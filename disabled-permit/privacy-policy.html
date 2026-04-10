@@ -16,7 +16,6 @@
     </script>
 
     <style>
-        /* בסיס זהה לחלוטין ל-TOS */
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
@@ -27,18 +26,20 @@
             background-color: #ffffff;
         }
         h1 { font-size: 2.2em; font-weight: 800; color: #1a73e8; margin-bottom: 5px; }
-        .subtitle { color: #5f6368; margin-top: 0; margin-bottom: 2rem; }
+        .subtitle { color: #5f6368; margin-top: 0; margin-bottom: 2rem; font-size: 1.1em; }
+        
         h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid #ebebeb; padding-bottom: 8px; color: #202124;}
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: #202124; }
+        
         p { margin-bottom: 1rem; }
         ul, ol { margin-bottom: 1rem; padding-left: 20px; }
         li { margin-bottom: 8px; }
-        .back { text-decoration: none; color: #1a73e8; font-weight: bold; display: inline-block; margin-bottom: 20px; }
-        .back:hover { text-decoration: underline; }
-
-        /* תוספות ייעודיות רק למדיניות פרטיות (תוכן עניינים וכו') */
-        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: #202124; }
+        
         a { color: #1a73e8; text-decoration: none; }
         a:hover { text-decoration: underline; }
+        
+        .back { text-decoration: none; color: #1a73e8; font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        
         .toc { 
             background-color: #f8f9fa; 
             padding: 20px 25px; 
@@ -92,8 +93,12 @@
 
     <h2 id="data-collection">4. Data Collection and Usage</h2>
     <p>To ensure technical stability, retrieve necessary data, and improve the Service, the App utilizes third-party providers and APIs:</p>
+    
+    <h3 id="data-gov">data.gov.il API (Israeli Government)</h3>
+    <p>When you search for a license plate, the App securely queries the official Israeli Government portal (data.gov.il). We only transmit the specific license plate number requested to retrieve the public permit status. As with any standard internet communication, your device's IP address may be visible to the government servers during these requests. However, the App does not associate the license plate number with you or your identity. The developer is not responsible for the accuracy or data retention policies of the government portal.</p>
+
+    <h3 id="third-party-tools">Technical & Ad Providers</h3>
     <ul>
-        <li><strong>Government Open Data API:</strong> When you search for a license plate, the App securely queries the official Israeli Government Open Data portal (data.gov.il). Only the specific license plate number requested is transmitted to retrieve the public permit status.</li>
         <li><strong>Google Analytics for Firebase:</strong> To understand how the app is used (e.g., button clicks and screen views) using anonymous identifiers.</li>
         <li><strong>Google Analytics:</strong> Used on this website to measure anonymous traffic data (such as page views) to help improve the service.</li>
         <li><strong>Firebase Performance Monitoring & Crashlytics:</strong> Used to collect technical logs, stack traces, and performance metrics (like OCR processing times) to identify and fix technical issues.</li>
