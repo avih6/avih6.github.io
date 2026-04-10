@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>avih6 - Android Developer</title>
+    
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --bg-color: #f8f9fa;
+            --text-main: #202124;
+            --text-secondary: #5f6368;
+            --card-bg: #ffffff;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* סקשן עליון - Header */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 1rem auto 0;
+        }
+
+        /* גריד האפליקציות */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 2.5rem;
+            color: var(--text-main);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        /* עיצוב כרטיסיית אפליקציה */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            flex-grow: 1;
+        }
+
+        /* קישורים בתוך הכרטיסייה */
+        .links {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 15px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .links a {
+            text-decoration: none;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .links a:hover {
+            text-decoration: underline;
+        }
+
+        /* פוטר */
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--text-secondary);
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>avih6</h1>
+        <p>Android Developer | Creating clean, functional, and user-centric applications</p>
+    </header>
+
+    <div class="container">
+        <h2 class="section-title">My Apps & Projects</h2>
+        <div class="grid">
+
+            <div class="card">
+                <h3>Disabled Permit Check</h3>
+                <p>A fast and reliable tool to check the status of accessible parking permits in real-time, utilizing official government APIs.</p>
+                <div class="links">
+                    <a href="disabled-permit/privacy-policy.html">Privacy Policy</a>
+                    </div>
+            </div>
+
+            <div class="card">
+                <h3>New Driver</h3>
+                <p>The ultimate companion for new drivers to track their required driving hours and license status securely on their device.</p>
+                <div class="links">
+                    <a href="new-driver/privacy-policy.html">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>חופש! (Freedom!)</h3>
+                <p>A highly customized countdown and tracking application designed for specialized schedules and important dates.</p>
+                <div class="links">
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>QR Generator</h3>
+                <p>Quickly generate high-quality QR codes on the go with a clean, intuitive, and completely local interface.</p>
+                <div class="links">
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 avih6 Development. All rights reserved.</p>
+        <p>Contact: <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+    </footer>
+
+</body>
+</html>
