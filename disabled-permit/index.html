@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disabled Permit Check - Support</title>
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K15Z8JR816"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-K15Z8JR816');
+
+      // פונקציה למעקב אחרי לחיצות
+      function trackClick(buttonName) {
+        gtag('event', 'click', {
+          'event_category': 'button',
+          'event_label': buttonName
+        });
+      }
+    </script>
+
+    <style>
+        body { font-family: system-ui, sans-serif; display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; margin: 0; background: #f8f9fa; color: #202124; }
+        h1 { color: #1a73e8; margin-bottom: 2rem; font-size: 2rem; text-align: center; }
+        .btn-container { display: flex; flex-direction: column; gap: 12px; width: 90%; max-width: 300px; }
+        .btn { padding: 16px; border-radius: 12px; text-decoration: none; text-align: center; font-weight: bold; border: 2px solid #1a73e8; color: #1a73e8; transition: 0.3s; }
+        .btn-main { background: #1a73e8; color: white; }
+        .btn:hover { opacity: 0.8; transform: translateY(-2px); }
+        .back-link { margin-top: 2.5rem; color: #5f6368; text-decoration: none; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <h1>Disabled Permit Check</h1>
+    
+    <div class="btn-container">
+        <a href="https://play.google.com/store/apps/details?id=com.avih6.disabledpermit" 
+           class="btn btn-main" 
+           onclick="trackClick('Google Play')" target="_blank">Google Play</a>
+        
+        <a href="privacy-policy.html" 
+           class="btn" 
+           onclick="trackClick('Privacy Policy')">Privacy Policy</a>
+        
+        <a href="terms.html" 
+           class="btn" 
+           onclick="trackClick('Terms of Service')">Terms of Service</a>
+    </div>
+
+    <a href="../index.html" class="back-link">← Back to avih6</a>
+
+</body>
+</html>
