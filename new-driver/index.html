@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Driver - Support</title>
 
-    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="icon" type="image/png" href="../icon-new-driver.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
@@ -13,6 +13,13 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
+
+      function trackClick(buttonName) {
+        gtag('event', 'click', {
+          'event_category': 'New_Driver_Site',
+          'event_label': buttonName
+        });
+      }
     </script>
 
     <style>
@@ -22,17 +29,33 @@
             flex-direction: column; 
             align-items: center; 
             justify-content: center; 
-            height: 100vh; 
+            min-height: 100vh; 
             margin: 0; 
             background: #f8f9fa; 
             color: #202124;
         }
-        h1 { color: #1a73e8; margin-bottom: 2rem; font-size: 2.5rem; }
+        
+        .app-icon { 
+            width: 80px; 
+            height: 80px; 
+            border-radius: 18px; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            margin-bottom: 1rem;
+        }
+
+        h1 { color: #1a73e8; margin-bottom: 2rem; font-size: 2.2rem; }
+        
+        .btn-container { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            width: 90%; 
+            max-width: 300px; 
+        }
+
         .btn { 
-            width: 250px; 
-            padding: 15px; 
-            margin: 10px; 
-            border-radius: 8px; 
+            padding: 16px; 
+            border-radius: 12px; 
             text-decoration: none; 
             text-align: center; 
             font-weight: bold; 
@@ -40,9 +63,16 @@
             color: #1a73e8; 
             transition: 0.3s; 
         }
-        .btn:hover { background: #1a73e8; color: white; }
+        
+        .btn-main { background: #1a73e8; color: white; }
+        
+        .btn:hover { 
+            opacity: 0.8; 
+            transform: translateY(-2px); 
+        }
+
         .back-link { 
-            margin-top: 2rem;
+            margin-top: 2.5rem;
             color: #5f6368; 
             text-decoration: none; 
             font-size: 0.9rem; 
@@ -52,10 +82,22 @@
 </head>
 <body>
 
+    <img src="../icon-new-driver.png" alt="New Driver Icon" class="app-icon">
+    
     <h1>New Driver</h1>
     
-    <a href="privacy-policy.html" class="btn">Privacy Policy</a>
-    
+    <div class="btn-container">
+        <a href="https://play.google.com/store/apps/details?id=com.avih6.newdriver" 
+           class="btn btn-main" 
+           onclick="trackClick('Google Play')" 
+           target="_blank">Google Play</a>
+        
+        <a href="privacy-policy.html" 
+           class="btn" 
+           onclick="trackClick('Privacy Policy')">Privacy Policy</a>
+
+        </div>
+
     <a href="../index.html" class="back-link">← Back to avih6</a>
 
 </body>
