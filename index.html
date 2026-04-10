@@ -3,21 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>avih6</title>
+    <title>avih6 - Android Developer</title>
+    
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+
+      // Function to track button clicks
+      function trackClick(appName, buttonType) {
+        gtag('event', 'click', {
+          'event_category': appName,
+          'event_label': buttonType
+        });
+      }
+    </script>
+
     <style>
         :root { --primary: #1a73e8; --bg: #f8f9fa; --card: #ffffff; }
         body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: #202124; text-align: center; }
         header { background: var(--primary); color: white; padding: 2.5rem 1rem; }
         h1 { margin: 0; font-size: 2.5rem; }
         .container { max-width: 1100px; margin: 2rem auto; padding: 0 1rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: var(--card); padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; border: 1px solid #eee; }
+        .card { background: var(--card); padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); display: flex; flex-direction: column; align-items: center; border: 1px solid #eee; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-3px); }
         .card h3 { margin: 0.5rem 0; color: var(--primary); font-size: 1.3rem; }
         .btn-group { display: flex; gap: 10px; margin-top: 1rem; width: 100%; }
         .btn { flex: 1; padding: 10px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 0.85rem; transition: 0.2s; text-align: center; }
         .btn-store { background: var(--primary); color: white; }
         .btn-site { border: 1px solid var(--primary); color: var(--primary); }
-        .btn-disabled { background: #e0e0e0; color: #9e9e9e; cursor: not-allowed; }
-        .btn:hover:not(.btn-disabled) { opacity: 0.8; }
+        .btn:hover { opacity: 0.8; }
         footer { margin-top: 3rem; padding: 2rem; font-size: 0.85rem; color: #5f6368; border-top: 1px solid #ddd; }
     </style>
 </head>
@@ -30,50 +49,50 @@
 
 <div class="container">
     <div class="card">
+        <h3>Disabled Permit Check</h3>
+        <div class="btn-group">
+            <a href="https://play.google.com/store/apps/details?id=com.avih6.disabledpermitcheck" class="btn btn-store" target="_blank" onclick="trackClick('Disabled Permit', 'Store')">Google Play</a>
+            <a href="disabled-permit/index.html" class="btn btn-site" onclick="trackClick('Disabled Permit', 'Site')">App Site</a>
+        </div>
+    </div>
+
+    <div class="card">
         <h3>New Driver</h3>
         <div class="btn-group">
-            <a href="https://play.google.com/store/apps/details?id=com.avih6.newdriver" class="btn btn-store" target="_blank">Google Play</a>
-            <a href="new-driver/index.html" class="btn btn-site">App Site</a>
+            <a href="https://play.google.com/store/apps/details?id=com.avih6.newdriver" class="btn btn-store" target="_blank" onclick="trackClick('New Driver', 'Store')">Google Play</a>
+            <a href="new-driver/index.html" class="btn btn-site" onclick="trackClick('New Driver', 'Site')">App Site</a>
         </div>
     </div>
 
     <div class="card">
         <h3>Hofesh!</h3>
         <div class="btn-group">
-            <a href="https://play.google.com/store/apps/details?id=com.avih6.hofesh" class="btn btn-store" target="_blank">Google Play</a>
-            <a href="hofesh/index.html" class="btn btn-site">App Site</a>
+            <a href="https://play.google.com/store/apps/details?id=com.avih6.hofesh" class="btn btn-store" target="_blank" onclick="trackClick('Hofesh', 'Store')">Google Play</a>
+            <a href="hofesh/index.html" class="btn btn-site" onclick="trackClick('Hofesh', 'Site')">App Site</a>
         </div>
     </div>
 
     <div class="card">
         <h3>QR Generator</h3>
         <div class="btn-group">
-            <a href="https://play.google.com/store/apps/details?id=com.avih6.qrgenerator" class="btn btn-store" target="_blank">Google Play</a>
-            <a href="qr-generator/index.html" class="btn btn-site">App Site</a>
+            <a href="https://play.google.com/store/apps/details?id=com.avih6.qrgenerator" class="btn btn-store" target="_blank" onclick="trackClick('QR Generator', 'Store')">Google Play</a>
+            <a href="qr-generator/index.html" class="btn btn-site" onclick="trackClick('QR Generator', 'Site')">App Site</a>
         </div>
     </div>
 
     <div class="card">
         <h3>Percentage Calculator</h3>
         <div class="btn-group">
-            <a href="https://play.google.com/store/apps/details?id=com.avih6.percentagecalculator" class="btn btn-store" target="_blank">Google Play</a>
-            <a href="percentage-calculator/index.html" class="btn btn-site">App Site</a>
+            <a href="https://play.google.com/store/apps/details?id=com.avih6.percentagecalculator" class="btn btn-store" target="_blank" onclick="trackClick('Percentage Calc', 'Store')">Google Play</a>
+            <a href="percentage-calculator/index.html" class="btn btn-site" onclick="trackClick('Percentage Calc', 'Site')">App Site</a>
         </div>
     </div>
 
     <div class="card">
         <h3>Flashlight</h3>
         <div class="btn-group">
-            <a href="https://play.google.com/store/apps/details?id=com.avih6.flashlight" class="btn btn-store" target="_blank">Google Play</a>
-            <a href="flashlight/index.html" class="btn btn-site">App Site</a>
-        </div>
-    </div>
-
-    <div class="card">
-        <h3>Disabled Permit Check</h3>
-        <div class="btn-group">
-            <span class="btn btn-disabled">Coming Soon</span>
-            <a href="disabled-permit/index.html" class="btn btn-site">App Site</a>
+            <a href="https://play.google.com/store/apps/details?id=com.avih6.flashlight" class="btn btn-store" target="_blank" onclick="trackClick('Flashlight', 'Store')">Google Play</a>
+            <a href="flashlight/index.html" class="btn btn-site" onclick="trackClick('Flashlight', 'Site')">App Site</a>
         </div>
     </div>
 </div>
