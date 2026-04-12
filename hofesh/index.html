@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hofesh! - Support</title>
+
+    <link rel="icon" type="image/png" href="../icon-hofesh.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TY7BN4NC30"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TY7BN4NC30');
+
+      function trackClick(buttonName) {
+        gtag('event', 'click', {
+          'event_category': 'Hofesh_Site',
+          'event_label': buttonName
+        });
+      }
+    </script>
+
+    <style>
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding-top: 8vh; 
+            background: #f8f9fa; 
+            color: #202124;
+        }
+        
+        .app-icon { 
+            width: 160px; 
+            height: 160px; 
+            border-radius: 35px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+        }
+
+        h1 { 
+            color: #1a73e8; 
+            margin-top: 0; 
+            margin-bottom: 2.5rem; 
+            font-size: 2.8rem; 
+            font-weight: 800;
+        }
+        
+        .btn-container { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            width: 90%; 
+            max-width: 320px; 
+        }
+
+        .btn { 
+            padding: 18px; 
+            border-radius: 16px; 
+            text-decoration: none; 
+            text-align: center; 
+            font-weight: bold; 
+            border: 2px solid #1a73e8; 
+            color: #1a73e8; 
+            transition: 0.3s; 
+            font-size: 1.1rem;
+        }
+        
+        .btn-main { background: #1a73e8; color: white; }
+        
+        .btn:hover { 
+            opacity: 0.9; 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 15px rgba(26, 115, 232, 0.2);
+        }
+
+        .back-link { 
+            margin-top: 4rem;
+            color: #5f6368; 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+        }
+        .back-link:hover { text-decoration: underline; color: #1a73e8; }
+    </style>
+</head>
+<body>
+
+    <img src="../icon-hofesh.png" alt="Hofesh Icon" class="app-icon">
+    
+    <h1>Hofesh!</h1>
+    
+    <div class="btn-container">
+        <a href="https://play.google.com/store/apps/details?id=com.avih6.hofesh" 
+           class="btn btn-main" 
+           onclick="trackClick('Google Play')" 
+           target="_blank">Google Play</a>
+        
+        <a href="privacy-policy" 
+           class="btn" 
+           onclick="trackClick('Privacy Policy')">Privacy Policy</a>
+
+        <a href="terms-of-service" 
+           class="btn" 
+           onclick="trackClick('Terms of Service')">Terms of Service</a>
+    </div>
+
+    <a href="../" class="back-link">← Back to avih6</a>
+
+</body>
+</html>
