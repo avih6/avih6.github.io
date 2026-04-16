@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Percentage Calculator</title>
-
+    
     <link rel="icon" type="image/png" href="/icon-percentage-calculator.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
@@ -16,130 +16,106 @@
     </script>
 
     <style>
+        /* בסיס זהה לחלוטין ל-TOS */
         body { 
             font-family: system-ui, -apple-system, sans-serif; 
-            line-height: 1.6;
-            margin: 0; 
-            padding: 0;
-            background: #f8f9fa; 
-            color: #202124;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            line-height: 1.6; 
+            color: #202124; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: #ffffff;
         }
+        h1 { font-size: 2.2em; font-weight: 800; color: #1a73e8; margin-bottom: 5px; }
+        .subtitle { color: #5f6368; margin-top: 0; margin-bottom: 2rem; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid #ebebeb; padding-bottom: 8px; color: #202124;}
+        p { margin-bottom: 1rem; }
+        ul, ol { margin-bottom: 1rem; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back { text-decoration: none; color: #1a73e8; font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back:hover { text-decoration: underline; }
 
-        .header {
-            padding-top: 5vh;
-            text-align: center;
-            width: 100%;
+        /* תוספות ייעודיות רק למדיניות פרטיות (תוכן עניינים וכו') */
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: #202124; }
+        a { color: #1a73e8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .toc { 
+            background-color: #f8f9fa; 
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            margin-bottom: 2.5em; 
+            border: 1px solid #eee;
         }
-        
-        .app-icon { 
-            width: 80px; 
-            height: 80px; 
-            border-radius: 18px; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            margin-bottom: 1rem;
-            object-fit: cover;
-        }
-
-        h1 { 
-            color: #1a73e8; 
-            font-size: 2.2rem; 
-            margin-bottom: 0.5rem;
-        }
-
-        .last-updated {
-            color: #5f6368;
-            font-size: 0.9rem;
-            margin-bottom: 2rem;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 800px;
-            background: white;
-            padding: 40px;
-            border-radius: 24px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            margin-bottom: 3rem;
-            text-align: left;
-        }
-
-        h2 { 
-            color: #1a73e8; 
-            border-bottom: 1px solid #eee; 
-            padding-bottom: 8px; 
-            margin-top: 1.5rem;
-            font-size: 1.4rem;
-        }
-
-        h3 { color: #3c4043; font-size: 1.1rem; margin-top: 1.2rem; }
-
-        p, li { color: #3c4043; }
-        
-        ul { padding-left: 20px; }
-
-        .back-link { 
-            margin-bottom: 4rem;
-            color: #5f6368; 
-            text-decoration: none; 
-            font-size: 0.95rem; 
-        }
-        .back-link:hover { text-decoration: underline; color: #1a73e8; }
-
-        @media (max-width: 600px) {
-            .container { padding: 20px; }
-            h1 { font-size: 1.8rem; }
-        }
+        .toc h3 { margin-top: 0; color: #1a73e8; font-size: 1.2em; }
+        .toc a { color: #5f6368; font-weight: 500; }
+        .toc a:hover { color: #1a73e8; }
+        .toc ol, .toc ul { margin-bottom: 0; }
+        .toc ul { list-style-type: disc; margin-top: 5px; margin-bottom: 10px;}
     </style>
 </head>
 <body>
-
-    <div class="header">
-        <img src="/icon-percentage-calculator.png" alt="Percentage Calculator Icon" class="app-icon">
-        <h1>Privacy Policy</h1>
-        <p class="last-updated">Last Updated: April 8, 2026</p>
-    </div>
     
-    <div class="container">
-        <p><strong>Percentage Calculator</strong> (the "App"), developed by <strong>avih6</strong>, is provided as a utility for performing various percentage-based calculations. The App is designed with a privacy-first approach, ensuring that functionality is provided without the requirement for personal data collection or external synchronization.</p>
+    <a href="./" class="back">← Back to App Site</a>
+    
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Percentage Calculator (מחשבון אחוזים)</p>
 
-        <h2>1. Overview</h2>
-        <p>This policy outlines how we handle information within the application. Our core principle is simple: your data stays on your device.</p>
-
-        <h2>2. Data Collection and Usage</h2>
-        <h3>Personal Information</h3>
-        <p>The App does not collect, harvest, or transmit any personally identifiable information (PII). Users are not required to create an account or provide any contact details to access the App's features.</p>
-
-        <h3>Third-Party Services</h3>
-        <p>The App is distributed through the Google Play Store and utilizes standard Google Play Services. These services may process certain non-identifying technical data for the following purposes:</p>
-        <ul>
-            <li><strong>Diagnostics:</strong> Monitoring application stability and identifying software crashes.</li>
-            <li><strong>Performance:</strong> Gathering aggregated usage statistics to improve the Android platform.</li>
-        </ul>
-        <p>All such data is managed by Google according to the <a href="https://policies.google.com/privacy" target="_blank" style="color:#1a73e8;">Google Privacy Policy</a>.</p>
-
-        <h2>3. Data Storage and Security</h2>
-        <h3>Local Processing</h3>
-        <p>All calculations, inputs, and results are processed exclusively on the user's device. No calculation data is transmitted to external servers or third-party entities.</p>
-
-        <h3>Calculation History and Settings</h3>
-        <p>The App includes a "History" feature and data persistence options. All history records and user preferences are stored strictly within a private local database on the device.</p>
-        <ul>
-            <li>This information is not synchronized with any cloud service.</li>
-            <li>Users may clear the stored history and preferences at any time through the App settings or by clearing the App's storage via the Android system settings.</li>
-        </ul>
-
-        <h2>4. Children’s Privacy</h2>
-        <p>The App does not collect personal information from any users, including children under the age of 13.</p>
-
-        <h2>5. Contact Information</h2>
-        <p>For any questions or concerns regarding this Privacy Policy, please contact:<br>
-        <a href="mailto:av6development@gmail.com" style="color: #1a73e8; font-weight: bold; text-decoration: none;">av6development@gmail.com</a></p>
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#data-collection">Data Collection and Usage</a>
+                <ul>
+                    <li><a href="#personal-information">Personal Information</a></li>
+                    <li><a href="#third-party">Third-Party Services</a></li>
+                </ul>
+            </li>
+            <li><a href="#data-storage">Data Storage and Security</a>
+                <ul>
+                    <li><a href="#local-processing">Local Processing</a></li>
+                    <li><a href="#history-settings">Calculation History and Settings</a></li>
+                </ul>
+            </li>
+            <li><a href="#childrens-privacy">Children’s Privacy</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
     </div>
 
-    <a href="./" class="back-link">← Back to App Page</a>
+    <p><strong>Last Updated:</strong> April 8, 2026</p>
+
+    <h2 id="overview">1. Overview</h2>
+    <p><strong>Percentage Calculator</strong> (the "App"), developed by <strong>avih6</strong>, is provided as a utility for performing various percentage-based calculations. The App is designed with a privacy-first approach, ensuring that functionality is provided without the requirement for personal data collection or external synchronization.</p>
+
+    <h2 id="data-collection">2. Data Collection and Usage</h2>
+    
+    <h3 id="personal-information">Personal Information</h3>
+    <p>The App does not collect, harvest, or transmit any personally identifiable information (PII). Users are not required to create an account or provide any contact details to access the App's features.</p>
+
+    <h3 id="third-party">Third-Party Services</h3>
+    <p>The App is distributed through the Google Play Store and utilizes standard Google Play Services. These services may process certain non-identifying technical data for the following purposes:</p>
+    <ul>
+        <li><strong>Diagnostics:</strong> Monitoring application stability and identifying software crashes.</li>
+        <li><strong>Performance:</strong> Gathering aggregated usage statistics to improve the Android platform.</li>
+    </ul>
+    <p>All such data is managed by Google according to the <a href="https://policies.google.com/privacy" target="_blank">Google Privacy Policy</a>.</p>
+
+    <h2 id="data-storage">3. Data Storage and Security</h2>
+    
+    <h3 id="local-processing">Local Processing</h3>
+    <p>All calculations, inputs, and results are processed exclusively on the user's device. No calculation data is transmitted to external servers or third-party entities.</p>
+
+    <h3 id="history-settings">Calculation History and Settings</h3>
+    <p>The App includes a "History" feature and data persistence options. All history records and user preferences are stored strictly within a private local database on the device.</p>
+    <ul>
+        <li>This information is not synchronized with any cloud service.</li>
+        <li>Users may clear the stored history and preferences at any time through the App settings or by clearing the App's storage via the Android system settings.</li>
+    </ul>
+
+    <h2 id="childrens-privacy">4. Children’s Privacy</h2>
+    <p>The App does not collect personal information from any users, including children under the age of 13.</p>
+
+    <h2 id="contact">5. Contact Information</h2>
+    <p>For any questions or concerns regarding this Privacy Policy, please contact: <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
 
 </body>
 </html>
