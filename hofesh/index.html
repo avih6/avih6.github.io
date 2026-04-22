@@ -23,7 +23,9 @@
         });
       }
 
-      // Dark Mode Logic - Checks the same localStorage used by the main page
+      const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
       if (localStorage.getItem('theme') === 'dark') {
           document.documentElement.classList.add('dark-mode');
       }
@@ -32,33 +34,31 @@
           document.documentElement.classList.toggle('dark-mode');
           const isDark = document.documentElement.classList.contains('dark-mode');
           localStorage.setItem('theme', isDark ? 'dark' : 'light');
-          document.getElementById('theme-icon').innerText = isDark ? '☀️' : '🌙';
+          document.getElementById('theme-icon-container').innerHTML = isDark ? sunIcon : moonIcon;
       }
 
       window.addEventListener('DOMContentLoaded', () => {
-          if (document.documentElement.classList.contains('dark-mode')) {
-              document.getElementById('theme-icon').innerText = '☀️';
-          }
+          const isDark = document.documentElement.classList.contains('dark-mode');
+          document.getElementById('theme-icon-container').innerHTML = isDark ? sunIcon : moonIcon;
       });
     </script>
 
     <style>
-        /* CSS Variables for seamless cross-page theming */
         :root { 
             --primary: #1a73e8; 
             --bg: #f8f9fa; 
             --text: #202124;
             --btn-border: #1a73e8;
-            --fab-bg: #ffffff;
+            --fab-bg: rgba(255, 255, 255, 0.8);
             --fab-border: #eee;
         }
         
         html.dark-mode {
             --bg: #121212;
             --text: #e8eaed;
-            --primary: #669df6; /* Lighter blue so it pops against the dark background */
+            --primary: #669df6; 
             --btn-border: #669df6;
-            --fab-bg: #1e1e1e;
+            --fab-bg: rgba(30, 30, 30, 0.8);
             --fab-border: #333333;
         }
 
@@ -140,21 +140,21 @@
         
         .back-link:hover { text-decoration: underline; color: var(--primary); }
 
-        /* Shared Floating Action Button Style */
         .theme-fab {
             position: fixed;
             bottom: 30px;
             right: 30px;
             background: var(--fab-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             color: var(--text);
             border: 1px solid var(--fab-border);
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            transition: transform 0.2s, background 0.3s, box-shadow 0.2s;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             z-index: 1000;
             display: flex;
             align-items: center;
@@ -162,8 +162,13 @@
         }
 
         .theme-fab:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
         }
     </style>
 </head>
@@ -191,7 +196,7 @@
     <a href="/" class="back-link">← Back to avih6</a>
 
     <button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-        <span id="theme-icon">🌙</span>
+        <div id="theme-icon-container"></div>
     </button>
 
 </body>
