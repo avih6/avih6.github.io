@@ -1,1 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Flashlight</title>
+    <meta name="description" content="Support and download page for Flashlight (פנס), an Android utility app by avih6.">
+    
+    <link rel="canonical" href="https://avih6.github.io/flashlight">
 
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+
+      function trackClick(buttonName) {
+        gtag('event', 'click', {
+          'event_category': 'Flashlight_Site',
+          'event_label': buttonName
+        });
+      }
+
+      const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+      if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+      }
+
+      function toggleTheme() {
+          document.documentElement.classList.toggle('dark-mode');
+          const isDark = document.documentElement.classList.contains('dark-mode');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          document.getElementById('theme-icon-container').innerHTML = isDark ? sunIcon : moonIcon;
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+          const isDark = document.documentElement.classList.contains('dark-mode');
+          document.getElementById('theme-icon-container').innerHTML = isDark ? sunIcon : moonIcon;
+      });
+    </script>
+
+    <style>
+        :root { 
+            --primary: #1a73e8; 
+            --bg: #f8f9fa; 
+            --text: #202124;
+            --btn-border: #1a73e8;
+            --fab-bg: rgba(255, 255, 255, 0.8);
+            --fab-border: #eee;
+        }
+        
+        html.dark-mode {
+            --bg: #121212;
+            --text: #e8eaed;
+            --primary: #669df6; 
+            --btn-border: #669df6;
+            --fab-bg: rgba(30, 30, 30, 0.8);
+            --fab-border: #333333;
+        }
+
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: flex-start; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding-top: 8vh; 
+            background: var(--bg); 
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
+        
+        .app-icon { 
+            width: 160px; 
+            height: 160px; 
+            border-radius: 35px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+            object-fit: cover;
+        }
+
+        h1 { 
+            color: var(--primary); 
+            margin-top: 0; 
+            margin-bottom: 2.5rem; 
+            font-size: 2.8rem; 
+            font-weight: 800;
+            text-align: center;
+            transition: color 0.3s;
+        }
+        
+        .btn-container { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            width: 90%; 
+            max-width: 320px; 
+        }
+
+        .btn { 
+            padding: 18px; 
+            border-radius: 16px; 
+            text-decoration: none; 
+            text-align: center; 
+            font-weight: bold; 
+            border: 2px solid var(--btn-border); 
+            color: var(--primary); 
+            transition: 0.3s; 
+            font-size: 1.1rem;
+        }
+        
+        .btn-main { 
+            background: var(--primary); 
+            color: var(--bg);
+            border-color: var(--primary);
+        }
+        
+        .btn:hover { 
+            opacity: 0.9; 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 15px rgba(26, 115, 232, 0.2);
+        }
+
+        .back-link { 
+            margin-top: 4rem;
+            color: #5f6368; 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+            transition: color 0.3s;
+        }
+        
+        html.dark-mode .back-link {
+            color: #9aa0a6; 
+        }
+        
+        .back-link:hover { text-decoration: underline; color: var(--primary); }
+
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--fab-border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-fab:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+        }
+
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+</head>
+<body>
+
+    <img src="/icon-flashlight.png" alt="Flashlight (פנס) Icon" class="app-icon">
+    
+    <h1>Flashlight</h1>
+    
+    <div class="btn-container">
+        <a href="https://play.google.com/store/apps/details?id=com.avih6.flashlight" 
+           class="btn btn-main" 
+           onclick="trackClick('Google Play')" 
+           target="_blank">Google Play</a>
+        
+        <a href="privacy-policy" 
+           class="btn" 
+           onclick="trackClick('Privacy Policy')">Privacy Policy</a>
+
+        <a href="terms-of-service" 
+           class="btn" 
+           onclick="trackClick('Terms of Service')">Terms of Service</a>
+    </div>
+
+    <a href="/" class="back-link">← Back to avih6</a>
+
+    <button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        <div id="theme-icon-container"></div>
+    </button>
+
+</body>
+</html>
