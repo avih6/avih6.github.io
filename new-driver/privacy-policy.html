@@ -63,14 +63,14 @@
         <h3>Table of Contents</h3>
         <ol>
             <li><a href="#overview">Overview</a></li>
-            <li><a href="#local-data">Local Data Handling</a>
+            <li><a href="#data-handling">Data Handling & Synchronization</a>
                 <ul>
                     <li><a href="#local-personal-data">Local Personal Data</a></li>
-                    <li><a href="#device-sync">Device Synchronization</a></li>
-                    <li><a href="#data-deletion">Data Deletion and Management</a></li>
+                    <li><a href="#cloud-sync">Optional Cloud Backup & Synchronization</a></li>
+                    <li><a href="#data-deletion">Data Deletion & Account Deletion</a></li>
                 </ul>
             </li>
-            <li><a href="#data-collection">Data Collection and Usage</a></li>
+            <li><a href="#data-collection">Data Collection, Consent & Usage</a></li>
             <li><a href="#external-links">External Links</a></li>
             <li><a href="#childrens-privacy">Children’s Privacy</a></li>
             <li><a href="#changes">Changes to This Policy</a></li>
@@ -78,32 +78,42 @@
         </ol>
     </div>
 
-    <p><strong>Last Updated:</strong> April 10, 2026</p>
+    <p><strong>Last Updated:</strong> July 18, 2026 (Effective starting from App Version 2.1.0)</p>
 
     <h2 id="overview">1. Overview</h2>
     <p>avih6 built the New Driver app as a Free app. This SERVICE is provided at no cost and is intended for use as is. This page informs visitors regarding policies with the handling, use, and disclosure of information for anyone deciding to use the Service.</p>
     <p>By using the Service, there is an agreement to the policies described herein. The App is designed with a privacy-first approach; all core driving data and profile configurations are handled locally on the device.</p>
 
-    <h2 id="local-data">2. Local Data Handling</h2>
-    <p>The following operations are performed locally on the user's device and do not involve data collection by the developer:</p>
+    <h2 id="data-handling">2. Data Handling & Synchronization</h2>
+    <p>The application supports both local offline storage and optional cloud backup:</p>
     
     <h3 id="local-personal-data">Local Personal Data</h3>
-    <p>The application processes specific dates (such as birth date and driving test date) and allows users to log driving hours. This data is stored strictly locally in a private database on the user's device. No personal driving information is collected, transmitted, or stored on external servers by the developer.</p>
+    <p>By default, the application processes specific dates (such as birth date and driving test date) and allows users to log driving hours locally. This data is stored strictly in a private database on the user's device. No personal driving information is transmitted or stored on external servers unless you choose to enable Cloud Backup.</p>
 
-    <h3 id="device-sync">Device Synchronization</h3>
-    <p>Data stored locally may be synchronized with the user’s own Wear OS devices. This synchronization is handled locally or via standard system APIs and does not involve external data collection.</p>
+    <h3 id="cloud-sync">Optional Cloud Backup & Synchronization</h3>
+    <p>You may optionally choose to sign in using your Google account. If you enable this feature, your driving logs, logs configurations, and app settings will be securely backed up and synchronized across your Wear OS and Android devices using Firebase Authentication and Google Cloud Firestore. This synchronization respects your device type (e.g., adaptive color preferences are only active on supported Android versions and are not applied to incompatible devices).</p>
 
-    <h3 id="data-deletion">Data Deletion and Management</h3>
-    <p>Users maintain full control over their data. The application provides a "Reset" function within the settings that permanently deletes all locally stored driving logs and configuration data from the device.</p>
-
-    <h2 id="data-collection">3. Data Collection and Usage</h2>
-    <p>To ensure technical stability and improve the Service, the App utilizes third-party providers that may process anonymous information:</p>
+    <h3 id="data-deletion">Data Deletion & Account Deletion</h3>
+    <p>Users maintain full control over their data:</p>
     <ul>
-        <li><strong>Google Analytics for Firebase:</strong> To understand how the app is used.</li>
-        <li><strong>Google Analytics:</strong> Used on this website to measure anonymous traffic data (such as page views) to help improve the service.</li>
-        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Used to collect technical logs, stack traces, and performance metrics to identify and fix technical issues.</li>
-        <li><strong>Google AdMob:</strong> Used to display advertisements. AdMob may process device identifiers and IP addresses to provide and personalize ads. The display of ads is managed dynamically and may not be active at all times.</li>
-        <li><strong>Firebase Cloud Messaging (FCM):</strong> Used to deliver system updates and remote notifications.</li>
+        <li><strong>Local Reset:</strong> You can use the "Reset" function within the settings to permanently delete all locally stored driving logs and configuration data from your device.</li>
+        <li><strong>Account Deletion:</strong> If you signed in with your Google account, you can request the permanent deletion of your account and all associated cloud data at any time via the "Delete Account" button in the app settings. This action is irreversible and permanently erases your profile and logs from Google Firebase servers.</li>
+    </ul>
+
+    <h2 id="data-collection">3. Data Collection, Consent & Usage</h2>
+    <p>To ensure technical stability, optimize performance, and display advertisements, the App utilizes third-party providers that may process anonymous or pseudonymous information. The App complies with applicable privacy regulations, including the European Union's General Data Protection Regulation (GDPR):</p>
+    
+    <h3>GDPR & Consent Management</h3>
+    <p>If you are a user located in the European Economic Area (EEA), the United Kingdom, or Switzerland, the application displays a consent dialog compliant with the European General Data Protection Regulation (GDPR) using the Google User Messaging Platform (UMP) SDK. This allows you to consent to or decline the collection of data for analytics, personalized ads, or non-personalized ads. You can view, customize, or withdraw your consent at any time through the app settings.</p>
+
+    <h3>Third-Party Service Providers</h3>
+    <ul>
+        <li><strong>Firebase Authentication & Cloud Firestore:</strong> Used to manage user accounts and securely back up and sync your data (only if you choose to sign in with Google).</li>
+        <li><strong>Google Analytics for Firebase:</strong> Used to understand how the app is used and analyze user behavior.</li>
+        <li><strong>Google Analytics:</strong> Used on this website to measure anonymous traffic data (such as page views).</li>
+        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Used to collect technical logs, stack traces, and performance metrics to identify and fix bugs.</li>
+        <li><strong>Google AdMob:</strong> Used to display advertisements. AdMob may process device identifiers and IP addresses. For users in the EEA/UK, ad personalization is strictly subject to the consent provided via the GDPR consent dialog.</li>
+        <li><strong>Firebase Cloud Messaging (FCM):</strong> Used to deliver remote notifications and updates.</li>
     </ul>
     <p>For more information, please review the privacy policies of these providers:<br>
     <a href="https://policies.google.com/privacy" target="_blank">Google Privacy & Terms</a> | <a href="https://marketingplatform.google.com/about/analytics/terms/us/" target="_blank">Google Analytics Terms</a> | <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy and Security</a></p>
