@@ -67,6 +67,7 @@
                 <ul>
                     <li><a href="#local-personal-data">Local Personal Data</a></li>
                     <li><a href="#cloud-sync">Optional Cloud Backup & Synchronization</a></li>
+                    <li><a href="#google-data">Google Account Data</a></li>
                     <li><a href="#data-deletion">Data Deletion & Account Deletion</a></li>
                 </ul>
             </li>
@@ -92,6 +93,16 @@
 
     <h3 id="cloud-sync">Optional Cloud Backup & Synchronization</h3>
     <p>You may optionally choose to sign in using your Google account. If you enable this feature, your driving logs, logs configurations, and app settings will be securely backed up and synchronized across your Wear OS and Android devices using Firebase Authentication and Google Cloud Firestore. This synchronization respects your device type (e.g., adaptive color preferences are only active on supported Android versions and are not applied to incompatible devices).</p>
+
+    <h3 id="google-data">Google Account Data</h3>
+    <p>When you sign in with Google, the App receives and stores the following information from your Google account:</p>
+    <ul>
+        <li><strong>Display Name:</strong> Used to personalize your experience within the App (e.g., shown on the settings screen).</li>
+        <li><strong>Email Address:</strong> Used as your unique account identifier and displayed in the App settings.</li>
+        <li><strong>Profile Photo URL:</strong> Displayed as your avatar within the App.</li>
+        <li><strong>Google User ID:</strong> A unique identifier used internally to associate your cloud data with your account.</li>
+    </ul>
+    <p>This information is stored securely in Google Cloud Firestore and is never shared with third parties. It is used solely for authentication, personalization, and data synchronization purposes. You can remove all of this data at any time by using the "Delete Account" option in the App settings.</p>
 
     <h3 id="data-deletion">Data Deletion & Account Deletion</h3>
     <p>Users maintain full control over their data:</p>
