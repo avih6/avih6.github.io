@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Electricity Calculator</title>
+    
+    <link rel="icon" type="image/png" href="../icon-electricity-calculator.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+
+    <style>
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: #202124; 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: #ffffff;
+        }
+        h1 { font-size: 2.2em; font-weight: 800; color: #1a73e8; margin-bottom: 5px; }
+        .subtitle { color: #5f6368; margin-top: 0; margin-bottom: 2rem; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid #ebebeb; padding-bottom: 8px; color: #202124;}
+        p { margin-bottom: 1rem; }
+        ul, ol { margin-bottom: 1rem; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back { text-decoration: none; color: #1a73e8; font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back:hover { text-decoration: underline; }
+
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: #202124; }
+        a { color: #1a73e8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .toc { 
+            background-color: #f8f9fa; 
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            margin-bottom: 2.5em; 
+            border: 1px solid #eee;
+        }
+        .toc h3 { margin-top: 0; color: #1a73e8; font-size: 1.2em; }
+        .toc a { color: #5f6368; font-weight: 500; }
+        .toc a:hover { color: #1a73e8; }
+        .toc ol { margin-bottom: 0; }
+    </style>
+</head>
+<body>
+    
+    <a href="./" class="back">← Back to App Site</a>
+    
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Electricity Calculator (מחשבון חשמל)</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#data-handling">Data Handling & Local Storage</a>
+                <ul>
+                    <li><a href="#local-data">Local Calculation Data</a></li>
+                    <li><a href="#data-deletion">Data Deletion</a></li>
+                </ul>
+            </li>
+            <li><a href="#data-collection">Data Collection, Third-Party Services & GDPR</a></li>
+            <li><a href="#external-links">External Links</a></li>
+            <li><a href="#childrens-privacy">Children’s Privacy</a></li>
+            <li><a href="#changes">Changes to This Policy</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
+    </div>
+
+    <p><strong>Last Updated:</strong> July 21, 2026</p>
+
+    <h2 id="overview">1. Overview</h2>
+    <p>avih6 built the Electricity Calculator app as a Free app. This SERVICE is provided at no cost and is intended for use as is. This page informs visitors regarding policies with the handling, use, and disclosure of information for anyone deciding to use the Service.</p>
+    <p>By using the Service, there is an agreement to the policies described herein. The App is designed with a privacy-first approach; all meter readings, tariff configurations, and calculation history records are handled locally on the device.</p>
+
+    <h2 id="data-handling">2. Data Handling & Local Storage</h2>
+    
+    <h3 id="local-data">Local Calculation Data</h3>
+    <p>The application processes specific user-entered inputs (such as current and previous meter readings, billing periods, household/general/fixed tariff rates, and Eilat VAT preferences). This data is stored strictly in a private local database (Room SQLite & DataStore) on the user's device. No personal billing or meter reading data is transmitted to or stored on external servers.</p>
+
+    <h3 id="data-deletion">Data Deletion</h3>
+    <p>Users maintain full control over their stored history data:</p>
+    <ul>
+        <li><strong>Local Clear:</strong> You can use the "Clear All" (נקה הכל) function within the History screen to permanently delete all locally stored calculation records from your device.</li>
+        <li><strong>App Removal:</strong> Uninstalling the application erases all local data and user settings stored on the device.</li>
+    </ul>
+
+    <h2 id="data-collection">3. Data Collection, Third-Party Services & GDPR</h2>
+    <p>To ensure technical stability, optimize performance, dynamically update standard tariffs, and display advertisements, the App utilizes third-party providers that may process anonymous or pseudonymous information. The App complies with applicable privacy regulations, including the European Union's General Data Protection Regulation (GDPR):</p>
+    
+    <h3>GDPR & Consent Management</h3>
+    <p>If you are a user located in the European Economic Area (EEA), the United Kingdom, or Switzerland, the application displays a consent dialog compliant with the European General Data Protection Regulation (GDPR) using the Google User Messaging Platform (UMP) SDK. This allows you to consent to or decline the collection of data for analytics, personalized ads, or non-personalized ads.</p>
+
+    <h3>Third-Party Service Providers</h3>
+    <ul>
+        <li><strong>Google AdMob:</strong> Used to display advertisements. AdMob may process device identifiers and IP addresses. For users in the EEA/UK, ad personalization is strictly subject to the consent provided via the GDPR consent dialog.</li>
+        <li><strong>Google Analytics for Firebase:</strong> Used to understand how the app is used and analyze user behavior.</li>
+        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Used to collect technical logs, stack traces, and performance metrics to identify and fix bugs.</li>
+        <li><strong>Firebase Remote Config:</strong> Used to retrieve updated electricity tariff rates and configuration.</li>
+    </ul>
+    <p>For more information, please review the privacy policies of these providers:<br>
+    <a href="https://policies.google.com/privacy" target="_blank">Google Privacy & Terms</a> | <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy and Security</a></p>
+
+    <h2 id="external-links">4. External Links</h2>
+    <p>The Service contains links to external sites (such as official utility tariff portals). Note that these external sites are not operated by avih6, and there is no responsibility for the content or privacy practices of these third-party platforms.</p>
+
+    <h2 id="childrens-privacy">5. Children’s Privacy</h2>
+    <p>There is no intentional collection of personally identifiable information from children under the age of 13.</p>
+
+    <h2 id="changes">6. Changes to This Policy</h2>
+    <p>This Privacy Policy may be updated periodically. Users are advised to review this page for any changes. Updates are effective immediately upon being posted on this page.</p>
+
+    <h2 id="contact">7. Contact Information</h2>
+    <p>For any questions or concerns regarding this Privacy Policy, please contact: <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+
+</body>
+</html>
