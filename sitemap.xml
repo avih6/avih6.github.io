@@ -32,4 +32,8 @@
     <loc>https://avih6.github.io/electricity-calculator</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://avih6.github.io/wavetune-radio</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
