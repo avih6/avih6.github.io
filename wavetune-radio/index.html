@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WaveTune Radio</title>
+
+    <meta name="description" content="WaveTune Radio — Stream thousands of live radio stations worldwide. Listen by genre, country, or city. Free, no sign-up required.">
+
+    <link rel="canonical" href="https://avih6.github.io/wavetune-radio/">
+
+    <link rel="icon" type="image/jpeg" href="/icon-wavetune-radio.jpg">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+
+      function trackClick(buttonName) {
+        gtag('event', 'click', {
+          'event_category': 'WaveTune_Radio_Site',
+          'event_label': buttonName
+        });
+      }
+
+      const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+      if (localStorage.getItem('theme') === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+      }
+
+      function toggleTheme() {
+          document.documentElement.classList.toggle('dark-mode');
+          const isDark = document.documentElement.classList.contains('dark-mode');
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          document.getElementById('theme-icon-container').innerHTML = isDark ? sunIcon : moonIcon;
+      }
+
+      window.addEventListener('DOMContentLoaded', () => {
+          const isDark = document.documentElement.classList.contains('dark-mode');
+          document.getElementById('theme-icon-container').innerHTML = isDark ? sunIcon : moonIcon;
+      });
+    </script>
+
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --bg: #f8f9fa;
+            --card: #ffffff;
+            --text: #202124;
+            --subtext: #5f6368;
+            --border: #eee;
+            --fab-bg: rgba(255,255,255,0.8);
+        }
+        html.dark-mode {
+            --bg: #121212;
+            --card: #1e1e1e;
+            --text: #e8eaed;
+            --subtext: #9aa0a6;
+            --border: #333;
+            --fab-bg: rgba(30,30,30,0.8);
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        /* Nav */
+        .topnav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 24px;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            font-size: 0.9rem;
+            transition: background 0.3s, border 0.3s;
+        }
+        .topnav a { color: var(--primary); font-weight: 600; }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0D1B2A 0%, #1a2a4a 60%, #0f2040 100%);
+            color: white;
+            padding: 4rem 1rem 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 50%, rgba(0,180,216,0.15) 0%, transparent 60%),
+                        radial-gradient(ellipse at 70% 50%, rgba(233,30,140,0.15) 0%, transparent 60%);
+        }
+        .hero-content { position: relative; z-index: 1; }
+        .hero-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 22px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+        }
+        .hero h1 {
+            margin: 0 0 0.5rem;
+            font-size: 2.4rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .hero p {
+            margin: 0 0 2rem;
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.8);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .btn-play {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary);
+            color: white;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(26,115,232,0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .btn-play:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(26,115,232,0.5);
+            text-decoration: none;
+            color: white;
+        }
+        .btn-play svg { width: 22px; height: 22px; }
+
+        /* Features */
+        .features {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+        .features h2 {
+            text-align: center;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+        }
+        .feature-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 1.4rem 1.6rem;
+            transition: transform 0.2s, box-shadow 0.2s, background 0.3s, border 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .feature-icon { font-size: 2rem; margin-bottom: 0.6rem; }
+        .feature-card h3 { margin: 0 0 0.4rem; font-size: 1rem; font-weight: 700; }
+        .feature-card p { margin: 0; font-size: 0.88rem; color: var(--subtext); line-height: 1.5; }
+
+        /* Legal links */
+        .legal {
+            text-align: center;
+            padding: 2rem 1rem;
+            font-size: 0.85rem;
+            color: var(--subtext);
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-top: 1px solid var(--border);
+            transition: border 0.3s;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.82rem;
+            color: var(--subtext);
+            border-top: 1px solid var(--border);
+            transition: border 0.3s;
+        }
+
+        /* FAB */
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-fab:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card);
+        }
+        .theme-fab svg { width: 22px; height: 22px; }
+    </style>
+</head>
+<body>
+
+<nav class="topnav">
+    <a href="/">&larr; Back to Portfolio</a>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <img src="/icon-wavetune-radio.jpg" alt="WaveTune Radio Icon" class="hero-icon">
+        <h1>WaveTune Radio</h1>
+        <p>Stream thousands of live radio stations from around the world. Browse by genre, country, or city — free, no sign-up required.</p>
+        <a href="https://play.google.com/store/apps/details?id=com.avih6.wavetune.radio" class="btn-play" target="_blank" onclick="trackClick('Google_Play')">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M3 20.5v-17c0-.83 1-.83 1.5-.5l14 8.5c.5.3.5 1.2 0 1.5l-14 8.5c-.5.3-1.5.33-1.5-.5z"/></svg>
+            Get it on Google Play
+        </a>
+    </div>
+</section>
+
+<section class="features">
+    <h2>Features</h2>
+    <div class="features-grid">
+        <div class="feature-card">
+            <div class="feature-icon">🌍</div>
+            <h3>Worldwide Stations</h3>
+            <p>Discover and stream radio stations from over 150 countries, with real-time data from the RadioBrowser community database.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎵</div>
+            <h3>Browse by Genre</h3>
+            <p>Filter by Music, News, Talk, Jazz, Rock, Classical, Hip Hop, Latin, and many more genres.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🗺️</div>
+            <h3>Browse by Country</h3>
+            <p>Explore stations grouped by country, including cities and regions — perfect for finding local content abroad.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">❤️</div>
+            <h3>Favorites & History</h3>
+            <p>Save your favorite stations and genres for quick access. Your recently played stations are always just a tap away.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏱️</div>
+            <h3>Sleep Timer & Alarm</h3>
+            <p>Fall asleep to your favorite station with the built-in sleep timer. Wake up to live radio with the radio alarm clock.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">⏺️</div>
+            <h3>Stream Recording</h3>
+            <p>Record any live stream directly to your device, saved as high-quality audio files you can play back anytime.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">🎛️</div>
+            <h3>Equalizer</h3>
+            <p>Fine-tune your audio experience with the built-in equalizer and volume normalization.</p>
+        </div>
+        <div class="feature-card">
+            <div class="feature-icon">📡</div>
+            <h3>Background Playback</h3>
+            <p>WaveTune Radio plays in the background with full media controls in the notification shade and lock screen.</p>
+        </div>
+    </div>
+</section>
+
+<div class="legal">
+    <a href="./privacy-policy.html" onclick="trackClick('Privacy_Policy')">Privacy Policy</a>
+    <a href="./terms-of-service.html" onclick="trackClick('Terms_of_Service')">Terms of Service</a>
+    <a href="mailto:av6development@gmail.com" onclick="trackClick('Support')">Contact &amp; Support</a>
+</div>
+
+<footer>
+    &copy; 2026 avih6 | WaveTune Radio
+</footer>
+
+<button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+    <div id="theme-icon-container"></div>
+</button>
+
+</body>
+</html>
