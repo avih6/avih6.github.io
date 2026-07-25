@@ -27,15 +27,16 @@
         }
         h1 { font-size: 2.2em; font-weight: 800; color: #1a73e8; margin-bottom: 5px; }
         .subtitle { color: #5f6368; margin-top: 0; margin-bottom: 2rem; }
-        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid #ebebeb; padding-bottom: 8px; color: #202124; }
-        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: #202124; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid #ebebeb; padding-bottom: 8px; color: #202124;}
         p { margin-bottom: 1rem; }
         ul, ol { margin-bottom: 1rem; padding-left: 20px; }
         li { margin-bottom: 8px; }
-        a { color: #1a73e8; text-decoration: none; }
-        a:hover { text-decoration: underline; }
         .back { text-decoration: none; color: #1a73e8; font-weight: bold; display: inline-block; margin-bottom: 20px; }
         .back:hover { text-decoration: underline; }
+
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: #202124; }
+        a { color: #1a73e8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
         .toc {
             background-color: #f8f9fa;
             padding: 20px 25px;
@@ -47,18 +48,11 @@
         .toc a { color: #5f6368; font-weight: 500; }
         .toc a:hover { color: #1a73e8; }
         .toc ol { margin-bottom: 0; }
-        .info-box {
-            background-color: #e8f0fe;
-            border-left: 4px solid #1a73e8;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 4px;
-        }
     </style>
 </head>
 <body>
 
-    <a href="./" class="back">&larr; Back to App Site</a>
+    <a href="./" class="back">← Back to App Site</a>
 
     <h1>Privacy Policy</h1>
     <p class="subtitle">WaveTune Radio</p>
@@ -66,118 +60,79 @@
     <div class="toc">
         <h3>Table of Contents</h3>
         <ol>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#data-collection">Data Collection &amp; Usage</a>
+            <li><a href="#overview">1. Overview</a></li>
+            <li><a href="#data-handling">2. Data Handling & Storage</a>
                 <ul>
-                    <li><a href="#no-personal-data">No Personal Data Collected</a></li>
-                    <li><a href="#local-storage">Local Storage &amp; Preferences</a></li>
-                    <li><a href="#analytics">Analytics</a></li>
-                    <li><a href="#third-party-services">Third-Party Services</a></li>
+                    <li><a href="#local-data">Local User Preferences</a></li>
+                    <li><a href="#recordings">Stream Recordings</a></li>
                 </ul>
             </li>
-            <li><a href="#network">Network Requests &amp; Radio Data</a></li>
-            <li><a href="#permissions">App Permissions</a></li>
-            <li><a href="#recordings">Stream Recordings</a></li>
-            <li><a href="#childrens-privacy">Children's Privacy</a></li>
-            <li><a href="#changes">Changes to This Policy</a></li>
-            <li><a href="#contact">Contact Information</a></li>
+            <li><a href="#data-collection">3. Technical Data & Analytics</a>
+                <ul>
+                    <li><a href="#analytics">Anonymized Analytics</a></li>
+                    <li><a href="#crashlytics">Crash Reporting & Performance</a></li>
+                </ul>
+            </li>
+            <li><a href="#third-party">4. Third-Party Service Providers</a></li>
+            <li><a href="#permissions">5. App Permissions</a></li>
+            <li><a href="#childrens-privacy">6. Children’s Privacy</a></li>
+            <li><a href="#changes">7. Changes to This Policy</a></li>
+            <li><a href="#contact">8. Contact Information</a></li>
         </ol>
     </div>
 
     <p><strong>Last Updated:</strong> July 25, 2026</p>
 
     <h2 id="overview">1. Overview</h2>
-    <p>avih6 built the WaveTune Radio app as a free app. This SERVICE is provided at no cost and is intended for use as is.</p>
-    <p>WaveTune Radio is designed with privacy in mind. We do not collect, store, or transmit any personal information from users. This page informs visitors about our policies regarding the handling [...]
-    <div class="info-box">
-        <strong>Short version:</strong> WaveTune Radio does not collect any personal data. All your preferences are stored locally on your device only.
-    </div>
+    <p>avih6 built WaveTune Radio as a Free app. This SERVICE is provided at no cost and is intended for use as is. This page informs visitors regarding policies with the handling, use, and disclosure of information for anyone deciding to use the Service.</p>
+    <p>By using the Service, there is an agreement to the policies described herein. WaveTune Radio is designed with a privacy-first approach; we do not collect, store, or transmit any of your personally identifiable information (PII).</p>
 
-    <h2 id="data-collection">2. Data Collection &amp; Usage</h2>
+    <h2 id="data-handling">2. Data Handling & Storage</h2>
+    <p>The application is designed to function primarily offline and locally for user-specific data:</p>
 
-    <h3 id="no-personal-data">No Personal Data Collected</h3>
-    <p>WaveTune Radio does <strong>not</strong> collect, store, or transmit any personally identifiable information (PII), including but not limited to:</p>
+    <h3 id="local-data">Local User Preferences</h3>
+    <p>To enhance your experience, the app stores your preferences—such as favorite stations, listening history, custom settings, and radio alarms—locally on your device using Android's <code>SharedPreferences</code> or <code>DataStore</code>. This information remains strictly on your device and is not transmitted to external servers.</p>
+
+    <h3 id="recordings">Stream Recordings</h3>
+    <p>If you use the built-in recording feature, the audio files are stored exclusively on your device's local storage. These recordings are private and are never uploaded to any server or shared with third parties.</p>
+
+    <h2 id="data-collection">3. Technical Data & Analytics</h2>
+    <p>To ensure technical stability and optimize performance, the App utilizes third-party providers that process anonymous or pseudonymous information:</p>
+
+    <h3 id="analytics">Anonymized Analytics</h3>
+    <p>We use Google Analytics for Firebase to understand how the app is used and analyze user behavior on an aggregated level. This data is anonymized and does not include personal identifiers such as names or emails.</p>
+
+    <h3 id="crashlytics">Crash Reporting & Performance</h3>
+    <p>We use Firebase Crashlytics and Performance Monitoring to collect technical logs, stack traces, and performance metrics. This information is used solely to identify and fix bugs and optimize app speed. It does not contain personal information.</p>
+
+    <h2 id="third-party">4. Third-Party Service Providers</h2>
+    <p>The app interacts with several external services to function:</p>
     <ul>
-        <li>Name, email address, or account credentials</li>
-        <li>Location or GPS data</li>
-        <li>Device identifiers or advertising IDs (beyond what the Android OS may provide to analytics)</li>
-        <li>Contact lists or call logs</li>
-        <li>Financial information</li>
+        <li><strong>Radio-Browser API:</strong> Used to fetch the directory of radio stations.</li>
+        <li><strong>Google Analytics for Firebase:</strong> Used for anonymized usage analysis.</li>
+        <li><strong>Firebase Crashlytics:</strong> Used for technical stability monitoring.</li>
+        <li><strong>Content Delivery Networks (CDNs):</strong> Station logos and flags are fetched from external sources (e.g., <code>flagcdn.com</code>).</li>
     </ul>
-    <p>No account registration or sign-in is required to use WaveTune Radio.</p>
+    <p>Interacting with these services involve standard HTTP requests that include your IP address, which is necessary for data transmission. For more information, please review the privacy policies of these providers:<br>
+    <a href="https://policies.google.com/privacy" target="_blank">Google Privacy & Terms</a> | <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy and Security</a></p>
 
-    <h3 id="local-storage">Local Storage &amp; Preferences</h3>
-    <p>The following data is stored <strong>exclusively on your device</strong> (using Android SharedPreferences/DataStore) and is never transmitted to any server:</p>
+    <h2 id="permissions">5. App Permissions</h2>
+    <p>To provide its features, WaveTune Radio requires several permissions:</p>
     <ul>
-        <li>Your favorite radio stations and genres</li>
-        <li>Recently played stations history</li>
-        <li>App settings (theme, language, equalizer settings, sleep timer preferences)</li>
-        <li>Alarm clock configuration</li>
-    </ul>
-    <p>This data remains on your device unless you uninstall the app, at which point it is deleted.</p>
-
-    <h3 id="analytics">Analytics</h3>
-    <p>WaveTune Radio may use Firebase Analytics (by Google) to collect anonymized, aggregated usage statistics such as:</p>
-    <ul>
-        <li>App open/close events</li>
-        <li>General feature usage (e.g., how often the sleep timer is used)</li>
-        <li>Crash reports via Firebase Crashlytics</li>
-    </ul>
-    <p>This data is anonymized and cannot be used to identify you personally. You can opt out of analytics by adjusting your device's advertising settings or by disabling analytics in Android settings[...]
-
-    <h3 id="third-party-services">Third-Party Services</h3>
-    <p>WaveTune Radio uses the following third-party services, each with their own privacy policies:</p>
-    <ul>
-        <li><strong>RadioBrowser API</strong> (api.radio-browser.info) — An open-source, community-maintained database of radio stations. When you browse or search for stations, the app sends a quer[...]
-        <li><strong>Firebase (Google)</strong> — Used for anonymized crash reporting and analytics. See <a href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy Policy<[...]
-        <li><strong>Station Favicons/Logos</strong> — Station logos are loaded directly from station websites or third-party CDNs. These are standard HTTP requests that may include your IP address ([...]
-        <li><strong>Country Flags</strong> — Country flag images are loaded from flagcdn.com.</li>
+        <li><strong>Internet:</strong> To stream radio stations and fetch station data.</li>
+        <li><strong>Foreground Service:</strong> To allow continuous radio playback while the screen is off.</li>
+        <li><strong>Notifications:</strong> To display playback controls in the notification drawer.</li>
+        <li><strong>Alarms & Reminders:</strong> To enable the radio alarm clock feature.</li>
     </ul>
 
-    <h2 id="network">3. Network Requests &amp; Radio Data</h2>
-    <p>When you use WaveTune Radio, the app makes network requests to:</p>
-    <ul>
-        <li>Fetch the list of radio stations, tags, and countries from the RadioBrowser public API</li>
-        <li>Stream audio from the selected radio station's URL</li>
-        <li>Load station logos/icons from external URLs</li>
-    </ul>
-    <p>These requests are standard internet connections. Your IP address may be visible to these external services as part of normal internet communication, just as with any web browser.</p>
-    <p>WaveTune Radio does not send any personal data, search queries, or usage patterns to these external services.</p>
-
-    <h2 id="permissions">4. App Permissions</h2>
-    <p>WaveTune Radio requests the following Android permissions:</p>
-    <ul>
-        <li><strong>INTERNET</strong> — Required to stream radio stations and fetch station data.</li>
-        <li><strong>FOREGROUND_SERVICE / FOREGROUND_SERVICE_MEDIA_PLAYBACK</strong> — Required to play audio in the background.</li>
-        <li><strong>WRITE_EXTERNAL_STORAGE / READ_MEDIA_AUDIO</strong> (Android 12 and below) — Required only for saving recorded audio files to your device storage.</li>
-        <li><strong>POST_NOTIFICATIONS</strong> — Required to show the media player notification (required on Android 13+).</li>
-        <li><strong>RECEIVE_BOOT_COMPLETED</strong> — Required for the alarm clock feature to survive device restarts.</li>
-        <li><strong>USE_EXACT_ALARM / SCHEDULE_EXACT_ALARM</strong> — Required for the alarm clock to fire at the correct time.</li>
-    </ul>
-    <p>None of these permissions are used to collect personal data.</p>
-
-    <h2 id="recordings">5. Stream Recordings</h2>
-    <p>WaveTune Radio includes an optional stream recording feature. Recorded audio files are:</p>
-    <ul>
-        <li>Saved locally on your device in a folder accessible via your file manager</li>
-        <li>Never uploaded to any server or shared with any third party</li>
-        <li>Entirely under your control — you can delete them at any time</li>
-    </ul>
-    <p>Please be aware that recording radio broadcasts may be subject to copyright laws in your jurisdiction. You are responsible for ensuring your use of the recording feature complies with applicabl[...]
-
-    <h2 id="childrens-privacy">6. Children's Privacy</h2>
-    <p>WaveTune Radio does not knowingly collect any personal information from children under 13. The app does not collect any personal data from any user, including children. If you believe a child h[...]
+    <h2 id="childrens-privacy">6. Children’s Privacy</h2>
+    <p>There is no intentional collection of personally identifiable information from children under the age of 13. Since WaveTune Radio does not collect personal data from any users, it complies with standard privacy protections for minors.</p>
 
     <h2 id="changes">7. Changes to This Policy</h2>
-    <p>We may update this Privacy Policy from time to time. Any changes will be reflected on this page with an updated "Last Updated" date. We encourage you to review this page periodically.</p>
-    <p>Continued use of WaveTune Radio after any changes constitutes your acceptance of the updated policy.</p>
+    <p>This Privacy Policy may be updated periodically. Users are advised to review this page for any changes. Updates are effective immediately upon being posted on this page.</p>
 
     <h2 id="contact">8. Contact Information</h2>
-    <p>If you have any questions or concerns about this Privacy Policy, please contact us:</p>
-    <ul>
-        <li><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
-        <li><strong>App Support Page:</strong> <a href="https://avih6.github.io/wavetune-radio/">https://avih6.github.io/wavetune-radio/</a></li>
-    </ul>
+    <p>For any questions or concerns regarding this Privacy Policy, please contact: <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
 
 </body>
 </html>
