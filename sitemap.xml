@@ -40,4 +40,8 @@
     <loc>https://avih6.github.io/lie-detector</loc>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://avih6.github.io/ip-lookup</loc>
+    <priority>0.8</priority>
+  </url>
 </urlset>
