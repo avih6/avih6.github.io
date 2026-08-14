@@ -52,6 +52,11 @@
     </style>
 
     
+<script>
+  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+  }
+</script>
 </head>
 <body>
     <a href="https://avih6.github.io/flashlight" class="back">← Back to App Site</a>

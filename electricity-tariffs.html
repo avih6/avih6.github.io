@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta http-equiv="refresh" content="0; url=https://www.iec.co.il/content/tariffs/contentpages/homeelectricitytariff">
   <script>window.location.replace("https://www.iec.co.il/content/tariffs/contentpages/homeelectricitytariff");</script>
+<script>
+  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+  }
+</script>
 </head>
 <body></body>
 </html>
