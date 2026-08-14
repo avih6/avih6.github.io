@@ -50,6 +50,12 @@
         .toc ol, .toc ul { margin-bottom: 0; }
         .toc ul { list-style-type: disc; margin-top: 5px; margin-bottom: 10px;}
     </style>
+
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
 </head>
 <body>
     

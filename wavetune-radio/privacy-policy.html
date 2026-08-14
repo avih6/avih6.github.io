@@ -49,6 +49,12 @@
         .toc a:hover { color: #1a73e8; }
         .toc ol { margin-bottom: 0; }
     </style>
+
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
 </head>
 <body>
 
