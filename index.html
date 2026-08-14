@@ -1,19 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>avih6 - Android Developer</title>
-    
     <meta name="description" content="Portfolio of avih6, an Android Developer. Discover and download apps like Disabled Permit Check, New Driver, QR Generator, and more utility tools.">
     <link rel="canonical" href="https://avih6.github.io/">
-    
+    <!-- Open Graph / Social Media Preview -->
+    <meta property="og:title" content="avih6 - Android Developer Portfolio">
+    <meta property="og:description" content="Discover and download Android utility apps by avih6: Disabled Permit Check, New Driver, QR Generator, Hofesh!, and more.">
+    <meta property="og:image" content="https://avih6.github.io/icon-hofesh.png">
+    <meta property="og:url" content="https://avih6.github.io/">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="avih6 - Android Developer">
+    <meta name="twitter:description" content="Portfolio of Android apps by avih6. Utility tools, calculators, and Israel-focused applications.">
+    <meta name="twitter:image" content="https://avih6.github.io/icon-hofesh.png">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
+    <!-- Preconnects -->
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <!-- Content Security Policy -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -47,7 +60,6 @@
           document.getElementById('theme-icon-container').innerHTML = isDark ? sunIcon : moonIcon;
       });
     </script>
-
     <style>
         :root { 
             --primary: #1a73e8; 
@@ -57,7 +69,6 @@
             --border: #eee;
             --fab-bg: rgba(255, 255, 255, 0.8);
         }
-        
         html.dark-mode {
             --bg: #121212;
             --card: #1e1e1e;
@@ -65,22 +76,41 @@
             --border: #333333;
             --fab-bg: rgba(30, 30, 30, 0.8);
         }
-
         body { 
-            font-family: system-ui, -apple-system, sans-serif; 
+            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
             margin: 0; 
             background: var(--bg); 
             color: var(--text); 
             text-align: center; 
             transition: background 0.3s, color 0.3s;
         }
-        
+        .skip-link {
+            position: absolute;
+            left: -999px;
+            top: auto;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+        .skip-link:focus {
+            left: 1rem;
+            top: 1rem;
+            width: auto;
+            height: auto;
+            background: var(--card);
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            z-index: 1000;
+        }
+        a:focus, button:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
         header { 
             background: linear-gradient(to right, #0043a8 0%, #002083 100%); 
             color: white; 
             padding: 3.5rem 1rem; 
         }
-
         .theme-fab {
             position: fixed;
             bottom: 30px;
@@ -101,29 +131,30 @@
             align-items: center;
             justify-content: center;
         }
-
         .theme-fab:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
             background: var(--card);
         }
-
         .theme-fab svg {
             width: 22px;
             height: 22px;
         }
-        
-        h1 { margin: 0; font-size: 2.5rem; }
-        
+        h1 { margin: 0; font-size: 2.5rem; font-weight: 800; }
+        .section-title { 
+            margin: 2.5rem 0 1rem 0; 
+            font-size: 1.6rem; 
+            font-weight: 700; 
+            color: var(--text); 
+        }
         .container { 
             max-width: 1100px; 
-            margin: 2rem auto; 
+            margin: 0 auto 2rem auto; 
             padding: 0 1rem; 
             display: grid; 
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
             gap: 1.5rem; 
         }
-        
         .card { 
             background: var(--card); 
             padding: 1.5rem; 
@@ -133,14 +164,12 @@
             flex-direction: column; 
             align-items: center; 
             border: 1px solid var(--border); 
-            transition: transform 0.2s, box-shadow 0.2s, background 0.3s, border 0.3s; 
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.3s, border 0.3s; 
         }
-        
         .card:hover { 
-            transform: translateY(-4px); 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.12); 
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12); 
         }
-        
         .app-icon { 
             width: 64px; 
             height: 64px; 
@@ -149,45 +178,31 @@
             object-fit: cover; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
         }
-        
         .card h3 { 
             margin: 0.5rem 0; 
             color: var(--primary); 
             font-size: 1.3rem; 
         }
-        
         .btn-group { 
             display: flex; 
-            gap: 10px; 
+            gap: 0.5rem; 
             margin-top: 1rem; 
             width: 100%; 
         }
-        
         .btn { 
             flex: 1; 
-            padding: 10px; 
+            padding: 0.6rem 1rem; 
             border-radius: 8px; 
             text-decoration: none; 
-            font-weight: bold; 
-            font-size: 0.85rem; 
-            transition: 0.2s; 
-            text-align: center; 
+            font-weight: 500; 
+            font-size: 0.9rem; 
+            transition: opacity 0.2s, transform 0.1s; 
+            display: inline-block;
         }
-        
-        .btn-store { 
-            background: var(--primary); 
-            color: white; 
-        }
-        
-        .btn-site { 
-            border: 1px solid var(--primary); 
-            color: var(--primary); 
-        }
-        
-        .btn:hover { 
-            opacity: 0.8; 
-        }
-        
+        .btn:active { transform: scale(0.98); }
+        .btn-store { background: var(--primary); color: white; }
+        .btn-site { border: 1px solid var(--primary); color: var(--primary); }
+        .btn:hover { opacity: 0.9; }
         footer { 
             margin-top: 3rem; 
             padding: 2rem; 
@@ -197,118 +212,107 @@
             transition: border 0.3s;
         }
     </style>
-<script>
-  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-  }
-</script>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
 </head>
 <body>
-
-<header>
-    <h1>avih6</h1>
-    <p>Android Developer</p>
-</header>
-
-<main class="container">
-    <div class="card">
-        <img loading="lazy" src="/icon-disabled-permit.png" alt="Disabled Permit Icon" class="app-icon">
-        <h3>Disabled Permit Check</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.disabledpermitcheck" class="btn btn-store" target="_blank" onclick="trackClick('Disabled Permit', 'Store')">Google Play</a>
-            <a href="/disabled-permit" class="btn btn-site" onclick="trackClick('Disabled Permit', 'Site')">App Site</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <h1>avih6</h1>
+        <p>Android Developer</p>
+    </header>
+    <h2 class="section-title">Applications Portfolio</h2>
+    <main id="main-content" class="container">
+        <div class="card">
+            <img loading="lazy" src="/icon-disabled-permit.png" alt="Disabled Permit Icon" width="64" height="64" class="app-icon">
+            <h3>Disabled Permit Check</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.disabledpermitcheck" class="btn btn-store" target="_blank" onclick="trackClick('Disabled Permit', 'Store')">Google Play</a>
+                <a href="/disabled-permit" class="btn btn-site" onclick="trackClick('Disabled Permit', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-new-driver.png" alt="New Driver Icon" class="app-icon">
-        <h3>New Driver</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.newdriver" class="btn btn-store" target="_blank" onclick="trackClick('New Driver', 'Store')">Google Play</a>
-            <a href="/new-driver" class="btn btn-site" onclick="trackClick('New Driver', 'Site')">App Site</a>
+        <!-- Repeat similar cards for other apps -->
+        <div class="card">
+            <img loading="lazy" src="/icon-new-driver.png" alt="New Driver Icon" width="64" height="64" class="app-icon">
+            <h3>New Driver</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.newdriver" class="btn btn-store" target="_blank" onclick="trackClick('New Driver', 'Store')">Google Play</a>
+                <a href="/new-driver" class="btn btn-site" onclick="trackClick('New Driver', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-hofesh.png" alt="Hofesh Icon" class="app-icon">
-        <h3>Hofesh!</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.hofesh" class="btn btn-store" target="_blank" onclick="trackClick('Hofesh', 'Store')">Google Play</a>
-            <a href="/hofesh" class="btn btn-site" onclick="trackClick('Hofesh', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-qr-generator.png" alt="QR Generator Icon" width="64" height="64" class="app-icon">
+            <h3>QR Generator</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.qrgenerator" class="btn btn-store" target="_blank" onclick="trackClick('QR Generator', 'Store')">Google Play</a>
+                <a href="/qr-generator" class="btn btn-site" onclick="trackClick('QR Generator', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-qr-generator.png" alt="QR Generator Icon" class="app-icon">
-        <h3>QR Generator</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.qrgenerator" class="btn btn-store" target="_blank" onclick="trackClick('QR Generator', 'Store')">Google Play</a>
-            <a href="/qr-generator" class="btn btn-site" onclick="trackClick('QR Generator', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-electricity-calculator.png" alt="Electricity Calculator Icon" width="64" height="64" class="app-icon">
+            <h3>Electricity Calculator</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.electricitycalculator" class="btn btn-store" target="_blank" onclick="trackClick('Electricity Calculator', 'Store')">Google Play</a>
+                <a href="/electricity-calculator" class="btn btn-site" onclick="trackClick('Electricity Calculator', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-percentage-calculator.png" alt="Percentage Calculator Icon" class="app-icon">
-        <h3>Percentage Calculator</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.percentagecalculator" class="btn btn-store" target="_blank" onclick="trackClick('Percentage Calc', 'Store')">Google Play</a>
-            <a href="/percentage-calculator" class="btn btn-site" onclick="trackClick('Percentage Calc', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-hofesh.png" alt="Hofesh! Icon" width="64" height="64" class="app-icon">
+            <h3>Hofesh!</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.hofesh" class="btn btn-store" target="_blank" onclick="trackClick('Hofesh!', 'Store')">Google Play</a>
+                <a href="/hofesh" class="btn btn-site" onclick="trackClick('Hofesh!', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-flashlight.png" alt="Flashlight Icon" class="app-icon">
-        <h3>Flashlight</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.flashlight" class="btn btn-store" target="_blank" onclick="trackClick('Flashlight', 'Store')">Google Play</a>
-            <a href="/flashlight" class="btn btn-site" onclick="trackClick('Flashlight', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-wavetune-radio.png" alt="WaveTune Radio Icon" width="64" height="64" class="app-icon">
+            <h3>WaveTune Radio</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.wavetuneradio" class="btn btn-store" target="_blank" onclick="trackClick('WaveTune Radio', 'Store')">Google Play</a>
+                <a href="/wavetune-radio" class="btn btn-site" onclick="trackClick('WaveTune Radio', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-electricity-calculator.png" alt="Electricity Calculator Icon" class="app-icon">
-        <h3>Electricity Calculator</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.electricitycalculator" class="btn btn-store" target="_blank" onclick="trackClick('Electricity Calc', 'Store')">Google Play</a>
-            <a href="/electricity-calculator" class="btn btn-site" onclick="trackClick('Electricity Calc', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-flashlight.png" alt="Flashlight Icon" width="64" height="64" class="app-icon">
+            <h3>Flashlight</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.flashlight" class="btn btn-store" target="_blank" onclick="trackClick('Flashlight', 'Store')">Google Play</a>
+                <a href="/flashlight" class="btn btn-site" onclick="trackClick('Flashlight', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-wavetune-radio.png" alt="WaveTune Radio Icon" class="app-icon">
-        <h3>WaveTune Radio</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.wavetune.radio" class="btn btn-store" target="_blank" onclick="trackClick('WaveTune Radio', 'Store')">Google Play</a>
-            <a href="/wavetune-radio" class="btn btn-site" onclick="trackClick('WaveTune Radio', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-percentage-calculator.png" alt="Percentage Calculator Icon" width="64" height="64" class="app-icon">
+            <h3>Percentage Calculator</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.percentagecalculator" class="btn btn-store" target="_blank" onclick="trackClick('Percentage Calculator', 'Store')">Google Play</a>
+                <a href="/percentage-calculator" class="btn btn-site" onclick="trackClick('Percentage Calculator', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-lie-detector.png" alt="Lie Detector Icon" class="app-icon">
-        <h3>Lie Detector</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.liedetector" class="btn btn-store" target="_blank" onclick="trackClick('Lie Detector', 'Store')">Google Play</a>
-            <a href="/lie-detector" class="btn btn-site" onclick="trackClick('Lie Detector', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-lie-detector.png" alt="Lie Detector Icon" width="64" height="64" class="app-icon">
+            <h3>Lie Detector</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.liedetector" class="btn btn-store" target="_blank" onclick="trackClick('Lie Detector', 'Store')">Google Play</a>
+                <a href="/lie-detector" class="btn btn-site" onclick="trackClick('Lie Detector', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-
-    <div class="card">
-        <img loading="lazy" src="/icon-ip-lookup.png" alt="IP Lookup Icon" class="app-icon">
-        <h3>IP Lookup</h3>
-        <div class="btn-group">
-            <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.iplookup" class="btn btn-store" target="_blank" onclick="trackClick('IP Lookup', 'Store')">Google Play</a>
-            <a href="/ip-lookup" class="btn btn-site" onclick="trackClick('IP Lookup', 'Site')">App Site</a>
+        <div class="card">
+            <img loading="lazy" src="/icon-ip-lookup.png" alt="IP Lookup Icon" width="64" height="64" class="app-icon">
+            <h3>IP Lookup</h3>
+            <div class="btn-group">
+                <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.iplookup" class="btn btn-store" target="_blank" onclick="trackClick('IP Lookup', 'Store')">Google Play</a>
+                <a href="/ip-lookup" class="btn btn-site" onclick="trackClick('IP Lookup', 'Site')">App Site</a>
+            </div>
         </div>
-    </div>
-</main>
-
-<footer>
-    &copy; 2026 avih6 | <a href="/privacy-policy" style="color:inherit">Privacy Policy</a> | <a href="/terms-of-service" style="color:inherit">Terms of Service</a> | <a href="mailto:av6development@gmail.com" style="color:inherit">Contact</a>
-</footer>
-
-<button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-    <div id="theme-icon-container"></div>
-</button>
-
+    </main>
+    <footer>
+        &copy; 2026 avih6 | <a href="/privacy-policy" style="color:inherit">Privacy Policy</a> | <a href="/terms-of-service" style="color:inherit">Terms of Service</a> | <a href="mailto:av6development@gmail.com" style="color:inherit">Contact</a>
+    </footer>
+    <button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        <div id="theme-icon-container"></div>
+    </button>
 </body>
 </html>
