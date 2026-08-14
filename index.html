@@ -18,27 +18,10 @@
     <meta name="twitter:image" content="https://avih6.github.io/icon-hofesh.png">
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <!-- Preconnects -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <!-- Theme (critical - must run before render to prevent FOUC) -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-650BH6MCPS');
-
-      function trackClick(appName, buttonType) {
-        gtag('event', 'click', {
-          'event_category': appName,
-          'event_label': buttonType
-        });
-      }
-
       const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
       const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
@@ -312,5 +295,33 @@
     <button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
         <div id="theme-icon-container"></div>
     </button>
+    <!-- Google Analytics - deferred to avoid blocking main thread -->
+    <script>
+      function trackClick(appName, buttonType) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'click', {
+            'event_category': appName,
+            'event_label': buttonType
+          });
+        }
+      }
+      (function loadGA() {
+        var load = function() {
+          window.dataLayer = window.dataLayer || [];
+          window.gtag = function(){dataLayer.push(arguments);};
+          gtag('js', new Date());
+          gtag('config', 'G-650BH6MCPS');
+          var s = document.createElement('script');
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS';
+          s.async = true;
+          document.head.appendChild(s);
+        };
+        if ('requestIdleCallback' in window) {
+          requestIdleCallback(load, {timeout: 3000});
+        } else {
+          setTimeout(load, 2000);
+        }
+      })();
+    </script>
 </body>
 </html>
