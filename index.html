@@ -21,11 +21,9 @@
     <!-- Preconnects -->
     <link rel="preconnect" href="https://www.googletagmanager.com">
     <link rel="preconnect" href="https://www.google-analytics.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
     <!-- Content Security Policy -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
@@ -77,7 +75,7 @@
             --fab-bg: rgba(30, 30, 30, 0.8);
         }
         body { 
-            font-family: 'Inter', system-ui, -apple-system, sans-serif; 
+            font-family: system-ui, -apple-system, sans-serif; 
             margin: 0; 
             background: var(--bg); 
             color: var(--text); 
@@ -178,7 +176,7 @@
             object-fit: cover; 
             box-shadow: 0 2px 4px rgba(0,0,0,0.1); 
         }
-        .card h3 { 
+        .card h2 { 
             margin: 0.5rem 0; 
             color: var(--primary); 
             font-size: 1.3rem; 
@@ -227,8 +225,8 @@
 
     <main id="main-content" class="container">
         <div class="card">
-            <img loading="lazy" src="/icon-disabled-permit.png" alt="Disabled Permit Icon" width="64" height="64" class="app-icon">
-            <h3>Disabled Permit Check</h3>
+            <img loading="lazy" src="/icon-disabled-permit.webp" alt="Disabled Permit Icon" width="64" height="64" class="app-icon">
+            <h2>Disabled Permit Check</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.disabledpermitcheck" class="btn btn-store" target="_blank" onclick="trackClick('Disabled Permit', 'Store')">Google Play</a>
                 <a href="/disabled-permit" class="btn btn-site" onclick="trackClick('Disabled Permit', 'Site')">App Site</a>
@@ -236,72 +234,72 @@
         </div>
         <!-- Repeat similar cards for other apps -->
         <div class="card">
-            <img loading="lazy" src="/icon-new-driver.png" alt="New Driver Icon" width="64" height="64" class="app-icon">
-            <h3>New Driver</h3>
+            <img loading="lazy" src="/icon-new-driver.webp" alt="New Driver Icon" width="64" height="64" class="app-icon">
+            <h2>New Driver</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.newdriver" class="btn btn-store" target="_blank" onclick="trackClick('New Driver', 'Store')">Google Play</a>
                 <a href="/new-driver" class="btn btn-site" onclick="trackClick('New Driver', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-qr-generator.png" alt="QR Generator Icon" width="64" height="64" class="app-icon">
-            <h3>QR Generator</h3>
+            <img loading="lazy" src="/icon-qr-generator.webp" alt="QR Generator Icon" width="64" height="64" class="app-icon">
+            <h2>QR Generator</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.qrgenerator" class="btn btn-store" target="_blank" onclick="trackClick('QR Generator', 'Store')">Google Play</a>
                 <a href="/qr-generator" class="btn btn-site" onclick="trackClick('QR Generator', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-electricity-calculator.png" alt="Electricity Calculator Icon" width="64" height="64" class="app-icon">
-            <h3>Electricity Calculator</h3>
+            <img loading="lazy" src="/icon-electricity-calculator.webp" alt="Electricity Calculator Icon" width="64" height="64" class="app-icon">
+            <h2>Electricity Calculator</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.electricitycalculator" class="btn btn-store" target="_blank" onclick="trackClick('Electricity Calculator', 'Store')">Google Play</a>
                 <a href="/electricity-calculator" class="btn btn-site" onclick="trackClick('Electricity Calculator', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-hofesh.png" alt="Hofesh! Icon" width="64" height="64" class="app-icon">
-            <h3>Hofesh!</h3>
+            <img loading="lazy" src="/icon-hofesh.webp" alt="Hofesh! Icon" width="64" height="64" class="app-icon">
+            <h2>Hofesh!</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.hofesh" class="btn btn-store" target="_blank" onclick="trackClick('Hofesh!', 'Store')">Google Play</a>
                 <a href="/hofesh" class="btn btn-site" onclick="trackClick('Hofesh!', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-wavetune-radio.png" alt="WaveTune Radio Icon" width="64" height="64" class="app-icon">
-            <h3>WaveTune Radio</h3>
+            <img loading="lazy" src="/icon-wavetune-radio.webp" alt="WaveTune Radio Icon" width="64" height="64" class="app-icon">
+            <h2>WaveTune Radio</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.wavetuneradio" class="btn btn-store" target="_blank" onclick="trackClick('WaveTune Radio', 'Store')">Google Play</a>
                 <a href="/wavetune-radio" class="btn btn-site" onclick="trackClick('WaveTune Radio', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-flashlight.png" alt="Flashlight Icon" width="64" height="64" class="app-icon">
-            <h3>Flashlight</h3>
+            <img loading="lazy" src="/icon-flashlight.webp" alt="Flashlight Icon" width="64" height="64" class="app-icon">
+            <h2>Flashlight</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.flashlight" class="btn btn-store" target="_blank" onclick="trackClick('Flashlight', 'Store')">Google Play</a>
                 <a href="/flashlight" class="btn btn-site" onclick="trackClick('Flashlight', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-percentage-calculator.png" alt="Percentage Calculator Icon" width="64" height="64" class="app-icon">
-            <h3>Percentage Calculator</h3>
+            <img loading="lazy" src="/icon-percentage-calculator.webp" alt="Percentage Calculator Icon" width="64" height="64" class="app-icon">
+            <h2>Percentage Calculator</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.percentagecalculator" class="btn btn-store" target="_blank" onclick="trackClick('Percentage Calculator', 'Store')">Google Play</a>
                 <a href="/percentage-calculator" class="btn btn-site" onclick="trackClick('Percentage Calculator', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-lie-detector.png" alt="Lie Detector Icon" width="64" height="64" class="app-icon">
-            <h3>Lie Detector</h3>
+            <img loading="lazy" src="/icon-lie-detector.webp" alt="Lie Detector Icon" width="64" height="64" class="app-icon">
+            <h2>Lie Detector</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.liedetector" class="btn btn-store" target="_blank" onclick="trackClick('Lie Detector', 'Store')">Google Play</a>
                 <a href="/lie-detector" class="btn btn-site" onclick="trackClick('Lie Detector', 'Site')">App Site</a>
             </div>
         </div>
         <div class="card">
-            <img loading="lazy" src="/icon-ip-lookup.png" alt="IP Lookup Icon" width="64" height="64" class="app-icon">
-            <h3>IP Lookup</h3>
+            <img loading="lazy" src="/icon-ip-lookup.webp" alt="IP Lookup Icon" width="64" height="64" class="app-icon">
+            <h2>IP Lookup</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.iplookup" class="btn btn-store" target="_blank" onclick="trackClick('IP Lookup', 'Store')">Google Play</a>
                 <a href="/ip-lookup" class="btn btn-site" onclick="trackClick('IP Lookup', 'Site')">App Site</a>
