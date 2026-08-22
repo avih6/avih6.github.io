@@ -298,8 +298,7 @@
     <p>To ensure app stability, monitor performance, and improve user experience, the app incorporates reputable industry-standard SDKs provided by Google LLC:</p>
     <ul>
         <li><strong>Google Analytics for Firebase:</strong> Collects aggregated, pseudonymous usage statistics (such as screen views, station category clicks, and playback durations). Firebase automatically derives coarse, city-level geographic data from IP addresses on Google servers without accessing device GPS. This aggregated data is not linked to any personal user identity.</li>
-        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and resolve technical issues.</li>
-        <li><strong>Data Anonymization Lifecycle:</strong> Google automatically anonymizes log data by removing portions of IP addresses after 9 months and cookie data after 18 months.</li>
+        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and resolve technical issues. Diagnostics and crash reports are retained and expired in accordance with standard Firebase retention policies.</li>
     </ul>
 
     <h3 id="radio-directory">4.2 Radio Directory & Content Delivery Networks</h3>
@@ -313,7 +312,6 @@
     <p>For more information on the data processing practices of third-party service providers, review their official policies:</p>
     <ul>
         <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy & Terms</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a></li>
         <li><a href="https://www.radio-browser.info/" target="_blank" rel="noopener">Community Radio Browser Project</a></li>
     </ul>
 
