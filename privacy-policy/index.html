@@ -2,17 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
     <script>
-  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-  }
-</script>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - avih6 Website</title>
+    <title>Privacy Policy - avih6 Portfolio</title>
     
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="canonical" href="https://avih6.github.io/privacy-policy">
@@ -24,8 +20,6 @@
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
     </script>
-    
-
     <style>
         :root {
             --bg: #ffffff;
@@ -104,44 +98,8 @@
             --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-}
 
-        html.dark-mode {
-            --bg: #121212 !important;
-            --text: #e8eaed !important;
-            --primary: #8ab4f8 !important;
-            --subtitle: #9aa0a6 !important;
-            --border: #333333 !important;
-            --toc-bg: #1e1e1e !important;
-            --toc-border: #333333 !important;
-            --toc-link: #9aa0a6 !important;
-            --card-bg: #1e1e1e !important;
-            --warning-bg: #3c2f00 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #ffd54f !important;
-            --btn-border: #8ab4f8 !important;
-            --fab-bg: rgba(30, 30, 30, 0.85) !important;
-            --fab-border: #333333 !important;
-        }
-
-        html.light-mode {
-            --bg: #ffffff !important;
-            --text: #202124 !important;
-            --primary: #1a73e8 !important;
-            --subtitle: #5f6368 !important;
-            --border: #ebebeb !important;
-            --toc-bg: #f8f9fa !important;
-            --toc-border: #eee !important;
-            --toc-link: #5f6368 !important;
-            --card-bg: #ffffff !important;
-            --warning-bg: #fef7e0 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #202124 !important;
-            --btn-border: #1a73e8 !important;
-            --fab-bg: rgba(255, 255, 255, 0.85) !important;
-            --fab-border: #eee !important;
-        }
-body { 
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -177,14 +135,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -217,10 +178,7 @@ body {
             height: 22px;
         }
     </style>
-    
-
-
-<script>
+    <script>
   const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
   const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
@@ -278,38 +236,61 @@ body {
     <a href="/" class="back">← Back to avih6 Home</a>
     
     <h1>Privacy Policy</h1>
-    <p class="subtitle">avih6 Website</p>
+    <p class="subtitle">avih6 Portfolio</p>
 
     <div class="toc">
         <h3>Table of Contents</h3>
         <ol>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#visitor-analytics">Visitor Analytics &amp; Cookies</a></li>
-            <li><a href="#external-links">External Links</a></li>
+            <li><a href="#overview">Overview & Developer Portfolio</a></li>
+            <li><a href="#visitor-analytics">Visitor Analytics & Pseudonymous Metrics</a></li>
+            <li><a href="#external-links">External Links & Dedicated Application Policies</a></li>
+            <li><a href="#user-rights">User Rights & Data Control</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#childrens-privacy">Children’s Privacy</a></li>
+            <li><a href="#policy-changes">Policy Changes & Transfer of Ownership</a></li>
             <li><a href="#contact">Contact Information</a></li>
         </ol>
     </div>
 
-    <p><strong>Last Updated:</strong> August 14, 2026</p>
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
 
-    <h2 id="overview">1. Overview</h2>
-    <p>This Privacy Policy informs visitors regarding the policies with the collection, use, and disclosure of information for anyone visiting the <strong>avih6 Website</strong> (hosted at <strong>https://avih6.github.io</strong>).</p>
-    <p>The website is designed primarily as an informational portfolio to showcase Android applications developed by avih6. No personal data or user accounts are required or collected on this website.</p>
+    <h2 id="overview">1. Overview & Developer Portfolio</h2>
+    <p>This Privacy Policy informs visitors regarding the privacy principles and data practices of the <strong>avih6 Developer Portfolio</strong> (hosted at <a href="https://avih6.github.io">https://avih6.github.io</a>).</p>
+    <p>The website is maintained strictly as an informational portfolio to showcase mobile applications developed and maintained by avih6. <strong>No user registration is required, no user accounts exist, and no personal data is collected or harvested on this website.</strong></p>
 
-    <h2 id="visitor-analytics">2. Visitor Analytics &amp; Cookies</h2>
-    <p>The website utilizes <strong>Google Analytics</strong> to collect anonymous traffic statistics (such as page views, country of origin, and browser type). This aggregated data helps evaluate website performance and optimize user experience.</p>
-    <p>For more details on how Google processes analytics data, please review <a rel="noopener noreferrer" href="https://policies.google.com/privacy" target="_blank">Google’s Privacy Policy</a> and the <a rel="noopener noreferrer" href="https://marketingplatform.google.com/about/analytics/terms/us/" target="_blank">Google Analytics Terms of Service</a>.</p>
+    <h2 id="visitor-analytics">2. Visitor Analytics & Pseudonymous Metrics</h2>
+    <p>To monitor portfolio availability and understand high-level traffic trends, the website integrates <strong>Google Analytics (GA4)</strong>:</p>
+    <ul>
+        <li><strong>Aggregated Data:</strong> Google Analytics processes non-identifying, aggregated metrics such as page views, visitor country/city region, referring URLs, and browser types.</li>
+        <li><strong>No Personal Profiling:</strong> This telemetry is not linked to any personal identity, name, or email address.</li>
+        <li><strong>Documentation:</strong> For more details on Google's data processing, review <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy & Terms</a>.</li>
+    </ul>
 
-    <h2 id="external-links">3. External Links</h2>
-    <p>This website contains links to external sites, including Google Play Store app listings and specific application landing pages. Each application maintains its own dedicated Privacy Policy accessible on its respective page. avih6 is not responsible for the privacy practices of external third-party platforms.</p>
+    <h2 id="external-links">3. External Links & Dedicated Application Policies</h2>
+    <p>This website provides direct hyperlinks to application landing pages and official Google Play Store listings.</p>
+    <p><strong>Every mobile application maintains its own dedicated, specialized Privacy Policy</strong> tailored to its specific hardware permissions, local database architecture, and integrated SDKs. Visitors are encouraged to review the respective policy on each application's dedicated sub-page.</p>
 
-    <h2 id="contact">4. Contact Information</h2>
-    <p>For any questions or inquiries regarding this Privacy Policy, please contact:<br>
-    <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+    <h2 id="user-rights">4. User Rights & Data Control</h2>
+    <p>Because the website operates without user accounts and maintains no server-side personal profiles, there are no private user records to access, modify, or delete. Visitors may direct any privacy inquiries or questions regarding portfolio applications to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>.</p>
+
+    <h2 id="data-security">5. Data Security</h2>
+    <p>Security of website visitors is prioritized. The website is hosted on secure, distributed infrastructure provided by GitHub Pages and is served exclusively over encrypted HTTPS connections to safeguard communications against interception.</p>
+
+    <h2 id="childrens-privacy">6. Children’s Privacy</h2>
+    <p>The portfolio is designed for a general audience. There is no intentional collection or solicitation of personal data from children under the age of 13.</p>
+
+    <h2 id="policy-changes">7. Policy Changes & Transfer of Ownership</h2>
+    <p>This Privacy Policy may be updated periodically by posting the revised version on this page with an updated "Last Updated" date. In the event of a transfer of ownership or portfolio reorganization, information practices will remain governed by this Privacy Policy.</p>
+
+    <h2 id="contact">8. Contact Information</h2>
+    <p>For any questions, suggestions, or requests regarding this Privacy Policy, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Support Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
         <span id="theme-icon-container"></span>
     </button>
-
 </body>
 </html>

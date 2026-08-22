@@ -2,17 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
     <script>
-  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-  }
-</script>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - avih6 Website</title>
+    <title>Terms of Service - avih6 Portfolio</title>
     
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="canonical" href="https://avih6.github.io/terms-of-service">
@@ -24,8 +20,6 @@
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
     </script>
-    
-
     <style>
         :root {
             --bg: #ffffff;
@@ -104,44 +98,8 @@
             --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-}
 
-        html.dark-mode {
-            --bg: #121212 !important;
-            --text: #e8eaed !important;
-            --primary: #8ab4f8 !important;
-            --subtitle: #9aa0a6 !important;
-            --border: #333333 !important;
-            --toc-bg: #1e1e1e !important;
-            --toc-border: #333333 !important;
-            --toc-link: #9aa0a6 !important;
-            --card-bg: #1e1e1e !important;
-            --warning-bg: #3c2f00 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #ffd54f !important;
-            --btn-border: #8ab4f8 !important;
-            --fab-bg: rgba(30, 30, 30, 0.85) !important;
-            --fab-border: #333333 !important;
-        }
-
-        html.light-mode {
-            --bg: #ffffff !important;
-            --text: #202124 !important;
-            --primary: #1a73e8 !important;
-            --subtitle: #5f6368 !important;
-            --border: #ebebeb !important;
-            --toc-bg: #f8f9fa !important;
-            --toc-border: #eee !important;
-            --toc-link: #5f6368 !important;
-            --card-bg: #ffffff !important;
-            --warning-bg: #fef7e0 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #202124 !important;
-            --btn-border: #1a73e8 !important;
-            --fab-bg: rgba(255, 255, 255, 0.85) !important;
-            --fab-border: #eee !important;
-        }
-body { 
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -177,14 +135,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -217,10 +178,7 @@ body {
             height: 22px;
         }
     </style>
-    
-
-
-<script>
+    <script>
   const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
   const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
@@ -278,32 +236,55 @@ body {
     <a href="/" class="back">← Back to avih6 Home</a>
     
     <h1>Terms of Service</h1>
-    <p class="subtitle">avih6 Website</p>
+    <p class="subtitle">avih6 Portfolio</p>
 
-    <p><strong>Last Updated:</strong> August 14, 2026</p>
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#acceptance">Acceptance of Terms</a></li>
+            <li><a href="#portfolio-purpose">Portfolio Purpose & Informational Content</a></li>
+            <li><a href="#external-terms">External Links & Application Terms</a></li>
+            <li><a href="#intellectual-property">Intellectual Property & Brand Assets</a></li>
+            <li><a href="#disclaimer-warranties">Disclaimer of Warranties ("AS IS")</a></li>
+            <li><a href="#limitation-liability">Limitation of Liability</a></li>
+            <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
+    </div>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>By accessing or using the <strong>avih6 Website</strong> (hosted at <strong>https://avih6.github.io</strong>), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the website.</p>
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
 
-    <h2>2. Website Purpose</h2>
-    <p>This website serves as an informational developer portfolio showcasing Android applications created by avih6. All content and app links are provided for informational purposes.</p>
+    <h2 id="acceptance">1. Acceptance of Terms</h2>
+    <p>By accessing, browsing, or utilizing the <strong>avih6 Developer Portfolio</strong> (hosted at <a href="https://avih6.github.io">https://avih6.github.io</a>), the visitor agrees to be legally bound by these Terms of Service ("Terms"). If the visitor does not agree to these Terms, the visitor must refrain from using the website.</p>
 
-    <h2>3. Intellectual Property</h2>
-    <p>All content, design, code, and logos displayed on this website are the property of avih6. Unauthorized copying or redistribution without written permission is prohibited.</p>
+    <h2 id="portfolio-purpose">2. Portfolio Purpose & Informational Content</h2>
+    <p>This website serves exclusively as an informational showcase presenting Android applications designed, developed, and maintained by avih6. All materials, project descriptions, and graphic previews are provided for general informational and demonstration purposes.</p>
 
-    <h2>4. Limitation of Liability</h2>
-    <p>avih6 shall not be held liable for any damages arising from the use of, or inability to access, this website or external links provided herein.</p>
+    <h2 id="external-terms">3. External Links & Application Terms</h2>
+    <p>• <strong>Independent Application Terms:</strong> The installation, access, and usage of specific mobile applications featured on this portfolio are governed by each application's dedicated Terms of Service and official Google Play Store distribution terms.</p>
+    <p>• <strong>Third-Party Portals:</strong> avih6 exercises no control over external platforms (such as the Google Play Store or GitHub) and assumes no responsibility for third-party service terms or availability.</p>
 
-    <h2>5. Governing Law</h2>
-    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel.</p>
+    <h2 id="intellectual-property">4. Intellectual Property & Brand Assets</h2>
+    <p>All right, title, and interest in and to this website (including software code, visual styles, text descriptions, logos, and portfolio arrangements) remain the exclusive property of avih6. Unauthorized scraping, automated harvesting, copying, or redistribution of website content without prior written permission is strictly prohibited.</p>
 
-    <h2>6. Contact Information</h2>
-    <p>For any questions or inquiries regarding these Terms of Service, please contact:<br>
-    <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+    <h2 id="disclaimer-warranties">5. Disclaimer of Warranties ("AS IS")</h2>
+    <p>The website is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis, without warranties of any kind, whether express, implied, statutory, or otherwise. avih6 makes no guarantees regarding continuous uptime, server response times, or error-free web browsing.</p>
+
+    <h2 id="limitation-liability">6. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, avih6 shall not be held liable for any direct, indirect, incidental, special, or consequential damages resulting from the access to, use of, or inability to access this website or any external hyperlinks provided herein.</p>
+
+    <h2 id="governing-law">7. Governing Law & Jurisdiction</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel. Any dispute arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Israel.</p>
+
+    <h2 id="contact">8. Contact Information</h2>
+    <p>For questions or inquiries regarding these Terms of Service, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
         <span id="theme-icon-container"></span>
     </button>
-
 </body>
 </html>
