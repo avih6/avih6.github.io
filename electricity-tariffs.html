@@ -14,5 +14,27 @@
   }
 </script>
 </head>
-<body></body>
+<body><script>
+  (function() {
+    if (!window.PointerEvent) return;
+    var currentHover = null;
+    document.addEventListener('pointerover', function(e) {
+      if (e.pointerType === 'pen') {
+        var el = e.target.closest('.card, .btn, .theme-fab, .back, .back-link, a');
+        if (el && el !== currentHover) {
+          if (currentHover) currentHover.classList.remove('is-pen-hover');
+          currentHover = el;
+          currentHover.classList.add('is-pen-hover');
+        }
+      }
+    }, { passive: true });
+    document.addEventListener('pointerout', function(e) {
+      if (e.pointerType === 'pen' && currentHover) {
+        currentHover.classList.remove('is-pen-hover');
+        currentHover = null;
+      }
+    }, { passive: true });
+  })();
+</script>
+</body>
 </html>

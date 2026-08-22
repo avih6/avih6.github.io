@@ -202,7 +202,7 @@ body {
             align-items: center;
             justify-content: center;
         }
-        .theme-fab:hover {
+        .theme-fab:hover, .theme-fab.is-pen-hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
             background: var(--card);
@@ -238,7 +238,7 @@ body {
             border: 1px solid var(--border); 
             transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.3s, border 0.3s; 
         }
-        .card:hover { 
+        .card:hover, .card.is-pen-hover { 
             transform: translateY(-5px); 
             box-shadow: 0 10px 20px rgba(0,0,0,0.12); 
         }
@@ -274,7 +274,7 @@ body {
         .btn:active { transform: scale(0.98); }
         .btn-store { background: var(--primary); color: white; }
         .btn-site { border: 1px solid var(--primary); color: var(--primary); }
-        .btn:hover { opacity: 0.9; }
+        .btn:hover, .btn.is-pen-hover { opacity: 0.9; }
         footer { 
             margin-top: 3rem; 
             padding: 2rem; 
@@ -471,6 +471,28 @@ body {
     if (el) {
       el.textContent = curYear > 2026 ? '2026-' + curYear : '2026';
     }
+  })();
+</script>
+<script>
+  (function() {
+    if (!window.PointerEvent) return;
+    var currentHover = null;
+    document.addEventListener('pointerover', function(e) {
+      if (e.pointerType === 'pen') {
+        var el = e.target.closest('.card, .btn, .theme-fab, .back, .back-link, a');
+        if (el && el !== currentHover) {
+          if (currentHover) currentHover.classList.remove('is-pen-hover');
+          currentHover = el;
+          currentHover.classList.add('is-pen-hover');
+        }
+      }
+    }, { passive: true });
+    document.addEventListener('pointerout', function(e) {
+      if (e.pointerType === 'pen' && currentHover) {
+        currentHover.classList.remove('is-pen-hover');
+        currentHover = null;
+      }
+    }, { passive: true });
   })();
 </script>
 </body>

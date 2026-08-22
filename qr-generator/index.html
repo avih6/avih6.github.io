@@ -222,7 +222,7 @@ body {
             border-color: var(--primary);
         }
         
-        .btn:hover { 
+        .btn:hover, .btn.is-pen-hover { 
             opacity: 0.9; 
             transform: translateY(-3px); 
             box-shadow: 0 6px 15px rgba(26, 115, 232, 0.2);
@@ -240,7 +240,7 @@ body {
             color: #9aa0a6; 
         }
         
-        .back-link:hover { text-decoration: underline; color: var(--primary); }
+        .back-link:hover, .back-link.is-pen-hover { text-decoration: underline; color: var(--primary); }
 
         .theme-fab {
             position: fixed;
@@ -263,7 +263,7 @@ body {
             justify-content: center;
         }
 
-        .theme-fab:hover {
+        .theme-fab:hover, .theme-fab.is-pen-hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
             background: var(--card-bg);
@@ -356,5 +356,27 @@ body {
         <span id="theme-icon-container"></span>
     </button>
 
+<script>
+  (function() {
+    if (!window.PointerEvent) return;
+    var currentHover = null;
+    document.addEventListener('pointerover', function(e) {
+      if (e.pointerType === 'pen') {
+        var el = e.target.closest('.card, .btn, .theme-fab, .back, .back-link, a');
+        if (el && el !== currentHover) {
+          if (currentHover) currentHover.classList.remove('is-pen-hover');
+          currentHover = el;
+          currentHover.classList.add('is-pen-hover');
+        }
+      }
+    }, { passive: true });
+    document.addEventListener('pointerout', function(e) {
+      if (e.pointerType === 'pen' && currentHover) {
+        currentHover.classList.remove('is-pen-hover');
+        currentHover = null;
+      }
+    }, { passive: true });
+  })();
+</script>
 </body>
 </html>

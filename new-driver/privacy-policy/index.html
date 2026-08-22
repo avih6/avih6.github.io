@@ -121,9 +121,9 @@
         ul, ol { margin-bottom: 1rem; padding-left: 20px; }
         li { margin-bottom: 8px; }
         .back { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
-        .back:hover { text-decoration: underline; }
+        .back:hover, .back.is-pen-hover { text-decoration: underline; }
         a { color: var(--primary); text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        a:hover, a.is-pen-hover { text-decoration: underline; }
         .toc { 
             background-color: var(--toc-bg); 
             padding: 20px 25px; 
@@ -134,7 +134,7 @@
         }
         .toc h3 { margin-top: 0; color: var(--primary); font-size: 1.2em; }
         .toc a { color: var(--toc-link); font-weight: 500; }
-        .toc a:hover { color: var(--primary); }
+        .toc a:hover, a.is-pen-hover { color: var(--primary); }
         .toc ol { margin-bottom: 0; }
         .warning-box {
             background-color: var(--warning-bg);
@@ -171,7 +171,7 @@
             align-items: center;
             justify-content: center;
         }
-        .theme-fab:hover {
+        .theme-fab:hover, .theme-fab.is-pen-hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
             background: var(--card-bg);
@@ -381,5 +381,27 @@
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
         <span id="theme-icon-container"></span>
     </button>
+<script>
+  (function() {
+    if (!window.PointerEvent) return;
+    var currentHover = null;
+    document.addEventListener('pointerover', function(e) {
+      if (e.pointerType === 'pen') {
+        var el = e.target.closest('.card, .btn, .theme-fab, .back, .back-link, a');
+        if (el && el !== currentHover) {
+          if (currentHover) currentHover.classList.remove('is-pen-hover');
+          currentHover = el;
+          currentHover.classList.add('is-pen-hover');
+        }
+      }
+    }, { passive: true });
+    document.addEventListener('pointerout', function(e) {
+      if (e.pointerType === 'pen' && currentHover) {
+        currentHover.classList.remove('is-pen-hover');
+        currentHover = null;
+      }
+    }, { passive: true });
+  })();
+</script>
 </body>
 </html>
