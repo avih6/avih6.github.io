@@ -2,17 +2,15 @@
 <html lang="en" dir="ltr">
 <head>
     <script>
-  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-  }
-</script>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Lie Detector</title>
+    
+    <link rel="icon" type="image/png" href="/icon-lie-detector.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
@@ -21,7 +19,6 @@
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
     </script>
-
     <style>
         :root {
             --bg: #ffffff;
@@ -100,44 +97,8 @@
             --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-}
 
-        html.dark-mode {
-            --bg: #121212 !important;
-            --text: #e8eaed !important;
-            --primary: #8ab4f8 !important;
-            --subtitle: #9aa0a6 !important;
-            --border: #333333 !important;
-            --toc-bg: #1e1e1e !important;
-            --toc-border: #333333 !important;
-            --toc-link: #9aa0a6 !important;
-            --card-bg: #1e1e1e !important;
-            --warning-bg: #3c2f00 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #ffd54f !important;
-            --btn-border: #8ab4f8 !important;
-            --fab-bg: rgba(30, 30, 30, 0.85) !important;
-            --fab-border: #333333 !important;
-        }
-
-        html.light-mode {
-            --bg: #ffffff !important;
-            --text: #202124 !important;
-            --primary: #1a73e8 !important;
-            --subtitle: #5f6368 !important;
-            --border: #ebebeb !important;
-            --toc-bg: #f8f9fa !important;
-            --toc-border: #eee !important;
-            --toc-link: #5f6368 !important;
-            --card-bg: #ffffff !important;
-            --warning-bg: #fef7e0 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #202124 !important;
-            --btn-border: #1a73e8 !important;
-            --fab-bg: rgba(255, 255, 255, 0.85) !important;
-            --fab-border: #eee !important;
-        }
-body { 
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -173,14 +134,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -213,13 +177,7 @@ body {
             height: 22px;
         }
     </style>
-
-    
-
-    
-
-
-<script>
+    <script>
   const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
   const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
@@ -273,73 +231,105 @@ body {
 </script>
 </head>
 <body>
-
+    
     <a href="/lie-detector" class="back">← Back to App Site</a>
-
+    
     <h1>Privacy Policy</h1>
     <p class="subtitle">Lie Detector</p>
 
     <div class="toc">
         <h3>Table of Contents</h3>
         <ol>
-            <li><a href="#overview">1. Overview</a></li>
-            <li><a href="#data-handling">2. Data Handling & Local Storage</a></li>
-            <li><a href="#data-collection">3. Technical Data & Advertising</a>
+            <li><a href="#overview">Overview & Privacy-First Principle</a></li>
+            <li><a href="#simulated-hardware">Simulated Functionality & Zero Biometric Data Capture</a>
                 <ul>
-                    <li><a href="#admob">Google AdMob</a></li>
-                    <li><a href="#analytics">Anonymized Analytics</a></li>
+                    <li><a href="#touch-simulation">Touch Gesture Simulation (No Biometric Processing)</a></li>
+                    <li><a href="#device-permissions">Device Permissions & Local Preferences</a></li>
                 </ul>
             </li>
-            <li><a href="#third-party">4. Third-Party Service Providers</a></li>
-            <li><a href="#permissions">5. App Permissions</a></li>
-            <li><a href="#childrens-privacy">6. Children’s Privacy</a></li>
-            <li><a href="#changes">7. Changes to This Policy</a></li>
-            <li><a href="#contact">8. Contact Information</a></li>
+            <li><a href="#third-party-services">Third-Party Services & Advertising</a>
+                <ul>
+                    <li><a href="#ads-admob">Google AdMob & Android Privacy Sandbox</a></li>
+                    <li><a href="#third-party-policies">Third-Party Privacy Policy References</a></li>
+                </ul>
+            </li>
+            <li><a href="#distribution-channel">Official Distribution Channel</a></li>
+            <li><a href="#user-rights">User Rights & Local Data Management</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#childrens-privacy">Children’s Privacy</a></li>
+            <li><a href="#international-regulations">International Privacy Regulations & Scope</a></li>
+            <li><a href="#policy-changes">Policy Changes & Transfer of Ownership</a></li>
+            <li><a href="#contact">Contact Information</a></li>
         </ol>
     </div>
 
-    <p><strong>Last Updated:</strong> July 30, 2026</p>
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
 
-    <h2 id="overview">1. Overview</h2>
-    <p>Lie Detector is provided by avih6 as a Free entertainment and prank app. This SERVICE is provided at no cost and is intended for use as is. Lie Detector is designed strictly for fun and entertainment purposes.</p>
-    <p>By using the Service, you agree to the policies described herein. Lie Detector does not collect, store, or transmit any personally identifiable information (PII).</p>
+    <h2 id="overview">1. Overview & Privacy-First Principle</h2>
+    <p>The "Lie Detector" application (the "App") is developed and maintained by avih6 as a free, ad-supported novelty and entertainment application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
+    <p>The App operates on a strict <strong>privacy-first approach</strong>: it does not require user account registration, does not maintain cloud databases, and does not collect personally identifiable information (PII) such as personal names, email addresses, phone numbers, or user location data.</p>
 
-    <h2 id="data-handling">2. Data Handling & Local Storage</h2>
-    <p>The application operates primarily offline for user preferences. Sound settings, vibration preferences, and scan counts are stored locally on your device using Android's <code>SharedPreferences</code> or <code>DataStore</code>. This information remains on your device and is never uploaded to external servers.</p>
+    <h2 id="simulated-hardware">2. Simulated Functionality & Zero Biometric Data Capture</h2>
+    
+    <h3 id="touch-simulation">2.1 Touch Gesture Simulation (No Biometric Processing)</h3>
+    <p>The simulated fingerprint scanner operates entirely through standard on-screen capacitive touch events (UI pointer input). <strong>The App does NOT read, capture, scan, extract, store, or process real biometric fingerprint images, biometric ridge templates, pulse readings, skin conductivity, or physiological indicators.</strong></p>
 
-    <h2 id="data-collection">3. Technical Data & Advertising</h2>
-    <p>To support the development of this free application and monitor stability, the App uses third-party services:</p>
+    <h3 id="device-permissions">2.2 Device Permissions & Local Preferences</h3>
+    <p>• <strong>Haptic Feedback Permission:</strong> The App requests permission to vibrate the device (<code>android.permission.VIBRATE</code>) strictly to deliver tactile feedback during the simulated scanning animation.</p>
+    <p>• <strong>Local Settings Storage:</strong> Custom preferences (sound effects, haptic toggles, and UI theme options) are saved strictly locally on the physical device using standard Android local storage. No user settings are transmitted to external servers.</p>
 
-    <h3 id="admob">Google AdMob</h3>
-    <p>The App displays advertisements served by Google AdMob. AdMob may use device identifiers (such as Android Advertising ID) to serve personalized or non-personalized advertisements and perform ad measurements. For more information on how Google manages advertising data, visit <a rel="noopener noreferrer" href="https://policies.google.com/technologies/ads" target="_blank">Google's Advertising Policies</a>.</p>
+    <h2 id="third-party-services">3. Third-Party Services & Advertising</h2>
 
-    <h2 id="third-party">4. Third-Party Service Providers</h2>
-    <p>The app relies on the following third-party service providers:</p>
+    <h3 id="ads-admob">3.1 Google AdMob & Android Privacy Sandbox</h3>
+    <p>To support the application as a free novelty tool, the App integrates Google AdMob to serve non-intrusive advertisements:</p>
     <ul>
-        <li><strong>Google Play Services:</strong> Core platform support.</li>
-        <li><strong>Google AdMob:</strong> Advertisement delivery.</li>
+        <li><strong>Google AdMob:</strong> AdMob may process advertising identifiers (Google Advertising ID / AAID) and coarse IP data to serve and measure advertisements in compliance with its privacy policies. Google automatically anonymizes log data by removing portions of IP addresses after 9 months and cookie data after 18 months.</li>
+        <li><strong>Privacy Sandbox for Android:</strong> The application supports modern privacy-preserving advertising APIs in Android 13+ (such as AdServices Topics and Attribution APIs) designed to limit cross-app tracking.</li>
     </ul>
 
-    <h2 id="permissions">5. App Permissions</h2>
-    <p>To provide sound effects, tactile feedback, and ad support, Lie Detector requests the following standard capabilities:</p>
+    <h3 id="third-party-policies">3.2 Third-Party Privacy Policy References</h3>
+    <p>For more information on the data processing practices of advertising partners, review the official policy:</p>
     <ul>
-        <li><strong>Vibrate:</strong> To trigger haptic feedback during fingerprint scanning.</li>
-        <li><strong>Internet & Network State:</strong> Required by Google AdMob to load advertisements.</li>
-        <li><strong>Advertising ID (com.google.android.gms.permission.AD_ID):</strong> Used by Google AdMob to provide ad measurement and frequency capping.</li>
+        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Policies</a></li>
     </ul>
 
-    <h2 id="childrens-privacy">6. Children’s Privacy</h2>
-    <p>Lie Detector does not knowingly collect personally identifiable information from children under the age of 13. As no personal identifiers are collected by the app itself, it complies with standard privacy protections for minors.</p>
+    <h2 id="distribution-channel">4. Official Distribution Channel</h2>
+    <p><strong>The only authorized and official distribution platform for Lie Detector is the Google Play Store:</strong></p>
+    <p><a href="https://play.google.com/store/apps/details?id=com.avih6.liedetector" target="_blank" rel="noopener">Google Play Store - Lie Detector</a></p>
+    <p>Any download or distribution through third-party websites, APK mirror portals, or unofficial app stores is unauthorized and unmaintained. avih6 assumes no responsibility for modified, corrupted, or potentially harmful APK files obtained outside the official Google Play Store.</p>
 
-    <h2 id="changes">7. Changes to This Policy</h2>
-    <p>This Privacy Policy may be updated periodically. Users are advised to review this page for any changes. Updates are effective immediately upon being posted on this page.</p>
+    <h2 id="user-rights">5. User Rights & Local Data Management</h2>
+    <p>Because the App operates without user accounts and stores no personal data on external servers, data control is managed directly on the local device:</p>
+    <ul>
+        <li><strong>Local Data Removal:</strong> Clearing application storage via Android OS Settings or uninstalling the App immediately and permanently erases all locally stored preferences from the physical device.</li>
+        <li><strong>Anonymous Diagnostics:</strong> Technical telemetry and crash reports processed by advertising partners are pseudonymous, aggregated, and automatically expired according to standard retention schedules; they cannot be linked to individual user identities or email addresses.</li>
+        <li><strong>Privacy Inquiries:</strong> Users may direct any privacy inquiries to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>.</li>
+    </ul>
 
-    <h2 id="contact">8. Contact Information</h2>
-    <p>For any questions or concerns regarding this Privacy Policy, please contact: <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+    <h2 id="data-security">6. Data Security</h2>
+    <p>Security of user information is prioritized, and commercially reasonable technical and organizational safeguards are employed. However, no method of electronic storage or internet transmission is 100% immune to vulnerabilities, and absolute security cannot be guaranteed.</p>
+
+    <h2 id="childrens-privacy">7. Children’s Privacy</h2>
+    <p>The Service is designed for a general audience. There is no intentional collection or solicitation of personal information from children under the age of 13. If it is discovered that a child under 13 has provided personal data without parental consent, please send a notification immediately to the contact email so that the information can be promptly removed.</p>
+
+    <h2 id="international-regulations">8. International Privacy Regulations & Scope</h2>
+    <ul>
+        <li><strong>European & UK GDPR Compliance:</strong> The Application respects the rights of users located in the European Economic Area (EEA), the UK, and Switzerland under the General Data Protection Regulation (GDPR) through strict data minimization and zero persistent personal data tracking.</li>
+        <li><strong>California Consumer Privacy Act (CCPA):</strong> The App does not sell or share personal consumer information. Users retain full rights to query data handling policies under applicable US state privacy frameworks.</li>
+    </ul>
+
+    <h2 id="policy-changes">9. Policy Changes & Transfer of Ownership</h2>
+    <p>This Privacy Policy may be updated periodically by posting the revised version on this page with an updated "Last Updated" date. In the event of a merger, acquisition, or transfer of the application or its service, stored data will remain subject to the provisions of this Privacy Policy.</p>
+
+    <h2 id="contact">10. Contact Information</h2>
+    <p>For any questions, suggestions, or requests regarding this Privacy Policy, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Support Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
         <span id="theme-icon-container"></span>
     </button>
-
 </body>
 </html>

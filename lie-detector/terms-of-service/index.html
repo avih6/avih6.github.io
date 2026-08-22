@@ -2,17 +2,15 @@
 <html lang="en" dir="ltr">
 <head>
     <script>
-  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-  }
-</script>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Lie Detector</title>
+    
+    <link rel="icon" type="image/png" href="/icon-lie-detector.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
@@ -21,7 +19,6 @@
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
     </script>
-
     <style>
         :root {
             --bg: #ffffff;
@@ -100,44 +97,8 @@
             --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-}
 
-        html.dark-mode {
-            --bg: #121212 !important;
-            --text: #e8eaed !important;
-            --primary: #8ab4f8 !important;
-            --subtitle: #9aa0a6 !important;
-            --border: #333333 !important;
-            --toc-bg: #1e1e1e !important;
-            --toc-border: #333333 !important;
-            --toc-link: #9aa0a6 !important;
-            --card-bg: #1e1e1e !important;
-            --warning-bg: #3c2f00 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #ffd54f !important;
-            --btn-border: #8ab4f8 !important;
-            --fab-bg: rgba(30, 30, 30, 0.85) !important;
-            --fab-border: #333333 !important;
-        }
-
-        html.light-mode {
-            --bg: #ffffff !important;
-            --text: #202124 !important;
-            --primary: #1a73e8 !important;
-            --subtitle: #5f6368 !important;
-            --border: #ebebeb !important;
-            --toc-bg: #f8f9fa !important;
-            --toc-border: #eee !important;
-            --toc-link: #5f6368 !important;
-            --card-bg: #ffffff !important;
-            --warning-bg: #fef7e0 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #202124 !important;
-            --btn-border: #1a73e8 !important;
-            --fab-bg: rgba(255, 255, 255, 0.85) !important;
-            --fab-border: #eee !important;
-        }
-body { 
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -173,14 +134,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -213,13 +177,7 @@ body {
             height: 22px;
         }
     </style>
-
-    
-
-    
-
-
-<script>
+    <script>
   const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
   const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
@@ -273,64 +231,77 @@ body {
 </script>
 </head>
 <body>
+    
     <a href="/lie-detector" class="back">← Back to App Site</a>
-
+    
     <h1>Terms of Service</h1>
     <p class="subtitle">Lie Detector</p>
 
     <div class="toc">
         <h3>Table of Contents</h3>
         <ol>
-            <li><a href="#sec-1">1. Acceptance of Terms</a></li>
-            <li><a href="#sec-2">2. Entertainment Disclaimer</a></li>
-            <li><a href="#sec-3">3. User Responsibilities</a></li>
-            <li><a href="#sec-4">4. Intellectual Property</a></li>
-            <li><a href="#sec-5">5. Disclaimer of Warranties</a></li>
-            <li><a href="#sec-6">6. Limitation of Liability</a></li>
-            <li><a href="#sec-7">7. Governing Law</a></li>
-            <li><a href="#sec-8">8. Modifications to the Terms</a></li>
-            <li><a href="#sec-9">9. Contact Information</a></li>
+            <li><a href="#acceptance">Acceptance of Terms</a></li>
+            <li><a href="#nature-of-service">Nature of Service & Novelty Simulator</a></li>
+            <li><a href="#entertainment-disclaimer">Entertainment & Prank Disclaimer</a></li>
+            <li><a href="#disclaimer-warranties">Disclaimer of Warranties ("AS IS")</a></li>
+            <li><a href="#limitation-liability">Limitation of Liability</a></li>
+            <li><a href="#intellectual-property">Intellectual Property & License</a></li>
+            <li><a href="#third-party">Third-Party Services & Advertising Links</a></li>
+            <li><a href="#modifications">Modifications to the Service & Terms</a></li>
+            <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
+            <li><a href="#contact">Contact Information</a></li>
         </ol>
     </div>
-    <p><strong>Last Updated:</strong> July 30, 2026</p>
 
-    <h2 id="sec-1">1. Acceptance of Terms</h2>
-    <p>By downloading, accessing, or using the "Lie Detector" application (the "App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
 
-    <h2 id="sec-2">2. Entertainment Disclaimer</h2>
+    <h2 id="acceptance">1. Acceptance of Terms</h2>
+    <p>By downloading, installing, accessing, or using the "Lie Detector" application (the "App"), the user agrees to be legally bound by these Terms of Service ("Terms"). If the user does not agree to these Terms, the user must refrain from using the App.</p>
+
+    <h2 id="nature-of-service">2. Nature of Service & Novelty Simulator</h2>
+    <p>• <strong>Prank & Entertainment Tool:</strong> Lie Detector is a novelty simulation application designed exclusively for humor, social entertainment, and personal amusement.</p>
+    <p>• <strong>Simulated Touch Interaction:</strong> The animated scanning graphics, sound effects, vibrations, and outcome results are purely simulated entertainment mechanics.</p>
+
+    <h2 id="entertainment-disclaimer">3. Entertainment & Prank Disclaimer</h2>
     <div class="warning-box">
-        <strong>Entertainment & Prank Purpose Only:</strong> Lie Detector is a simulator designed strictly for fun, entertainment, and prank purposes. It does NOT possess real polygraph capabilities or scientific lie-detection functions. Results are randomly generated or simulated.
+        <p><strong>NOVELTY & PRANK PURPOSE ONLY:</strong> The App is NOT a real polygraph machine, physiological measurement device, or scientific lie detection apparatus.</p>
+        <p>• Results generated by the App are randomized, simulated, or pre-configured for entertainment and prank purposes only.</p>
+        <p>• The user agrees NEVER to present, represent, or rely upon scan results as scientific proof, legal evidence, or genuine confirmation of truthfulness or falsehood.</p>
+        <p>• The user agrees to use the App responsibly and solely in safe social situations where participants understand the simulated nature of the game.</p>
     </div>
 
-    <h2 id="sec-3">3. User Responsibilities</h2>
-    <p>By using the App, you explicitly acknowledge and agree that:</p>
+    <h2 id="disclaimer-warranties">4. Disclaimer of Warranties ("AS IS")</h2>
+    <p>The App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis, without warranties of any kind, whether express, implied, statutory, or otherwise. avih6 makes no guarantees regarding the performance, operational accuracy, or user experience of the entertainment simulation.</p>
+
+    <h2 id="limitation-liability">5. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, avih6 shall not be held liable for any direct, indirect, incidental, special, or consequential damages resulting from the use of, or inability to use, the App. This includes, without limitation:</p>
     <ul>
-        <li>You will use the App responsibly and solely for entertainment purposes.</li>
-        <li>You agree not to use the App for any purpose that is unlawful or prohibited by these Terms.</li>
-        <li>You will not present scan results as actual scientific or legal proof of truthfulness or falsehood.</li>
+        <li>Interpersonal disputes, emotional distress, arguments, or relationship conflicts arising from pranks or simulated scan results.</li>
+        <li>Any reliance placed by any party on the simulated truth or lie outcomes.</li>
+        <li>Physical device heating or wear resulting from extended use.</li>
     </ul>
 
-    <h2 id="sec-4">4. Intellectual Property</h2>
-    <p>All rights, title, and interest in and to the App, including all underlying source code, design, logos, and features, are the exclusive property of avih6. You may not copy, modify, distribute, sell, or lease any part of the App, nor may you reverse engineer or attempt to extract the source code of the software without explicit written permission.</p>
+    <h2 id="intellectual-property">6. Intellectual Property & License</h2>
+    <p>All right, title, and interest in and to the App (including underlying software code, animations, sound designs, visual interfaces, branding, and assets) remain the exclusive property of avih6. The user is granted a limited, personal, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes. Reverse engineering, decompiling, extracting source code, copying, or distributing modified versions of the App is strictly prohibited.</p>
 
-    <h2 id="sec-5">5. Disclaimer of Warranties</h2>
-    <p>The App is provided "as is" and "as available" without any warranty of any kind, express or implied. There is no guarantee that the App will meet your expectations or operate error-free.</p>
+    <h2 id="third-party">7. Third-Party Services & Advertising Links</h2>
+    <p>The App integrates third-party developer libraries (such as Google Play Services and Google AdMob). avih6 exercises no control over external advertising platforms and assumes no liability for their availability, content, or policies.</p>
 
-    <h2 id="sec-6">6. Limitation of Liability</h2>
-    <p>avih6 shall not be held liable for any direct, indirect, incidental, special, or consequential damages resulting from the use or inability to use the App.</p>
+    <h2 id="modifications">8. Modifications to the Service & Terms</h2>
+    <p>avih6 reserves the right to modify, suspend, or discontinue the App or any portion thereof at any time without prior notice. These Terms may be revised periodically, with updates becoming effective upon publication on this page.</p>
 
-    <h2 id="sec-7">7. Governing Law</h2>
-    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel, without regard to its conflict of law provisions.</p>
+    <h2 id="governing-law">9. Governing Law & Jurisdiction</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel. Any dispute arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Israel.</p>
 
-    <h2 id="sec-8">8. Modifications to the Terms</h2>
-    <p>avih6 reserves the right to modify or update these Terms of Service at any time. Continued use of the App following any changes constitutes your acceptance of the new terms.</p>
-
-    <h2 id="sec-9">9. Contact Information</h2>
-    <p>For any questions or concerns regarding these terms, please contact: <br><a href="mailto:av6development@gmail.com" style="color: #1a73e8;">av6development@gmail.com</a></p>
+    <h2 id="contact">10. Contact Information</h2>
+    <p>For questions or inquiries regarding these Terms of Service, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
         <span id="theme-icon-container"></span>
     </button>
-
 </body>
 </html>
