@@ -7,26 +7,13 @@
     
     <link rel="icon" type="image/png" href="/icon-new-driver.png">
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
-
-      function loadGA() {
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS';
-        script.async = true;
-        document.head.appendChild(script);
-      }
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGA);
-      } else {
-        window.addEventListener('load', loadGA);
-      }
     </script>
-    
-    
     <style>
         :root {
             --bg: #ffffff;
@@ -101,7 +88,8 @@
             --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-body { 
+
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -137,14 +125,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -176,59 +167,58 @@ body {
             height: 22px;
         }
     </style>
+    <script>
+      const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-<script>
-  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+      (function() {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+          document.documentElement.classList.remove('light-mode');
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-mode');
+          document.documentElement.classList.remove('dark-mode');
+        }
+      })();
 
-  (function() {
-    var savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark-mode');
-      document.documentElement.classList.remove('light-mode');
-    } else if (savedTheme === 'light') {
-      document.documentElement.classList.add('light-mode');
-      document.documentElement.classList.remove('dark-mode');
-    }
-  })();
+      function isCurrentlyDark() {
+        if (document.documentElement.classList.contains('dark-mode')) return true;
+        if (document.documentElement.classList.contains('light-mode')) return false;
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
 
-  function isCurrentlyDark() {
-    if (document.documentElement.classList.contains('dark-mode')) return true;
-    if (document.documentElement.classList.contains('light-mode')) return false;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+      function updateThemeIcon() {
+        var container = document.getElementById('theme-icon-container');
+        if (container) {
+          container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+        }
+      }
 
-  function updateThemeIcon() {
-    var container = document.getElementById('theme-icon-container');
-    if (container) {
-      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
-    }
-  }
-
-  function toggleTheme() {
-    var willBeDark = !isCurrentlyDark();
-    if (willBeDark) {
-      document.documentElement.classList.add('dark-mode');
-      document.documentElement.classList.remove('light-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.add('light-mode');
-      document.documentElement.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-    updateThemeIcon();
-  }
-
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-      if (!localStorage.getItem('theme')) {
+      function toggleTheme() {
+        var willBeDark = !isCurrentlyDark();
+        if (willBeDark) {
+          document.documentElement.classList.add('dark-mode');
+          document.documentElement.classList.remove('light-mode');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.add('light-mode');
+          document.documentElement.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+        }
         updateThemeIcon();
       }
-    });
-  }
 
-  window.addEventListener('DOMContentLoaded', updateThemeIcon);
-</script>
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            updateThemeIcon();
+          }
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', updateThemeIcon);
+    </script>
 </head>
 <body>
     
@@ -246,7 +236,7 @@ body {
                 <ul>
                     <li><a href="#local-data">Local Offline Storage (Default)</a></li>
                     <li><a href="#cloud-backup">Optional Cloud Backup & Synchronization</a></li>
-                    <li><a href="#live-drive">Live Drive (Foreground Service & No GPS Tracking)</a></li>
+                    <li><a href="#live-drive">Live Drive Duration Tracking</a></li>
                 </ul>
             </li>
             <li><a href="#third-party-services">Third-Party Services & Technical Data Collection</a>
@@ -283,13 +273,13 @@ body {
     <h2 id="data-handling">3. Data Handling, Storage & Synchronization</h2>
     
     <h3 id="local-data">3.1 Local Offline Storage (Default)</h3>
-    <p>By default, all user data entered into the application is stored strictly in a private, encrypted local database (Room SQLite) and SharedPreferences on the physical device:</p>
+    <p>By default, all personal data entered into the application is stored strictly in a private, encrypted local database (Room SQLite) and SharedPreferences on the physical device:</p>
     <ul>
         <li><strong>Dates:</strong> Birth date, driving test pass date, and calculated accompaniment milestones.</li>
         <li><strong>Driving Logs:</strong> Logged trips (date, day/night duration, distance/road type, and optional companion details).</li>
-        <li><strong>Preferences:</strong> UI themes, dynamic color settings, target goals, and reminder preferences.</li>
+        <li><strong>Local Preferences:</strong> UI themes, target goals, and local reminder preferences.</li>
     </ul>
-    <p><strong>This information is never transmitted to external servers without explicit user action.</strong></p>
+    <p><strong>Personal driving logs and milestone dates are never transmitted to external servers without explicit user sign-in.</strong></p>
 
     <h3 id="cloud-backup">3.2 Optional Cloud Backup & Synchronization</h3>
     <p>Users may optionally choose to sign in using a Google account to back up and synchronize driving records across Android devices:</p>
@@ -304,11 +294,11 @@ body {
         <li><strong>No Third-Party Sharing:</strong> Driving logs and personal account data stored in Firestore are strictly private to the user's account and are never sold, rented, or shared with third-party advertisers.</li>
     </ul>
 
-    <h3 id="live-drive">3.3 Live Drive (Foreground Service & No GPS Tracking)</h3>
+    <h3 id="live-drive">3.3 Live Drive Duration Tracking</h3>
     <p>The Live Drive feature allows real-time duration tracking during a drive:</p>
     <ul>
         <li>The application utilizes an Android Foreground Service (<code>FOREGROUND_SERVICE_SPECIAL_USE</code>) strictly to keep the driving timer active in the background and display an ongoing status notification while driving.</li>
-        <li><strong>No GPS Route Tracking:</strong> The application <strong>does NOT record, track, or store geographical GPS locations or driving routes.</strong> It measures elapsed time only.</li>
+        <li><strong>No GPS Location Tracking:</strong> Live Drive measures elapsed trip duration only, without accessing, recording, or storing GPS location data or driving routes.</li>
     </ul>
 
     <h2 id="third-party-services">4. Third-Party Services & Technical Data Collection</h2>
@@ -316,8 +306,8 @@ body {
     <h3 id="analytics-crashlytics">4.1 Technical Identifiers & Analytics</h3>
     <p>To ensure app stability, monitor performance, and improve user experience, the app incorporates reputable industry-standard SDKs provided by Google LLC:</p>
     <ul>
-        <li><strong>Google Analytics for Firebase:</strong> Collects aggregated, non-personally identifiable usage statistics. Firebase automatically derives coarse, city-level geographic data from IP addresses without accessing precise device GPS.</li>
-        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and fix bugs.</li>
+        <li><strong>Google Analytics for Firebase:</strong> Collects aggregated, non-personally identifiable usage statistics (such as screen views and feature engagement). Firebase automatically derives coarse, city-level geographic data from IP addresses on Google servers without accessing device GPS. This aggregated data is completely separate from any Google Sign-In user account.</li>
+        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and fix technical issues.</li>
         <li><strong>Firebase App Check & Play Integrity:</strong> Verifies the authenticity and integrity of the application binary against tampering and piracy.</li>
         <li><strong>Firebase Remote Config:</strong> Dynamically fetches non-personal configuration values (such as feature flags and official reference links).</li>
     </ul>
@@ -332,7 +322,6 @@ body {
     <p><strong>Third-Party Privacy Policies:</strong></p>
     <ul>
         <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy & Terms</a></li>
-        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a></li>
         <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Policies</a></li>
     </ul>
 
@@ -346,7 +335,7 @@ body {
     <ol>
         <li><strong>Local Data Deletion (Reset):</strong> Users can permanently delete all locally stored driving records, test dates, and preferences at any time using the "איפוס נתונים" (Reset Data) button located in the App Settings.</li>
         <li><strong>Cloud Account & Data Deletion:</strong> If Google Sign-In was enabled, users can permanently erase the entire cloud profile, driving logs, and authentication records by tapping "מחיקת חשבון" (Delete Account) in the App Settings. This action immediately and irreversibly purges the data from Google Cloud Firestore.</li>
-        <li><strong>Manual Deletion Request:</strong> Users may also email a deletion request directly to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>, explicitly specifying the Google account email address associated with the records to be deleted. All associated records will be purged within 30 days.</li>
+        <li><strong>Manual Deletion Request:</strong> Users may also email a deletion request directly to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>, explicitly specifying the Google account email address associated with the records to be deleted. All associated records will be purged within 30 days. If no confirmation is received, please send a reminder email with "Data Deletion Reminder" in the subject line, or submit a request via the "Contact Developer" feedback option in the App Settings.</li>
     </ol>
 
     <h2 id="data-security">7. Data Security</h2>
@@ -369,7 +358,6 @@ body {
     <ul>
         <li><strong>Developer:</strong> avih6</li>
         <li><strong>Support Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
-        <li><strong>Website:</strong> <a href="https://avih6.github.io/new-driver/">https://avih6.github.io/new-driver/</a></li>
     </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">

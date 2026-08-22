@@ -7,26 +7,13 @@
     
     <link rel="icon" type="image/png" href="/icon-new-driver.png">
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
-
-      function loadGA() {
-        var script = document.createElement('script');
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS';
-        script.async = true;
-        document.head.appendChild(script);
-      }
-      if ('requestIdleCallback' in window) {
-        requestIdleCallback(loadGA);
-      } else {
-        window.addEventListener('load', loadGA);
-      }
     </script>
-    
-    
     <style>
         :root {
             --bg: #ffffff;
@@ -101,7 +88,8 @@
             --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-body { 
+
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -137,14 +125,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -176,59 +167,58 @@ body {
             height: 22px;
         }
     </style>
+    <script>
+      const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-<script>
-  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+      (function() {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+          document.documentElement.classList.remove('light-mode');
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-mode');
+          document.documentElement.classList.remove('dark-mode');
+        }
+      })();
 
-  (function() {
-    var savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark-mode');
-      document.documentElement.classList.remove('light-mode');
-    } else if (savedTheme === 'light') {
-      document.documentElement.classList.add('light-mode');
-      document.documentElement.classList.remove('dark-mode');
-    }
-  })();
+      function isCurrentlyDark() {
+        if (document.documentElement.classList.contains('dark-mode')) return true;
+        if (document.documentElement.classList.contains('light-mode')) return false;
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
 
-  function isCurrentlyDark() {
-    if (document.documentElement.classList.contains('dark-mode')) return true;
-    if (document.documentElement.classList.contains('light-mode')) return false;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
+      function updateThemeIcon() {
+        var container = document.getElementById('theme-icon-container');
+        if (container) {
+          container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+        }
+      }
 
-  function updateThemeIcon() {
-    var container = document.getElementById('theme-icon-container');
-    if (container) {
-      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
-    }
-  }
-
-  function toggleTheme() {
-    var willBeDark = !isCurrentlyDark();
-    if (willBeDark) {
-      document.documentElement.classList.add('dark-mode');
-      document.documentElement.classList.remove('light-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.add('light-mode');
-      document.documentElement.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-    updateThemeIcon();
-  }
-
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-      if (!localStorage.getItem('theme')) {
+      function toggleTheme() {
+        var willBeDark = !isCurrentlyDark();
+        if (willBeDark) {
+          document.documentElement.classList.add('dark-mode');
+          document.documentElement.classList.remove('light-mode');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.add('light-mode');
+          document.documentElement.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+        }
         updateThemeIcon();
       }
-    });
-  }
 
-  window.addEventListener('DOMContentLoaded', updateThemeIcon);
-</script>
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            updateThemeIcon();
+          }
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', updateThemeIcon);
+    </script>
 </head>
 <body>
     
@@ -261,7 +251,8 @@ body {
 
     <h2 id="safety">2. Important Safety & Road Disclaimer</h2>
     <div class="warning-box">
-        <p><strong>SAFETY FIRST:</strong> The App must strictly NOT be operated or handled by the driver while the vehicle is in motion. The driver must always keep hands on the wheel, eyes on the road, and give undivided attention to driving in full compliance with all traffic safety laws.</p>
+        <p><strong>SAFETY FIRST:</strong> The App must strictly NOT be operated or handled by the driver while the vehicle is in motion.</p>
+        <p>The driver must always keep hands on the wheel, eyes on the road, and give undivided attention to driving in full compliance with all traffic safety laws.</p>
     </div>
 
     <h2 id="nature-of-service">3. Nature of Service & Government Disclaimer</h2>
