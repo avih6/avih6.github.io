@@ -242,7 +242,7 @@
             <li><a href="#overview">Overview & Privacy-First Principle</a></li>
             <li><a href="#hardware-data">Data Handling, Hardware Capabilities & Local Processing</a>
                 <ul>
-                    <li><a href="#camera-access">Camera Flash & Torch Control</a></li>
+                    <li><a href="#camera-permissions">Device Permissions & Camera Hardware Access</a></li>
                     <li><a href="#sensor-processing">On-Device Sensor Processing</a></li>
                     <li><a href="#local-settings">Local Settings Storage</a></li>
                 </ul>
@@ -272,7 +272,7 @@
 
     <h2 id="hardware-data">2. Data Handling, Hardware Capabilities & Local Processing</h2>
     
-    <h3 id="camera-access">2.1 Camera Flash & Torch Control</h3>
+    <h3 id="camera-permissions">2.1 Device Permissions & Camera Hardware Access</h3>
     <p>On modern Android versions (Android 6.0+ / API 23+), the App controls the physical LED flashlight directly via the system CameraManager API without requesting or requiring runtime camera permissions from the user. The legacy CAMERA permission declaration in the application manifest exists strictly for backward compatibility with legacy Android versions.</p>
     <p><strong>The App never requests runtime camera access, does not access the camera sensor, and never captures, records, streams, or stores photographs, video frames, or audio feeds.</strong></p>
 

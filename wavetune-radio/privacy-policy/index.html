@@ -243,8 +243,8 @@
             <li><a href="#broadcast-disclaimer">Important Operational & Broadcast Disclaimer</a></li>
             <li><a href="#data-handling">Data Handling, Media Playback & Local Storage</a>
                 <ul>
-                    <li><a href="#streaming-playback">Internet Radio Streaming & Media Playback</a></li>
-                    <li><a href="#local-recordings">Local Audio Recordings & Alarm Schedules</a></li>
+                    <li><a href="#streaming-playback">Foreground Service Permission & Media Playback</a></li>
+                    <li><a href="#local-recordings">Alarm Permissions & Local Audio Recordings</a></li>
                     <li><a href="#local-preferences">Local Database & Preferences</a></li>
                 </ul>
             </li>
@@ -280,11 +280,11 @@
 
     <h2 id="data-handling">3. Data Handling, Media Playback & Local Storage</h2>
     
-    <h3 id="streaming-playback">3.1 Internet Radio Streaming & Media Playback</h3>
+    <h3 id="streaming-playback">3.1 Foreground Service Permission & Media Playback</h3>
     <p>The App utilizes the AndroidX Media3 / ExoPlayer framework via an Android Foreground Service (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>) strictly to enable uninterrupted background audio playback and display lock-screen media controls.</p>
     <p>When a station is selected, the application establishes a direct stream connection between the user's device and the third-party broadcaster's streaming server. No audio streams are routed through or stored on developer-owned proxy servers.</p>
 
-    <h3 id="local-recordings">3.2 Local Audio Recordings & Alarm Schedules</h3>
+    <h3 id="local-recordings">3.2 Alarm Permissions & Local Audio Recordings</h3>
     <p>• <strong>On-Device Stream Recording:</strong> If the user utilizes the built-in recording feature, audio files are saved strictly to the physical device's local storage for personal, offline listening. Recordings are never uploaded, synchronized, or transmitted to any external server.</p>
     <p>• <strong>Exact Alarms & Sleep Timer:</strong> Scheduled radio alarms and sleep timers are managed strictly by the local Android OS alarm subsystem (<code>USE_EXACT_ALARM</code> / <code>SCHEDULE_EXACT_ALARM</code>).</p>
 
