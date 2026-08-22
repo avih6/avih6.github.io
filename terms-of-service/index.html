@@ -32,10 +32,11 @@
             --primary: #1a73e8;
             --subtitle: #5f6368;
             --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
             --toc-bg: #f8f9fa;
             --toc-border: #eee;
             --toc-link: #5f6368;
-            --card-bg: #ffffff;
             --warning-bg: #fef7e0;
             --warning-border: #f9ab00;
             --warning-text: #202124;
@@ -51,10 +52,11 @@
                 --primary: #8ab4f8;
                 --subtitle: #9aa0a6;
                 --border: #333333;
+                --card: #1e1e1e;
+                --card-bg: #1e1e1e;
                 --toc-bg: #1e1e1e;
                 --toc-border: #333333;
                 --toc-link: #9aa0a6;
-                --card-bg: #1e1e1e;
                 --warning-bg: #3c2f00;
                 --warning-border: #f9ab00;
                 --warning-text: #ffd54f;
@@ -63,6 +65,45 @@
                 --fab-border: #333333;
             }
         }
+
+        html.dark-mode {
+            --bg: #121212 !important;
+            --text: #e8eaed !important;
+            --primary: #8ab4f8 !important;
+            --subtitle: #9aa0a6 !important;
+            --border: #333333 !important;
+            --card: #1e1e1e !important;
+            --card-bg: #1e1e1e !important;
+            --toc-bg: #1e1e1e !important;
+            --toc-border: #333333 !important;
+            --toc-link: #9aa0a6 !important;
+            --warning-bg: #3c2f00 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #ffd54f !important;
+            --btn-border: #8ab4f8 !important;
+            --fab-bg: rgba(30, 30, 30, 0.85) !important;
+            --fab-border: #333333 !important;
+        }
+
+        html.light-mode {
+            --bg: #ffffff !important;
+            --text: #202124 !important;
+            --primary: #1a73e8 !important;
+            --subtitle: #5f6368 !important;
+            --border: #ebebeb !important;
+            --card: #ffffff !important;
+            --card-bg: #ffffff !important;
+            --toc-bg: #f8f9fa !important;
+            --toc-border: #eee !important;
+            --toc-link: #5f6368 !important;
+            --warning-bg: #fef7e0 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #202124 !important;
+            --btn-border: #1a73e8 !important;
+            --fab-bg: rgba(255, 255, 255, 0.85) !important;
+            --fab-border: #eee !important;
+        }
+}
 
         html.dark-mode {
             --bg: #121212 !important;
@@ -175,6 +216,7 @@ body {
         }
     </style>
     
+
 
 <script>
   const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
