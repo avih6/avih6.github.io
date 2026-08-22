@@ -1,24 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Terms of Service - Disabled Permit Check</title>
     
     <link rel="icon" type="image/png" href="/icon-disabled-permit.png">
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-K15Z8JR816"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-K15Z8JR816');
+      gtag('config', 'G-650BH6MCPS');
     </script>
-
     <style>
         :root {
             --bg: #ffffff;
@@ -93,7 +88,8 @@
             --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-body { 
+
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -129,14 +125,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -168,67 +167,58 @@ body {
             height: 22px;
         }
     </style>
+    <script>
+      const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
-    
-<script>
-  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-  }
-</script>
-    
+      (function() {
+        var savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'dark') {
+          document.documentElement.classList.add('dark-mode');
+          document.documentElement.classList.remove('light-mode');
+        } else if (savedTheme === 'light') {
+          document.documentElement.classList.add('light-mode');
+          document.documentElement.classList.remove('dark-mode');
+        }
+      })();
 
-<script>
-  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+      function isCurrentlyDark() {
+        if (document.documentElement.classList.contains('dark-mode')) return true;
+        if (document.documentElement.classList.contains('light-mode')) return false;
+        return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+      }
 
-  (function() {
-    var savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-      document.documentElement.classList.add('dark-mode');
-      document.documentElement.classList.remove('light-mode');
-    } else if (savedTheme === 'light') {
-      document.documentElement.classList.add('light-mode');
-      document.documentElement.classList.remove('dark-mode');
-    }
-  })();
+      function updateThemeIcon() {
+        var container = document.getElementById('theme-icon-container');
+        if (container) {
+          container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+        }
+      }
 
-  function isCurrentlyDark() {
-    if (document.documentElement.classList.contains('dark-mode')) return true;
-    if (document.documentElement.classList.contains('light-mode')) return false;
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-
-  function updateThemeIcon() {
-    var container = document.getElementById('theme-icon-container');
-    if (container) {
-      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
-    }
-  }
-
-  function toggleTheme() {
-    var willBeDark = !isCurrentlyDark();
-    if (willBeDark) {
-      document.documentElement.classList.add('dark-mode');
-      document.documentElement.classList.remove('light-mode');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.add('light-mode');
-      document.documentElement.classList.remove('dark-mode');
-      localStorage.setItem('theme', 'light');
-    }
-    updateThemeIcon();
-  }
-
-  if (window.matchMedia) {
-    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
-      if (!localStorage.getItem('theme')) {
+      function toggleTheme() {
+        var willBeDark = !isCurrentlyDark();
+        if (willBeDark) {
+          document.documentElement.classList.add('dark-mode');
+          document.documentElement.classList.remove('light-mode');
+          localStorage.setItem('theme', 'dark');
+        } else {
+          document.documentElement.classList.add('light-mode');
+          document.documentElement.classList.remove('dark-mode');
+          localStorage.setItem('theme', 'light');
+        }
         updateThemeIcon();
       }
-    });
-  }
 
-  window.addEventListener('DOMContentLoaded', updateThemeIcon);
-</script>
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            updateThemeIcon();
+          }
+        });
+      }
+
+      window.addEventListener('DOMContentLoaded', updateThemeIcon);
+    </script>
 </head>
 <body>
     
@@ -241,67 +231,63 @@ body {
         <h3>Table of Contents</h3>
         <ol>
             <li><a href="#acceptance">Acceptance of Terms</a></li>
-            <li><a href="#purpose">Purpose of the App & Data Source</a></li>
-            <li><a href="#responsibilities">User Responsibilities & Legal Compliance</a></li>
-            <li><a href="#disclaimer">Disclaimer of Liability</a></li>
-            <li><a href="#intellectual">Intellectual Property</a></li>
-            <li><a href="#privacy">Privacy</a></li>
-            <li><a href="#governing">Governing Law</a></li>
-            <li><a href="#modifications">Modifications to the Terms</a></li>
+            <li><a href="#nature-of-service">Nature of Service & Government Disclaimer</a></li>
+            <li><a href="#user-responsibilities">User Responsibilities & Parking Laws</a></li>
+            <li><a href="#disclaimer-warranties">Disclaimer of Warranties ("AS IS")</a></li>
+            <li><a href="#limitation-liability">Limitation of Liability</a></li>
+            <li><a href="#intellectual-property">Intellectual Property</a></li>
+            <li><a href="#modifications">Modifications to the Service & Terms</a></li>
+            <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
             <li><a href="#contact">Contact Information</a></li>
         </ol>
     </div>
 
-    <p><strong>Last Updated:</strong> April 12, 2026</p>
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
 
     <h2 id="acceptance">1. Acceptance of Terms</h2>
-    <p>By downloading, accessing, or using the "Disabled Permit Check" application (the "App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the App.</p>
+    <p>By downloading, installing, accessing, or using the "Disabled Permit Check" (בדיקת תו נכה) application (the "App"), the user agrees to be legally bound by these Terms of Service ("Terms"). If the user does not agree to these Terms, the user must refrain from using the App.</p>
 
-    <h2 id="purpose">2. Purpose of the App & Data Source</h2>
-    <p>The App is a free utility tool designed to help users check the status of disabled parking permits for vehicles in Israel. It functions solely as a viewer and search interface.</p>
-    <p>All data provided through the App is retrieved in real-time from the official Open Data portal of the Israeli Government (data.gov.il). avih6 does not create, modify, or host the permit database.</p>
+    <h2 id="nature-of-service">2. Nature of Service & Government Disclaimer</h2>
+    <p>• <strong>Independent Search Tool:</strong> The App is a search viewer designed to query the publicly accessible database of disabled parking permits in Israel.</p>
+    <p>• <strong>No Government Affiliation:</strong> The App is <strong>NOT affiliated with, endorsed by, authorized by, or operated on behalf of the Israel Ministry of Transport and Road Safety (משרד התחבורה והבטיחות בדרכים), Israel Police, or any governmental or municipal entity.</strong></p>
+    <p>• <strong>Third-Party Public Data:</strong> Information is retrieved in real time from the Israeli Government Open Data repository (<strong>data.gov.il</strong>). avih6 does not author, control, host, or alter the government permit records.</p>
 
+    <h2 id="user-responsibilities">3. User Responsibilities & Parking Laws</h2>
     <div class="warning-box">
-        <strong>Important Disclaimer (No Government Affiliation):</strong> avih6 of this App  is <strong>not</strong> affiliated with, endorsed by, or representing any government entity, including the Ministry of Transport or the Government of Israel.
+        <p><strong>LEGAL NOTICE:</strong> The physical disabled permit displayed on a vehicle’s windshield, official municipal signage, and road traffic laws always take precedence over the App.</p>
+        <p>Government registries may experience temporary technical downtime or synchronization latency. A vehicle displayed as possessing or lacking a permit in the App does not override official statutory records or physical badge verification.</p>
+        <p>The driver remains solely responsible for legal parking compliance at all times.</p>
     </div>
 
-    <h2 id="responsibilities">3. User Responsibilities & Legal Compliance</h2>
-    <p>By using the App, you explicitly acknowledge and agree that:</p>
+    <h2 id="disclaimer-warranties">4. Disclaimer of Warranties ("AS IS")</h2>
+    <p>The App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis, without warranties of any kind, whether express, implied, statutory, or otherwise. avih6 makes no representations or warranties regarding the continuous availability, accuracy, completeness, or reliability of data retrieved from government endpoints.</p>
+
+    <h2 id="limitation-liability">5. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, avih6 shall not be held liable for any direct, indirect, incidental, or consequential damages resulting from the use of, or inability to use, the App. This includes, without limitation:</p>
     <ul>
-        <li>You are solely responsible for parking legally and in full compliance with local traffic laws.</li>
-        <li>The physical disabled permit displayed in a vehicle, official street signs, and local municipal laws always take precedence over the App's data.</li>
-        <li>Government databases may experience downtime or have delays in updating newly issued or revoked permits. A vehicle displaying as "No Permit" in the App may still possess a valid physical permit, and vice versa.</li>
-        <li>avih6 is not responsible for the accuracy, completeness, or timeliness of the data retrieved from the government API.</li>
+        <li>Parking citations, fines, vehicle towing fees, or municipal penalties.</li>
+        <li>Disputes with local enforcement authorities, parking inspectors, or third parties.</li>
+        <li>Decisions made based on search results displayed within the application.</li>
     </ul>
 
-    <h2 id="disclaimer">4. Disclaimer of Liability</h2>
-    <p>avih6  shall not be held liable for any direct, indirect, incidental, or consequential damages resulting from the use or inability to use the App. This includes, but is not limited to:</p>
-    <ul>
-        <li>Parking fines, tickets, or citations.</li>
-        <li>Vehicle towing, clamping, or damage.</li>
-        <li>Legal disputes regarding parking spaces.</li>
-        <li>Reliance on inaccurate, delayed, or missing data from the government API.</li>
-    </ul>
-    <p>You agree that you use the App entirely at your own risk and responsibility.</p>
+    <h2 id="intellectual-property">6. Intellectual Property</h2>
+    <p>All application design, interfaces, software code, and branding remain the intellectual property of avih6. The user is granted a revocable, non-exclusive, non-transferable license for personal, non-commercial use only.</p>
 
-    <h2 id="intellectual">5. Intellectual Property</h2>
-    <p>All rights, title, and interest in and to the App, including all underlying source code, design, logos, and features, are the exclusive property of avih6. You may not copy, modify, distribute, sell, or lease any part of the App, nor may you reverse engineer or attempt to extract the source code of the software without explicit written permission.</p>
+    <h2 id="modifications">7. Modifications to the Service & Terms</h2>
+    <p>avih6 reserves the right to modify, suspend, or discontinue the App or any portion thereof at any time without prior notice. These Terms may be revised periodically, with updates becoming effective upon publication on this page.</p>
 
-    <h2 id="privacy">6. Privacy</h2>
-    <p>Use of the App is also subject to the Privacy Policy. By using the App, you acknowledge and agree to the terms outlined in the Privacy Policy.</p>
-
-    <h2 id="governing">7. Governing Law</h2>
-    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel, without regard to its conflict of law provisions.</p>
-
-    <h2 id="modifications">8. Modifications to the Terms</h2>
-    <p>avih6 reserves the right to modify or update these Terms of Service at any time. Continued use of the App following any changes constitutes your acceptance of the new terms.</p>
+    <h2 id="governing-law">8. Governing Law & Jurisdiction</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel. Any dispute arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Israel.</p>
 
     <h2 id="contact">9. Contact Information</h2>
-    <p>If you have any questions or concerns regarding these terms, please contact: <br><a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+    <p>For questions or inquiries regarding these Terms of Service, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
         <span id="theme-icon-container"></span>
     </button>
-
 </body>
 </html>
