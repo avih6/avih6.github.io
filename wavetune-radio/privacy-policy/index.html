@@ -2,18 +2,14 @@
 <html lang="en" dir="ltr">
 <head>
     <script>
-  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-  }
-</script>
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://www.google-analytics.com">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net https://api.hebcal.com;">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - WaveTune Radio</title>
-
+    
     <link rel="icon" type="image/png" href="/icon-wavetune-radio.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
@@ -23,7 +19,6 @@
       gtag('js', new Date());
       gtag('config', 'G-650BH6MCPS');
     </script>
-
     <style>
         :root {
             --bg: #ffffff;
@@ -99,47 +94,11 @@
             --warning-border: #f9ab00 !important;
             --warning-text: #202124 !important;
             --btn-border: #1a73e8 !important;
-            --fab-bg: rgba(255, 255, 255, 0.85) !important;
-            --fab-border: #eee !important;
-        }
-}
-
-        html.dark-mode {
-            --bg: #121212 !important;
-            --text: #e8eaed !important;
-            --primary: #8ab4f8 !important;
-            --subtitle: #9aa0a6 !important;
-            --border: #333333 !important;
-            --toc-bg: #1e1e1e !important;
-            --toc-border: #333333 !important;
-            --toc-link: #9aa0a6 !important;
-            --card-bg: #1e1e1e !important;
-            --warning-bg: #3c2f00 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #ffd54f !important;
-            --btn-border: #8ab4f8 !important;
             --fab-bg: rgba(30, 30, 30, 0.85) !important;
-            --fab-border: #333333 !important;
-        }
-
-        html.light-mode {
-            --bg: #ffffff !important;
-            --text: #202124 !important;
-            --primary: #1a73e8 !important;
-            --subtitle: #5f6368 !important;
-            --border: #ebebeb !important;
-            --toc-bg: #f8f9fa !important;
-            --toc-border: #eee !important;
-            --toc-link: #5f6368 !important;
-            --card-bg: #ffffff !important;
-            --warning-bg: #fef7e0 !important;
-            --warning-border: #f9ab00 !important;
-            --warning-text: #202124 !important;
-            --btn-border: #1a73e8 !important;
-            --fab-bg: rgba(255, 255, 255, 0.85) !important;
             --fab-border: #eee !important;
         }
-body { 
+
+        body { 
             font-family: system-ui, -apple-system, sans-serif; 
             line-height: 1.6; 
             color: var(--text); 
@@ -175,14 +134,17 @@ body {
         .warning-box {
             background-color: var(--warning-bg);
             border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
+            padding: 18px 22px;
             border-radius: 8px;
-            margin: 1.5rem 0;
+            margin: 1.8rem 0;
             color: var(--warning-text);
         }
         .warning-box p {
-            margin: 0;
+            margin: 0 0 12px 0;
             font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
         }
         .theme-fab {
             position: fixed;
@@ -214,13 +176,7 @@ body {
             height: 22px;
         }
     </style>
-
-    
-
-    
-
-
-<script>
+    <script>
   const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
   const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
 
@@ -274,92 +230,129 @@ body {
 </script>
 </head>
 <body>
-
+    
     <a href="/wavetune-radio" class="back">← Back to App Site</a>
-
+    
     <h1>Privacy Policy</h1>
     <p class="subtitle">WaveTune Radio</p>
 
     <div class="toc">
         <h3>Table of Contents</h3>
         <ol>
-            <li><a href="#overview">1. Overview</a></li>
-            <li><a href="#data-handling">2. Data Handling & Storage</a>
+            <li><a href="#overview">Overview & Privacy-First Principle</a></li>
+            <li><a href="#broadcast-disclaimer">Important Operational & Broadcast Disclaimer</a></li>
+            <li><a href="#data-handling">Data Handling, Media Playback & Local Storage</a>
                 <ul>
-                    <li><a href="#local-data">Local User Preferences</a></li>
-                    <li><a href="#recordings">Stream Recordings</a></li>
+                    <li><a href="#streaming-playback">Internet Radio Streaming & Media Playback</a></li>
+                    <li><a href="#local-recordings">Local Audio Recordings & Alarm Schedules</a></li>
+                    <li><a href="#local-preferences">Local Database & Preferences</a></li>
                 </ul>
             </li>
-            <li><a href="#data-collection">3. Technical Data & Analytics</a>
+            <li><a href="#third-party-services">Third-Party Services & Technical Data Collection</a>
                 <ul>
-                    <li><a href="#analytics">Anonymized Analytics</a></li>
-                    <li><a href="#crashlytics">Crash Reporting & Performance</a></li>
+                    <li><a href="#analytics-crashlytics">Technical Identifiers & Analytics</a></li>
+                    <li><a href="#radio-directory">Radio Directory & Content Delivery Networks</a></li>
+                    <li><a href="#third-party-policies">Third-Party Privacy Policy References</a></li>
                 </ul>
             </li>
-            <li><a href="#third-party">4. Third-Party Service Providers</a></li>
-            <li><a href="#permissions">5. App Permissions</a></li>
-            <li><a href="#childrens-privacy">6. Children's Privacy</a></li>
-            <li><a href="#changes">7. Changes to This Policy</a></li>
-            <li><a href="#contact">8. Contact Information</a></li>
+            <li><a href="#distribution-channel">Official Distribution Channel</a></li>
+            <li><a href="#user-rights">User Rights & Local Data Management</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#childrens-privacy">Children’s Privacy</a></li>
+            <li><a href="#international-regulations">International Privacy Regulations & Scope</a></li>
+            <li><a href="#policy-changes">Policy Changes & Transfer of Ownership</a></li>
+            <li><a href="#contact">Contact Information</a></li>
         </ol>
     </div>
 
-    <p><strong>Last Updated:</strong> July 25, 2026</p>
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
 
-    <h2 id="overview">1. Overview</h2>
-    <p>WaveTune Radio is provided by avih6 as a Free app. This SERVICE is provided at no cost and is intended for use as is. This page informs visitors regarding policies with the handling, use, and disclosure of personal information when using this service.</p>
-    <p>By using the Service, there is an agreement to the policies described herein. WaveTune Radio is designed with a privacy-first approach; The App does not collect, store, or transmit any of your personal data.</p>
+    <h2 id="overview">1. Overview & Privacy-First Principle</h2>
+    <p>The "WaveTune Radio" application (the "App") is developed and maintained by avih6 as a free utility application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
+    <p>The App operates on a strict <strong>privacy-first approach</strong>: it does not require user account registration, does not create cloud profiles, and does not collect personally identifiable information (PII) such as personal names, email addresses, phone numbers, or user location coordinates.</p>
 
-    <h2 id="data-handling">2. Data Handling & Storage</h2>
-    <p>The application is designed to function primarily offline and locally for user-specific data:</p>
+    <h2 id="broadcast-disclaimer">2. Important Operational & Broadcast Disclaimer</h2>
+    <div class="warning-box">
+        <p><strong>Independent Audio Player & Directory Browser:</strong> WaveTune Radio is an independent mobile application developed solely by avih6.</p>
+        <p>• <strong>Third-Party Broadcast Content:</strong> The application functions as an audio tuner and directory browser connecting to public internet streams. avih6 does NOT own, produce, host, broadcast, rebroadcast, or monitor the audio content, music, talk shows, news, opinions, or advertisements transmitted by independent radio stations.</p>
+        <p>• <strong>Broadcaster Intellectual Property:</strong> All radio broadcasts, trademarks, and station brand names remain the exclusive intellectual property of their respective owners and broadcasters.</p>
+    </div>
 
-    <h3 id="local-data">Local User Preferences</h3>
-    <p>To enhance your experience, the app stores your preferences: such as favorite stations, listening history, custom settings, and radio alarms: locally on your device using Android's SharedPreferences or equivalent local storage mechanisms. This data never leaves your device and is not transmitted anywhere.</p>
+    <h2 id="data-handling">3. Data Handling, Media Playback & Local Storage</h2>
+    
+    <h3 id="streaming-playback">3.1 Internet Radio Streaming & Media Playback</h3>
+    <p>The App utilizes the AndroidX Media3 / ExoPlayer framework via an Android Foreground Service (<code>FOREGROUND_SERVICE_MEDIA_PLAYBACK</code>) strictly to enable uninterrupted background audio playback and display lock-screen media controls.</p>
+    <p>When a station is selected, the application establishes a direct stream connection between the user's device and the third-party broadcaster's streaming server. No audio streams are routed through or stored on developer-owned proxy servers.</p>
 
-    <h3 id="recordings">Stream Recordings</h3>
-    <p>If you use the built-in recording feature, the audio files are stored exclusively on your device's local storage. These recordings are private and are never uploaded to any server or shared with third parties.</p>
+    <h3 id="local-recordings">3.2 Local Audio Recordings & Alarm Schedules</h3>
+    <p>• <strong>On-Device Stream Recording:</strong> If the user utilizes the built-in recording feature, audio files are saved strictly to the physical device's local storage for personal, offline listening. Recordings are never uploaded, synchronized, or transmitted to any external server.</p>
+    <p>• <strong>Exact Alarms & Sleep Timer:</strong> Scheduled radio alarms and sleep timers are managed strictly by the local Android OS alarm subsystem (<code>USE_EXACT_ALARM</code> / <code>SCHEDULE_EXACT_ALARM</code>).</p>
 
-    <h2 id="data-collection">3. Technical Data & Analytics</h2>
-    <p>To ensure technical stability and optimize performance, the App utilizes third-party providers that process anonymous or pseudonymous information:</p>
+    <h3 id="local-preferences">3.3 Local Database & Preferences</h3>
+    <p>User preferences (including favorited stations, recent search history, audio buffer settings, and theme choices) are stored strictly locally on the device using a Room SQLite database and Jetpack DataStore. This data is never transmitted to external servers.</p>
 
-    <h3 id="analytics">Anonymized Analytics</h3>
-    <p>avih6 uses Google Analytics for Firebase to understand how the app is used and analyze user behavior on an aggregated level. This data is anonymized and does not include personal identifiers such as email addresses or device identifiers.</p>
+    <h2 id="third-party-services">4. Third-Party Services & Technical Data Collection</h2>
 
-    <h3 id="crashlytics">Crash Reporting & Performance</h3>
-    <p>The App use Firebase Crashlytics and Performance Monitoring to collect technical logs, stack traces, and performance metrics. This information is used solely to identify and fix bugs and optimize the app's performance. No personal data is included in these reports.</p>
-
-    <h2 id="third-party">4. Third-Party Service Providers</h2>
-    <p>The app interacts with several external services to function:</p>
+    <h3 id="analytics-crashlytics">4.1 Technical Identifiers & Analytics</h3>
+    <p>To ensure app stability, monitor performance, and improve user experience, the app incorporates reputable industry-standard SDKs provided by Google LLC:</p>
     <ul>
-        <li><strong>Radio-Browser API:</strong> Used to fetch the directory of radio stations.</li>
-        <li><strong>Google Analytics for Firebase:</strong> Used for anonymized usage analysis.</li>
-        <li><strong>Firebase Crashlytics:</strong> Used for technical stability monitoring.</li>
-        <li><strong>Content Delivery Networks (CDNs):</strong> Station logos and flags are fetched from external sources (e.g., <code>flagcdn.com</code>).</li>
-    </ul>
-    <p>Interacting with these services involve standard HTTP requests that include your IP address, which is necessary for data transmission. For more information, please review the privacy policies of these services:</p>
-    <a rel="noopener noreferrer" href="https://policies.google.com/privacy" target="_blank">Google Privacy & Terms</a> | <a rel="noopener noreferrer" href="https://firebase.google.com/support/privacy" target="_blank">Firebase Privacy and Security</a> | <a rel="noopener noreferrer" href="https://www.radio-browser.info/" target="_blank">Radio-Browser</a>
-
-    <h2 id="permissions">5. App Permissions</h2>
-    <p>To provide its features, WaveTune Radio requires several permissions:</p>
-    <ul>
-        <li><strong>Internet:</strong> To stream radio stations and fetch station data.</li>
-        <li><strong>Foreground Service:</strong> To allow continuous radio playback while the screen is off.</li>
-        <li><strong>Notifications:</strong> To display playback controls in the notification drawer.</li>
-        <li><strong>Alarms & Reminders:</strong> To enable the radio alarm clock feature.</li>
+        <li><strong>Google Analytics for Firebase:</strong> Collects aggregated, pseudonymous usage statistics (such as screen views, station category clicks, and playback durations). Firebase automatically derives coarse, city-level geographic data from IP addresses on Google servers without accessing device GPS. This aggregated data is not linked to any personal user identity.</li>
+        <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and resolve technical issues.</li>
+        <li><strong>Data Anonymization Lifecycle:</strong> Google automatically anonymizes log data by removing portions of IP addresses after 9 months and cookie data after 18 months.</li>
     </ul>
 
-    <h2 id="childrens-privacy">6. Children's Privacy</h2>
-    <p>There is no intentional collection of personally identifiable information from children under the age of 13. Since WaveTune Radio does not collect personal data from any users, it complies with COPPA (Children's Online Privacy Protection Act).</p>
+    <h3 id="radio-directory">4.2 Radio Directory & Content Delivery Networks</h3>
+    <p>To retrieve station listings, category directories, and visual metadata, the App communicates with external public services:</p>
+    <ul>
+        <li><strong>Community Radio Browser API:</strong> Queries public station directories (<a href="https://www.radio-browser.info/" target="_blank" rel="noopener">radio-browser.info</a>) ephemerally over HTTPS to fetch station stream URLs and names.</li>
+        <li><strong>Content Delivery Networks (CDNs):</strong> Station logos, favicons, and country flag graphics are fetched from public CDN endpoints.</li>
+    </ul>
 
-    <h2 id="changes">7. Changes to This Policy</h2>
-    <p>This Privacy Policy may be updated periodically. Users are advised to review this page for any changes. Updates are effective immediately upon being posted on this page.</p>
+    <h3 id="third-party-policies">4.3 Third-Party Privacy Policy References</h3>
+    <p>For more information on the data processing practices of third-party service providers, review their official policies:</p>
+    <ul>
+        <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy & Terms</a></li>
+        <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase Privacy and Security</a></li>
+        <li><a href="https://www.radio-browser.info/" target="_blank" rel="noopener">Community Radio Browser Project</a></li>
+    </ul>
 
-    <h2 id="contact">8. Contact Information</h2>
-    <p>For any questions or concerns regarding this Privacy Policy, please contact: <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+    <h2 id="distribution-channel">5. Official Distribution Channel</h2>
+    <p><strong>The only authorized and official distribution platform for WaveTune Radio is the Google Play Store:</strong></p>
+    <p><a href="https://play.google.com/store/apps/details?id=com.avih6.wavetune" target="_blank" rel="noopener">Google Play Store - WaveTune Radio</a></p>
+    <p>Any download or distribution through third-party websites, APK mirror portals, or unofficial app stores is unauthorized and unmaintained. avih6 assumes no responsibility for modified, corrupted, or potentially harmful APK files obtained outside the official Google Play Store.</p>
+
+    <h2 id="user-rights">6. User Rights & Local Data Management</h2>
+    <p>Because the App operates without user accounts and stores no personal data on external servers, data control is managed directly on the local device:</p>
+    <ul>
+        <li><strong>Local Data Removal:</strong> Clearing application storage via Android OS Settings or uninstalling the App immediately and permanently erases all locally stored records, history, recordings, and preferences from the physical device.</li>
+        <li><strong>Anonymous Diagnostics:</strong> Technical telemetry and crash reports processed by Firebase are pseudonymous, aggregated, and automatically expired according to Google's retention schedules; they cannot be linked to individual user identities or email addresses.</li>
+        <li><strong>Privacy Inquiries:</strong> Users may direct any privacy inquiries to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>.</li>
+    </ul>
+
+    <h2 id="data-security">7. Data Security</h2>
+    <p>Security of user information is prioritized, and commercially reasonable technical and organizational safeguards are employed. However, no method of electronic storage or internet transmission is 100% immune to vulnerabilities, and absolute security cannot be guaranteed.</p>
+
+    <h2 id="childrens-privacy">8. Children’s Privacy</h2>
+    <p>The Service is designed for a general audience. There is no intentional collection or solicitation of personal information from children under the age of 13. If it is discovered that a child under 13 has provided personal data without parental consent, please send a notification immediately to the contact email so that the information can be promptly removed.</p>
+
+    <h2 id="international-regulations">9. International Privacy Regulations & Scope</h2>
+    <ul>
+        <li><strong>European & UK GDPR Compliance:</strong> The Application complies with European GDPR and UK GDPR standards through a privacy-by-design architecture, strict data minimization, and the complete absence of persistent user tracking.</li>
+        <li><strong>California Consumer Privacy Act (CCPA):</strong> The App does not sell or share consumer personal information. Users maintain full rights to query data handling policies under applicable US state privacy frameworks.</li>
+    </ul>
+
+    <h2 id="policy-changes">10. Policy Changes & Transfer of Ownership</h2>
+    <p>This Privacy Policy may be updated periodically by posting the revised version on this page with an updated "Last Updated" date. In the event of a merger, acquisition, or transfer of the application or its service, stored data will remain subject to the provisions of this Privacy Policy.</p>
+
+    <h2 id="contact">11. Contact Information</h2>
+    <p>For any questions, suggestions, or requests regarding this Privacy Policy, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Support Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
         <span id="theme-icon-container"></span>
     </button>
-
 </body>
 </html>
