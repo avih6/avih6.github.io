@@ -202,6 +202,7 @@ body {
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
             background: var(--card);
         }
+        .theme-fab span { display: flex; align-items: center; justify-content: center; }
         .theme-fab svg {
             width: 22px;
             height: 22px;
@@ -427,8 +428,8 @@ body {
     <footer>
         &copy; 2026 avih6 | <a href="/privacy-policy" style="color:inherit">Privacy Policy</a> | <a href="/terms-of-service" style="color:inherit">Terms of Service</a> | <a href="mailto:av6development@gmail.com" style="color:inherit">Contact</a>
     </footer>
-    <button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-        <div id="theme-icon-container"></div>
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        <span id="theme-icon-container"></span>
     </button>
     <!-- Google Analytics - deferred to avoid blocking main thread -->
     <script>

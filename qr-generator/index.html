@@ -261,8 +261,10 @@ body {
         .theme-fab:hover {
             transform: translateY(-5px);
             box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card-bg);
         }
 
+        .theme-fab span { display: flex; align-items: center; justify-content: center; }
         .theme-fab svg {
             width: 22px;
             height: 22px;
@@ -345,8 +347,8 @@ body {
 
     <a href="/" class="back-link">← Back to avih6</a>
 
-    <button class="theme-fab" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
-        <div id="theme-icon-container"></div>
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        <span id="theme-icon-container"></span>
     </button>
 
 </body>
