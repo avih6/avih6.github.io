@@ -240,14 +240,14 @@
         <h3>Table of Contents</h3>
         <ol>
             <li><a href="#overview">Overview & Privacy-First Principle</a></li>
-            <li><a href="#hardware-data">Hardware Capabilities & On-Device Processing</a>
+            <li><a href="#operational-disclaimer">Important Operational & Utility Disclaimer</a></li>
+            <li><a href="#hardware-data">Data Handling, Hardware Capabilities & Local Processing</a>
                 <ul>
                     <li><a href="#camera-access">Camera Flash & Torch Control</a></li>
-                    <li><a href="#sensor-processing">Sensor Processing (Orientation & Accelerometer)</a></li>
+                    <li><a href="#sensor-processing">On-Device Sensor Processing</a></li>
                     <li><a href="#local-settings">Local Settings Storage</a></li>
                 </ul>
             </li>
-            <li><a href="#health-warning">Health & Photosensitivity Notice</a></li>
             <li><a href="#third-party-services">Third-Party Services & Technical Data Collection</a>
                 <ul>
                     <li><a href="#ads-mediation">Advertisements, Mediation & Android Privacy Sandbox</a></li>
@@ -271,24 +271,24 @@
     <p>The "Flashlight" application (the "App") is developed and maintained by avih6 as a free, ad-supported utility application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
     <p>The App operates on a strict <strong>privacy-first approach</strong>: it does not require user registration, does not create cloud user accounts, and does not collect personally identifiable information (PII) such as personal names, email addresses, phone numbers, or user locations.</p>
 
-    <h2 id="hardware-data">2. Hardware Capabilities & On-Device Processing</h2>
+    <h2 id="operational-disclaimer">2. Important Operational & Utility Disclaimer</h2>
+    <div class="warning-box">
+        <p><strong>Independent Utility Aid:</strong> Flashlight is an independent mobile tool developed solely by avih6.</p>
+        <p>• <strong>Informational & Convenience Purpose:</strong> The application features (including LED illumination, strobe signaling, SOS mode, compass, and bubble level) are provided for general utility and convenience only.</p>
+        <p>• <strong>Sensor Convenience Limitation:</strong> The integrated compass and level indicators are intended for informal reference and should not be relied upon for critical navigation, marine orientation, surveying, or structural construction.</p>
+    </div>
+
+    <h2 id="hardware-data">3. Data Handling, Hardware Capabilities & Local Processing</h2>
     
-    <h3 id="camera-access">2.1 Camera Flash & Torch Control</h3>
+    <h3 id="camera-access">3.1 Camera Flash & Torch Control</h3>
     <p>On modern Android versions (Android 6.0+ / API 23+), the App controls the physical LED flashlight directly via the system CameraManager API without requesting or requiring runtime camera permissions from the user. The legacy CAMERA permission declaration in the application manifest exists strictly for backward compatibility with legacy Android versions.</p>
     <p><strong>The App never requests runtime camera access, does not access the camera sensor, and never captures, records, streams, or stores photographs, video frames, or audio feeds.</strong></p>
 
-    <h3 id="sensor-processing">2.2 Sensor Processing (Orientation & Accelerometer)</h3>
+    <h3 id="sensor-processing">3.2 On-Device Sensor Processing</h3>
     <p>The App processes real-time device orientation, rotation vector, and accelerometer sensor inputs to render the integrated compass and bubble level indicators, and to power the shake-to-light feature. All sensor computations are performed entirely in transient device memory and are never saved, cached, or transmitted to external servers.</p>
 
-    <h3 id="local-settings">2.3 Local Settings Storage</h3>
+    <h3 id="local-settings">3.3 Local Settings Storage</h3>
     <p>User preferences (such as morse speed, SOS configurations, screen light colors, auto-off timers, pocket protection limiters, and theme options) are stored strictly locally on the device using Jetpack DataStore. No configuration data is synchronized to external servers.</p>
-
-    <h2 id="health-warning">3. Health & Photosensitivity Notice</h2>
-    <div class="warning-box">
-        <p><strong>PHOTOSENSITIVITY & STROBE WARNING:</strong> Strobe light, rapid flashing, and disco illumination modes may trigger seizures or discomfort for individuals with photosensitive epilepsy or light sensitivities.</p>
-        <p>• Use strobe and rapid pulsing features with caution.</p>
-        <p>• Avoid pointing high-intensity LED light directly into human or animal eyes.</p>
-    </div>
 
     <h2 id="third-party-services">4. Third-Party Services & Technical Data Collection</h2>
 
