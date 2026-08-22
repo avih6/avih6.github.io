@@ -240,7 +240,6 @@
         <h3>Table of Contents</h3>
         <ol>
             <li><a href="#overview">Overview & Privacy-First Principle</a></li>
-            <li><a href="#operational-disclaimer">Important Operational & Utility Disclaimer</a></li>
             <li><a href="#hardware-data">Data Handling, Hardware Capabilities & Local Processing</a>
                 <ul>
                     <li><a href="#camera-access">Camera Flash & Torch Control</a></li>
@@ -250,7 +249,7 @@
             </li>
             <li><a href="#third-party-services">Third-Party Services & Technical Data Collection</a>
                 <ul>
-                    <li><a href="#ads-mediation">Advertisements, Mediation & Android Privacy Sandbox</a></li>
+                    <li><a href="#ads-admob">Advertisements & Android Privacy Sandbox</a></li>
                     <li><a href="#in-app-reviews">In-App Feedback & Reviews</a></li>
                     <li><a href="#third-party-policies">Third-Party Privacy Policy References</a></li>
                 </ul>
@@ -271,52 +270,44 @@
     <p>The "Flashlight" application (the "App") is developed and maintained by avih6 as a free, ad-supported utility application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
     <p>The App operates on a strict <strong>privacy-first approach</strong>: it does not require user registration, does not create cloud user accounts, and does not collect personally identifiable information (PII) such as personal names, email addresses, phone numbers, or user locations.</p>
 
-    <h2 id="operational-disclaimer">2. Important Operational & Utility Disclaimer</h2>
-    <div class="warning-box">
-        <p><strong>Independent Utility Aid:</strong> Flashlight is an independent mobile tool developed solely by avih6.</p>
-        <p>• <strong>Informational & Convenience Purpose:</strong> The application features (including LED illumination, strobe signaling, SOS mode, compass, and bubble level) are provided for general utility and convenience only.</p>
-        <p>• <strong>Sensor Convenience Limitation:</strong> The integrated compass and level indicators are intended for informal reference and should not be relied upon for critical navigation, marine orientation, surveying, or structural construction.</p>
-    </div>
-
-    <h2 id="hardware-data">3. Data Handling, Hardware Capabilities & Local Processing</h2>
+    <h2 id="hardware-data">2. Data Handling, Hardware Capabilities & Local Processing</h2>
     
-    <h3 id="camera-access">3.1 Camera Flash & Torch Control</h3>
+    <h3 id="camera-access">2.1 Camera Flash & Torch Control</h3>
     <p>On modern Android versions (Android 6.0+ / API 23+), the App controls the physical LED flashlight directly via the system CameraManager API without requesting or requiring runtime camera permissions from the user. The legacy CAMERA permission declaration in the application manifest exists strictly for backward compatibility with legacy Android versions.</p>
     <p><strong>The App never requests runtime camera access, does not access the camera sensor, and never captures, records, streams, or stores photographs, video frames, or audio feeds.</strong></p>
 
-    <h3 id="sensor-processing">3.2 On-Device Sensor Processing</h3>
+    <h3 id="sensor-processing">2.2 On-Device Sensor Processing</h3>
     <p>The App processes real-time device orientation, rotation vector, and accelerometer sensor inputs to render the integrated compass and bubble level indicators, and to power the shake-to-light feature. All sensor computations are performed entirely in transient device memory and are never saved, cached, or transmitted to external servers.</p>
 
-    <h3 id="local-settings">3.3 Local Settings Storage</h3>
+    <h3 id="local-settings">2.3 Local Settings Storage</h3>
     <p>User preferences (such as morse speed, SOS configurations, screen light colors, auto-off timers, pocket protection limiters, and theme options) are stored strictly locally on the device using Jetpack DataStore. No configuration data is synchronized to external servers.</p>
 
-    <h2 id="third-party-services">4. Third-Party Services & Technical Data Collection</h2>
+    <h2 id="third-party-services">3. Third-Party Services & Technical Data Collection</h2>
 
-    <h3 id="ads-mediation">4.1 Advertisements, Mediation & Android Privacy Sandbox</h3>
-    <p>To support the application as a free utility, the App integrates reputable third-party advertising SDKs:</p>
+    <h3 id="ads-admob">3.1 Advertisements & Android Privacy Sandbox</h3>
+    <p>To support the application as a free utility, the App integrates Google AdMob to display non-intrusive advertisements:</p>
     <ul>
-        <li><strong>Google AdMob & Unity Ads Mediation:</strong> Used to serve non-intrusive advertisements. AdMob and Unity Ads may process advertising identifiers (Google Advertising ID / AAID) and coarse IP data to serve and measure ads in compliance with their privacy policies. Google automatically anonymizes log data by removing portions of IP addresses after 9 months and cookie data after 18 months.</li>
+        <li><strong>Google AdMob:</strong> AdMob may process advertising identifiers (Google Advertising ID / AAID) and coarse IP data to serve and measure ads in compliance with its privacy policies. Google automatically anonymizes log data by removing portions of IP addresses after 9 months and cookie data after 18 months.</li>
         <li><strong>Privacy Sandbox for Android:</strong> The application supports modern privacy-preserving advertising APIs in Android 13+ (such as AdServices Topics and Attribution APIs) designed to limit cross-app tracking.</li>
         <li><strong>GDPR & Consent Management (EEA/UK):</strong> For users in the European Economic Area (EEA), UK, and Switzerland, the Google User Messaging Platform (UMP) SDK presents a regulatory consent dialog to manage advertising preferences. Choices can be modified at any time in the App Settings.</li>
     </ul>
 
-    <h3 id="in-app-reviews">4.2 In-App Feedback & Reviews</h3>
+    <h3 id="in-app-reviews">3.2 In-App Feedback & Reviews</h3>
     <p>The App integrates the Google Play In-App Review API to facilitate native app rating prompts without redirecting the user away from the application.</p>
 
-    <h3 id="third-party-policies">4.3 Third-Party Privacy Policy References</h3>
+    <h3 id="third-party-policies">3.3 Third-Party Privacy Policy References</h3>
     <p>For more information on the data processing practices of third-party SDK providers, review their official policies:</p>
     <ul>
         <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy & Terms</a></li>
         <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Policies</a></li>
-        <li><a href="https://unity.com/legal/privacy-policy" target="_blank" rel="noopener">Unity Privacy Policy</a></li>
     </ul>
 
-    <h2 id="distribution-channel">5. Official Distribution Channel</h2>
+    <h2 id="distribution-channel">4. Official Distribution Channel</h2>
     <p><strong>The only authorized and official distribution platform for Flashlight is the Google Play Store:</strong></p>
     <p><a href="https://play.google.com/store/apps/details?id=com.avih6.flashlight" target="_blank" rel="noopener">Google Play Store - Flashlight</a></p>
     <p>Any download or distribution through third-party websites, APK mirror portals, or unofficial app stores is unauthorized and unmaintained. avih6 assumes no responsibility for modified, corrupted, or potentially harmful APK files obtained outside the official Google Play Store.</p>
 
-    <h2 id="user-rights">6. User Rights & Local Data Management</h2>
+    <h2 id="user-rights">5. User Rights & Local Data Management</h2>
     <p>Because the App operates without user accounts and stores no personal data on external servers, data control is managed directly on the local device:</p>
     <ul>
         <li><strong>Local Data Removal:</strong> Clearing application storage via Android OS Settings or uninstalling the App immediately and permanently erases all locally stored records, history, and preferences from the physical device.</li>
@@ -324,22 +315,22 @@
         <li><strong>Privacy Inquiries:</strong> Users may direct any privacy inquiries to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>.</li>
     </ul>
 
-    <h2 id="data-security">7. Data Security</h2>
+    <h2 id="data-security">6. Data Security</h2>
     <p>Security of user information is prioritized, and commercially reasonable technical and organizational safeguards are employed. However, no method of electronic storage or internet transmission is 100% immune to vulnerabilities, and absolute security cannot be guaranteed.</p>
 
-    <h2 id="childrens-privacy">8. Children’s Privacy</h2>
+    <h2 id="childrens-privacy">7. Children’s Privacy</h2>
     <p>The Service is designed for a general audience. There is no intentional collection or solicitation of personal information from children under the age of 13. If it is discovered that a child under 13 has provided personal data without parental consent, please send a notification immediately to the contact email so that the information can be promptly removed.</p>
 
-    <h2 id="international-regulations">9. International Privacy Regulations & Scope</h2>
+    <h2 id="international-regulations">8. International Privacy Regulations & Scope</h2>
     <ul>
         <li><strong>European & UK GDPR Compliance:</strong> The Application respects the rights of users located in the European Economic Area (EEA), the UK, and Switzerland under the General Data Protection Regulation (GDPR). The App provides consent controls through the Google UMP SDK and collects no personal data without lawful basis.</li>
         <li><strong>California Consumer Privacy Act (CCPA):</strong> The App does not sell or share personal consumer information. Users retain full rights to request information regarding data practices under applicable US state privacy laws.</li>
     </ul>
 
-    <h2 id="policy-changes">10. Policy Changes & Transfer of Ownership</h2>
+    <h2 id="policy-changes">9. Policy Changes & Transfer of Ownership</h2>
     <p>This Privacy Policy may be updated periodically by posting the revised version on this page with an updated "Last Updated" date. In the event of a merger, acquisition, or transfer of the application or its service, stored data will remain subject to the provisions of this Privacy Policy.</p>
 
-    <h2 id="contact">11. Contact Information</h2>
+    <h2 id="contact">10. Contact Information</h2>
     <p>For any questions, suggestions, or requests regarding this Privacy Policy, please contact:</p>
     <ul>
         <li><strong>Developer:</strong> avih6</li>
