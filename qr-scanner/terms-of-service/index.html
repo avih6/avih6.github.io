@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - QR Scanner & Generator</title>
+    
+    <link rel="icon" type="image/png" href="/icon-qr-generator.png">
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+
+      function loadGA() {
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS';
+        script.async = true;
+        document.head.appendChild(script);
+      }
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGA);
+      } else {
+        window.addEventListener('load', loadGA);
+      }
+    </script>
+    <script>
+      (function() {
+        var savedTheme = localStorage.getItem('theme');
+        var systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+          document.documentElement.classList.add('dark-mode');
+        } else {
+          document.documentElement.classList.remove('dark-mode');
+        }
+      })();
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+          if (!localStorage.getItem('theme')) {
+            if (e.matches) {
+              document.documentElement.classList.add('dark-mode');
+            } else {
+              document.documentElement.classList.remove('dark-mode');
+            }
+            if (typeof updateThemeIcon === 'function') {
+              updateThemeIcon();
+            }
+          }
+        });
+      }
+    </script>
+    <script>
+      const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+      const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+      function updateThemeIcon() {
+        const container = document.getElementById('theme-icon-container');
+        if (container) {
+          const isDark = document.documentElement.classList.contains('dark-mode');
+          container.innerHTML = isDark ? sunIcon : moonIcon;
+        }
+      }
+
+      function toggleTheme() {
+        document.documentElement.classList.toggle('dark-mode');
+        const isDark = document.documentElement.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        updateThemeIcon();
+      }
+
+      window.addEventListener('DOMContentLoaded', updateThemeIcon);
+    </script>
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --card-bg: #ffffff;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+            --fab-bg: rgba(255, 255, 255, 0.8);
+            --fab-border: #eee;
+        }
+
+        html.dark-mode {
+            --bg: #121212;
+            --text: #e8eaed;
+            --primary: #8ab4f8;
+            --subtitle: #9aa0a6;
+            --border: #333333;
+            --toc-bg: #1e1e1e;
+            --toc-border: #333333;
+            --toc-link: #9aa0a6;
+            --card-bg: #1e1e1e;
+            --warning-bg: #3c2f00;
+            --warning-border: #f9ab00;
+            --warning-text: #ffd54f;
+            --fab-bg: rgba(30, 30, 30, 0.8);
+            --fab-border: #333333;
+        }
+
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: var(--bg);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 { font-size: 2.2em; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: var(--subtitle); margin-top: 0; margin-bottom: 2rem; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text); }
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: var(--text); }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin-bottom: 1rem; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back:hover { text-decoration: underline; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .toc { 
+            background-color: var(--toc-bg); 
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            margin-bottom: 2.5em; 
+            border: 1px solid var(--toc-border);
+            transition: background-color 0.3s, border 0.3s;
+        }
+        .toc h3 { margin-top: 0; color: var(--primary); font-size: 1.2em; }
+        .toc a { color: var(--toc-link); font-weight: 500; }
+        .toc a:hover { color: var(--primary); }
+        .toc ol { margin-bottom: 0; }
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--fab-border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px; 
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-fab:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card-bg);
+        }
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+</head>
+<body>
+    
+    <a href="/qr-generator/" class="back">← Back to App Site</a>
+    
+    <h1>Terms of Service</h1>
+    <p class="subtitle">QR Scanner & Generator</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#acceptance">Acceptance of Terms</a></li>
+            <li><a href="#use">Use of the Application</a></li>
+            <li><a href="#external-links">External Links in Scanned Codes</a></li>
+            <li><a href="#disclaimer">Disclaimer of Warranties ("AS IS")</a></li>
+            <li><a href="#limitation">Limitation of Liability</a></li>
+            <li><a href="#intellectual-property">Intellectual Property</a></li>
+            <li><a href="#changes">Modifications to Terms</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
+    </div>
+
+    <p><strong>Last Updated:</strong> August 22, 2026</p>
+
+    <h2 id="acceptance">1. Acceptance of Terms</h2>
+    <p>By downloading, installing, or using the "QR Scanner & Generator" application (the "App"), the user agrees to be legally bound by these Terms of Service ("Terms"). If the user does not agree to these Terms, the user must refrain from using the App.</p>
+
+    <h2 id="use">2. Use of the Application</h2>
+    <p>The App is provided as a utility tool for personal, non-commercial decoding and creation of QR codes. The user agrees not to use the App for generating malicious URLs, phishing links, or illicit content.</p>
+
+    <h2 id="external-links">3. External Links in Scanned Codes</h2>
+    <p>The App decodes data embedded in QR codes. When a scanned QR code contains an external URL, the user is solely responsible for verifying the safety and trustworthiness of the destination website before opening it. avih6 assumes no responsibility for third-party websites or malicious links accessed through scanned codes.</p>
+
+    <h2 id="disclaimer">4. Disclaimer of Warranties ("AS IS")</h2>
+    <p>The App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis, without warranties of any kind, whether express or implied, including fitness for a particular purpose or error-free scanning accuracy.</p>
+
+    <h2 id="limitation">5. Limitation of Liability</h2>
+    <p>To the fullest extent permissible by law, avih6 shall not be liable for any indirect, incidental, or consequential damages resulting from the use or inability to use the App or from interactions with third-party sites accessed via scanned codes.</p>
+
+    <h2 id="intellectual-property">6. Intellectual Property</h2>
+    <p>All design assets, source code, and trademarks associated with the App remain the exclusive property of avih6.</p>
+
+    <h2 id="changes">7. Modifications to Terms</h2>
+    <p>These Terms may be updated from time to time. Continued use of the App following posted changes constitutes acceptance of the revised terms.</p>
+
+    <h2 id="contact">8. Contact Information</h2>
+    <p>For inquiries regarding these Terms of Service, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
+
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <span id="theme-icon-container"></span>
+    </button>
+</body>
+</html>
