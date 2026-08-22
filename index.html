@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+  if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+    window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+  }
+</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>avih6 - Android Developer</title>
@@ -273,11 +278,7 @@ body {
             transition: border 0.3s;
         }
     </style>
-    <script>
-      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
-        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
-      }
-    </script>
+    
 
 
 <script>
