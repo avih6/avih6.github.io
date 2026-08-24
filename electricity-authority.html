@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="he" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="cache-control" content="no-cache, must-revalidate, post-check=0, pre-check=0">
-  <meta http-equiv="cache-control" content="max-age=0">
-  <meta http-equiv="expires" content="0">
-  <meta http-equiv="pragma" content="no-cache">
-  <meta name="referrer" content="no-referrer">
-  <script>
-    // Force redirect with hidden referrer using rel="noreferrer" simulation
-    function redirect() {
-      var url = "https://www.gov.il/he/departments/the_electricity_authority";
-      var a = document.createElement("a");
-      a.href = url;
-      a.rel = "noreferrer";
-      document.body.appendChild(a);
-      a.click();
-    }
-    window.onload = redirect;
-  </script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תעריפי חשמל רשמיים ומקורות מידע - מחשבון חשמל</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: #202124; max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: #f8f9fa; }
+    .card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); border: 1px solid #e0e0e0; }
+    h1 { color: #1565C0; font-size: 1.8rem; margin-top: 0; border-bottom: 2px solid #1565C0; padding-bottom: 10px; }
+    p { font-size: 1.05rem; }
+    table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+    th, td { border: 1px solid #ddd; padding: 12px; text-align: right; }
+    th { background-color: #f1f3f4; color: #202124; font-weight: bold; }
+    tr:nth-child(even) { background-color: #f8f9fa; }
+    .disclaimer { font-size: 0.9rem; color: #5f6368; background-color: #fef7e0; border-left: 4px solid #f9ab00; padding: 15px; margin-top: 25px; border-radius: 4px; }
+    .btn { display: inline-block; background-color: #1565C0; color: white; padding: 10px 20px; text-decoration: none; border-radius: 6px; font-weight: bold; margin-top: 15px; }
+    .btn:hover { background-color: #0d47a1; }
+  </style>
 </head>
-<body></body>
+<body>
+  <div class="card">
+    <h1>תעריפי חשמל רשמיים בישראל</h1>
+    <p>אפליקציית "מחשבון חשמל" מתעדכנת באופן שוטף בהתאם לפרסומים הרשמיים של רשות החשמל וחברת החשמל לישראל.</p>
+    
+    <h2>תעריפי צריכה נכון לשנת 2026</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>סוג התעריף</th>
+          <th>מחיר לקוט"ש (כולל מע"מ)</th>
+          <th>מחיר לקוט"ש (ללא מע"מ)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>תעריף ביתי</td>
+          <td>63.52 אגורות</td>
+          <td>54.29 אגורות</td>
+        </tr>
+        <tr>
+          <td>תעריף כללי / עסקי</td>
+          <td>74.20 אגורות</td>
+          <td>63.42 אגורות</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>הערה: התעריפים באפליקציה מתעדכנים אוטומטית באמצעות שירותי ענן על בסיס הנתונים הללו.</p>
+
+    <div class="disclaimer">
+      <strong>הבהרה חשובה:</strong> אתר זה והאפליקציה "מחשבון חשמל" הינם שירותים עצמאיים ואינם קשורים, מורשים או מייצגים את חברת החשמל לישראל, רשות החשמל הממשלתית או כל גוף רשמי אחר של מדינת ישראל. לקבלת מידע ופעולות רשמיות יש לפנות ישירות לאתרי הספקים המורשים.
+    </div>
+
+    <a href="https://www.iec.co.il" class="btn" target="_blank" rel="noopener">מעבר לאתר חברת החשמל</a>
+  </div>
+</body>
 </html>
