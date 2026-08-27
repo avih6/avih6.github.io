@@ -8,9 +8,9 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - IP Lookup</title>
+    <title>Privacy Policy - IP Lookup</title>
     
-    <link rel="icon" type="image/png" href="/icon-ip-lookup.png">
+    <link rel="icon" type="image/png" href="/icon-ips-lookup.png">
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
     <script>
@@ -237,72 +237,105 @@
 </head>
 <body>
     
-    <a href="/ip-lookup" class="back">← Back to App Site</a>
+    <a href="/ips-lookup" class="back">← Back to App Site</a>
     
-    <h1>Terms of Service</h1>
+    <h1>Privacy Policy</h1>
     <p class="subtitle">IP Lookup</p>
 
     <div class="toc">
         <h3>Table of Contents</h3>
         <ol>
-            <li><a href="#acceptance">Acceptance of Terms</a></li>
-            <li><a href="#nature-of-service">Nature of Service & Network Utility</a></li>
-            <li><a href="#geolocation-disclaimer">Geolocation Accuracy Disclaimer & Acceptable Use</a></li>
-            <li><a href="#disclaimer-warranties">Disclaimer of Warranties ("AS IS")</a></li>
-            <li><a href="#limitation-liability">Limitation of Liability</a></li>
-            <li><a href="#intellectual-property">Intellectual Property & License</a></li>
-            <li><a href="#third-party">Third-Party Services & External APIs</a></li>
-            <li><a href="#modifications">Modifications to the Service & Terms</a></li>
-            <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
+            <li><a href="#overview">Overview & Privacy-First Principle</a></li>
+            <li><a href="#network-processing">Network Intelligence Processing & Local Data Handling</a>
+                <ul>
+                    <li><a href="#ipwhois-api">Ephemeral IP Geolocation Lookups (ipwho.is API)</a></li>
+                    <li><a href="#network-permissions">Local Network Inspection & Device Permissions</a></li>
+                    <li><a href="#history-preferences">Local Search History & Preferences</a></li>
+                </ul>
+            </li>
+            <li><a href="#third-party-services">Third-Party Advertising & Technical Data Collection</a>
+                <ul>
+                    <li><a href="#ads-admob">Google AdMob & Android Privacy Sandbox</a></li>
+                    <li><a href="#third-party-policies">Third-Party Privacy Policy References</a></li>
+                </ul>
+            </li>
+            <li><a href="#distribution-channel">Official Distribution Channel</a></li>
+            <li><a href="#user-rights">User Rights & Local Data Management</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#childrens-privacy">Children’s Privacy</a></li>
+            <li><a href="#international-regulations">International Privacy Regulations & Scope</a></li>
+            <li><a href="#policy-changes">Policy Changes & Transfer of Ownership</a></li>
             <li><a href="#contact">Contact Information</a></li>
         </ol>
     </div>
 
     <p><strong>Last Updated:</strong> August 22, 2026</p>
 
-    <h2 id="acceptance">1. Acceptance of Terms</h2>
-    <p>By downloading, installing, accessing, or using the "IP Lookup" application (the "App"), the user agrees to be legally bound by these Terms of Service ("Terms"). If the user does not agree to these Terms, the user must refrain from using the App.</p>
+    <h2 id="overview">1. Overview & Privacy-First Principle</h2>
+    <p>The "IP Lookup" application (the "App") is developed and maintained by avih6 as a free, ad-supported mobile network utility. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
+    <p>The App operates on a strict <strong>privacy-first approach</strong>: it does not require user account creation, does not maintain user tracking profiles, and does not collect personally identifiable information (PII) such as names, phone numbers, or private user credentials.</p>
 
-    <h2 id="nature-of-service">2. Nature of Service & Network Utility</h2>
-    <p>• <strong>Network Intelligence Tool:</strong> IP Lookup is a mobile utility designed to retrieve public network intelligence, ISP records, ASN assignments, and approximate geographical location data for public IP addresses.</p>
-    <p>• <strong>API Aggregation:</strong> The App aggregates public network data retrieved over HTTPS from third-party services (ipwho.is) and static map renders (OpenStreetMap).</p>
+    <h2 id="network-processing">2. Network Intelligence Processing & Local Data Handling</h2>
+    
+    <h3 id="ipwhois-api">2.1 Ephemeral IP Geolocation Lookups (ipwho.is API)</h3>
+    <p>To provide network intelligence, ISP lookup, ASN verification, and approximate city/country geolocation, the App transmits the queried IP address (or the device's public IP upon startup) ephemerally over secure HTTPS to the public API service provided by <strong>ipwho.is</strong>. The App does not link queried IP addresses to any personal identity. Static map graphics representing approximate geographic coordinates are loaded from OpenStreetMap community servers.</p>
 
-    <h2 id="geolocation-disclaimer">3. Geolocation Accuracy Disclaimer & Acceptable Use</h2>
-    <div class="warning-box">
-        <p><strong>APPROXIMATE IP GEOLOCATION DISCLAIMER:</strong> Geolocation coordinates, city designations, and ISP records provided by the App are derived from public third-party databases and represent approximate indicators only.</p>
-        <p>• The user acknowledges that IP geolocation does NOT reveal the precise physical address, street location, or personal identity of an individual.</p>
-        <p>• The data must NEVER be used for emergency dispatch, physical navigation, criminal investigation, legal evidence, or critical security infrastructure.</p>
-        <p>• <strong>Acceptable Use:</strong> Users agree strictly not to utilize the App for malicious network scanning, unauthorized vulnerability reconnaissance, cyber-attacks, or harassment.</p>
-    </div>
+    <h3 id="network-permissions">2.2 Local Network Inspection & Device Permissions</h3>
+    <p>• <strong>Local Wi-Fi State:</strong> The App requests permission to view Wi-Fi state (<code>android.permission.ACCESS_WIFI_STATE</code>) and general network state (<code>ACCESS_NETWORK_STATE</code>) strictly to read and display local gateway details (such as local Wi-Fi SSID and private IPv4/IPv6 gateway addresses) directly on the device interface.</p>
+    <p>• <strong>Haptic Feedback:</strong> The App uses the device vibrator (<code>android.permission.VIBRATE</code>) strictly to provide tactile confirmation when copying network data to the clipboard.</p>
 
-    <h2 id="disclaimer-warranties">4. Disclaimer of Warranties ("AS IS")</h2>
-    <p>The App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis, without warranties of any kind, whether express, implied, statutory, or otherwise. avih6 makes no guarantees regarding the uptime of external APIs, the precision of third-party IP registries, or error-free network lookups.</p>
+    <h3 id="history-preferences">2.3 Local Search History & Preferences</h3>
+    <p>Recent IP search queries and user preferences (such as UI themes and haptic settings) are stored strictly locally in private storage on the device using Jetpack DataStore. No search history or network queries are synchronized to private cloud databases.</p>
 
-    <h2 id="limitation-liability">5. Limitation of Liability</h2>
-    <p>To the maximum extent permitted by applicable law, avih6 shall not be held liable for any direct, indirect, incidental, special, or consequential damages resulting from the use of, or inability to use, the App. This includes, without limitation:</p>
+    <h2 id="third-party-services">3. Third-Party Advertising & Technical Data Collection</h2>
+
+    <h3 id="ads-admob">3.1 Google AdMob & Android Privacy Sandbox</h3>
+    <p>To support the application as a free utility, the App integrates Google AdMob to serve non-intrusive advertisements:</p>
     <ul>
-        <li>Decisions or actions taken in reliance upon approximate IP geolocation or ASN intelligence.</li>
-        <li>Temporary outages, rate limits, or inaccuracies originating from third-party API providers (such as ipwho.is).</li>
-        <li>Network data usage consumed during IP queries and map rendering.</li>
+        <li><strong>Google AdMob:</strong> AdMob may process advertising identifiers (Google Advertising ID / AAID) and coarse IP data to serve and measure advertisements in compliance with its privacy policies. Google automatically anonymizes log data by removing portions of IP addresses after 9 months and cookie data after 18 months.</li>
+        <li><strong>Privacy Sandbox for Android:</strong> The application supports modern privacy-preserving advertising APIs in Android 13+ (such as AdServices Topics and Attribution APIs) designed to limit cross-app tracking.</li>
     </ul>
 
-    <h2 id="intellectual-property">6. Intellectual Property & License</h2>
-    <p>All right, title, and interest in and to the App (including underlying software code, UI designs, branding, and assets) remain the exclusive property of avih6. The user is granted a limited, personal, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes. Reverse engineering, decompiling, extracting source code, copying, or distributing modified versions of the App is strictly prohibited.</p>
+    <h3 id="third-party-policies">3.2 Third-Party Privacy Policy References</h3>
+    <p>For more information on the data processing practices of third-party service providers, review their official policies:</p>
+    <ul>
+        <li><a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">Google AdMob Policies</a></li>
+        <li><a href="https://ipwhois.io/privacy" target="_blank" rel="noopener">ipwhois Privacy Policy</a></li>
+    </ul>
 
-    <h2 id="third-party">7. Third-Party Services & External APIs</h2>
-    <p>The App communicates with external services including ipwho.is, OpenStreetMap, Google Play Services, and Google AdMob. avih6 exercises no control over third-party infrastructure and assumes no liability for their availability, content, or policies.</p>
+    <h2 id="distribution-channel">4. Official Distribution Channel</h2>
+    <p><strong>The only authorized and official distribution platform for IP Lookup is the Google Play Store:</strong></p>
+    <p><a href="https://play.google.com/store/apps/details?id=com.avih6.ipslookup" target="_blank" rel="noopener">Google Play Store - IP Lookup</a></p>
+    <p>Any download or distribution through third-party websites, APK mirror portals, or unofficial app stores is unauthorized and unmaintained. avih6 assumes no responsibility for modified, corrupted, or potentially harmful APK files obtained outside the official Google Play Store.</p>
 
-    <h2 id="modifications">8. Modifications to the Service & Terms</h2>
-    <p>avih6 reserves the right to modify, suspend, or discontinue the App or any portion thereof at any time without prior notice. These Terms may be revised periodically, with updates becoming effective upon publication on this page.</p>
+    <h2 id="user-rights">5. User Rights & Local Data Management</h2>
+    <p>Because the App operates without user accounts and stores no personal data on external servers, data control is managed directly on the local device:</p>
+    <ul>
+        <li><strong>Local Data Removal:</strong> Clearing application storage via Android OS Settings or uninstalling the App immediately and permanently erases all locally stored search history and preferences from the physical device.</li>
+        <li><strong>Anonymous Diagnostics:</strong> Technical telemetry and crash reports processed by advertising partners are pseudonymous, aggregated, and automatically expired according to standard retention schedules; they cannot be linked to individual user identities or email addresses.</li>
+        <li><strong>Privacy Inquiries:</strong> Users may direct any privacy inquiries to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>.</li>
+    </ul>
 
-    <h2 id="governing-law">9. Governing Law & Jurisdiction</h2>
-    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel. Any dispute arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Israel.</p>
+    <h2 id="data-security">6. Data Security</h2>
+    <p>Security of user information is prioritized, and commercially reasonable technical and organizational safeguards are employed. However, no method of electronic storage or internet transmission is 100% immune to vulnerabilities, and absolute security cannot be guaranteed.</p>
+
+    <h2 id="childrens-privacy">7. Children’s Privacy</h2>
+    <p>The Service is designed for a general audience. There is no intentional collection or solicitation of personal information from children under the age of 13. If it is discovered that a child under 13 has provided personal data without parental consent, please send a notification immediately to the contact email so that the information can be promptly removed.</p>
+
+    <h2 id="international-regulations">8. International Privacy Regulations & Scope</h2>
+    <ul>
+        <li><strong>European & UK GDPR Compliance:</strong> The Application respects the rights of users located in the European Economic Area (EEA), the UK, and Switzerland under the General Data Protection Regulation (GDPR) through strict data minimization and zero persistent personal data tracking.</li>
+        <li><strong>California Consumer Privacy Act (CCPA):</strong> The App does not sell or share personal consumer information. Users retain full rights to query data handling policies under applicable US state privacy frameworks.</li>
+    </ul>
+
+    <h2 id="policy-changes">9. Policy Changes & Transfer of Ownership</h2>
+    <p>This Privacy Policy may be updated periodically by posting the revised version on this page with an updated "Last Updated" date. In the event of a merger, acquisition, or transfer of the application or its service, stored data will remain subject to the provisions of this Privacy Policy.</p>
 
     <h2 id="contact">10. Contact Information</h2>
-    <p>For questions or inquiries regarding these Terms of Service, please contact:</p>
+    <p>For any questions, suggestions, or requests regarding this Privacy Policy, please contact:</p>
     <ul>
         <li><strong>Developer:</strong> avih6</li>
-        <li><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+        <li><strong>Support Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
     </ul>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
