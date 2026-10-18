@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - My List</title>
+    
+    <link rel="icon" type="image/webp" href="/icon-my-list.webp">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+            --btn-border: #1a73e8;
+            --fab-bg: rgba(255, 255, 255, 0.85);
+            --fab-border: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --text: #e8eaed;
+                --primary: #8ab4f8;
+                --subtitle: #9aa0a6;
+                --border: #333333;
+                --card: #1e1e1e;
+                --card-bg: #1e1e1e;
+                --toc-bg: #1e1e1e;
+                --toc-border: #333333;
+                --toc-link: #9aa0a6;
+                --warning-bg: #3c2f00;
+                --warning-border: #f9ab00;
+                --warning-text: #ffd54f;
+                --btn-border: #8ab4f8;
+                --fab-bg: rgba(30, 30, 30, 0.85);
+                --fab-border: #333333;
+            }
+        }
+
+        html.dark-mode {
+            --bg: #121212 !important;
+            --text: #e8eaed !important;
+            --primary: #8ab4f8 !important;
+            --subtitle: #9aa0a6 !important;
+            --border: #333333 !important;
+            --card: #1e1e1e !important;
+            --card-bg: #1e1e1e !important;
+            --toc-bg: #1e1e1e !important;
+            --toc-border: #333333 !important;
+            --toc-link: #9aa0a6 !important;
+            --warning-bg: #3c2f00 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #ffd54f !important;
+            --btn-border: #8ab4f8 !important;
+            --fab-bg: rgba(30, 30, 30, 0.85) !important;
+            --fab-border: #333333 !important;
+        }
+
+        html.light-mode {
+            --bg: #ffffff !important;
+            --text: #202124 !important;
+            --primary: #1a73e8 !important;
+            --subtitle: #5f6368 !important;
+            --border: #ebebeb !important;
+            --card: #ffffff !important;
+            --card-bg: #ffffff !important;
+            --toc-bg: #f8f9fa !important;
+            --toc-border: #eee !important;
+            --toc-link: #5f6368 !important;
+            --warning-bg: #fef7e0 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #202124 !important;
+            --btn-border: #1a73e8 !important;
+            --fab-bg: rgba(255, 255, 255, 0.85) !important;
+            --fab-border: #eee !important;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: var(--bg);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        h1 {
+            color: var(--text);
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        h2 {
+            color: var(--text);
+            font-size: 1.3rem;
+            margin-top: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.3rem;
+            transition: border 0.3s;
+        }
+
+        .subtitle {
+            color: var(--subtitle);
+            margin-top: 0;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+
+        .back {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        .back:hover, .back.is-pen-hover { text-decoration: underline; }
+
+        .toc {
+            background: var(--toc-bg);
+            padding: 1.2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border: 1px solid var(--toc-border);
+            transition: background 0.3s, border 0.3s;
+        }
+        .toc h3 { margin-top: 0; margin-bottom: 0.5rem; font-size: 1rem; color: var(--text); }
+        .toc ol { margin: 0; padding-left: 1.2rem; }
+        .toc li { margin-bottom: 0.3rem; font-size: 0.9rem; }
+        .toc a { color: var(--toc-link); text-decoration: none; }
+        .toc a:hover, .toc a.is-pen-hover { text-decoration: underline; color: var(--primary); }
+
+        ul { padding-left: 1.2rem; }
+        li { margin-bottom: 0.4rem; }
+        p { margin-bottom: 1rem; }
+
+        .callout-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 0 8px 8px 0;
+            color: var(--warning-text);
+            transition: background 0.3s, color 0.3s;
+        }
+        .callout-box p { margin: 0; }
+
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--fab-border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-fab:hover, .theme-fab.is-pen-hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card-bg);
+        }
+        .theme-fab span { display: flex; align-items: center; justify-content: center; }
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+    <script>
+  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+  (function() {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+    } else if (savedTheme === 'light') {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+    }
+  })();
+
+  function isCurrentlyDark() {
+    if (document.documentElement.classList.contains('dark-mode')) return true;
+    if (document.documentElement.classList.contains('light-mode')) return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function updateThemeIcon() {
+    var container = document.getElementById('theme-icon-container');
+    if (container) {
+      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+    }
+  }
+
+  function toggleTheme() {
+    var willBeDark = !isCurrentlyDark();
+    if (willBeDark) {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+    updateThemeIcon();
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) {
+        updateThemeIcon();
+      }
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', updateThemeIcon);
+</script>
+</head>
+<body>
+    
+    <a href="/my-list" class="back">← Back to App Site</a>
+    
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">My List (רשימת קניות) &bull; Last updated: October 2026</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#overview">Overview & Core Privacy Principles</a></li>
+            <li><a href="#data-collection">Data We Collect & How It Is Used</a></li>
+            <li><a href="#authentication">Authentication Options (Google Sign-In & Anonymous)</a></li>
+            <li><a href="#cloud-sync">Cloud Storage & Real-Time Synchronization</a></li>
+            <li><a href="#analytics">Diagnostics, Analytics & Performance</a></li>
+            <li><a href="#data-retention">Data Retention & Deletion</a></li>
+            <li><a href="#security">Security & Encryption</a></li>
+            <li><a href="#user-rights">User Rights & International Regulations</a></li>
+            <li><a href="#children">Children’s Privacy</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
+    </div>
+
+    <h2 id="overview">1. Overview & Core Privacy Principles</h2>
+    <p>
+        <strong>My List</strong> is a lightweight, modern, and collaborative shopping list application created by developer <strong>avih6</strong>. We believe in privacy-by-design: you own your shopping lists, and we collect only the minimal data required to deliver real-time multi-user synchronization and reliable service.
+    </p>
+    <p>
+        We do <strong>not</strong> sell, rent, monetize, or share your personal information or shopping lists with third-party advertisers.
+    </p>
+
+    <h2 id="data-collection">2. Data We Collect & How It Is Used</h2>
+    <p>Depending on how you use My List, the following categories of information may be processed:</p>
+    <ul>
+        <li>
+            <strong>Shopping List Content:</strong> Names of items, quantities, units (e.g. kg, liters, pcs), optional item notes, category tags, and checkmark statuses. This content is created directly by you and is stored locally on your device and, if cloud sync is enabled, in your secure cloud group database.
+        </li>
+        <li>
+            <strong>Group Metadata:</strong> Group name, randomly generated 6-character invite code, and the list of member identifiers who have joined the group.
+        </li>
+        <li>
+            <strong>Account Identifiers:</strong> Your unique authentication identifier (UID) provided by Google Firebase, and your public display name (if you choose to sign in with Google).
+        </li>
+    </ul>
+
+    <h2 id="authentication">3. Authentication Options (Google Sign-In & Anonymous)</h2>
+    <p>My List provides two flexible sign-in methods powered by <strong>Google Firebase Authentication</strong>:</p>
+    <ul>
+        <li>
+            <strong>Sign in with Google:</strong> Authenticates you using your existing Google Account. Firebase provides us with your public display name, email address, and a unique user ID. Your password is never shared with or accessible to the app. This allows seamless cross-device synchronization and account recovery.
+        </li>
+        <li>
+            <strong>Anonymous Guest Sign-In:</strong> If you prefer maximum privacy without linking any personal identity or email, you can use the app as a guest. A random, pseudonymized identifier (anonymous Firebase UID) is assigned to your device session. This allows you to create lists, join groups via invite codes, and enjoy full app functionality without revealing personal information.
+        </li>
+    </ul>
+
+    <div class="callout-box">
+        <p><strong>Note on Anonymous Accounts:</strong> Anonymous sessions are automatically cleaned up if inactive for extended periods according to Firebase auto-cleanup policies, unless upgraded to an authenticated account.</p>
+    </div>
+
+    <h2 id="cloud-sync">4. Cloud Storage & Real-Time Synchronization</h2>
+    <p>
+        To allow real-time collaborative editing between family members and roommates, My List uses <strong>Google Cloud Firestore</strong> (hosted on secure Google Cloud Platform data centers):
+    </p>
+    <ul>
+        <li>Shopping list items and group configurations are transmitted using TLS/SSL encryption and synchronized in real time.</li>
+        <li>Access to list items and group data is restricted by Firebase Security Rules, ensuring only verified members of a given group can read or modify its items.</li>
+        <li>Local SQLite caching (via Android Room) ensures that you can always view and edit your lists even when offline or experiencing poor cellular reception.</li>
+    </ul>
+
+    <h2 id="analytics">5. Diagnostics, Analytics & Performance</h2>
+    <p>To improve app reliability, fix bugs promptly, and understand overall app performance, My List integrates standard Google Firebase SDKs:</p>
+    <ul>
+        <li><strong>Firebase Crashlytics:</strong> Collects anonymized crash logs, stack traces, and device state (such as OS version and device model) when an unexpected application error occurs.</li>
+        <li><strong>Firebase Analytics:</strong> Tracks non-personally identifiable app usage metrics (such as item creation frequency, active screens, and group join events) to help us optimize performance and user experience.</li>
+        <li><strong>Firebase Performance Monitoring:</strong> Measures app startup latency and network request performance.</li>
+    </ul>
+    <p>These diagnostics never inspect the specific private textual contents of your shopping items.</p>
+
+    <h2 id="data-retention">6. Data Retention & Deletion</h2>
+    <p>
+        You have complete control over your data:
+    </p>
+    <ul>
+        <li><strong>Items:</strong> Deleting an item or checking off items deletes or archives them immediately.</li>
+        <li><strong>Leaving Groups:</strong> You can leave any shared group at any time, which removes your identifier and membership immediately.</li>
+        <li><strong>Account & Cloud Data Deletion:</strong> You can request complete deletion of all associated cloud data and account records by contacting us at <a href="mailto:av6development@gmail.com" style="color:var(--primary)">av6development@gmail.com</a>.</li>
+    </ul>
+
+    <h2 id="security">7. Security & Encryption</h2>
+    <p>
+        All communication between your device and Google Cloud servers is encrypted in transit using industry-standard HTTPS / TLS encryption. Data stored within Cloud Firestore is encrypted at rest using Google Cloud security protocols.
+    </p>
+
+    <h2 id="user-rights">8. User Rights & International Regulations</h2>
+    <p>
+        Whether you are located in the European Economic Area (GDPR), the United States (CCPA/CPRA), Israel (Privacy Protection Law), or elsewhere globally, you have the right to:
+    </p>
+    <ul>
+        <li>Know what personal data is held about you.</li>
+        <li>Request correction or deletion of your data.</li>
+        <li>Cease using the service and have your cloud records purged.</li>
+    </ul>
+
+    <h2 id="children">9. Children’s Privacy</h2>
+    <p>
+        My List does not knowingly collect personal information from children under the age of 13. If you believe that a child has provided us with personal information, please contact us and we will promptly delete it.
+    </p>
+
+    <h2 id="contact">10. Contact Information</h2>
+    <p>
+        If you have any questions, suggestions, or concerns regarding this Privacy Policy or your data, please contact:
+    </p>
+    <p>
+        <strong>Developer:</strong> avih6<br>
+        <strong>Email:</strong> <a href="mailto:av6development@gmail.com" style="color:var(--primary)">av6development@gmail.com</a><br>
+        <strong>Website:</strong> <a href="https://avih6.github.io" style="color:var(--primary)">https://avih6.github.io</a>
+    </p>
+
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        <span id="theme-icon-container"></span>
+    </button>
+</body>
+</html>
