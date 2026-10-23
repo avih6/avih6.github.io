@@ -271,11 +271,11 @@
         </ol>
     </div>
 
-    <p><strong>Last Updated:</strong> August 22, 2026</p>
+    <p><strong>Last Updated:</strong> October 23, 2026</p>
 
     <h2 id="overview">1. Overview & Privacy-First Principle</h2>
     <p>The New Driver (נהג חדש) application is developed and maintained by avih6 as a free, ad-supported utility application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
-    <p>This Privacy Policy explains how information is handled, stored, and protected during the use of the New Driver mobile application and its associated web pages. The application is built on a <strong>privacy-first approach</strong>: personal driving calculations, test dates, and driving logs remain strictly on the local device by default, and no personal driving data is shared or sold.</p>
+    <p>This Privacy Policy explains how information is handled, stored, and protected during the use of the New Driver mobile application and its associated web pages. The application stores detailed driving logs on the device by default. After Google sign-in, it automatically backs up and synchronizes those logs to Firebase Cloud Firestore. Google Analytics for Firebase receives limited app-usage and drive-related event data, as described below; complete driving-log records are not sent to Analytics.</p>
     <p>By downloading or using the Service, the user agrees to the collection and use of information in accordance with this policy.</p>
 
     <h2 id="government-disclaimer">2. Important Legal & Government Disclaimer</h2>
@@ -289,25 +289,25 @@
     <h2 id="data-handling">3. Data Handling, Storage & Synchronization</h2>
     
     <h3 id="local-data">3.1 Local Offline Storage (Default)</h3>
-    <p>By default, all personal data entered into the application is stored strictly in a private, encrypted local database (Room SQLite) and SharedPreferences on the physical device:</p>
+    <p>Detailed driving logs, dates, and app settings are stored on the physical device. Complete driving-log records remain on the device unless you sign in and cloud synchronization begins. Google Analytics for Firebase separately receives limited event-level app-usage and drive-related information, as described below.</p>
     <ul>
         <li><strong>Dates:</strong> Birth date, driving test pass date, and calculated accompaniment milestones.</li>
         <li><strong>Driving Logs:</strong> Logged trips (date, day/night duration, distance/road type, and optional companion details).</li>
         <li><strong>Local Preferences:</strong> UI themes, target goals, and local reminder preferences.</li>
     </ul>
-    <p><strong>Personal driving logs and milestone dates are never transmitted to external servers without explicit user sign-in.</strong></p>
+    <p><strong>Complete driving-log records and milestone dates are not uploaded to Firebase Cloud Firestore before Google sign-in. Limited event-level drive metrics may still be sent to Google Analytics for Firebase.</strong></p>
 
     <h3 id="cloud-backup">3.2 Optional Cloud Backup & Synchronization</h3>
-    <p>Users may optionally choose to sign in using a Google account to back up and synchronize driving records across Android devices:</p>
+    <p>Google sign-in is optional. After a successful sign-in, the App automatically backs up and synchronizes data using Firebase Authentication and Google Cloud Firestore:</p>
     <ul>
-        <li><strong>Synchronized Data:</strong> If enabled, driving logs (dates, durations, road types), target hours, and milestone progress are securely synchronized using Google Cloud Firestore and Firebase Authentication.</li>
+        <li><strong>Synchronized Data:</strong> The backup includes your birth date, driving test date, app settings, and detailed driving logs. Each driving log may include its date and time, duration, drive type, whether it was at night, companion name, and note. Data is synchronized across Android and Wear OS devices.</li>
         <li><strong>Google Account Authentication:</strong> When signing in, the application accesses strictly:
             <ul>
                 <li><em>Email Address:</em> Displayed in the App Settings to indicate the currently connected account.</li>
                 <li><em>Google User ID (UID):</em> A unique, pseudonymous identifier used strictly to link the cloud backup documents to the user's account.</li>
             </ul>
         </li>
-        <li><strong>No Third-Party Sharing:</strong> Driving logs and personal account data stored in Firestore are strictly private to the user's account and are never sold, rented, or shared with third-party advertisers.</li>
+        <li><strong>Purpose:</strong> The App uses the synced data to provide account-based backup and synchronization. Data is associated with your authenticated account and is not used by the App for advertising.</li>
     </ul>
 
     <h3 id="live-drive">3.3 Foreground Service Permission & Live Drive Tracking</h3>
@@ -322,7 +322,7 @@
     <h3 id="analytics-crashlytics">4.1 Technical Identifiers & Analytics</h3>
     <p>To ensure app stability, monitor performance, and improve user experience, the app incorporates reputable industry-standard SDKs provided by Google LLC:</p>
     <ul>
-        <li><strong>Google Analytics for Firebase:</strong> Collects aggregated, non-personally identifiable usage statistics (such as screen views and feature engagement). Firebase automatically derives coarse, city-level geographic data from IP addresses on Google servers without accessing device GPS. This aggregated data is completely separate from any Google Sign-In user account.</li>
+        <li><strong>Google Analytics for Firebase:</strong> Analytics collection is enabled by default. It may collect app interactions and limited drive-related event metrics, such as drive duration and broad driving attributes (for example, drive type, road type, whether it was at night, or whether a companion was present). Complete driving-log records, notes, and companion names are not sent as Analytics events. The App does not set the Firebase Authentication UID as the Analytics user ID.</li>
         <li><strong>Firebase Crashlytics & Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and fix technical issues.</li>
         <li><strong>Firebase App Check & Play Integrity:</strong> Verifies the authenticity and integrity of the application binary against tampering and piracy.</li>
         <li><strong>Firebase Remote Config:</strong> Dynamically fetches non-personal configuration values (such as feature flags and official reference links).</li>
@@ -332,7 +332,6 @@
     <ul>
         <li><strong>Google AdMob:</strong> Used to display non-intrusive advertisements. AdMob may process advertising identifiers (Google Advertising ID / AAID), device identifiers, and IP addresses to serve and measure ads. Google automatically anonymizes log data by removing portions of IP addresses after 9 months and cookie data after 18 months.</li>
         <li><strong>Privacy Sandbox for Android:</strong> The application supports modern privacy-preserving advertising APIs in Android 13+ (such as AdServices Topics and Attribution APIs) designed to eliminate cross-app tracking.</li>
-        <li><strong>GDPR & Consent Management (EEA/UK):</strong> For users in the European Economic Area (EEA), UK, and Switzerland, the Google User Messaging Platform (UMP) SDK presents a regulatory consent dialog to manage advertising preferences. Choices can be modified at any time in the app settings.</li>
     </ul>
 
     <h3 id="third-party-policies">4.3 Third-Party Privacy Policy References</h3>
@@ -362,10 +361,9 @@
     <h2 id="childrens-privacy">8. Children’s Privacy</h2>
     <p>The Service is designed for drivers and learner drivers (typically ages 16 and older). There is no intentional collection or solicitation of personal information from children under the age of 13. If it is discovered that a child under 13 has provided personal data without parental consent, please send a notification immediately to the contact email so that the information can be promptly removed.</p>
 
-    <h2 id="compliance">9. Compliance with Israeli Law & International Scope</h2>
+    <h2 id="compliance">9. Israeli Privacy Requests</h2>
     <ul>
         <li><strong>Israeli Privacy Protection Law (חוק הגנת הפרטיות):</strong> Processing of personal data complies with the provisions of Israeli law. Users residing in Israel possess the right to review and request correction or deletion of their personal information.</li>
-        <li><strong>European GDPR & UK GDPR Compliance:</strong> While the Service is intended primarily for audiences in Israel, the Application actively supports GDPR and UK GDPR privacy standards for users located in the European Economic Area (EEA), the UK, and Switzerland. This includes integration of the Google User Messaging Platform (UMP) SDK for regulatory advertising consent, transparent cloud data handling in Google Cloud Firestore, and full user rights to access, export, and permanently delete personal driving records.</li>
     </ul>
 
     <h2 id="policy-changes">10. Policy Changes & Transfer of Ownership</h2>
