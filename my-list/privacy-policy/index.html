@@ -189,7 +189,7 @@
         <a href="/my-list" class="back-link">&larr; Back to My List</a>
         <header>
             <h1>Privacy Policy</h1>
-            <div class="last-updated">Last updated: October 18, 2026</div>
+            <div class="last-updated">Last updated: October 23, 2026</div>
         </header>
         <div class="toc">
             <h3>Table of Contents</h3>
@@ -219,21 +219,23 @@
 
         <h2 id="overview">1. Overview &amp; Privacy-First Principle</h2>
         <p>The "My List" application (the "App") is developed and maintained by avih6 as a utility application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
-        <p>This Privacy Policy explains how information is handled, stored, and protected during the use of the My List mobile application and its associated web pages. The application is built on a <strong>privacy-first approach</strong>: personal shopping lists remain strictly on the local device by default or in private synchronized groups, and no personal shopping data is shared or sold.</p>
+        <p>This Privacy Policy explains how information is handled, stored, and protected when using My List. Lists created without Google sign-in are stored on the device unless the user explicitly chooses to share a list. Signing in with Google automatically uploads the user’s existing lists and synchronizes all of their lists with Google Cloud Firestore across devices. Shared lists are also stored in Firestore so members can collaborate. List contents are not sold.</p>
         <p>By downloading or using the Service, the user agrees to the collection and use of information in accordance with this policy.</p>
 
         <h2 id="data-handling">2. Data Handling, Storage &amp; Synchronization</h2>
         
         <h3 id="local-data">2.1 Local Offline Storage (Default)</h3>
-        <p>By default, all shopping list items and user preferences entered into the application are cached securely in a private, encrypted local database (Room SQLite) and DataStore on the physical device for instant offline access.</p>
+        <p>Lists created while signed out of Google are stored in a local Room SQLite database on the device, and app preferences are stored locally using DataStore. The app can use local lists offline. The local database is protected by Android’s app storage sandbox, but it is not encrypted by the app. These local lists are excluded from Android cloud backup and device transfer.</p>
 
         <h3 id="cloud-backup">2.2 Cloud Backup, Synchronization &amp; Sharing</h3>
-        <p>Users may optionally create shared lists or sign in using a Google account to synchronize shopping lists across Android devices and collaborate with family members:</p>
+        <p>Cloud storage depends on the user’s account and sharing choices:</p>
         <ul>
-            <li><strong>Synchronized Data:</strong> Grocery item names, quantities, measurement units, optional notes, categories, and completion states are securely synchronized using Google Cloud Firestore and Firebase Authentication.</li>
-            <li><strong>Invite Codes:</strong> Shared lists are accessed through unique 6-character alphanumeric codes. Anyone in possession of the code can view and edit the list.</li>
-            <li><strong>Google Account Authentication:</strong> When signing in with Google, the application accesses strictly the public display name, email address, and unique user identifier (UID) solely to link cloud documents and display group membership. Account passwords are never accessible to the App.</li>
-            <li><strong>Anonymous Guest Mode:</strong> Users can collaborate anonymously without providing an email address or real name.</li>
+            <li><strong>Without Google sign-in:</strong> Lists stay on the device unless the user explicitly chooses to share one. Sharing uploads that list and its contents to Google Cloud Firestore so invited members can access it.</li>
+            <li><strong>With Google sign-in:</strong> Signing in automatically uploads existing local lists and synchronizes all of the user’s lists with Google Cloud Firestore. This is the app’s current sync behavior; Google sign-in is not a per-list sync toggle. Users should not sign in if they want their lists to remain only on that device.</li>
+            <li><strong>Cloud data:</strong> Synchronized list names and item names, quantities, measurement units, optional notes, categories, completion states, membership, and invite codes are stored in Firestore. A copy already uploaded to the cloud may remain there after sign-out until it is deleted through available app controls or a deletion request is completed.</li>
+            <li><strong>Invite codes:</strong> Shared lists use 6-character codes. Anyone who obtains a valid code may be able to join and access that list, subject to Firebase security rules. Share codes only with intended members.</li>
+            <li><strong>Google account authentication:</strong> Google sign-in provides Firebase Authentication with account identifiers such as the user ID, display name, and email address. The app does not receive the Google account password.</li>
+            <li><strong>Anonymous accounts:</strong> Firebase may issue an anonymous user identifier for app operations. Anonymous users may explicitly join or share cloud lists where the app permits, without providing a Google email address.</li>
         </ul>
 
         <h2 id="third-party-services">3. Third-Party Services &amp; Technical Data Collection</h2>
@@ -242,7 +244,8 @@
         <p>To ensure app stability, monitor performance, and improve user experience, the app incorporates reputable industry-standard SDKs provided by Google LLC:</p>
         <ul>
             <li><strong>Google Analytics for Firebase:</strong> Collects aggregated, non-personally identifiable usage statistics (such as screen views and feature engagement). Firebase automatically derives coarse geographic data from IP addresses on Google servers without accessing device GPS. This aggregated data is completely separate from any Google Sign-In user account.</li>
-            <li><strong>Firebase Crashlytics &amp; Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and fix technical issues.</li>
+            <li><strong>Firebase Crashlytics &amp; Performance Monitoring:</strong> May collect crash reports, diagnostic details, and device or app information to help troubleshoot technical issues, according to the Firebase configuration and Google’s retention practices.</li>
+            <li><strong>Firebase Cloud Messaging:</strong> When group notifications are enabled, the app obtains an FCM device token and subscribes to a group topic. Firebase may process the token and message-routing metadata to provide push notifications. Notification delivery also depends on the server-side Firebase configuration and device permissions.</li>
         </ul>
 
         <h3 id="third-party-policies">3.2 Third-Party Privacy Policy References</h3>
@@ -260,14 +263,14 @@
         <h2 id="user-rights">5. User Rights, Data Control &amp; Deletion</h2>
         <p>Users maintain complete sovereignty over their data:</p>
         <ol>
-            <li><strong>Granular Local &amp; Cloud Data Deletion:</strong> Users can permanently delete individual shopping items, clear completed items, or remove specific shopping lists at any time directly through the application interface. These actions synchronize immediately and permanently erase the corresponding records from Google Cloud Firestore without requiring account termination.</li>
+            <li><strong>List and item controls:</strong> Users can delete individual items and clear completed items where those controls are available. The app currently does not provide a general in-app control to delete an entire list or erase all cloud data. For deletion of a cloud list or other records, contact support using the request process below. Deletion from the device alone does not necessarily remove a copy already stored in Firestore.</li>
             <li><strong>In-App Group &amp; Cloud Profile Removal:</strong> Users can leave any shared group at any time, immediately removing their membership and access. Users can also sign out or request full account removal through the App Settings.</li>
             <li><strong>Manual Deletion Request &amp; Partial Data Deletion:</strong> Users may also submit a request to delete specific shopping lists, shared groups, or particular data records without requiring the deletion of their entire account by emailing <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>. To prevent unauthorized deletions and protect user privacy, the deletion request must be sent directly from the specific Google account email address associated with the records to be deleted. If no confirmation is received, please send a reminder email with "Data Deletion Reminder" in the subject line.</li>
             <li><strong>Anonymous Diagnostics &amp; Telemetry:</strong> Deletion requests apply exclusively to personal shopping lists, group records, and account profiles stored in Google Cloud Firestore. Aggregated, pseudonymous analytics and crash telemetry collected by Firebase are not linked to individual identities and are automatically retained and expired according to Google's standard data lifecycle policies.</li>
         </ol>
 
         <h2 id="data-security">6. Data Security</h2>
-        <p>Security of user information is prioritized, and commercially reasonable technical and organizational safeguards are employed. All data in transit is encrypted using modern TLS/HTTPS protocols. However, no method of electronic storage or internet transmission is 100% immune to vulnerabilities, and absolute security cannot be guaranteed.</p>
+        <p>Data sent between the app and Firebase is transmitted over encrypted TLS connections. Local lists are stored in Android app-private storage, but the app does not encrypt the Room database itself. Cloud data protection depends on Firebase access rules and Google Cloud safeguards. No method of electronic storage or internet transmission is completely secure.</p>
 
         <h2 id="childrens-privacy">7. Children's Privacy</h2>
         <p>The Service is designed for general audiences and household shoppers (ages 13 and older). There is no intentional collection or solicitation of personal information from children under the age of 13. If it is discovered that a child under 13 has provided personal data, please send a notification immediately to the contact email so that the information can be promptly removed.</p>
