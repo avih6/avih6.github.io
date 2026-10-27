@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Ad Matai!</title>
+    
+    <link rel="icon" type="image/x-icon" href="/ad-matai/favicon.ico">
+    <link rel="icon" type="image/png" href="/icon-ad-matai.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+            --btn-border: #1a73e8;
+            --fab-bg: rgba(255, 255, 255, 0.85);
+            --fab-border: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --text: #e8eaed;
+                --primary: #8ab4f8;
+                --subtitle: #9aa0a6;
+                --border: #333333;
+                --card: #1e1e1e;
+                --card-bg: #1e1e1e;
+                --toc-bg: #1e1e1e;
+                --toc-border: #333333;
+                --toc-link: #9aa0a6;
+                --warning-bg: #3c2f00;
+                --warning-border: #f9ab00;
+                --warning-text: #ffd54f;
+                --btn-border: #8ab4f8;
+                --fab-bg: rgba(30, 30, 30, 0.85);
+                --fab-border: #333333;
+            }
+        }
+
+        html.dark-mode {
+            --bg: #121212 !important;
+            --text: #e8eaed !important;
+            --primary: #8ab4f8 !important;
+            --subtitle: #9aa0a6 !important;
+            --border: #333333 !important;
+            --card: #1e1e1e !important;
+            --card-bg: #1e1e1e !important;
+            --toc-bg: #1e1e1e !important;
+            --toc-border: #333333 !important;
+            --toc-link: #9aa0a6 !important;
+            --warning-bg: #3c2f00 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #ffd54f !important;
+            --btn-border: #8ab4f8 !important;
+            --fab-bg: rgba(30, 30, 30, 0.85) !important;
+            --fab-border: #333333 !important;
+        }
+
+        html.light-mode {
+            --bg: #ffffff !important;
+            --text: #202124 !important;
+            --primary: #1a73e8 !important;
+            --subtitle: #5f6368 !important;
+            --border: #ebebeb !important;
+            --card: #ffffff !important;
+            --card-bg: #ffffff !important;
+            --toc-bg: #f8f9fa !important;
+            --toc-border: #eee !important;
+            --toc-link: #5f6368 !important;
+            --warning-bg: #fef7e0 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #202124 !important;
+            --btn-border: #1a73e8 !important;
+            --fab-bg: rgba(255, 255, 255, 0.85) !important;
+            --fab-border: #eee !important;
+        }
+
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: var(--bg);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 { font-size: 2.2em; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: var(--subtitle); margin-top: 0; margin-bottom: 2rem; font-weight: 500; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text); }
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: var(--text); }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin-bottom: 1rem; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back:hover, .back.is-pen-hover { text-decoration: underline; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover, a.is-pen-hover { text-decoration: underline; }
+        .toc { 
+            background-color: var(--toc-bg); 
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            margin-bottom: 2.5em; 
+            border: 1px solid var(--toc-border);
+            transition: background-color 0.3s, border 0.3s;
+        }
+        .toc h3 { margin-top: 0; color: var(--primary); font-size: 1.2em; }
+        .toc a { color: var(--toc-link); font-weight: 500; }
+        .toc a:hover, a.is-pen-hover { color: var(--primary); }
+        .toc ol { margin-bottom: 0; }
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin: 1.8rem 0;
+            color: var(--warning-text);
+        }
+        .warning-box p {
+            margin: 0 0 12px 0;
+            font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
+        }
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--fab-border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px; 
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-fab:hover, .theme-fab.is-pen-hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card-bg);
+        }
+        .theme-fab span { display: flex; align-items: center; justify-content: center; }
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+    <script>
+  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+  (function() {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+    } else if (savedTheme === 'light') {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+    }
+  })();
+
+  function isCurrentlyDark() {
+    if (document.documentElement.classList.contains('dark-mode')) return true;
+    if (document.documentElement.classList.contains('light-mode')) return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function updateThemeIcon() {
+    var container = document.getElementById('theme-icon-container');
+    if (container) {
+      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+    }
+  }
+
+  function toggleTheme() {
+    var willBeDark = !isCurrentlyDark();
+    if (willBeDark) {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+    updateThemeIcon();
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) {
+        updateThemeIcon();
+      }
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', updateThemeIcon);
+</script>
+</head>
+<body>
+    
+    <a href="/ad-matai" class="back">← Back to App Site</a>
+    
+    <h1>Privacy Policy</h1>
+    <p class="subtitle">Ad Matai!</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#overview">Overview & Privacy-First Principle</a></li>
+            <li><a href="#military-disclaimer">Important Military & Government Disclaimer</a></li>
+            <li><a href="#data-handling">Data Handling, Storage & Authentication</a>
+                <ul>
+                    <li><a href="#local-data">Local Profile & Service Countdowns (Default)</a></li>
+                    <li><a href="#authentication">User Accounts & Authentication (Google Sign-In & Anonymous Guest Mode)</a></li>
+                </ul>
+            </li>
+            <li><a href="#lost-and-found">Lost & Found Community Board (מציאון)</a></li>
+            <li><a href="#community-reports">Anonymous Community Reports (Transit & Checkpoint Updates)</a>
+                <ul>
+                    <li><a href="#report-privacy">Public Station Anonymity</a></li>
+                    <li><a href="#report-ttl">Automatic Expiration & Purging (2-Hour TTL)</a></li>
+                </ul>
+            </li>
+            <li><a href="#maps-location">Location Services & Map Tiles (OpenStreetMap)</a></li>
+            <li><a href="#third-party-services">Third-Party Services & Technical Diagnostics</a></li>
+            <li><a href="#distribution-channel">Official Distribution Channel</a></li>
+            <li><a href="#user-rights">User Rights, Data Control & Deletion</a></li>
+            <li><a href="#data-security">Data Security</a></li>
+            <li><a href="#childrens-privacy">Children’s Privacy</a></li>
+            <li><a href="#compliance">Compliance with Israeli Law & Privacy Regulations</a></li>
+            <li><a href="#policy-changes">Policy Changes & Contact Information</a></li>
+        </ol>
+    </div>
+
+    <p><strong>Last Updated:</strong> October 26, 2026</p>
+
+    <h2 id="overview">1. Overview & Privacy-First Principle</h2>
+    <p>The "Ad Matai!" application (the "App") is developed and maintained by avih6 as a personal countdown, leave planner, educational military terminology glossary, lost &amp; found board, and community transit utility application for Israeli military personnel. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
+    <p>The App operates on a strict <strong>privacy-first approach</strong>: by default, it does not require registration, stores your personal milestones locally on your device, and never sells or brokers your data.</p>
+
+    <h2 id="military-disclaimer">2. Important Military & Government Disclaimer</h2>
+    <div class="warning-box">
+        <p><strong>Independent Utility Application:</strong> Ad Matai! is an independent utility tool developed solely by avih6 for personal organizational, historical, and morale purposes.</p>
+        <p>• <strong>No Military or Government Affiliation:</strong> The App is <strong>NOT affiliated with, endorsed by, authorized by, or operated on behalf of the Israel Defense Forces (IDF), the Israel Ministry of Defense, or the Government of Israel.</strong></p>
+        <p>• <strong>Security Directives & General Staff Orders:</strong> Official military command orders, standing discipline instructions, and Information Security directives always supersede any informal countdowns, cultural glossaries, or community transit notices in the App.</p>
+        <p>• <strong>No Classified Information:</strong> The App contains no classified material and strictly forbids reporting, submitting, or sharing operational army bases, classified equipment serial numbers, or troop movements.</p>
+    </div>
+
+    <h2 id="data-handling">3. Data Handling, Storage & Authentication</h2>
+    
+    <h3 id="local-data">3.1 Local Profile & Service Countdowns (Default)</h3>
+    <p>All service parameters entered by the user—including enlistment date, planned release date, leave cycle (daily shifts, weekend leaves, rotational schedules), rank, and local friends list—are processed and stored <strong>exclusively in private local storage on your device (Android DataStore / Room Database)</strong>.</p>
+    <ul>
+        <li><strong>No Cloud Account Requirement:</strong> You can use all core countdown and tracking features without creating an account or providing any personal details.</li>
+        <li><strong>No Commercial Profiling:</strong> Your personal countdown parameters and private notes are never sent to external servers or shared with commercial data brokers.</li>
+    </ul>
+
+    <h3 id="authentication">3.2 User Accounts & Authentication (Google Sign-In & Anonymous Guest Mode)</h3>
+    <p>Users may optionally sign in to the App to link their community contributions and preserve settings:</p>
+    <ul>
+        <li><strong>Google Account Authentication:</strong> When choosing to sign in with Google via Android Credential Manager, the App receives only your public display name, email address, and unique user identifier (UID) solely for authentication and author attribution. The App never accesses, stores, or transmits your account password.</li>
+        <li><strong>Anonymous Guest Mode:</strong> Users who prefer complete anonymity can opt for Guest Mode, enabling participation without providing an email address, name, or phone number.</li>
+    </ul>
+
+    <h2 id="lost-and-found">4. Lost & Found Community Board (מציאון)</h2>
+    <p>The App features a community Lost & Found notice board to help soldiers recover misplaced civilian and permitted personal belongings:</p>
+    <ul>
+        <li><strong>Voluntary Submission:</strong> Submitting an item is entirely voluntary. <strong>Only the item title is mandatory.</strong> All additional fields—including detailed descriptions, contact phone/WhatsApp/email, optional photo URL/attachment, incident date/time, and map location coordinates—are purely optional ("רשות").</li>
+        <li><strong>OpenStreetMap Location Picker:</strong> Users may voluntarily select a point on an interactive OpenStreetMap to indicate where an item was lost or found. The App does not continuously track your device location.</li>
+        <li><strong>Prohibition on Military Secrets & Weapons:</strong> Users are strictly prohibited from uploading photos or publishing serial numbers of military firearms, cryptographic gear, secret unit documents, or restricted operational zones.</li>
+    </ul>
+
+    <h2 id="community-reports">5. Anonymous Community Reports (Transit & Checkpoint Updates)</h2>
+    
+    <h3 id="report-privacy">5.1 Public Station Anonymity</h3>
+    <p>The App includes a community alert feature for civilian transit checkpoint awareness to assist soldiers with uniform inspection readiness at major civilian transit hubs:</p>
+    <ul>
+        <li><strong>Fixed Public Locations Only:</strong> Reports can only be submitted for predefined civilian public transportation stations (central train stations and central bus terminals). Free-text entry of custom location names is intentionally disabled to strictly prevent operational security leaks.</li>
+        <li><strong>Completely Anonymous Submissions:</strong> Reports are sent via Firebase Anonymous Authentication without attaching personal identities, phone numbers, or device fingerprints.</li>
+    </ul>
+
+    <h3 id="report-ttl">5.2 Automatic Expiration & Purging (2-Hour TTL)</h3>
+    <p>All community reports are automatically expired and permanently purged from the database after <strong>two (2) hours</strong> from submission, ensuring real-time relevance and preventing historical tracking.</p>
+
+    <h2 id="maps-location">6. Location Services & Map Tiles (OpenStreetMap)</h2>
+    <p>The App utilizes OpenStreetMap (osmdroid) to display civilian transportation maps and lost &amp; found locations:</p>
+    <ul>
+        <li><strong>Approximate Device Location:</strong> If you choose to grant device location permission, your coordinates are processed strictly on your device solely to center the map on your nearby transit station and calculate distance to public hubs.</li>
+        <li><strong>No Location Logging:</strong> Your location is never logged, tracked over time, or transmitted to any server.</li>
+        <li><strong>Map Tiles:</strong> Map visual tiles are loaded from standard public OpenStreetMap servers in compliance with their usage policies.</li>
+    </ul>
+
+    <h2 id="third-party-services">7. Third-Party Services & Technical Diagnostics</h2>
+    <p>The App integrates reputable services provided by Google LLC to maintain stability and backend synchronization:</p>
+    <ul>
+        <li><strong>Google Identity & Credential Manager:</strong> Enables secure Google Sign-In without compromising user credentials.</li>
+        <li><strong>Google Firebase Firestore & Firebase Auth:</strong> Used for lost &amp; found board listings and anonymous community report synchronization.</li>
+        <li><strong>Google Firebase Crashlytics:</strong> Collects pseudonymous technical crash logs and device hardware metrics to troubleshoot bugs and improve application reliability.</li>
+        <li><strong>No Advertising Networks:</strong> The App contains no commercial advertising trackers or advertising identifiers (AAID).</li>
+    </ul>
+    <p>For more details on Google Firebase privacy practices, consult <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.</p>
+
+    <h2 id="distribution-channel">8. Official Distribution Channel</h2>
+    <p><strong>The only authorized and official distribution platform for Ad Matai! is the Google Play Store:</strong></p>
+    <p><a href="https://play.google.com/store/apps/details?id=com.avih6.admatai" target="_blank" rel="noopener">Google Play Store - Ad Matai!</a></p>
+    <p>avih6 is not responsible for APKs downloaded from unauthorized third-party mirrors or modified releases.</p>
+
+    <h2 id="user-rights">9. User Rights, Data Control & Deletion</h2>
+    <p>We respect your ownership over your personal data:</p>
+    <ul>
+        <li><strong>Immediate Local Erasure:</strong> Clearing the App's storage via Android Settings or uninstalling the App immediately and permanently erases all locally stored countdowns, preferences, and local friends lists.</li>
+        <li><strong>Cloud Data & Account Deletion:</strong> If you signed in with Google or submitted items to the Lost &amp; Found board, you may request the complete deletion of your associated cloud records at any time by sending an email with your user ID/email to <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>. Requests are processed within 30 days.</li>
+        <li><strong>Permission Revocation:</strong> You can grant or revoke notification and location permissions at any time through your Android System Settings.</li>
+    </ul>
+
+    <h2 id="data-security">10. Data Security</h2>
+    <p>We employ modern security best practices, encrypted HTTPS network communication, and minimal data exposure. However, no electronic transmission or local device storage is completely invulnerable to security breaches, and absolute security cannot be guaranteed.</p>
+
+    <h2 id="childrens-privacy">11. Children’s Privacy</h2>
+    <p>The App is designed for pre-draft candidates, active service personnel, and reservists. It does not knowingly collect personal information from children under the age of 13. If you believe such information was submitted, please contact us immediately.</p>
+
+    <h2 id="compliance">12. Compliance with Israeli Law & Privacy Regulations</h2>
+    <p>Data processing practices comply with the provisions of Israeli law (Israeli Privacy Protection Law, 5741-1981, including Amendment 13) and applicable international standards.</p>
+
+    <h2 id="policy-changes">13. Policy Changes & Contact Information</h2>
+    <p>This Privacy Policy may be updated periodically. The revised policy will be posted on this page with an updated date.</p>
+    <p>For any questions or suggestions regarding this Privacy Policy, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Support Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
+
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <span id="theme-icon-container"></span>
+    </button>
+<script>
+  (function() {
+    if (!window.PointerEvent) return;
+    var currentHover = null;
+    document.addEventListener('pointerover', function(e) {
+      if (e.pointerType === 'pen') {
+        var el = e.target.closest('.card, .btn, .theme-fab, .back, .back-link, a');
+        if (el && el !== currentHover) {
+          if (currentHover) currentHover.classList.remove('is-pen-hover');
+          currentHover = el;
+          currentHover.classList.add('is-pen-hover');
+        }
+      }
+    }, { passive: true });
+    document.addEventListener('pointerout', function(e) {
+      if (e.pointerType === 'pen' && currentHover) {
+        currentHover.classList.remove('is-pen-hover');
+        currentHover = null;
+      }
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>

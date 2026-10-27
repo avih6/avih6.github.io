@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#172017">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>בקשת חברות | עד מתי</title>
+  <link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+  <style>
+    :root{--bg:#111811;--panel:#202b20;--line:rgba(231,185,75,.25);--gold:#e7b94b;--cream:#fff8e8;--muted:#b8c1af}
+    *{box-sizing:border-box}body{margin:0;min-height:100vh;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 18% 12%,#465436 0,transparent 34%),radial-gradient(circle at 88% 90%,#334127 0,transparent 38%),var(--bg);color:var(--cream);font-family:"Heebo",Arial,sans-serif}
+    .grid{position:fixed;inset:0;pointer-events:none;opacity:.11;background-image:linear-gradient(rgba(231,185,75,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(231,185,75,.22) 1px,transparent 1px);background-size:28px 28px;mask-image:linear-gradient(to bottom,black,transparent)}
+    main{width:min(92vw,440px);padding:22px;position:relative;margin-inline:auto}.card{width:100%}.card{padding:30px 25px 24px;text-align:center;direction:rtl;border:1px solid var(--line);border-radius:28px;background:linear-gradient(145deg,rgba(40,54,39,.96),rgba(20,29,20,.96));box-shadow:0 25px 80px rgba(0,0,0,.42),inset 0 1px rgba(255,255,255,.05)}
+    .brand{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:26px;color:var(--gold);font-weight:800;letter-spacing:.2px}.brand:before,.brand:after{content:"";width:26px;height:1px;background:var(--gold);opacity:.65}.icon{width:88px;height:88px;border-radius:23px;box-shadow:0 12px 30px rgba(0,0,0,.34);margin-bottom:18px}
+    .eyebrow{margin:0 0 8px;color:var(--gold);font-size:12px;font-weight:bold;letter-spacing:1px}h1{margin:0;outline:0;font-size:28px;line-height:1.25;text-wrap:balance}p{text-align:center;margin:12px auto 24px;max-width:285px;line-height:1.65;color:var(--muted);font-size:15px}.actions{display:flex;justify-content:center;align-items:center;gap:11px}.actions a{width:min(100%,260px);margin-inline:auto}a{display:flex;align-items:center;justify-content:center;min-height:52px;border-radius:14px;text-decoration:none;font-weight:800;transition:transform .18s ease,filter .18s ease}.primary{background:var(--gold);color:#182016;box-shadow:0 8px 20px rgba(231,185,75,.2)}.secondary{border:1px solid rgba(255,255,255,.15);color:var(--cream);background:rgba(255,255,255,.04)}a:hover{transform:translateY(-2px);filter:brightness(1.05)}a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}.note{font-size:12px;color:#8d9986;margin:20px 0 0}.loader{width:22px;height:22px;border:2px solid rgba(231,185,75,.28);border-top-color:var(--gold);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 16px}@keyframes spin{to{transform:rotate(360deg)}}.hidden{display:none}
+    @media (min-width:720px){main{width:min(92vw,620px);margin-inline:auto}.card{padding:46px 64px 36px;border-radius:34px}.icon{width:112px;height:112px;border-radius:29px;margin-bottom:22px}.brand{margin-bottom:32px}h1{font-size:34px}p{max-width:390px;font-size:16px}.actions{display:flex;justify-content:center;gap:14px}.actions.single-action{display:flex!important;justify-content:center!important;width:100%}.actions.single-action a{width:min(100%,260px)}.note{margin-top:25px}}
+  </style>
+</head>
+<body>
+  <div class="grid"></div>
+  <main aria-labelledby="title">
+    <section class="card">
+      <div class="brand">עד מתי</div>
+      <img class="icon" src="../app-icon.svg" alt="אייקון עד מתי">
+      <div id="loader" class="loader" role="status" aria-label="טוען הזמנה"></div>
+      <div class="eyebrow">הזמנת חברות</div>
+      <h1 id="title">הזמנה מחכה לך</h1>
+      <p id="message">פותחים את אפליקציית עד מתי כדי לאשר בקשת חברות…</p>
+      <div class="actions">
+        <a id="open" class="primary" href="#">פתיחת עד מתי</a>
+        <a class="secondary" href="https://play.google.com/store/apps/details?id=com.avih6.admatai">אין לך את האפליקציה? להתקנה</a>
+      </div>
+      <p class="note">אישור הבקשה יחבר ביניכם כחברים בעד מתי.</p>
+    </section>
+  </main>
+  <script type="module">
+
+    const params = new URLSearchParams(location.search);
+    const code = (params.get("code") || "").trim().toUpperCase();
+    const inviteType = params.get("type") === "group" ? "group" : "friend";
+    const inviter = params.get("preview") === "1" ? (params.get("from") || "").trim().slice(0, 40) : "";
+    const title = document.getElementById("title");
+    const message = document.getElementById("message");
+    const open = document.getElementById("open");
+    const loader = document.getElementById("loader");
+    const actions = document.querySelector(".actions");
+    const validCode = /^[A-Z0-9]{12}$/.test(code);
+
+
+    function showVerifiedSender(senderName, groupName = "") {
+      const rawName = (senderName || "").trim();
+      const genericNames = new Set(["אורח", "אורח/ת", "משתמש/ת בעד מתי", "חבר/ה בעד מתי", "חייל צה״ל"]);
+      const publicName = rawName && !genericNames.has(rawName) ? rawName.split(/\\s+/)[0].slice(0, 24) : "";
+      if (inviteType === "group") {
+        title.textContent = publicName ? publicName + " הזמין או הזמינה אותך לקבוצה" : "הוזמנת לקבוצת חברים";
+        message.textContent = groupName ? "קבוצת " + groupName + " מחכה לך. יש לפתוח את הקישור מהטלפון כדי להצטרף." : "יש לפתוח את הקישור מהטלפון כדי להצטרף לקבוצה."; 
+        document.querySelector(".eyebrow").textContent = "הזמנה לקבוצה";
+      } else if (publicName) {
+        title.textContent = publicName + " שלח או שלחה לך בקשת חברות";
+        message.textContent = "בקשת חברות אישית מ-" + publicName + ". אפשר לפתוח את האפליקציה ולאשר אותה שם.";
+      } else {
+        title.textContent = "חבר או חברה שלחו לך בקשת חברות";
+        message.textContent = "יש לפתוח את הקישור מהטלפון כדי לאמת את הבקשה ולאשר אותה באפליקציה.";
+      }
+    }
+
+    async function loadInviteSender() {\n      return null;\n    }\n\n    async function start() {
+      if (params.get("preview") === "1") {
+        title.textContent = inviter ? "בקשת חברות מאת " + inviter : "בקשת חברות";
+        message.textContent = inviter ? inviter + " רוצה להיות חבר או חברה שלך בעד מתי." : "בקשת חברות אישית בעד מתי.";
+        open.classList.add("hidden");
+        loader.classList.add("hidden");
+        actions.classList.add("single-action");
+        return;
+      }
+
+      if (!validCode) {
+        title.textContent = "הקישור אינו תקין";
+        message.textContent = "אפשר לבקש מחבר לשלוח הזמנה חדשה.";
+        open.classList.add("hidden");
+        loader.classList.add("hidden");
+        return;
+      }
+
+      const appUrl = "admatai://join?type=" + inviteType + "&code=" + encodeURIComponent(code);
+      open.href = appUrl;
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const senderName = await loadInviteSender();
+
+      if (isMobile) {
+        showVerifiedSender(senderName?.senderName, senderName?.groupName);
+        setTimeout(() => { location.href = appUrl; }, 750);
+      } else {
+        loader.classList.add("hidden");
+        open.classList.add("hidden");
+        actions.classList.add("single-action");
+        showVerifiedSender(senderName);
+      }
+    }
+
+    start();
+  </script>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - My List</title>
+    
+    <link rel="icon" type="image/png" href="/icon-my-list.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+        }
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+        }
+        [data-theme="dark"] {
+            --bg: #121212;
+            --text: #e8eaed;
+            --primary: #8ab4f8;
+            --subtitle: #9aa0a6;
+            --border: #3c4043;
+            --card: #1e1e1e;
+            --card-bg: #1e1e1e;
+            --toc-bg: #1e1e1e;
+            --toc-border: #3c4043;
+            --toc-link: #9aa0a6;
+            --warning-bg: #332b00;
+            --warning-border: #f9ab00;
+            --warning-text: #e8eaed;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+        }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--text);
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .last-updated {
+            color: var(--subtitle);
+            font-size: 0.9rem;
+        }
+        h2 {
+            color: var(--text);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border);
+        }
+        p, li {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .toc {
+            background-color: var(--toc-bg);
+            border: 1px solid var(--toc-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: var(--text);
+        }
+        .toc ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 6px;
+        }
+        .toc a {
+            color: var(--toc-link);
+            font-size: 0.9rem;
+        }
+        .toc a:hover {
+            color: var(--primary);
+        }
+        .disclaimer-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: var(--warning-text);
+        }
+        .disclaimer-box p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: inherit;
+        }
+        .theme-fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+        .theme-fab:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--subtitle);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/my-list" class="back-link">&larr; Back to My List</a>
+        <header>
+            <h1>Privacy Policy</h1>
+            <div class="last-updated">Last updated: October 18, 2026</div>
+        </header>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#overview">Overview &amp; Privacy-First Principle</a></li>
+                <li><a href="#data-handling">Data Handling, Storage &amp; Synchronization</a>
+                    <ul>
+                        <li><a href="#local-data">Local Offline Storage (Default)</a></li>
+                        <li><a href="#cloud-backup">Cloud Backup, Synchronization &amp; Sharing</a></li>
+                    </ul>
+                </li>
+                <li><a href="#third-party-services">Third-Party Services &amp; Technical Data Collection</a>
+                    <ul>
+                        <li><a href="#analytics-crashlytics">Technical Identifiers &amp; Analytics</a></li>
+                        <li><a href="#third-party-policies">Third-Party Privacy Policy References</a></li>
+                    </ul>
+                </li>
+                <li><a href="#distribution-channel">Official Distribution Channel</a></li>
+                <li><a href="#user-rights">User Rights, Data Control &amp; Deletion</a></li>
+                <li><a href="#data-security">Data Security</a></li>
+                <li><a href="#childrens-privacy">Children's Privacy</a></li>
+                <li><a href="#compliance">Compliance with Israeli Law &amp; International Scope</a></li>
+                <li><a href="#policy-changes">Policy Changes &amp; Transfer of Ownership</a></li>
+                <li><a href="#contact">Contact Information</a></li>
+            </ol>
+        </div>
+
+        <h2 id="overview">1. Overview &amp; Privacy-First Principle</h2>
+        <p>The "My List" application (the "App") is developed and maintained by avih6 as a utility application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
+        <p>This Privacy Policy explains how information is handled, stored, and protected during the use of the My List mobile application and its associated web pages. The application is built on a <strong>privacy-first approach</strong>: personal shopping lists remain strictly on the local device by default or in private synchronized groups, and no personal shopping data is shared or sold.</p>
+        <p>By downloading or using the Service, the user agrees to the collection and use of information in accordance with this policy.</p>
+
+        <h2 id="data-handling">2. Data Handling, Storage &amp; Synchronization</h2>
+        
+        <h3 id="local-data">2.1 Local Offline Storage (Default)</h3>
+        <p>By default, all shopping list items and user preferences entered into the application are cached securely in a private, encrypted local database (Room SQLite) and DataStore on the physical device for instant offline access.</p>
+
+        <h3 id="cloud-backup">2.2 Cloud Backup, Synchronization &amp; Sharing</h3>
+        <p>Users may optionally create shared lists or sign in using a Google account to synchronize shopping lists across Android devices and collaborate with family members:</p>
+        <ul>
+            <li><strong>Synchronized Data:</strong> Grocery item names, quantities, measurement units, optional notes, categories, and completion states are securely synchronized using Google Cloud Firestore and Firebase Authentication.</li>
+            <li><strong>Invite Codes:</strong> Shared lists are accessed through unique 6-character alphanumeric codes. Anyone in possession of the code can view and edit the list.</li>
+            <li><strong>Google Account Authentication:</strong> When signing in with Google, the application accesses strictly the public display name, email address, and unique user identifier (UID) solely to link cloud documents and display group membership. Account passwords are never accessible to the App.</li>
+            <li><strong>Anonymous Guest Mode:</strong> Users can collaborate anonymously without providing an email address or real name.</li>
+        </ul>
+
+        <h2 id="third-party-services">3. Third-Party Services &amp; Technical Data Collection</h2>
+
+        <h3 id="analytics-crashlytics">3.1 Technical Identifiers &amp; Analytics</h3>
+        <p>To ensure app stability, monitor performance, and improve user experience, the app incorporates reputable industry-standard SDKs provided by Google LLC:</p>
+        <ul>
+            <li><strong>Google Analytics for Firebase:</strong> Collects aggregated, non-personally identifiable usage statistics (such as screen views and feature engagement). Firebase automatically derives coarse geographic data from IP addresses on Google servers without accessing device GPS. This aggregated data is completely separate from any Google Sign-In user account.</li>
+            <li><strong>Firebase Crashlytics &amp; Performance Monitoring:</strong> Automatically collects crash logs, stack traces, and device hardware/OS specifications to troubleshoot and fix technical issues.</li>
+        </ul>
+
+        <h3 id="third-party-policies">3.2 Third-Party Privacy Policy References</h3>
+        <p>For more information on how Google processes and protects technical data, review Google's official documentation:</p>
+        <ul>
+            <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy &amp; Terms</a></li>
+            <li><a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener noreferrer">Firebase Privacy Details</a></li>
+        </ul>
+
+        <h2 id="distribution-channel">4. Official Distribution Channel</h2>
+        <p><strong>The only authorized and official distribution platform for My List is the Google Play Store:</strong></p>
+        <p><a href="https://play.google.com/store/apps/details?id=com.avih6.mylist" target="_blank" rel="noopener noreferrer">Google Play Store - My List</a></p>
+        <p>Any download or distribution through third-party websites, APK mirror portals, or unofficial app stores is unauthorized and unmaintained. avih6 assumes no responsibility for modified, corrupted, or potentially harmful APK files obtained outside the official Google Play Store.</p>
+
+        <h2 id="user-rights">5. User Rights, Data Control &amp; Deletion</h2>
+        <p>Users maintain complete sovereignty over their data:</p>
+        <ol>
+            <li><strong>Granular Local &amp; Cloud Data Deletion:</strong> Users can permanently delete individual shopping items, clear completed items, or remove specific shopping lists at any time directly through the application interface. These actions synchronize immediately and permanently erase the corresponding records from Google Cloud Firestore without requiring account termination.</li>
+            <li><strong>In-App Group &amp; Cloud Profile Removal:</strong> Users can leave any shared group at any time, immediately removing their membership and access. Users can also sign out or request full account removal through the App Settings.</li>
+            <li><strong>Manual Deletion Request &amp; Partial Data Deletion:</strong> Users may also submit a request to delete specific shopping lists, shared groups, or particular data records without requiring the deletion of their entire account by emailing <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>. To prevent unauthorized deletions and protect user privacy, the deletion request must be sent directly from the specific Google account email address associated with the records to be deleted. If no confirmation is received, please send a reminder email with "Data Deletion Reminder" in the subject line.</li>
+            <li><strong>Anonymous Diagnostics &amp; Telemetry:</strong> Deletion requests apply exclusively to personal shopping lists, group records, and account profiles stored in Google Cloud Firestore. Aggregated, pseudonymous analytics and crash telemetry collected by Firebase are not linked to individual identities and are automatically retained and expired according to Google's standard data lifecycle policies.</li>
+        </ol>
+
+        <h2 id="data-security">6. Data Security</h2>
+        <p>Security of user information is prioritized, and commercially reasonable technical and organizational safeguards are employed. All data in transit is encrypted using modern TLS/HTTPS protocols. However, no method of electronic storage or internet transmission is 100% immune to vulnerabilities, and absolute security cannot be guaranteed.</p>
+
+        <h2 id="childrens-privacy">7. Children's Privacy</h2>
+        <p>The Service is designed for general audiences and household shoppers (ages 13 and older). There is no intentional collection or solicitation of personal information from children under the age of 13. If it is discovered that a child under 13 has provided personal data, please send a notification immediately to the contact email so that the information can be promptly removed.</p>
+
+        <h2 id="compliance">8. Compliance with Israeli Law &amp; International Scope</h2>
+        <ul>
+            <li><strong>Israeli Privacy Protection Law (חוק הגנת הפרטיות):</strong> Processing of personal data complies with the provisions of Israeli law. Users residing in Israel possess the right to review and request correction or deletion of their personal information.</li>
+            <li><strong>European GDPR &amp; UK GDPR Compliance:</strong> The Application respects GDPR and UK GDPR privacy standards for international users, providing full transparency in Google Cloud Firestore handling and user rights to access and delete personal data.</li>
+        </ul>
+
+        <h2 id="policy-changes">9. Policy Changes &amp; Transfer of Ownership</h2>
+        <p>This Privacy Policy may be updated periodically by posting the revised version on this page with an updated "Last Updated" date. In the event of a transfer of the application, stored data will remain subject to the provisions of this Privacy Policy.</p>
+
+        <h2 id="contact">10. Contact Information</h2>
+        <p>For any questions, suggestions, or requests regarding this Privacy Policy, please contact:</p>
+        <p><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+        <footer>
+            <p>&copy; <span id="year">2026</span> avih6. All rights reserved.</p>
+        </footer>
+    </div>
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        <span id="theme-icon">&#9790;</span>
+    </button>
+    <script>
+        function getPreferredTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.innerHTML = theme === 'dark' ? '&#9788;' : '&#9790;';
+            }
+        }
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', next);
+            applyTheme(next);
+        }
+        applyTheme(getPreferredTheme());
+        const yr = new Date().getFullYear();
+        document.getElementById('year').textContent = yr > 2026 ? '2026-' + yr : '2026';
+    </script>
+</body>
+</html>

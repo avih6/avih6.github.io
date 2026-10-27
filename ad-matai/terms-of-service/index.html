@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Ad Matai!</title>
+    
+    <link rel="icon" type="image/x-icon" href="/ad-matai/favicon.ico">
+    <link rel="icon" type="image/png" href="/icon-ad-matai.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+            --btn-border: #1a73e8;
+            --fab-bg: rgba(255, 255, 255, 0.85);
+            --fab-border: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --text: #e8eaed;
+                --primary: #8ab4f8;
+                --subtitle: #9aa0a6;
+                --border: #333333;
+                --card: #1e1e1e;
+                --card-bg: #1e1e1e;
+                --toc-bg: #1e1e1e;
+                --toc-border: #333333;
+                --toc-link: #9aa0a6;
+                --warning-bg: #3c2f00;
+                --warning-border: #f9ab00;
+                --warning-text: #ffd54f;
+                --btn-border: #8ab4f8;
+                --fab-bg: rgba(30, 30, 30, 0.85);
+                --fab-border: #333333;
+            }
+        }
+
+        html.dark-mode {
+            --bg: #121212 !important;
+            --text: #e8eaed !important;
+            --primary: #8ab4f8 !important;
+            --subtitle: #9aa0a6 !important;
+            --border: #333333 !important;
+            --card: #1e1e1e !important;
+            --card-bg: #1e1e1e !important;
+            --toc-bg: #1e1e1e !important;
+            --toc-border: #333333 !important;
+            --toc-link: #9aa0a6 !important;
+            --warning-bg: #3c2f00 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #ffd54f !important;
+            --btn-border: #8ab4f8 !important;
+            --fab-bg: rgba(30, 30, 30, 0.85) !important;
+            --fab-border: #333333 !important;
+        }
+
+        html.light-mode {
+            --bg: #ffffff !important;
+            --text: #202124 !important;
+            --primary: #1a73e8 !important;
+            --subtitle: #5f6368 !important;
+            --border: #ebebeb !important;
+            --card: #ffffff !important;
+            --card-bg: #ffffff !important;
+            --toc-bg: #f8f9fa !important;
+            --toc-border: #eee !important;
+            --toc-link: #5f6368 !important;
+            --warning-bg: #fef7e0 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #202124 !important;
+            --btn-border: #1a73e8 !important;
+            --fab-bg: rgba(255, 255, 255, 0.85) !important;
+            --fab-border: #eee !important;
+        }
+
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: var(--bg);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 { font-size: 2.2em; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: var(--subtitle); margin-top: 0; margin-bottom: 2rem; font-weight: 500; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text); }
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: var(--text); }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin-bottom: 1rem; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back:hover, .back.is-pen-hover { text-decoration: underline; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover, a.is-pen-hover { text-decoration: underline; }
+        .toc { 
+            background-color: var(--toc-bg); 
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            margin-bottom: 2.5em; 
+            border: 1px solid var(--toc-border);
+            transition: background-color 0.3s, border 0.3s;
+        }
+        .toc h3 { margin-top: 0; color: var(--primary); font-size: 1.2em; }
+        .toc a { color: var(--toc-link); font-weight: 500; }
+        .toc a:hover, a.is-pen-hover { color: var(--primary); }
+        .toc ol { margin-bottom: 0; }
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin: 1.8rem 0;
+            color: var(--warning-text);
+        }
+        .warning-box p {
+            margin: 0 0 12px 0;
+            font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
+        }
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--fab-border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px; 
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-fab:hover, .theme-fab.is-pen-hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card-bg);
+        }
+        .theme-fab span { display: flex; align-items: center; justify-content: center; }
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+    <script>
+  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+  (function() {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+    } else if (savedTheme === 'light') {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+    }
+  })();
+
+  function isCurrentlyDark() {
+    if (document.documentElement.classList.contains('dark-mode')) return true;
+    if (document.documentElement.classList.contains('light-mode')) return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function updateThemeIcon() {
+    var container = document.getElementById('theme-icon-container');
+    if (container) {
+      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+    }
+  }
+
+  function toggleTheme() {
+    var willBeDark = !isCurrentlyDark();
+    if (willBeDark) {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+    updateThemeIcon();
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) {
+        updateThemeIcon();
+      }
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', updateThemeIcon);
+</script>
+</head>
+<body>
+    
+    <a href="/ad-matai" class="back">← Back to App Site</a>
+    
+    <h1>Terms of Service</h1>
+    <p class="subtitle">Ad Matai!</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#acceptance">1. Acceptance of Terms & Binding Legal Agreement</a></li>
+            <li><a href="#military-disclaimer">2. Absolute Military & Government Non-Affiliation Disclaimer</a></li>
+            <li><a href="#information-security">3. National Security & Zero-Tolerance for Classified Material</a></li>
+            <li><a href="#user-accounts">4. User Accounts, Authentication & Guest Mode</a></li>
+            <li><a href="#lost-and-found">5. Lost & Found Community Board & User Content</a></li>
+            <li><a href="#mp-radar">6. Crowdsourced Transit & Checkpoint Observation Reports Liability Shield</a></li>
+            <li><a href="#orders-precedence">7. Absolute Precedence of Official Military Orders & Chain of Command</a></li>
+            <li><a href="#informal-estimates">8. Informal Nature of Calculations, Slang & Knowledge Base</a></li>
+            <li><a href="#user-conduct">9. User Conduct & Prohibited Activities</a></li>
+            <li><a href="#intellectual-property">10. Intellectual Property & Limited License</a></li>
+            <li><a href="#disclaimer-warranties">11. Disclaimer of Warranties ("AS IS" & "AS AVAILABLE")</a></li>
+            <li><a href="#limitation-liability">12. Comprehensive Limitation of Liability (Zero Monetary Damage)</a></li>
+            <li><a href="#indemnification">13. Full User Indemnification in Favor of Developer</a></li>
+            <li><a href="#modifications-termination">14. Modifications to Service & Termination</a></li>
+            <li><a href="#governing-law">15. Governing Law & Exclusive Jurisdiction (State of Israel)</a></li>
+            <li><a href="#contact">16. Contact Information</a></li>
+        </ol>
+    </div>
+
+    <p><strong>Last Updated:</strong> October 26, 2026</p>
+
+    <h2 id="acceptance">1. Acceptance of Terms & Binding Legal Agreement</h2>
+    <p>By downloading, installing, launching, accessing, browsing, or using the "Ad Matai!" mobile application (the "App"), the user ("User", "you") explicitly, irrevocably, and unconditionally agrees to be legally bound by these Terms of Service ("Terms").</p>
+    <p><strong>IF YOU DO NOT AGREE TO EACH AND EVERY TERM, CONDITION, AND DISCLAIMER SET FORTH HEREIN, YOU MUST CEASE ALL USE OF THE APPLICATION AND IMMEDIATELY UNINSTALL IT FROM YOUR DEVICE.</strong></p>
+
+    <h2 id="military-disclaimer">2. Absolute Military & Government Non-Affiliation Disclaimer</h2>
+    <div class="warning-box">
+        <p><strong>CIVILIAN INDEPENDENT SOFTWARE:</strong> Ad Matai! is a private, third-party civilian software application developed, owned, and maintained solely by avih6 for informal personal organization, countdown calculation, and soldier morale.</p>
+        <p>• <strong>NO GOVERNMENT OR MILITARY AFFILIATION:</strong> The App is <strong>NOT affiliated with, sponsored by, endorsed by, authorized by, contracted by, or operated on behalf of the Israel Defense Forces (IDF), the Israel Ministry of Defense, the Israel Police, or any agency or body of the Government of the State of Israel.</strong></p>
+        <p>• <strong>NO OFFICIAL STATUS:</strong> Neither the developer nor the application holds any military, administrative, or government authorization. Nothing in the App constitutes an official military communication, military document, or certificate of service.</p>
+        <p>• <strong>INSIGNIA & SYMBOLS:</strong> Any graphical depictions of military ranks, beret colors, unit patches, insignia, and cultural slang displayed within the App are civilian artistic representations, historical references, and educational parodies. They are not issued by the military and do not confer any official military standing.</p>
+    </div>
+
+    <h2 id="information-security">3. National Security & Zero-Tolerance for Classified Material</h2>
+    <p>National defense and information security are paramount under Israeli law and military regulations. The developer upholds strict compliance with statutory security standards:</p>
+    <ul>
+        <li><strong>Strict Prohibition on Classified Material:</strong> You are expressly and unequivocally prohibited from entering, typing, storing, transmitting, sharing, or broadcasting any classified information, restricted base locations, operational unit deployments, troop movements, shift schedules, weapon specifications, emergency orders, or military secrets within or through the App.</li>
+        <li><strong>Criminal Law Acknowledgment:</strong> The User acknowledges that unauthorized disclosure or transmission of classified military information constitutes a severe criminal offense under Israeli Penal Law (provisions concerning espionage and state secret disclosure) and the Military Justice Law.</li>
+        <li><strong>Strict Enforcement & Immediate Reporting:</strong> avih6 maintains an absolute zero-tolerance policy. Any user who has violated, is violating, or is reasonably suspected of violating military security directives, classified information restrictions, or applicable laws will be immediately and permanently banned from the App, and relevant incident logs or technical details will be transmitted promptly and unconditionally to the competent authorities and military investigators.</li>
+        <li><strong>Developer Non-Liability:</strong> The developer shall bear no liability whatsoever for any unauthorized information entered by users into local device storage or transmitted through community features.</li>
+    </ul>
+
+    <h2 id="user-accounts">4. User Accounts, Authentication & Guest Mode</h2>
+    <p>The App permits access either via Anonymous Guest mode or Google Sign-In:</p>
+    <ul>
+        <li><strong>Account Responsibility:</strong> If you sign in via Google, you are solely responsible for maintaining device security and restricting unauthorized access to your account.</li>
+        <li><strong>Termination of Access:</strong> The developer reserves the right to suspend or revoke access to community features for any account found violating security, decency, or legal regulations.</li>
+    </ul>
+
+    <h2 id="lost-and-found">5. Lost & Found Community Board & User Content</h2>
+    <div class="warning-box">
+        <p><strong>COMMUNITY LOST &amp; FOUND DISCLAIMER:</strong> The Lost &amp; Found board is an unverified, community-driven bulletin board provided solely as a convenience to help soldiers locate misplaced personal gear.</p>
+        <p>• <strong>Strict Prohibition of Regulated Equipment:</strong> Users are strictly prohibited from posting, offering, or requesting firearms, ammunition, military communications equipment, night vision optics, sensitive documents, classified tags, or any item subject to strict military accountability (צל״ם / אמל״ח).</p>
+        <p>• <strong>Zero Developer Liability for Items:</strong> avih6 assumes <strong>NO RESPONSIBILITY</strong> for lost, damaged, stolen, or unrecovered property, nor for the legitimacy, safety, or accuracy of any item posted or interaction conducted between users.</p>
+    </div>
+
+    <h2 id="mp-radar">6. Crowdsourced Transit & Checkpoint Observation Reports Liability Shield</h2>
+    <div class="warning-box">
+        <p><strong>CROWDSOURCED PUBLIC TRANSIT OBSERVATIONS:</strong> The community transit observation feature is exclusively an informal, unverified community notice board reflecting civilian bystander observations at open civilian public transportation hubs.</p>
+        <p>• <strong>No Evasion of Duty or Insubordination:</strong> The App does <strong>NOT encourage, endorse, advise, or promote evasion of lawful military duties, dress code violations, dodging inspections, insubordination, or defiance of commanding officers.</strong></p>
+        <p>• <strong>Soldier Legal Obligation:</strong> All military personnel remain strictly bound by standing military discipline orders and command directives to wear complete regulation dress, carry valid military identification cards, and comply respectfully with military police and enforcement personnel at all times.</p>
+        <p>• <strong>Zero Liability for Citations & Disciplinary Actions:</strong> avih6 assumes <strong>NO RESPONSIBILITY OR LIABILITY WHATSOEVER</strong> for any disciplinary citation, complaint report, court-martial, military detention or confinement, monetary fine, demotion, extension of compulsory service, or administrative sanction incurred by any user.</p>
+        <p>• <strong>No Monitoring or Interference:</strong> The App does not monitor, track, intercept, or interfere with official military communications or official patrol schedules.</p>
+    </div>
+
+    <h2 id="orders-precedence">7. Absolute Precedence of Official Military Orders & Chain of Command</h2>
+    <p>• <strong>Direct Military Orders Always Govern:</strong> In any circumstance of contradiction, ambiguity, or discrepancy between information provided in the App (such as duty sleep hours, sick leave guidelines, leave calculations, shaving exemptions, or administrative procedures) and official General Staff Orders, commanding officer directives, or military medical staff, the <strong>OFFICIAL MILITARY INSTRUCTIONS AND COMMAND ORDERS SHALL TAKE ABSOLUTE AND EXCLUSIVE PRECEDENCE.</strong></p>
+    <p>• <strong>Personal Command Responsibility:</strong> The User remains personally and exclusively responsible for fulfilling all service duties, respecting line-of-command hierarchy, and confirming duty hours directly with their unit commanders.</p>
+
+    <h2 id="informal-estimates">8. Informal Nature of Calculations, Slang & Knowledge Base</h2>
+    <ul>
+        <li><strong>Estimates Only:</strong> Service countdowns, service percentages, net base days, and discharge predictions are calculated based purely on mathematical algorithms and user-entered inputs. They do not constitute official military discharge certificates or legal proof of service completion.</li>
+        <li><strong>Military Knowledge Glossary:</strong> All slang explanations, military terminology, and rights guides are compiled for cultural, historical, humorous, and organizational purposes only. They do not constitute formal legal counsel, military defense advice, or medical opinions.</li>
+        <li><strong>External Portals & Links:</strong> Links to external websites (such as soldier welfare portals or supply websites) are provided for convenience only. avih6 is not affiliated with the Association for the Wellbeing of Israel's Soldiers or commercial suppliers, and does not control their products, pricing, or availability.</li>
+    </ul>
+
+    <h2 id="user-conduct">9. User Conduct & Prohibited Activities</h2>
+    <p>You agree not to engage in any of the following prohibited behaviors:</p>
+    <ul>
+        <li>Submitting false, malicious, fraudulent, abusive, or defamatory community reports or lost &amp; found listings.</li>
+        <li>Attempting to probe, scan, or compromise the integrity or security of the App or its backend infrastructure.</li>
+        <li>Using the App for any unlawful, operational, commercial, or harmful purpose.</li>
+        <li>Entering operational, secret, or classified unit designations.</li>
+    </ul>
+
+    <h2 id="intellectual-property">10. Intellectual Property & Limited License</h2>
+    <p>All right, title, and interest in and to the App—including but not limited to source code, user interfaces, compiled binaries, layout, artwork, and visual design—are the sole and exclusive intellectual property of avih6. You are granted a limited, personal, non-exclusive, non-transferable, revocable license to use the App solely on your personal Android device. Any decompilation, reverse-engineering, modifying, mirroring, or distribution of unauthorized APKs is strictly prohibited.</p>
+
+    <h2 id="disclaimer-warranties">11. Disclaimer of Warranties ("AS IS" & "AS AVAILABLE")</h2>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE APP IS PROVIDED ON AN <strong>"AS IS"</strong> AND <strong>"AS AVAILABLE"</strong> BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE. THE DEVELOPER EXPRESSLY DISCLAIMS ALL WARRANTIES, INCLUDING MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, ACCURACY, AND NON-INFRINGEMENT.</p>
+    <p>THE DEVELOPER MAKES NO REPRESENTATION OR WARRANTY THAT THE APP WILL OPERATE UNINTERRUPTED, SECURELY, OR ERROR-FREE, OR THAT COMMUNITY REPORTS OR MILITARY KNOWLEDGE GUIDES WILL BE ACCURATE, COMPLETE, OR CONTINUOUSLY SYNCHRONIZED WITH INTERNAL MILITARY REGULATIONS.</p>
+
+    <h2 id="limitation-liability">12. Comprehensive Limitation of Liability (Zero Monetary Damage)</h2>
+    <div class="warning-box">
+        <p><strong>TOTAL EXCLUSION OF LIABILITY:</strong> UNDER NO CIRCUMSTANCES SHALL AVIH6 BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, PUNITIVE, OR EXEMPLARY DAMAGES WHATSOEVER ARISING OUT OF OR IN CONNECTION WITH YOUR USE OR INABILITY TO USE THE APP.</p>
+        <p>THIS INCLUDES, WITHOUT LIMITATION: MILITARY DISCIPLINARY ACTIONS, CITATIONS, ARREST, DETENTION, CONFINEMENT, COURT-MARTIAL PROCEEDINGS, DEMOTIONS, SERVICE EXTENSIONS, MISSED LEAVE DAYS, TRAINING ACCIDENTS, MISUNDERSTOOD ORDERS, OR LOSS OF LOCALLY STORED DATA.</p>
+        <p>IN ALL EVENTS, THE AGGREGATE TOTAL LIABILITY OF THE DEVELOPER FOR ANY AND ALL CLAIMS ARISING OUT OF THESE TERMS OR THE USE OF THE APP SHALL STRICTLY BE LIMITED TO <strong>ZERO NEW ISRAELI SHEKELS (0.00 NIS)</strong>.</p>
+    </div>
+
+    <h2 id="indemnification">13. Full User Indemnification in Favor of Developer</h2>
+    <p><strong>YOU AGREE TO FULLY DEFEND, INDEMNIFY, AND HOLD HARMLESS AVIH6 (THE DEVELOPER) FROM AND AGAINST ANY AND ALL LIABILITIES, CLAIMS, DEMANDS, DAMAGES, LOSSES, COSTS, INQUIRIES, PROCEEDINGS, AND EXPENSES (INCLUDING REASONABLE ATTORNEYS' FEES) ARISING OUT OF OR IN ANY WAY CONNECTED WITH:</strong></p>
+    <ul>
+        <li>Your use or misuse of the App or any of its features.</li>
+        <li>Your violation of any official military order, command directive, or civilian statute.</li>
+        <li>Your transmission or storage of classified, sensitive, operational, or unlawful information.</li>
+        <li>Any citation, disciplinary sanction, military trial, or penalty issued against you by military or civilian authorities.</li>
+        <li>Your breach of any provision of these Terms of Service.</li>
+    </ul>
+
+    <h2 id="modifications-termination">14. Modifications to Service & Termination</h2>
+    <p>avih6 reserves the right, at its sole discretion, to modify, update, suspend, or permanently terminate the App, or any portion thereof, at any time without prior notice or liability. These Terms may be amended periodically, with the updated version taking effect upon publication on this page.</p>
+
+    <h2 id="governing-law">15. Governing Law & Exclusive Jurisdiction (State of Israel)</h2>
+    <p>These Terms, their interpretation, validity, and performance, shall be governed solely and exclusively by the substantive laws of the <strong>State of Israel</strong>, without giving effect to any principles of conflicts of law. Any dispute, proceeding, claim, or controversy arising out of or relating to these Terms or the App shall be brought solely and exclusively before the competent courts located in the <strong>Tel Aviv-Yafo or Central District, Israel</strong>, and each party irrevocably consents to such jurisdiction.</p>
+
+    <h2 id="contact">16. Contact Information</h2>
+    <p>For questions, legal notices, or inquiries regarding these Terms of Service, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Support Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
+
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <span id="theme-icon-container"></span>
+    </button>
+<script>
+  (function() {
+    if (!window.PointerEvent) return;
+    var currentHover = null;
+    document.addEventListener('pointerover', function(e) {
+      if (e.pointerType === 'pen') {
+        var el = e.target.closest('.card, .btn, .theme-fab, .back, .back-link, a');
+        if (el && el !== currentHover) {
+          if (currentHover) currentHover.classList.remove('is-pen-hover');
+          currentHover = el;
+          currentHover.classList.add('is-pen-hover');
+        }
+      }
+    }, { passive: true });
+    document.addEventListener('pointerout', function(e) {
+      if (e.pointerType === 'pen' && currentHover) {
+        currentHover.classList.remove('is-pen-hover');
+        currentHover = null;
+      }
+    }, { passive: true });
+  })();
+</script>
+</body>
+</html>

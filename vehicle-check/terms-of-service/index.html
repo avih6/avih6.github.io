@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Vehicle Check (בדיקת רכב)</title>
+    
+    <link rel="icon" type="image/png" href="/icon-vehicle-check.png">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+            --btn-border: #1a73e8;
+            --fab-bg: rgba(255, 255, 255, 0.85);
+            --fab-border: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --text: #e8eaed;
+                --primary: #8ab4f8;
+                --subtitle: #9aa0a6;
+                --border: #333333;
+                --card: #1e1e1e;
+                --card-bg: #1e1e1e;
+                --toc-bg: #1e1e1e;
+                --toc-border: #333333;
+                --toc-link: #9aa0a6;
+                --warning-bg: #3c2f00;
+                --warning-border: #f9ab00;
+                --warning-text: #ffd54f;
+                --btn-border: #8ab4f8;
+                --fab-bg: rgba(30, 30, 30, 0.85);
+                --fab-border: #333333;
+            }
+        }
+
+        html.dark-mode {
+            --bg: #121212 !important;
+            --text: #e8eaed !important;
+            --primary: #8ab4f8 !important;
+            --subtitle: #9aa0a6 !important;
+            --border: #333333 !important;
+            --card: #1e1e1e !important;
+            --card-bg: #1e1e1e !important;
+            --toc-bg: #1e1e1e !important;
+            --toc-border: #333333 !important;
+            --toc-link: #9aa0a6 !important;
+            --warning-bg: #3c2f00 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #ffd54f !important;
+            --btn-border: #8ab4f8 !important;
+            --fab-bg: rgba(30, 30, 30, 0.85) !important;
+            --fab-border: #333333 !important;
+        }
+
+        html.light-mode {
+            --bg: #ffffff !important;
+            --text: #202124 !important;
+            --primary: #1a73e8 !important;
+            --subtitle: #5f6368 !important;
+            --border: #ebebeb !important;
+            --card: #ffffff !important;
+            --card-bg: #ffffff !important;
+            --toc-bg: #f8f9fa !important;
+            --toc-border: #eee !important;
+            --toc-link: #5f6368 !important;
+            --warning-bg: #fef7e0 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #202124 !important;
+            --btn-border: #1a73e8 !important;
+            --fab-bg: rgba(255, 255, 255, 0.85) !important;
+            --fab-border: #eee !important;
+        }
+
+        body { 
+            font-family: system-ui, -apple-system, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 800px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background-color: var(--bg);
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h1 { font-size: 2.2em; font-weight: 800; color: var(--primary); margin-bottom: 5px; }
+        .subtitle { color: var(--subtitle); margin-top: 0; margin-bottom: 2rem; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text); }
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: var(--text); }
+        p { margin-bottom: 1rem; }
+        ul, ol { margin-bottom: 1rem; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        .back { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back:hover, .back.is-pen-hover { text-decoration: underline; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover, a.is-pen-hover { text-decoration: underline; }
+        .toc { 
+            background-color: var(--toc-bg); 
+            padding: 20px 25px; 
+            border-radius: 12px; 
+            margin-bottom: 2.5em; 
+            border: 1px solid var(--toc-border);
+            transition: background-color 0.3s, border 0.3s;
+        }
+        .toc h3 { margin-top: 0; color: var(--primary); font-size: 1.2em; }
+        .toc a { color: var(--toc-link); font-weight: 500; }
+        .toc a:hover, a.is-pen-hover { color: var(--primary); }
+        .toc ol { margin-bottom: 0; }
+        .warning-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 18px 22px;
+            border-radius: 8px;
+            margin: 1.8rem 0;
+            color: var(--warning-text);
+        }
+        .warning-box p {
+            margin: 0 0 12px 0;
+            font-weight: 500;
+        }
+        .warning-box p:last-child {
+            margin-bottom: 0;
+        }
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px); 
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--fab-border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px; 
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .theme-fab:hover, .theme-fab.is-pen-hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card-bg);
+        }
+        .theme-fab span { display: flex; align-items: center; justify-content: center; }
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+    <script>
+  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+  (function() {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+    } else if (savedTheme === 'light') {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+    }
+  })();
+
+  function isCurrentlyDark() {
+    if (document.documentElement.classList.contains('dark-mode')) return true;
+    if (document.documentElement.classList.contains('light-mode')) return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function updateThemeIcon() {
+    var container = document.getElementById('theme-icon-container');
+    if (container) {
+      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+    }
+  }
+
+  function toggleTheme() {
+    var willBeDark = !isCurrentlyDark();
+    if (willBeDark) {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+    updateThemeIcon();
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) {
+        updateThemeIcon();
+      }
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', updateThemeIcon);
+</script>
+</head>
+<body>
+    
+    <a href="/vehicle-check" class="back">← Back to App Site</a>
+    
+    <h1>Terms of Service</h1>
+    <p class="subtitle">Vehicle Check (בדיקת רכב)</p>
+
+    <div class="toc">
+        <h3>Table of Contents</h3>
+        <ol>
+            <li><a href="#acceptance">Acceptance of Terms</a></li>
+            <li><a href="#nature-of-service">Nature of Service & Feature Overview</a></li>
+            <li><a href="#government-source">Government Open Data Source & Independence Disclaimer</a></li>
+            <li><a href="#inspection-disclaimer">Informational Use & Non-Official Inspection Caution</a></li>
+            <li><a href="#disclaimer-warranties">Disclaimer of Warranties ("AS IS")</a></li>
+            <li><a href="#limitation-liability">Limitation of Liability</a></li>
+            <li><a href="#intellectual-property">Intellectual Property & License</a></li>
+            <li><a href="#third-party">Third-Party Services & External Data Providers</a></li>
+            <li><a href="#modifications">Modifications to the Service & Terms</a></li>
+            <li><a href="#governing-law">Governing Law & Jurisdiction</a></li>
+            <li><a href="#contact">Contact Information</a></li>
+        </ol>
+    </div>
+
+    <p><strong>Last Updated:</strong> August 27, 2026</p>
+
+    <h2 id="acceptance">1. Acceptance of Terms</h2>
+    <p>By downloading, installing, accessing, or using the "Vehicle Check (בדיקת רכב)" application (the "App"), the user agrees to be legally bound by these Terms of Service ("Terms"). If the user does not agree to these Terms, the user must refrain from using the App.</p>
+
+    <h2 id="nature-of-service">2. Nature of Service & Feature Overview</h2>
+    <p>• <strong>Vehicle Information Utility:</strong> Vehicle Check is a mobile utility designed to assist users in querying public motor vehicle records in Israel by entering or scanning a vehicle license plate number.</p>
+    <p>• <strong>Features:</strong> The App provides access to vehicle technical specifications, previous inspection mileage, road test validity dates, active safety ratings, open recall notices, and an offline OBD-II diagnostic fault code (DTC) lookup tool.</p>
+
+    <h2 id="government-source">3. Government Open Data Source & Independence Disclaimer</h2>
+    <div class="warning-box">
+        <p><strong>INDEPENDENCE & DATA SOURCE DISCLAIMER:</strong> Vehicle Check is developed independently by avih6. <strong>The App is NOT an official government application, does NOT represent, and is NOT affiliated with the Ministry of Transport and Road Safety (משרד התחבורה והבטיחות בדרכים), the Israel Police, or any governmental agency.</strong></p>
+        <p>• All vehicular data displayed within the App is retrieved from public open government records published at <a href="https://data.gov.il" target="_blank" rel="noopener">data.gov.il</a>.</p>
+        <p>• avih6 does not generate, alter, or certify government vehicle records and assumes no responsibility for data entry omissions, government server outages, or latency in database updates on data.gov.il.</p>
+    </div>
+
+    <h2 id="inspection-disclaimer">4. Informational Use & Non-Official Inspection Caution</h2>
+    <div class="warning-box">
+        <p><strong>NON-INSPECTION & BUYER CAUTION:</strong> Information presented in the App is provided strictly for general informational and convenience purposes.</p>
+        <p>• <strong>No Mechanical Guarantee:</strong> The App does NOT replace a professional mechanical vehicle inspection (בדיקה במכון בדיקה מורשה או מוסך מוסמך) prior to purchasing a pre-owned vehicle.</p>
+        <p>• <strong>Legal Status & Ownership:</strong> The App does not verify financial encumbrances (משכונים), legal attachments (עיקולים), insurance claim histories, or undisclosed accident damage.</p>
+        <p>• The user remains solely responsible for verifying the legal, financial, and mechanical condition of any vehicle through official certified channels.</p>
+    </div>
+
+    <h2 id="disclaimer-warranties">5. Disclaimer of Warranties ("AS IS")</h2>
+    <p>The App is provided on an <strong>"AS IS"</strong> and <strong>"AS AVAILABLE"</strong> basis, without warranties of any kind, whether express, implied, statutory, or otherwise. avih6 makes no guarantees regarding the continuous availability of the <code>data.gov.il</code> API, OCR scanning precision under low light conditions, or completeness of historical records.</p>
+
+    <h2 id="limitation-liability">6. Limitation of Liability</h2>
+    <p>To the maximum extent permitted by applicable law, avih6 shall not be held liable for any direct, indirect, incidental, special, or consequential damages resulting from the use of, or inability to use, the App. This includes, without limitation:</p>
+    <ul>
+        <li>Financial decisions, vehicle purchases, or transaction losses made in reliance on data presented in the App.</li>
+        <li>Undisclosed mechanical defects, odometer tampering, or structural damages not recorded in government open databases.</li>
+        <li>Temporary or permanent downtime of public government API servers (<code>data.gov.il</code>).</li>
+    </ul>
+
+    <h2 id="intellectual-property">7. Intellectual Property & License</h2>
+    <p>All right, title, and interest in and to the App (including underlying software code, UI designs, graphics, branding, and local asset compilations) remain the exclusive property of avih6. The user is granted a limited, personal, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes. Reverse engineering, decompiling, extracting source code, copying, or distributing modified versions of the App is strictly prohibited.</p>
+
+    <h2 id="third-party">8. Third-Party Services & External Data Providers</h2>
+    <p>The App communicates with and integrates third-party services, including the Israeli Government Open Data Portal (<code>data.gov.il</code>), Wikimedia Commons API, Google Play Services, and Google AdMob. avih6 exercises no control over third-party infrastructure and assumes no liability for their availability, content, or policies.</p>
+
+    <h2 id="modifications">9. Modifications to the Service & Terms</h2>
+    <p>avih6 reserves the right to modify, suspend, or discontinue the App or any portion thereof at any time without prior notice. These Terms may be revised periodically, with updates becoming effective upon publication on this page.</p>
+
+    <h2 id="governing-law">10. Governing Law & Jurisdiction</h2>
+    <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel. Any dispute arising under or in connection with these Terms shall be subject to the exclusive jurisdiction of the competent courts of Israel.</p>
+
+    <h2 id="contact">11. Contact Information</h2>
+    <p>For questions or inquiries regarding these Terms of Service, please contact:</p>
+    <ul>
+        <li><strong>Developer:</strong> avih6</li>
+        <li><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></li>
+    </ul>
+
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Theme">
+        <span id="theme-icon-container"></span>
+    </button>
+</body>
+</html>

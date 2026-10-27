@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - My List</title>
+    
+    <link rel="icon" type="image/png" href="/icon-my-list.png">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+        }
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+        }
+        [data-theme="dark"] {
+            --bg: #121212;
+            --text: #e8eaed;
+            --primary: #8ab4f8;
+            --subtitle: #9aa0a6;
+            --border: #3c4043;
+            --card: #1e1e1e;
+            --card-bg: #1e1e1e;
+            --toc-bg: #1e1e1e;
+            --toc-border: #3c4043;
+            --toc-link: #9aa0a6;
+            --warning-bg: #332b00;
+            --warning-border: #f9ab00;
+            --warning-text: #e8eaed;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            margin: 0;
+            padding: 0;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px 80px 20px;
+        }
+        header {
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        h1 {
+            color: var(--text);
+            font-size: 2rem;
+            margin-bottom: 8px;
+        }
+        .last-updated {
+            color: var(--subtitle);
+            font-size: 0.9rem;
+        }
+        h2 {
+            color: var(--text);
+            font-size: 1.3rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border);
+        }
+        p, li {
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+        ul {
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+        .toc {
+            background-color: var(--toc-bg);
+            border: 1px solid var(--toc-border);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .toc h3 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-size: 1rem;
+            color: var(--text);
+        }
+        .toc ol {
+            margin: 0;
+            padding-left: 20px;
+        }
+        .toc li {
+            margin-bottom: 6px;
+        }
+        .toc a {
+            color: var(--toc-link);
+            font-size: 0.9rem;
+        }
+        .toc a:hover {
+            color: var(--primary);
+        }
+        .disclaimer-box {
+            background-color: var(--warning-bg);
+            border-left: 4px solid var(--warning-border);
+            padding: 15px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 20px 0;
+            color: var(--warning-text);
+        }
+        .disclaimer-box p {
+            margin: 0;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: inherit;
+        }
+        .theme-fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background-color: var(--card);
+            border: 1px solid var(--border);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            user-select: none;
+        }
+        .theme-fab:hover {
+            transform: scale(1.08);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+        }
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+            color: var(--subtitle);
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="/my-list" class="back-link">&larr; Back to My List</a>
+        <header>
+            <h1>Terms of Service</h1>
+            <div class="last-updated">Last updated: October 18, 2026</div>
+        </header>
+        <div class="toc">
+            <h3>Table of Contents</h3>
+            <ol>
+                <li><a href="#section-1">Acceptance of Terms</a></li>
+                <li><a href="#section-2">Description of Service</a></li>
+                <li><a href="#section-3">User Accounts &amp; Authentication</a></li>
+                <li><a href="#section-4">Shared Groups &amp; Invite Codes</a></li>
+                <li><a href="#section-5">Acceptable Use</a></li>
+                <li><a href="#section-6">Intellectual Property</a></li>
+                <li><a href="#section-7">Third-Party Services &amp; Infrastructure</a></li>
+                <li><a href="#section-8">Disclaimer of Warranties</a></li>
+                <li><a href="#section-9">Limitation of Liability</a></li>
+                <li><a href="#section-10">Changes to These Terms</a></li>
+                <li><a href="#section-11">Governing Law &amp; Contact</a></li>
+            </ol>
+        </div>
+        <section id="section-1">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By downloading, installing, or using <strong>My List</strong> (referred to as "the App"), you agree to be bound by these Terms of Service. If you do not agree to these terms, do not use the App.</p>
+        </section>
+        <section id="section-2">
+            <h2>2. Description of Service</h2>
+            <p>My List is an Android utility application designed to help individuals and groups create, organize, and manage grocery and shopping lists with real-time multi-device cloud synchronization.</p>
+        </section>
+        <section id="section-3">
+            <h2>3. User Accounts &amp; Authentication</h2>
+            <p>The App allows access via Google Sign-In or Anonymous Guest mode. You are responsible for maintaining the security of your device and accept responsibility for all activities conducted under your session.</p>
+        </section>
+        <section id="section-4">
+            <h2>4. Shared Groups &amp; Invite Codes</h2>
+            <p>My List allows users to create groups and invite others using 6-character alphanumeric invite codes:</p>
+            <ul>
+                <li>Any person in possession of a group invite code can join the group and view, add, modify, or delete items within that group's shopping list.</li>
+                <li>You are solely responsible for managing and distributing invite codes for your lists.</li>
+                <li>You may leave any group at any time directly through the group settings menu.</li>
+            </ul>
+        </section>
+        <section id="section-5">
+            <h2>5. Acceptable Use</h2>
+            <p>You agree to use the App solely for lawful personal and household purposes. You agree not to:</p>
+            <ul>
+                <li>Attempt to decompile, reverse engineer, or disassemble any part of the App.</li>
+                <li>Abuse, disrupt, or burden the Google Cloud Firestore backend or Firebase APIs.</li>
+                <li>Use automated scripts, bots, or scrapers to access the service.</li>
+            </ul>
+        </section>
+        <section id="section-6">
+            <h2>6. Intellectual Property</h2>
+            <p>All rights, title, and interest in and to the App, including its user interface design, logos, icons, and software code, are owned exclusively by avih6.</p>
+        </section>
+        <section id="section-7">
+            <h2>7. Third-Party Services &amp; Infrastructure</h2>
+            <p>The App utilizes Google Firebase infrastructure for cloud storage and authentication. The developer is not responsible for independent outages or connectivity disruptions affecting Google Cloud services.</p>
+        </section>
+        <section id="section-8">
+            <h2>8. Disclaimer of Warranties</h2>
+            <p>The App is provided on an "AS IS" and "AS AVAILABLE" basis without warranties of any kind, whether express or implied. There is no warranty that the App will be uninterrupted, error-free, or continuously available.</p>
+        </section>
+        <section id="section-9">
+            <h2>9. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by applicable law, in no event shall avih6 be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your access to or inability to use the App.</p>
+        </section>
+        <section id="section-10">
+            <h2>10. Changes to These Terms</h2>
+            <p>These Terms of Service may be modified at any time. Any changes will be posted on this page with an updated "Last updated" date.</p>
+        </section>
+        <section id="section-11">
+            <h2>11. Governing Law &amp; Contact</h2>
+            <p>These Terms shall be governed by and construed in accordance with the laws of the State of Israel. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the competent courts in Israel.</p>
+            <p>If you have any questions regarding these Terms, please direct inquiries to:</p>
+            <p><strong>Email:</strong> <a href="mailto:av6development@gmail.com">av6development@gmail.com</a></p>
+        </section>
+        <footer>
+            <p>&copy; <span id="year">2026</span> avih6. All rights reserved.</p>
+        </footer>
+    </div>
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+        <span id="theme-icon">&#9790;</span>
+    </button>
+    <script>
+        function getPreferredTheme() {
+            const saved = localStorage.getItem('theme');
+            if (saved) return saved;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            const icon = document.getElementById('theme-icon');
+            if (icon) {
+                icon.innerHTML = theme === 'dark' ? '&#9788;' : '&#9790;';
+            }
+        }
+        function toggleTheme() {
+            const current = document.documentElement.getAttribute('data-theme') || 'light';
+            const next = current === 'dark' ? 'light' : 'dark';
+            localStorage.setItem('theme', next);
+            applyTheme(next);
+        }
+        applyTheme(getPreferredTheme());
+        const yr = new Date().getFullYear();
+        document.getElementById('year').textContent = yr > 2026 ? '2026-' + yr : '2026';
+    </script>
+</body>
+</html>

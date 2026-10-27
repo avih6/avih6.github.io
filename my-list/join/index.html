@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My List - Join Shopping List</title>
+    <link rel="icon" type="image/png" href="/icon-my-list.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date());
+      gtag('config', 'G-650BH6MCPS');
+    </script>
+
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --primary-hover: #1557b0;
+            --primary-bg: #e8f0fe;
+            --bg: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #202124;
+            --text-sub: #5f6368;
+            --border: #dadce0;
+            --success: #1e8e3e;
+            --notice-bg: #fef7e0;
+            --notice-border: #f9ab00;
+            --notice-text: #7c4a00;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --primary: #8ab4f8;
+                --primary-hover: #aecbfa;
+                --primary-bg: #202b3d;
+                --bg: #202124;
+                --card-bg: #292a2d;
+                --text-main: #e8eaed;
+                --text-sub: #9aa0a6;
+                --border: #3c4043;
+                --success: #81c995;
+                --notice-bg: #3c2f00;
+                --notice-border: #f9ab00;
+                --notice-text: #ffe082;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Compact, subtle language switcher anchored in the corner */
+        .lang-switch {
+            position: fixed;
+            bottom: 16px;
+            right: 16px;
+            display: flex;
+            gap: 4px;
+            background: var(--card-bg);
+            padding: 4px 6px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+            border: 1px solid var(--border);
+            z-index: 100;
+        }
+
+        [dir="rtl"] .lang-switch {
+            right: auto;
+            left: 16px;
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            padding: 4px 10px;
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-sub);
+            border-radius: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .lang-btn:hover {
+            color: var(--text-main);
+        }
+
+        .lang-btn.active {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .lang-btn.active {
+                color: #202124;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 440px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            padding: 32px 24px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        p.subtitle {
+            font-size: 15px;
+            color: var(--text-sub);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .device-notice {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--notice-bg);
+            border: 1px solid var(--notice-border);
+            color: var(--notice-text);
+            font-size: 13px;
+            line-height: 1.4;
+            font-weight: 500;
+            padding: 10px 14px;
+            border-radius: 14px;
+            margin-bottom: 20px;
+            text-align: start;
+        }
+
+        .device-notice svg {
+            flex-shrink: 0;
+        }
+
+        .code-box {
+            background: var(--primary-bg);
+            border: 2px dashed var(--primary);
+            border-radius: 16px;
+            padding: 16px;
+            margin-bottom: 22px;
+        }
+
+        .code-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 6px;
+        }
+
+        .code-value {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            font-family: monospace;
+            color: var(--text-main);
+            margin-bottom: 10px;
+            word-break: break-all;
+        }
+
+        .btn-copy {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            font-weight: 500;
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .btn-copy:hover {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--primary);
+            color: #ffffff;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 13px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+            box-shadow: 0 2px 6px rgba(26, 115, 232, 0.3);
+            border: none;
+            cursor: pointer;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .btn-primary {
+                color: #202124;
+            }
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-secondary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 15px;
+            padding: 11px 20px;
+            border-radius: 14px;
+            text-decoration: none;
+            transition: background 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg);
+        }
+
+        .steps {
+            background: var(--bg);
+            border-radius: 16px;
+            padding: 16px;
+            text-align: start;
+        }
+
+        .steps-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--text-sub);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .steps ol {
+            padding-inline-start: 20px;
+            font-size: 14px;
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .footer {
+            margin-top: 24px;
+            font-size: 13px;
+            color: var(--text-sub);
+        }
+
+        .footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .copied-toast {
+            position: fixed;
+            bottom: 30px;
+            background: var(--success);
+            color: #ffffff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 200;
+        }
+
+        .copied-toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img src="/icon-my-list.png" alt="My List App Icon" class="app-icon" onerror="this.style.display='none'">
+        <h1 id="title">Join Shopping List</h1>
+        <p class="subtitle" id="subtitle">You have been invited to collaborate on a shared shopping list in My List.</p>
+
+        <!-- Device detection banner for Desktop or non-Android devices -->
+        <div id="deviceNotice" class="device-notice" style="display: none;">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <span id="deviceNoticeText"></span>
+        </div>
+
+        <div class="code-box">
+            <div class="code-label" id="codeLabel">Invitation Code</div>
+            <div class="code-value" id="inviteCodeDisplay">------</div>
+            <button class="btn-copy" id="copyBtn" onclick="copyCode()">Copy Code</button>
+        </div>
+
+        <div class="actions">
+            <!-- Primary Action: Open in App on Android / Copy Link on Desktop -->
+            <a href="#" class="btn-primary" id="openAppBtn" onclick="handlePrimaryAction(event)">
+                <svg id="primaryIconApp" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/>
+                </svg>
+                <svg id="primaryIconCopy" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" style="display:none;">
+                    <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+                </svg>
+                <span id="openAppText">Open in My List</span>
+            </a>
+
+            <!-- Official Google Play button with 4-color authentic vector -->
+            <a href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn-secondary" id="playStoreBtn" target="_blank">
+                <svg width="20" height="20" viewBox="0 0 512 512" style="flex-shrink:0;">
+                    <path fill="#4285F4" d="M47.7 36.4C44.4 40.1 42.5 45.6 42.5 53v406c0 7.4 1.9 12.9 5.2 16.6l1.3 1.2 227.6-227.6v-5.4L49 35.2l-1.3 1.2z"/>
+                    <path fill="#FBBC04" d="M352.3 328.7l-75.7-75.7v-5.4l75.7-75.7 1.7 1 89.8 51c25.7 14.6 25.7 38.5 0 53.1l-89.8 51-1.7.7z"/>
+                    <path fill="#EA4335" d="M276.6 253L47.7 475.6c8.4 8.9 22.3 10 37.8 1.2l268.5-152.5-77.4-71.3z"/>
+                    <path fill="#34A853" d="M276.6 259l77.4-71.3L85.5 35.2c-15.5-8.8-29.4-7.7-37.8 1.2L276.6 259z"/>
+                </svg>
+                <span id="playStoreText">Google Play</span>
+            </a>
+        </div>
+
+        <div class="steps">
+            <div class="steps-title" id="stepsTitle">How to join</div>
+            <ol id="stepsList">
+                <li>Install or open <strong>My List</strong> on your Android phone.</li>
+                <li>Tap the group icon or select <strong>Join List</strong>.</li>
+                <li>Enter or paste the code above to connect and start sharing.</li>
+            </ol>
+        </div>
+    </div>
+
+    <!-- Small, compact language toggle anchored at the bottom corner -->
+    <div class="lang-switch">
+        <button class="lang-btn" onclick="setLanguage('he')">עברית</button>
+        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
+        <button class="lang-btn" onclick="setLanguage('ru')">РУ</button>
+    </div>
+
+    <div class="footer">
+        <a href="/my-list" id="homeLink">My List Overview</a> &bull; 
+        <a href="/my-list/privacy-policy" id="privacyLink">Privacy Policy</a> &bull; 
+        <a href="/my-list/terms-of-service" id="termsLink">Terms</a>
+    </div>
+
+    <div class="copied-toast" id="toast">Code copied!</div>
+
+    <script>
+        const translations = {
+            en: {
+                dir: 'ltr',
+                title: 'Join Shopping List',
+                subtitle: 'You have been invited to collaborate on a shared shopping list in My List.',
+                codeLabel: 'Invitation Code',
+                copyBtn: 'Copy Code',
+                copied: 'Code copied to clipboard!',
+                linkCopied: 'Share link copied to clipboard! Send it to your Android device.',
+                openApp: 'Open in My List',
+                copyLinkForPhone: 'Copy Link for Phone',
+                playStore: 'Google Play',
+                stepsTitle: 'How to join',
+                step1: 'Install or open <strong>My List</strong> on your Android phone.',
+                step2: 'Tap the group icon or select <strong>Join List</strong>.',
+                step3: 'Enter or paste the code above to collaborate in real-time.',
+                step1Desktop: 'Send this code or link to your Android device.',
+                step2Desktop: 'Open <strong>My List</strong> from Google Play.',
+                step3Desktop: 'Enter the code to sync the shopping list.',
+                desktopNotice: 'You are viewing this on a computer. My List is an Android app — copy the link or code to open it on your phone.',
+                iosNotice: 'My List is currently available for Android devices. You can copy the code and share it with an Android phone.',
+                homeLink: 'My List Overview',
+                privacyLink: 'Privacy Policy',
+                termsLink: 'Terms'
+            },
+            he: {
+                dir: 'rtl',
+                title: 'הצטרפות לרשימת קניות',
+                subtitle: 'קיבלת הזמנה להצטרף ולערוך יחד רשימת קניות באפליקציית "רשימה שלי".',
+                codeLabel: 'קוד הצטרפות',
+                copyBtn: 'העתק קוד',
+                copied: 'הקוד הועתק ללוח!',
+                linkCopied: 'הקישור הועתק ללוח! שלח אותו למכשיר האנדרואיד שלך.',
+                openApp: 'פתח באפליקציה',
+                copyLinkForPhone: 'העתק קישור לטלפון',
+                playStore: 'Google Play',
+                stepsTitle: 'איך מצטרפים?',
+                step1: 'פתח או התקן את אפליקציית <strong>רשימה שלי</strong> בטלפון האנדרואיד שלך.',
+                step2: 'לחץ על סמל הקבוצה או בחר ב-<strong>הצטרפות לרשימה</strong>.',
+                step3: 'הדבק את הקוד שלמעלה כדי להצטרף ולסנכרן את הרשימה בזמן אמת.',
+                step1Desktop: 'שלח את הקוד או הקישור למכשיר האנדרואיד שלך.',
+                step2Desktop: 'פתח את אפליקציית <strong>רשימה שלי</strong> מ-Google Play.',
+                step3Desktop: 'הזן את הקוד להצטרפות וסנכרון מיידי.',
+                desktopNotice: 'הנך צופה מתוך מחשב. אפליקציית "רשימה שלי" פועלת במכשירי אנדרואיד — העתק את הקישור או הקוד כדי להצטרף מהטלפון.',
+                iosNotice: 'אפליקציית "רשימה שלי" זמינה למכשירי אנדרואיד. באפשרותך להעתיק את הקוד ולפתוח אותו במכשיר אנדרואיד.',
+                homeLink: 'דף הבית של רשימה שלי',
+                privacyLink: 'מדיניות פרטיות',
+                termsLink: 'תנאי שימוש'
+            },
+            ru: {
+                dir: 'ltr',
+                title: 'Присоединиться к списку',
+                subtitle: 'Вас пригласили для совместного ведения списка покупок в приложении «Мой Список».',
+                codeLabel: 'Код приглашения',
+                copyBtn: 'Скопировать код',
+                copied: 'Код скопирован в буфер!',
+                linkCopied: 'Ссылка скопирована! Отправьте её на Android-устройство.',
+                openApp: 'Открыть в приложении',
+                copyLinkForPhone: 'Скопировать ссылку для телефона',
+                playStore: 'Google Play',
+                stepsTitle: 'Как присоединиться',
+                step1: 'Установите или откройте <strong>Мой Список</strong> на телефоне Android.',
+                step2: 'Нажмите на значок группы или выберите <strong>Присоединиться к списку</strong>.',
+                step3: 'Вставьте указанный код для синхронизации в реальном времени.',
+                step1Desktop: 'Отправьте этот код или ссылку на ваше Android-устройство.',
+                step2Desktop: 'Откройте <strong>Мой Список</strong> из Google Play.',
+                step3Desktop: 'Введите код для синхронизации списка покупок.',
+                desktopNotice: 'Вы просматриваете страницу на компьютере. «Мой Список» работает на Android — скопируйте ссылку или код для телефона.',
+                iosNotice: 'Приложение «Мой Список» доступно для Android. Скопируйте код для использования на Android-устройстве.',
+                homeLink: 'О приложении',
+                privacyLink: 'Политика конфиденциальности',
+                termsLink: 'Условия'
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const inviteCode = (urlParams.get('code') || '').trim().toUpperCase();
+        let currentLang = 'en';
+
+        const isAndroid = /android/i.test(navigator.userAgent);
+        const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent);
+        const isNonAndroid = !isAndroid;
+
+        function init() {
+            if (inviteCode) {
+                document.getElementById('inviteCodeDisplay').textContent = inviteCode;
+            } else {
+                document.getElementById('inviteCodeDisplay').textContent = '------';
+            }
+
+            // Determine language:
+            // 1. Saved preference
+            const savedLang = localStorage.getItem('mylist_join_lang');
+            // 2. Query parameter
+            const queryLang = (urlParams.get('lang') || '').toLowerCase();
+            // 3. Browser language
+            const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+
+            if (savedLang && translations[savedLang]) {
+                currentLang = savedLang;
+            } else if (queryLang && (queryLang === 'he' || queryLang === 'iw')) {
+                currentLang = 'he';
+            } else if (queryLang && queryLang.startsWith('ru')) {
+                currentLang = 'ru';
+            } else if (queryLang && queryLang.startsWith('en')) {
+                currentLang = 'en';
+            } else if (browserLang.startsWith('he') || browserLang.startsWith('iw')) {
+                currentLang = 'he';
+            } else if (browserLang.startsWith('ru')) {
+                currentLang = 'ru';
+            } else {
+                currentLang = 'en';
+            }
+
+            setLanguage(currentLang, false);
+
+            // Auto-redirect to app ONLY on Android
+            if (isAndroid && inviteCode) {
+                setTimeout(() => {
+                    window.location.href = `mylist://join?code=${encodeURIComponent(inviteCode)}`;
+                }, 400);
+            }
+        }
+
+        function setLanguage(lang, save = true) {
+            if (!translations[lang]) lang = 'en';
+            currentLang = lang;
+            if (save) {
+                localStorage.setItem('mylist_join_lang', lang);
+            }
+
+            const t = translations[lang];
+            document.documentElement.lang = lang;
+            document.documentElement.dir = t.dir;
+
+            document.getElementById('title').textContent = t.title;
+            document.getElementById('subtitle').textContent = t.subtitle;
+            document.getElementById('codeLabel').textContent = t.codeLabel;
+            document.getElementById('copyBtn').textContent = t.copyBtn;
+            document.getElementById('playStoreText').textContent = t.playStore;
+            document.getElementById('stepsTitle').textContent = t.stepsTitle;
+
+            // Handle device-specific text and notices
+            const deviceNotice = document.getElementById('deviceNotice');
+            const deviceNoticeText = document.getElementById('deviceNoticeText');
+            const openAppText = document.getElementById('openAppText');
+            const primaryIconApp = document.getElementById('primaryIconApp');
+            const primaryIconCopy = document.getElementById('primaryIconCopy');
+            const stepsList = document.getElementById('stepsList');
+
+            if (isNonAndroid) {
+                deviceNotice.style.display = 'flex';
+                deviceNoticeText.textContent = isIOS ? t.iosNotice : t.desktopNotice;
+                openAppText.textContent = t.copyLinkForPhone;
+                primaryIconApp.style.display = 'none';
+                primaryIconCopy.style.display = 'inline-block';
+
+                stepsList.innerHTML = `
+                    <li>${t.step1Desktop}</li>
+                    <li>${t.step2Desktop}</li>
+                    <li>${t.step3Desktop}</li>
+                `;
+            } else {
+                deviceNotice.style.display = 'none';
+                openAppText.textContent = t.openApp;
+                primaryIconApp.style.display = 'inline-block';
+                primaryIconCopy.style.display = 'none';
+
+                stepsList.innerHTML = `
+                    <li>${t.step1}</li>
+                    <li>${t.step2}</li>
+                    <li>${t.step3}</li>
+                `;
+            }
+
+            document.getElementById('homeLink').textContent = t.homeLink;
+            document.getElementById('privacyLink').textContent = t.privacyLink;
+            document.getElementById('termsLink').textContent = t.termsLink;
+
+            // Update active button state in the compact switch
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                const label = btn.textContent.trim().toUpperCase();
+                if ((lang === 'he' && label === 'עברית') ||
+                    (lang === 'en' && label === 'EN') ||
+                    (lang === 'ru' && label === 'РУ')) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 2600);
+        }
+
+        function copyCode() {
+            if (!inviteCode) return;
+            navigator.clipboard.writeText(inviteCode).then(() => {
+                showToast(translations[currentLang].copied);
+            }).catch(() => {
+                alert(inviteCode);
+            });
+        }
+
+        function handlePrimaryAction(e) {
+            e.preventDefault();
+            if (isNonAndroid) {
+                // On desktop or iOS, copy the full share URL so user can send it to their phone
+                const shareUrl = window.location.href;
+                navigator.clipboard.writeText(shareUrl).then(() => {
+                    showToast(translations[currentLang].linkCopied);
+                }).catch(() => {
+                    alert(shareUrl);
+                });
+            } else {
+                // On Android, launch the app deep link
+                if (inviteCode) {
+                    window.location.href = `mylist://join?code=${encodeURIComponent(inviteCode)}`;
+                } else {
+                    window.location.href = `mylist://join`;
+                }
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.avih6.mylist",
+      "sha256_cert_fingerprints": [
+        "D3:06:7A:99:B3:E6:62:A8:CA:D1:F9:C2:54:0F:25:40:A4:5C:C8:9F:C2:97:80:FC:F1:E8:BB:8F:8B:74:B9:24",
+        "A3:EB:C3:19:44:7D:C3:0D:7A:96:AF:5D:44:CF:B3:66:D9:8D:B4:82:56:1C:71:B7:AD:5C:FB:15:21:3D:DA:72",
+        "E2:2D:EC:76:D1:3F:BA:35:86:68:81:36:6D:3B:70:0F:CD:45:F3:13:54:02:DE:5B:0B:D4:A9:EF:2B:08:02:B3"
+      ]
+    }
+  }
+]
