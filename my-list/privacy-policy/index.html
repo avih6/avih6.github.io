@@ -19,177 +19,41 @@
       gtag('config', 'G-650BH6MCPS');
     </script>
     <style>
-        html {
-            scroll-behavior: smooth;
-            touch-action: manipulation;
-        }
-        :root {
-            --bg: #ffffff;
-            --text: #202124;
-            --primary: #1a73e8;
-            --subtitle: #5f6368;
-            --border: #ebebeb;
-            --card: #ffffff;
-            --card-bg: #ffffff;
-            --toc-bg: #f8f9fa;
-            --toc-border: #eee;
-            --toc-link: #5f6368;
-            --warning-bg: #fef7e0;
-            --warning-border: #f9ab00;
-            --warning-text: #202124;
-        }
-        [data-theme="dark"] {
-            --bg: #121212;
-            --text: #e8eaed;
-            --primary: #8ab4f8;
-            --subtitle: #9aa0a6;
-            --border: #3c4043;
-            --card: #1e1e1e;
-            --card-bg: #1e1e1e;
-            --toc-bg: #1e1e1e;
-            --toc-border: #3c4043;
-            --toc-link: #9aa0a6;
-            --warning-bg: #332b00;
-            --warning-border: #f9ab00;
-            --warning-text: #e8eaed;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: var(--text);
-            background-color: var(--bg);
-            margin: 0;
-            padding: 0;
-            transition: background-color 0.3s, color 0.3s;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px 80px 20px;
-        }
-        header {
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
-            margin-bottom: 30px;
-        }
-        h1 {
-            color: var(--text);
-            font-size: 2rem;
-            margin-bottom: 8px;
-        }
-        .last-updated {
-            color: var(--subtitle);
-            font-size: 0.9rem;
-        }
-        h2 {
-            color: var(--text);
-            font-size: 1.3rem;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-bottom: 5px;
-            border-bottom: 1px solid var(--border);
-        }
-        p, li {
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-        ul {
-            padding-left: 20px;
-        }
-        li {
-            margin-bottom: 8px;
-        }
-        a {
-            color: var(--primary);
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
-        .toc {
-            background-color: var(--toc-bg);
-            border: 1px solid var(--toc-border);
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 30px;
-        }
-        .toc h3 {
-            margin-top: 0;
-            margin-bottom: 12px;
-            font-size: 1rem;
-            color: var(--text);
-        }
-        .toc ol {
-            margin: 0;
-            padding-left: 20px;
-        }
-        .toc li {
-            margin-bottom: 6px;
-        }
-        .toc a {
-            color: var(--toc-link);
-            font-size: 0.9rem;
-        }
-        .toc a:hover {
-            color: var(--primary);
-        }
-        .disclaimer-box {
-            background-color: var(--warning-bg);
-            border-left: 4px solid var(--warning-border);
-            padding: 15px 20px;
-            border-radius: 0 8px 8px 0;
-            margin: 20px 0;
-            color: var(--warning-text);
-        }
-        .disclaimer-box p {
-            margin: 0;
-            font-size: 0.9rem;
-            line-height: 1.5;
-            color: inherit;
-        }
-        .theme-fab {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            background-color: var(--card);
-            border: 1px solid var(--border);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            z-index: 1000;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            user-select: none;
-        }
-        .theme-fab:hover {
-            transform: scale(1.08);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        }
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-            font-size: 0.85rem;
-            color: var(--subtitle);
-            text-align: center;
-        }
-    </style>
+        :root { --background: #ffffff; --text: #202124; --primary: #1a73e8; --subtitle: #5f6368; --border: #ebebeb; --toc-bg: #f8f9fa; --toc-border: #eeeeee; --toc-link: #5f6368; }
+        [data-theme="dark"] { --background: #121212; --text: #e8eaed; --primary: #8ab4f8; --subtitle: #9aa0a6; --border: #3c4043; --toc-bg: #1e1e1e; --toc-border: #3c4043; --toc-link: #bdc1c6; }
+        html { scroll-behavior: smooth; }
+        body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.6; color: var(--text); max-width: 800px; margin: 0 auto; padding: 40px 20px; background-color: var(--background); }
+        .container { max-width: 800px; margin: 0 auto; padding: 0; }
+        header { border-bottom: 1px solid var(--border); padding-bottom: 20px; margin-bottom: 30px; }
+        h1 { font-size: 2.2em; font-weight: 800; color: var(--primary); margin: 0 0 5px; }
+        .subtitle { color: var(--subtitle); margin-top: 0; margin-bottom: 1rem; }
+        .last-updated { color: var(--subtitle); font-size: 0.9rem; }
+        h2 { font-size: 1.3em; font-weight: bold; margin-top: 2em; margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 8px; color: var(--text); }
+        h3 { font-size: 1.1em; font-weight: bold; margin-top: 1.5em; color: var(--text); }
+        p { margin-bottom: 1rem; }
+        p, li { color: var(--text); font-size: 0.95rem; }
+        ul, ol { margin-bottom: 1rem; padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        a { color: var(--primary); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back-link { text-decoration: none; color: var(--primary); font-weight: bold; display: inline-block; margin-bottom: 20px; }
+        .back-link:hover { text-decoration: underline; }
+        .toc { background-color: var(--toc-bg); padding: 20px 25px; border-radius: 12px; margin-bottom: 2.5em; border: 1px solid var(--toc-border); }
+        .toc h3 { margin-top: 0; color: var(--primary); font-size: 1.2em; }
+        .toc a { color: var(--toc-link); font-weight: 500; }
+        .toc a:hover { color: var(--primary); }
+        .toc ol { margin-bottom: 0; }
+        .theme-fab { position: fixed; bottom: 24px; right: 24px; width: 48px; height: 48px; border: 0; border-radius: 50%; color: var(--text); background: var(--toc-bg); box-shadow: 0 2px 8px rgba(0,0,0,.18); cursor: pointer; font-size: 20px; }
+        @media (max-width: 600px) { body { padding: 28px 18px; } .toc { padding: 18px; } }
+</style>
 </head>
 <body>
     <div class="container">
         <a href="/my-list" class="back-link">&larr; Back to My List</a>
         <header>
             <h1>Privacy Policy</h1>
-            <div class="last-updated">Last updated: October 18, 2026</div>
+            <p class="subtitle">My List</p>
+            <div class="last-updated">Last updated: October 30, 2026</div>
         </header>
         <div class="toc">
             <h3>Table of Contents</h3>
@@ -219,7 +83,7 @@
 
         <h2 id="overview">1. Overview &amp; Privacy-First Principle</h2>
         <p>The "My List" application (the "App") is developed and maintained by avih6 as a utility application. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
-        <p>This Privacy Policy explains how information is handled, stored, and protected during the use of the My List mobile application and its associated web pages. The application is built on a <strong>privacy-first approach</strong>: personal shopping lists remain strictly on the local device by default or in private synchronized groups, and no personal shopping data is shared or sold.</p>
+        <p>This Privacy Policy explains how information is handled, stored, and protected during the use of the My List mobile application and its associated web pages. The application follows a <strong>privacy-first approach</strong>: personal lists remain on the local device by default. Information in shared lists is stored in Firestore and available to group members. Personal information is not sold or used for advertising.</p>
         <p>By downloading or using the Service, the user agrees to the collection and use of information in accordance with this policy.</p>
 
         <h2 id="data-handling">2. Data Handling, Storage &amp; Synchronization</h2>
@@ -233,6 +97,7 @@
             <li><strong>Synchronized Data:</strong> Grocery item names, quantities, measurement units, optional notes, categories, and completion states are securely synchronized using Google Cloud Firestore and Firebase Authentication.</li>
             <li><strong>Invite Codes:</strong> Shared lists are accessed through unique 6-character alphanumeric codes. Anyone in possession of the code can view and edit the list.</li>
             <li><strong>Google Account Authentication:</strong> When signing in with Google, the application accesses strictly the public display name, email address, and unique user identifier (UID) solely to link cloud documents and display group membership. Account passwords are never accessible to the App.</li>
+            <li><strong>Optional Profile Photos:</strong> A Google profile photo is stored in a shared list only when sharing is explicitly enabled for that individual list. Signing in with Google does not enable photo sharing.</li>
             <li><strong>Anonymous Guest Mode:</strong> Users can collaborate anonymously without providing an email address or real name.</li>
         </ul>
 
