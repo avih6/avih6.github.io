@@ -254,15 +254,25 @@
       .hero-copy,.section-intro { color:var(--subtitle); font-size:1.08rem; max-width:580px; }
       .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
       .hero-actions .btn { width:auto; max-width:none; flex:1 1 210px; padding:15px 18px; font-size:1rem; }
-      .preview { max-width:340px; margin:auto; padding:15px; border:1px solid var(--border); border-radius:28px; background:var(--card); box-shadow:0 22px 60px rgba(20,45,90,.15); transform:rotate(1.5deg); }
-      .preview-head { padding:9px 8px 16px; font-weight:700; }
-      .preview-list { border:1px solid var(--border); border-radius:16px; padding:13px; background:var(--toc-bg); }
-      .preview-list h2 { font-size:1rem; margin:0 0 10px; }
-      .preview-row { display:flex; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--border); }
-      .preview-check { width:19px; height:19px; border:1.5px solid var(--subtitle); border-radius:6px; flex:none; }
-      .preview-row.done { color:var(--subtitle); text-decoration:line-through; }
-      .preview-row.done .preview-check { background:#16856c; border-color:#16856c; }
-      .preview-row.done .preview-check:after { content:'✓'; display:block; color:white; text-align:center; line-height:17px; }
+      .preview { width:min(370px,100%); margin:auto; padding:16px; border:1px solid var(--border); border-radius:25px; background:var(--card); box-shadow:0 22px 60px rgba(20,45,90,.15); transform:rotate(1deg); }
+      .preview-head { display:flex; align-items:center; gap:11px; padding:7px 6px 15px; font-weight:750; }
+      .preview-app-icon { display:grid; place-items:center; width:36px; height:36px; border-radius:11px; background:var(--primary); color:#fff; font-size:1.1rem; }
+      .preview-title { flex:1; }.preview-title small { display:block; color:var(--subtitle); font-size:.75rem; font-weight:500; }
+      .preview-menu { color:var(--subtitle); letter-spacing:2px; font-weight:800; }
+      .preview-list { border:1px solid var(--border); border-radius:19px; padding:14px; background:var(--toc-bg); }
+      .preview-list-head { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-bottom:12px; }
+      .preview-list h2 { font-size:1.02rem; margin:0; }
+      .preview-count { color:var(--subtitle); font-size:.76rem; font-weight:650; white-space:nowrap; }
+      .preview-progress { height:5px; overflow:hidden; border-radius:99px; background:var(--border); margin-bottom:8px; }
+      .preview-progress span { display:block; height:100%; width:25%; border-radius:inherit; background:#5478ed; transition:width .2s ease; }
+      .preview-row { width:100%; display:flex; align-items:center; gap:11px; min-height:47px; padding:9px 2px; border:0; border-top:1px solid var(--border); background:transparent; color:var(--text); text-align:left; font:inherit; cursor:pointer; border-radius:0; }
+      .preview-row:hover { background:color-mix(in srgb,var(--primary) 7%,transparent); }
+      .preview-check { display:grid; place-items:center; width:23px; height:23px; border:2px solid #9aa6ba; border-radius:7px; flex:none; color:transparent; transition:background .16s,border-color .16s,transform .16s; }
+      .preview-row[aria-checked="true"] { color:var(--subtitle); text-decoration:line-through; }
+      .preview-row[aria-checked="true"] .preview-check { background:#5478ed; border-color:#5478ed; color:white; transform:scale(.96); }
+      .preview-row[aria-checked="true"] .preview-check:after { content:'✓'; font-size:.9rem; font-weight:800; line-height:1; }
+      .preview-row:focus-visible { position:relative; z-index:1; outline:3px solid var(--primary); outline-offset:2px; border-radius:9px; }
+      .preview-hint { margin:10px 2px 0; color:var(--subtitle); font-size:.75rem; text-align:center; }
       .section { padding:55px 0; }
       .section h2 { font-size:clamp(1.8rem,4vw,2.6rem); letter-spacing:-.04em; margin:0 0 10px; }
       .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:24px; }
@@ -351,7 +361,18 @@
           <div class="hero-actions"><a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn btn-main" target="_blank" onclick="trackClick('Google Play')">Get My List on Google Play ↗</a><a href="#how-it-works" class="btn">See how it works</a></div>
           <p class="hero-copy" style="font-size:.9rem;margin-top:14px">Android app · Personal lists and shared lists</p>
         </div>
-        <div class="preview" role="img" aria-label="Illustration of a shared shopping list"><div class="preview-head">Weekend shopping</div><div class="preview-list"><h2>4 items</h2><div class="preview-row"><span class="preview-check"></span>Apples</div><div class="preview-row done"><span class="preview-check"></span>Bread</div><div class="preview-row"><span class="preview-check"></span>Milk</div><div class="preview-row"><span class="preview-check"></span>Tomatoes</div></div></div>
+        <div class="preview" aria-label="Interactive shopping-list preview">
+          <div class="preview-head"><span class="preview-app-icon" aria-hidden="true">✓</span><span class="preview-title">My List<small>Weekend shopping</small></span><span class="preview-menu" aria-hidden="true">•••</span></div>
+          <div class="preview-list">
+            <div class="preview-list-head"><h2>Shopping list</h2><span class="preview-count" id="preview-count" aria-live="polite">1 of 4 checked</span></div>
+            <div class="preview-progress" aria-hidden="true"><span id="preview-progress"></span></div>
+            <button class="preview-row" type="button" role="checkbox" aria-checked="false" data-preview-item="apples"><span class="preview-check" aria-hidden="true"></span><span>Apples</span></button>
+            <button class="preview-row" type="button" role="checkbox" aria-checked="true" data-preview-item="bread"><span class="preview-check" aria-hidden="true"></span><span>Bread</span></button>
+            <button class="preview-row" type="button" role="checkbox" aria-checked="false" data-preview-item="milk"><span class="preview-check" aria-hidden="true"></span><span>Milk</span></button>
+            <button class="preview-row" type="button" role="checkbox" aria-checked="false" data-preview-item="tomatoes"><span class="preview-check" aria-hidden="true"></span><span>Tomatoes</span></button>
+          </div>
+          <p class="preview-hint">Tap an item to check it off or add it back.</p>
+        </div>
       </section>
       <section class="site-wrap section" id="features" aria-labelledby="features-title"><h2 id="features-title">Lists that fit the way people shop</h2><p class="section-intro">Keep personal plans simple, then bring others into a list when coordination matters.</p>
         <div class="feature-grid">
@@ -376,6 +397,37 @@
     </button>
 
 <script>
+  (function() {
+    var rows = Array.from(document.querySelectorAll('[data-preview-item]'));
+    var count = document.getElementById('preview-count');
+    var progress = document.getElementById('preview-progress');
+    var storageKey = 'my-list-site-preview-checked';
+    var saved = null;
+    try { saved = JSON.parse(localStorage.getItem(storageKey) || 'null'); } catch (_) {}
+    if (Array.isArray(saved)) {
+      rows.forEach(function(row) {
+        row.setAttribute('aria-checked', String(saved.includes(row.dataset.previewItem)));
+      });
+    }
+    function updateSummary() {
+      var checked = rows.filter(function(row) { return row.getAttribute('aria-checked') === 'true'; }).length;
+      count.textContent = checked + ' of ' + rows.length + ' checked';
+      progress.style.width = (rows.length ? checked / rows.length * 100 : 0) + '%';
+      try {
+        localStorage.setItem(storageKey, JSON.stringify(rows.filter(function(row) {
+          return row.getAttribute('aria-checked') === 'true';
+        }).map(function(row) { return row.dataset.previewItem; })));
+      } catch (_) {}
+    }
+    rows.forEach(function(row) {
+      row.addEventListener('click', function() {
+        row.setAttribute('aria-checked', String(row.getAttribute('aria-checked') !== 'true'));
+        updateSummary();
+      });
+    });
+    updateSummary();
+  })();
+
   (function() {
     if (!window.PointerEvent) return;
     var currentHover = null;
