@@ -12,9 +12,12 @@
     <meta name="referrer" content="strict-origin-when-cross-origin">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My List</title>
+    <title>My List - Shopping, together</title>
 
-    <meta name="description" content="Support and download page for My List, an Android app by avih6.">
+    <meta name="description" content="My List keeps personal shopping lists on the device and helps groups coordinate shared lists.">
+    <meta property="og:title" content="My List - Shopping, together">
+    <meta property="og:description" content="Create personal lists, share selected lists, and keep everyone up to date.">
+    <meta property="og:image" content="https://avih6.github.io/icon-my-list.png">
     <link rel="canonical" href="https://avih6.github.io/my-list">
     <link rel="icon" type="image/png" href="/icon-my-list.png">
 
@@ -236,6 +239,51 @@
             height: 22px;
         }
     </style>
+    <style>
+      body { display:block; min-height:100vh; padding:0; justify-content:flex-start; }
+      .site-wrap { width:min(1080px,calc(100% - 40px)); margin:auto; }
+      .site-nav { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 0; }
+      .site-brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:750; color:var(--text); }
+      .site-brand img { width:42px; height:42px; border-radius:12px; box-shadow:0 3px 12px rgba(0,0,0,.14); }
+      .site-links { display:flex; gap:20px; color:var(--subtitle); font-size:.95rem; }
+      .site-links a,.site-footer a { color:inherit; text-decoration:none; }
+      .site-links a:hover,.site-footer a:hover { color:var(--primary); text-decoration:underline; text-underline-offset:4px; }
+      .hero { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:48px; padding:66px 0 74px; }
+      .eyebrow { color:var(--primary); font-size:.82rem; font-weight:750; letter-spacing:.09em; text-transform:uppercase; }
+      .hero h1 { font-size:clamp(2.8rem,6vw,5rem); letter-spacing:-.06em; line-height:1.02; margin:14px 0; }
+      .hero-copy,.section-intro { color:var(--subtitle); font-size:1.08rem; max-width:580px; }
+      .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+      .hero-actions .btn { width:auto; max-width:none; flex:1 1 210px; padding:15px 18px; font-size:1rem; }
+      .preview { max-width:340px; margin:auto; padding:15px; border:1px solid var(--border); border-radius:28px; background:var(--card); box-shadow:0 22px 60px rgba(20,45,90,.15); transform:rotate(1.5deg); }
+      .preview-head { padding:9px 8px 16px; font-weight:700; }
+      .preview-list { border:1px solid var(--border); border-radius:16px; padding:13px; background:var(--toc-bg); }
+      .preview-list h2 { font-size:1rem; margin:0 0 10px; }
+      .preview-row { display:flex; align-items:center; gap:10px; padding:10px 0; border-top:1px solid var(--border); }
+      .preview-check { width:19px; height:19px; border:1.5px solid var(--subtitle); border-radius:6px; flex:none; }
+      .preview-row.done { color:var(--subtitle); text-decoration:line-through; }
+      .preview-row.done .preview-check { background:#16856c; border-color:#16856c; }
+      .preview-row.done .preview-check:after { content:'✓'; display:block; color:white; text-align:center; line-height:17px; }
+      .section { padding:55px 0; }
+      .section h2 { font-size:clamp(1.8rem,4vw,2.6rem); letter-spacing:-.04em; margin:0 0 10px; }
+      .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:24px; }
+      .feature { border:1px solid var(--border); background:var(--card); border-radius:18px; padding:22px; text-align:left; }
+      .feature h3 { margin:0 0 7px; font-size:1.08rem; }
+      .feature p { color:var(--subtitle); margin:0; line-height:1.55; }
+      .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:24px; }
+      .step { border-top:1px solid var(--border); padding-top:16px; text-align:left; }
+      .step b { color:var(--primary); font-size:.85rem; letter-spacing:.08em; }
+      .step p { color:var(--subtitle); margin-bottom:0; }
+      .privacy-panel { display:grid; grid-template-columns:.8fr 1.2fr; gap:30px; align-items:start; border-radius:22px; padding:clamp(24px,5vw,44px); background:var(--toc-bg); text-align:left; }
+      .privacy-panel p { color:var(--subtitle); margin-top:0; }
+      .privacy-panel .btn { display:inline-block; width:auto; }
+      .site-footer { border-top:1px solid var(--border); margin-top:42px; padding:22px 0 32px; color:var(--subtitle); }
+      .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; }
+      .footer-links { display:flex; gap:18px; }
+      a:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
+      @media(max-width:760px) { .hero { grid-template-columns:1fr; gap:30px; padding:48px 0 38px; text-align:center; }.hero-copy { margin:auto; }.feature-grid { grid-template-columns:1fr; }.steps { grid-template-columns:1fr; }.privacy-panel { grid-template-columns:1fr; gap:16px; } }
+      @media(max-width:480px) { .site-wrap { width:calc(100% - 30px); }.site-links { gap:12px; font-size:.83rem; }.site-brand img { width:36px; height:36px; }.hero-actions .btn { flex-basis:100%; }.section { padding:40px 0; } }
+      @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; } }
+    </style>
 
 <script>
   const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
@@ -292,26 +340,36 @@
 </head>
 <body>
 
-    <img loading="lazy" src="/icon-my-list.png" alt="My List Icon" class="app-icon">
-
-    <h1>My List</h1>
-    
-    <div class="btn-container">
-        <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist"
-           class="btn btn-main" 
-           onclick="trackClick('Google Play')" 
-           target="_blank">Google Play</a>
-        
-        <a href="/my-list/privacy-policy" 
-           class="btn" 
-           onclick="trackClick('Privacy Policy')">Privacy Policy</a>
-        
-        <a href="/my-list/terms-of-service" 
-           class="btn" 
-           onclick="trackClick('Terms of Service')">Terms of Service</a>
-    </div>
-
-    <a href="/" class="back-link">← Back to avih6</a>
+    <header class="site-wrap site-nav">
+      <a class="site-brand" href="/my-list" aria-label="My List home"><img src="/icon-my-list.png" alt=""><span>My List</span></a>
+      <nav class="site-links" aria-label="Main navigation"><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="/">avih6</a></nav>
+    </header>
+    <main>
+      <section class="site-wrap hero" aria-labelledby="hero-title">
+        <div><span class="eyebrow">A simpler way to shop together</span><h1 id="hero-title">One clear list.<br>Everyone in sync.</h1>
+          <p class="hero-copy">Keep everyday shopping organized, share a list when it helps, and let everyone see what still needs to be picked up.</p>
+          <div class="hero-actions"><a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn btn-main" target="_blank" onclick="trackClick('Google Play')">Get My List on Google Play ↗</a><a href="#how-it-works" class="btn">See how it works</a></div>
+          <p class="hero-copy" style="font-size:.9rem;margin-top:14px">Android app · Personal lists and shared lists</p>
+        </div>
+        <div class="preview" role="img" aria-label="Illustration of a shared shopping list"><div class="preview-head">Weekend shopping</div><div class="preview-list"><h2>4 items</h2><div class="preview-row"><span class="preview-check"></span>Apples</div><div class="preview-row done"><span class="preview-check"></span>Bread</div><div class="preview-row"><span class="preview-check"></span>Milk</div><div class="preview-row"><span class="preview-check"></span>Tomatoes</div></div></div>
+      </section>
+      <section class="site-wrap section" id="features" aria-labelledby="features-title"><h2 id="features-title">Lists that fit the way people shop</h2><p class="section-intro">Keep personal plans simple, then bring others into a list when coordination matters.</p>
+        <div class="feature-grid">
+          <article class="feature"><h3>Keep track as you go</h3><p>Add items, mark purchases, and see what remains without passing notes around.</p></article>
+          <article class="feature"><h3>Make more than one list</h3><p>Separate errands, weekly shopping, and other plans into lists that are easy to switch between.</p></article>
+          <article class="feature"><h3>Share when useful</h3><p>Invite other members to collaborate on a shared list and keep changes in sync.</p></article>
+          <article class="feature"><h3>Choose activity alerts</h3><p>For each shared list, choose alerts for items added and items marked as purchased.</p></article>
+          <article class="feature"><h3>See group members</h3><p>View who is in a shared list and review the roles that manage its settings.</p></article>
+          <article class="feature"><h3>Keep personal lists private</h3><p>Lists kept on the device remain local until they are explicitly shared.</p></article>
+        </div>
+      </section>
+      <section class="site-wrap section" id="how-it-works" aria-labelledby="how-title"><h2 id="how-title">From a quick note to a shared plan</h2><p class="section-intro">Start with a personal list and invite others only when needed.</p>
+        <div class="steps"><article class="step"><b>01</b><h3>Create a list</h3><p>Start with a personal list on the device and add the items to remember.</p></article><article class="step"><b>02</b><h3>Share when ready</h3><p>Invite people when several members need to keep one list up to date.</p></article><article class="step"><b>03</b><h3>Shop and check things off</h3><p>Members can mark purchases and choose which activity alerts to receive.</p></article></div>
+      </section>
+      <section class="site-wrap section" id="privacy" aria-labelledby="privacy-title"><div class="privacy-panel"><h2 id="privacy-title">Privacy starts with your choice to share</h2><div><p>Personal lists are stored on the device. Signing in does not by itself upload those lists. Sharing a list moves it to the shared service so invited members can access it.</p><p>Profile photos are optional per shared list. Notification preferences can be set separately for each shared list.</p><a href="/my-list/privacy-policy" class="btn">Read the Privacy Policy</a></div></div></section>
+      <section class="site-wrap section" style="text-align:center"><h2>Make the next shopping trip easier to coordinate.</h2><p class="section-intro" style="margin:10px auto 0">Download My List for Android and start with a list of your own.</p><div class="hero-actions" style="justify-content:center"><a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn btn-main" target="_blank" onclick="trackClick('Google Play')">Open Google Play ↗</a><a href="/my-list/terms-of-service" class="btn">Terms of Service</a></div></section>
+    </main>
+    <footer class="site-footer"><div class="site-wrap footer-inner"><span>My List · Android</span><nav class="footer-links" aria-label="Legal links"><a href="/my-list/privacy-policy">Privacy Policy</a><a href="/my-list/terms-of-service">Terms of Service</a><a href="/">avih6 home</a></nav></div></footer>
 
     <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
         <span id="theme-icon-container"></span>

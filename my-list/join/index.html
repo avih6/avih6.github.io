@@ -65,60 +65,58 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
+            justify-content: flex-start;
             padding: 20px;
+            padding-top: clamp(20px, 5vh, 48px);
         }
 
-        /* Compact, subtle language switcher anchored in the corner */
+        /* Keep the language menu anchored in one place for every language. */
         .lang-switch {
             position: fixed;
             bottom: 16px;
             right: 16px;
-            display: flex;
-            gap: 4px;
-            background: var(--card-bg);
-            padding: 4px 6px;
-            border-radius: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
-            border: 1px solid var(--border);
             z-index: 100;
         }
 
-        [dir="rtl"] .lang-switch {
-            right: auto;
-            left: 16px;
-        }
-
-        .lang-btn {
-            background: transparent;
-            border: none;
-            padding: 4px 10px;
-            font-size: 12px;
-            font-weight: 500;
-            color: var(--text-sub);
+        .language-select {
+            appearance: none;
+            -webkit-appearance: none;
+            min-height: 44px;
+            min-width: 124px;
+            padding: 8px 38px 8px 14px;
+            border: 1px solid var(--border);
             border-radius: 14px;
+            background: var(--card-bg);
+            color: var(--text-main);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+            font: inherit;
+            font-size: 14px;
             cursor: pointer;
-            transition: all 0.2s ease;
         }
 
-        .lang-btn:hover {
+        .lang-switch::after {
+            content: "⌄";
+            position: absolute;
+            top: 50%;
+            right: 14px;
+            color: var(--text-sub);
+            pointer-events: none;
+            transform: translateY(-58%);
+        }
+
+        .language-select:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 2px;
+        }
+
+        .language-select option {
+            background: var(--card-bg);
             color: var(--text-main);
         }
-
-        .lang-btn.active {
-            background: var(--primary);
-            color: #ffffff;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .lang-btn.active {
-                color: #202124;
-            }
-        }
-
         .container {
             width: 100%;
             max-width: 440px;
+            margin-bottom: 68px;
             background: var(--card-bg);
             border-radius: 24px;
             padding: 32px 24px;
@@ -383,11 +381,12 @@
         </div>
     </div>
 
-    <!-- Small, compact language toggle anchored at the bottom corner -->
     <div class="lang-switch">
-        <button class="lang-btn" onclick="setLanguage('he')">עברית</button>
-        <button class="lang-btn" onclick="setLanguage('en')">EN</button>
-        <button class="lang-btn" onclick="setLanguage('ru')">РУ</button>
+        <select id="languageSelect" class="language-select" aria-label="Language" onchange="setLanguage(this.value)">
+            <option value="he">עברית</option>
+            <option value="en">English</option>
+            <option value="ru">Русский</option>
+        </select>
     </div>
 
     <div class="footer">
@@ -401,7 +400,7 @@
     <script>
         const translations = {
             en: {
-                dir: 'ltr',
+                languageLabel: 'Language',
                 title: 'Join Shopping List',
                 subtitle: 'You have been invited to collaborate on a shared shopping list in My List.',
                 codeLabel: 'Invitation Code',
@@ -418,14 +417,14 @@
                 step1Desktop: 'Send this code or link to your Android device.',
                 step2Desktop: 'Open <strong>My List</strong> from Google Play.',
                 step3Desktop: 'Enter the code to sync the shopping list.',
-                desktopNotice: 'You are viewing this on a computer. My List is an Android app — copy the link or code to open it on your phone.',
+                desktopNotice: 'You are viewing this on a computer. My List is an Android app - copy the link or code to open it on your phone.',
                 iosNotice: 'My List is currently available for Android devices. You can copy the code and share it with an Android phone.',
                 homeLink: 'My List Overview',
                 privacyLink: 'Privacy Policy',
                 termsLink: 'Terms'
             },
             he: {
-                dir: 'rtl',
+                languageLabel: 'שפה',
                 title: 'הצטרפות לרשימת קניות',
                 subtitle: 'קיבלת הזמנה להצטרף ולערוך יחד רשימת קניות באפליקציית "רשימה שלי".',
                 codeLabel: 'קוד הצטרפות',
@@ -442,14 +441,14 @@
                 step1Desktop: 'שלח את הקוד או הקישור למכשיר האנדרואיד שלך.',
                 step2Desktop: 'פתח את אפליקציית <strong>רשימה שלי</strong> מ-Google Play.',
                 step3Desktop: 'הזן את הקוד להצטרפות וסנכרון מיידי.',
-                desktopNotice: 'הנך צופה מתוך מחשב. אפליקציית "רשימה שלי" פועלת במכשירי אנדרואיד — העתק את הקישור או הקוד כדי להצטרף מהטלפון.',
+                desktopNotice: 'הנך צופה מתוך מחשב. אפליקציית "רשימה שלי" פועלת במכשירי אנדרואיד - העתק את הקישור או הקוד כדי להצטרף מהטלפון.',
                 iosNotice: 'אפליקציית "רשימה שלי" זמינה למכשירי אנדרואיד. באפשרותך להעתיק את הקוד ולפתוח אותו במכשיר אנדרואיד.',
                 homeLink: 'דף הבית של רשימה שלי',
                 privacyLink: 'מדיניות פרטיות',
                 termsLink: 'תנאי שימוש'
             },
             ru: {
-                dir: 'ltr',
+                languageLabel: 'Язык',
                 title: 'Присоединиться к списку',
                 subtitle: 'Вас пригласили для совместного ведения списка покупок в приложении «Мой Список».',
                 codeLabel: 'Код приглашения',
@@ -466,7 +465,7 @@
                 step1Desktop: 'Отправьте этот код или ссылку на ваше Android-устройство.',
                 step2Desktop: 'Откройте <strong>Мой Список</strong> из Google Play.',
                 step3Desktop: 'Введите код для синхронизации списка покупок.',
-                desktopNotice: 'Вы просматриваете страницу на компьютере. «Мой Список» работает на Android — скопируйте ссылку или код для телефона.',
+                desktopNotice: 'Вы просматриваете страницу на компьютере. «Мой Список» работает на Android - скопируйте ссылку или код для телефона.',
                 iosNotice: 'Приложение «Мой Список» доступно для Android. Скопируйте код для использования на Android-устройстве.',
                 homeLink: 'О приложении',
                 privacyLink: 'Политика конфиденциальности',
@@ -489,22 +488,20 @@
                 document.getElementById('inviteCodeDisplay').textContent = '------';
             }
 
-            // Determine language:
-            // 1. Saved preference
+            // Invitation links carry the sender's app language.
+            // Otherwise use this browser's saved choice, then its language.
+            const queryLang = (urlParams.get('lang') || '').toLowerCase().split('-')[0];
             const savedLang = localStorage.getItem('mylist_join_lang');
-            // 2. Query parameter
-            const queryLang = (urlParams.get('lang') || '').toLowerCase();
-            // 3. Browser language
             const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
 
-            if (savedLang && translations[savedLang]) {
-                currentLang = savedLang;
-            } else if (queryLang && (queryLang === 'he' || queryLang === 'iw')) {
+            if (queryLang === 'he' || queryLang === 'iw') {
                 currentLang = 'he';
-            } else if (queryLang && queryLang.startsWith('ru')) {
+            } else if (queryLang === 'ru') {
                 currentLang = 'ru';
-            } else if (queryLang && queryLang.startsWith('en')) {
+            } else if (queryLang === 'en') {
                 currentLang = 'en';
+            } else if (savedLang && translations[savedLang]) {
+                currentLang = savedLang;
             } else if (browserLang.startsWith('he') || browserLang.startsWith('iw')) {
                 currentLang = 'he';
             } else if (browserLang.startsWith('ru')) {
@@ -532,7 +529,11 @@
 
             const t = translations[lang];
             document.documentElement.lang = lang;
-            document.documentElement.dir = t.dir;
+            // Keep page geometry and fixed controls stable. Direction is applied
+            // only to text blocks, not to the whole document.
+            const languageSelect = document.getElementById('languageSelect');
+            languageSelect.value = lang;
+            languageSelect.setAttribute('aria-label', t.languageLabel);
 
             document.getElementById('title').textContent = t.title;
             document.getElementById('subtitle').textContent = t.subtitle;
@@ -578,16 +579,16 @@
             document.getElementById('privacyLink').textContent = t.privacyLink;
             document.getElementById('termsLink').textContent = t.termsLink;
 
-            // Update active button state in the compact switch
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => {
-                const label = btn.textContent.trim().toUpperCase();
-                if ((lang === 'he' && label === 'עברית') ||
-                    (lang === 'en' && label === 'EN') ||
-                    (lang === 'ru' && label === 'РУ')) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
+            const rtlTextIds = [
+                'title', 'subtitle', 'codeLabel', 'copyBtn', 'playStoreText',
+                'stepsTitle', 'stepsList', 'deviceNoticeText', 'openAppText',
+                'homeLink', 'privacyLink', 'termsLink'
+            ];
+            rtlTextIds.forEach(id => {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.lang = lang;
+                    element.dir = lang === 'he' ? 'rtl' : 'ltr';
                 }
             });
         }

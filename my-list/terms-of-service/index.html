@@ -77,19 +77,20 @@
         </section>
         <section id="section-2">
             <h2>2. Description of Service</h2>
-            <p>My List is an Android utility application designed to help individuals and groups create, organize, and manage grocery and shopping lists with real-time multi-device cloud synchronization.</p>
+            <p>My List is an Android application for creating and managing shopping lists. Lists remain on the device until a user chooses to share them. Shared lists synchronize through Firebase for their members.</p>
         </section>
         <section id="section-3">
             <h2>3. User Accounts &amp; Authentication</h2>
-            <p>The App allows access via Google Sign-In or Anonymous Guest mode. You are responsible for maintaining the security of your device and accept responsibility for all activities conducted under your session.</p>
+            <p>The App allows access via Google Sign-In or anonymous guest mode. Google sign-in alone does not upload local-only lists. A list is uploaded when the user explicitly shares it. Users are responsible for maintaining the security of their devices and for activity conducted through their sessions.</p>
         </section>
         <section id="section-4">
             <h2>4. Shared Groups &amp; Invite Codes</h2>
-            <p>My List allows users to create groups and invite others using unique 6-to-12-character alphanumeric invite codes:</p>
+            <p>My List allows users to share a list and invite others using a randomly generated invite code. A preview displays the list name and member names before joining. A list can have up to 100 members.</p>
             <ul>
-                <li>Any person in possession of a group invite code can join the group, view and add items, and update items. Item deletion follows the list owner's deletion policy; when deletion is restricted to admins, only list admins can delete items.</li>
-                <li>You are solely responsible for managing and distributing invite codes for your lists.</li>
-                <li>You may leave any group at any time directly through the group settings menu.</li>
+                <li>Possession of a valid invite code allows a person to request to join. Members can view and update shared-list items according to list permissions and can see member names. The list creator controls whether contributor names and item times are shown.</li>
+                <li>Invite codes should be shared only with intended participants. The list creator can rotate a code, delete a shared list for all members, or make the list private by saving a local copy and removing the shared version.</li>
+                <li>Members can leave while at least two members remain. If the creator leaves, ownership passes to the first remaining admin in the order appointed, or to the first remaining member when no appointed admins remain. The former creator loses access and must be invited again to return.</li>
+                <li>The last member cannot leave an empty group. The creator can delete the list for everyone or make a private copy on the current device.</li>
             </ul>
         </section>
         <section id="section-5">
