@@ -253,7 +253,9 @@
       .hero h1 { font-size:clamp(2.8rem,6vw,5rem); letter-spacing:-.06em; line-height:1.02; margin:14px 0; }
       .hero-copy,.section-intro { color:var(--subtitle); font-size:1.08rem; max-width:580px; }
       .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
-      .hero-actions .btn { width:auto; max-width:none; flex:1 1 210px; padding:15px 18px; font-size:1rem; }
+      .hero-actions .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; width:auto; max-width:none; flex:1 1 210px; padding:14px 14px; font-size:.96rem; }
+      .button-label,.button-arrow { white-space:nowrap; }
+      .button-arrow { flex:none; }
       .preview { width:min(330px,100%); margin:auto; padding:13px; border:1px solid var(--border); border-radius:23px; background:var(--card); box-shadow:0 22px 60px rgba(20,45,90,.15); transform:rotate(1deg); }
       .preview-head { display:flex; align-items:center; gap:10px; padding:6px 5px 12px; font-weight:750; }
       .preview-app-icon { display:grid; place-items:center; width:32px; height:32px; border-radius:10px; background:var(--primary); color:#fff; font-size:1rem; }
@@ -293,7 +295,7 @@
       .footer-links { display:flex; gap:18px; }
       a:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
       @media(max-width:760px) { .hero { grid-template-columns:1fr; gap:30px; padding:48px 0 38px; text-align:center; }.hero-copy { margin:auto; }.feature-grid { grid-template-columns:1fr; }.steps { grid-template-columns:1fr; }.privacy-panel { grid-template-columns:1fr; gap:16px; } }
-      @media(max-width:480px) { .site-wrap { width:calc(100% - 30px); }.site-links { gap:12px; font-size:.83rem; }.site-brand img { width:36px; height:36px; }.hero-actions .btn { flex-basis:100%; }.section { padding:40px 0; } }
+      @media(max-width:480px) { .site-wrap { width:calc(100% - 30px); }.site-links { gap:12px; font-size:.83rem; }.site-brand img { width:36px; height:36px; }.hero-actions .btn { flex-basis:100%; font-size:.9rem; }.section { padding:40px 0; } }
       @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; } }
     </style>
 
@@ -366,7 +368,7 @@
       <section class="site-wrap hero" aria-labelledby="hero-title">
         <div><span class="eyebrow">A simpler way to shop together</span><h1 id="hero-title">One clear list.<br>Everyone in sync.</h1>
           <p class="hero-copy">Keep everyday shopping organized, share a list when it helps, and let everyone see what still needs to be picked up.</p>
-          <div class="hero-actions"><a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn btn-main" target="_blank" onclick="trackClick('Google Play')">Get My List on Google Play ↗</a><a href="#how-it-works" class="btn">See how it works</a></div>
+          <div class="hero-actions"><a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn btn-main" target="_blank" onclick="trackClick('Google Play')"><span class="button-label">Get My List on Google Play</span><span class="button-arrow" aria-hidden="true">↗</span></a><a href="#how-it-works" class="btn">See how it works</a></div>
           <p class="hero-copy" style="font-size:.9rem;margin-top:14px">Android app · Personal lists and shared lists</p>
         </div>
         <div class="preview" aria-label="Interactive shopping-list preview">
@@ -395,7 +397,7 @@
         <div class="steps"><article class="step"><b>01</b><h3>Create a list</h3><p>Start with a personal list on the device and add the items to remember.</p></article><article class="step"><b>02</b><h3>Share when ready</h3><p>Invite people when several members need to keep one list up to date.</p></article><article class="step"><b>03</b><h3>Shop and check things off</h3><p>Members can mark purchases and choose which activity alerts to receive.</p></article></div>
       </section>
       <section class="site-wrap section" id="privacy" aria-labelledby="privacy-title"><div class="privacy-panel"><h2 id="privacy-title">Privacy starts with your choice to share</h2><div><p>Personal lists are stored on the device. Signing in does not by itself upload those lists. Sharing a list moves it to the shared service so invited members can access it.</p><p>Profile photos are optional per shared list. Notification preferences can be set separately for each shared list.</p><a href="/my-list/privacy-policy" class="btn">Read the Privacy Policy</a></div></div></section>
-      <section class="site-wrap section" style="text-align:center"><h2>Make the next shopping trip easier to coordinate.</h2><p class="section-intro" style="margin:10px auto 0">Download My List for Android and start with a list of your own.</p><div class="hero-actions" style="justify-content:center"><a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn btn-main" target="_blank" onclick="trackClick('Google Play')">Open Google Play ↗</a><a href="/my-list/terms-of-service" class="btn">Terms of Service</a></div></section>
+      <section class="site-wrap section" style="text-align:center"><h2>Make the next shopping trip easier to coordinate.</h2><p class="section-intro" style="margin:10px auto 0">Download My List for Android and start with a list of your own.</p><div class="hero-actions" style="justify-content:center"><a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.mylist" class="btn btn-main" target="_blank" onclick="trackClick('Google Play')"><span class="button-label">Open Google Play</span><span class="button-arrow" aria-hidden="true">↗</span></a><a href="/my-list/terms-of-service" class="btn">Terms of Service</a></div></section>
     </main>
     <footer class="site-footer"><div class="site-wrap footer-inner"><span>My List · Android</span><nav class="footer-links" aria-label="Legal links"><a href="/my-list/privacy-policy">Privacy Policy</a><a href="/my-list/terms-of-service">Terms of Service</a><a href="/">avih6 home</a></nav></div></footer>
 
