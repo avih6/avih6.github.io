@@ -272,6 +272,9 @@
       .preview-row[aria-checked="true"] .preview-check { background:#5478ed; border-color:#5478ed; color:white; transform:scale(.96); }
       .preview-row[aria-checked="true"] .preview-check:after { content:'✓'; font-size:.9rem; font-weight:800; line-height:1; }
       .preview-row:focus-visible { position:relative; z-index:1; outline:3px solid var(--primary); outline-offset:2px; border-radius:9px; }
+      .theme-fab { width:46px; height:46px; border-radius:50%; border:1px solid var(--border); background:var(--card); color:var(--primary); box-shadow:0 5px 18px rgba(20,35,65,.16); }
+      .theme-fab:hover,.theme-fab.is-pen-hover { transform:translateY(-2px); background:var(--primary); color:var(--bg); box-shadow:0 8px 22px rgba(20,35,65,.2); }
+      .theme-fab svg { width:20px; height:20px; }
       .section { padding:55px 0; }
       .section h2 { font-size:clamp(1.8rem,4vw,2.6rem); letter-spacing:-.04em; margin:0 0 10px; }
       .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:24px; }
@@ -320,6 +323,12 @@
     if (container) {
       container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
     }
+    var button = document.getElementById('theme-btn');
+    if (button) {
+      var label = isCurrentlyDark() ? 'Switch to light mode' : 'Switch to dark mode';
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    }
   }
 
   function toggleTheme() {
@@ -351,7 +360,7 @@
 
     <header class="site-wrap site-nav">
       <a class="site-brand" href="/my-list" aria-label="My List home"><img src="/icon-my-list.png" alt=""><span>My List</span></a>
-      <nav class="site-links" aria-label="Main navigation"><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="/">avih6</a></nav>
+      <nav class="site-links" aria-label="Main navigation"><a href="#features">Features</a><a href="#privacy">Privacy</a><a href="/my-list/terms-of-service">Terms</a><a href="/">avih6</a></nav>
     </header>
     <main>
       <section class="site-wrap hero" aria-labelledby="hero-title">
@@ -390,7 +399,7 @@
     </main>
     <footer class="site-footer"><div class="site-wrap footer-inner"><span>My List · Android</span><nav class="footer-links" aria-label="Legal links"><a href="/my-list/privacy-policy">Privacy Policy</a><a href="/my-list/terms-of-service">Terms of Service</a><a href="/">avih6 home</a></nav></div></footer>
 
-    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle Dark Mode">
+    <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Switch to dark mode" title="Switch to dark mode">
         <span id="theme-icon-container"></span>
     </button>
 
