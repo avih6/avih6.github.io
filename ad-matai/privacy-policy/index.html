@@ -252,6 +252,7 @@
                 <ul>
                     <li><a href="#local-data">Local Profile & Service Countdowns (Default)</a></li>
                     <li><a href="#authentication">User Accounts & Authentication (Google Sign-In & Anonymous Guest Mode)</a></li>
+                    <li><a href="#cloud-encryption">Encrypted Cloud Backup & Seamless Recovery</a></li>
                 </ul>
             </li>
             <li><a href="#lost-and-found">Lost & Found Community Board (מציאון)</a></li>
@@ -272,7 +273,7 @@
         </ol>
     </div>
 
-    <p><strong>Last Updated:</strong> October 30, 2026</p>
+    <p><strong>Last Updated:</strong> October 31, 2026</p>
 
     <h2 id="overview">1. Overview & Privacy-First Principle</h2>
     <p>The "Ad Matai!" application (the "App") is developed and maintained by avih6 as a personal countdown, leave planner, educational military terminology glossary, lost &amp; found board, and community transit utility application for Israeli military personnel. This SERVICE is provided at no cost and is intended for use "AS IS".</p>
@@ -300,6 +301,14 @@
     <ul>
         <li><strong>Google Account Authentication:</strong> When choosing to sign in with Google via Android Credential Manager, the App receives only your public display name, email address, and unique user identifier (UID) solely for authentication and author attribution. The App never accesses, stores, or transmits your account password.</li>
         <li><strong>Anonymous Guest Mode:</strong> Users who prefer complete anonymity can opt for Guest Mode, enabling participation without providing an email address, name, or phone number.</li>
+    </ul>
+
+    <h3 id="cloud-encryption">3.3 Encrypted Cloud Backup & Seamless Recovery</h3>
+    <p>For users who voluntarily connect a Google account to synchronize countdown settings across devices:</p>
+    <ul>
+        <li><strong>AES-256-GCM Authenticated Encryption:</strong> Service parameters (including dates, unit selections, and custom goals) are encrypted on the user's device prior to transmission using AES-256-GCM authenticated encryption. Raw service data is never stored in plaintext on our cloud database.</li>
+        <li><strong>Cloud-Backed Key Recovery:</strong> To protect against permanent data loss when reinstalling the application or switching devices, an encrypted user key token is synchronized with your cloud document, allowing instant and seamless restoration of your profile upon re-authenticating with Google.</li>
+        <li><strong>Self-Service Cloud Deletion:</strong> You may permanently delete your synchronized cloud data at any time directly through the in-app profile menu or by contacting support.</li>
     </ul>
 
     <h2 id="lost-and-found">4. Lost & Found Community Board (מציאון)</h2>
