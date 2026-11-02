@@ -85,19 +85,34 @@
         return;
       }
 
-      const appUrl = "admatai://join?type=" + inviteType + "&code=" + encodeURIComponent(code);
-      open.href = appUrl;
-      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      const senderName = await loadInviteSender();
+      const encodedCode = encodeURIComponent(code);
+      const appUrl = "admatai://join?type=" + inviteType + "&code=" + encodedCode;
+      const playStoreFallback = encodeURIComponent("https://play.google.com/store/apps/details?id=com.avih6.admatai");
+      const intentUrl = "intent://join?type=" + inviteType + "&code=" + encodedCode + "#Intent;scheme=admatai;package=com.avih6.admatai;S.browser_fallback_url=" + playStoreFallback + ";end";
 
+      open.href = intentUrl;
+
+      function openInApp() {
+        // Direct intent launch for Android Chrome
+        window.location.href = intentUrl;
+        setTimeout(() => {
+          // Custom scheme fallback
+          window.location.href = appUrl;
+        }, 350);
+      }
+
+      open.onclick = function(e) {
+        e.preventDefault();
+        openInApp();
+      };
+
+      const senderName = await loadInviteSender();
+      loader.classList.add("hidden");
+      showVerifiedSender(senderName?.senderName, senderName?.groupName);
+
+      const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
       if (isMobile) {
-        showVerifiedSender(senderName?.senderName, senderName?.groupName);
-        setTimeout(() => { location.href = appUrl; }, 750);
-      } else {
-        loader.classList.add("hidden");
-        open.classList.add("hidden");
-        actions.classList.add("single-action");
-        showVerifiedSender(senderName);
+        setTimeout(openInApp, 800);
       }
     }
 
