@@ -8,6 +8,69 @@
   <meta name="description" content="Terms of Service for Ad Matai!">
   <link rel="icon" type="image/svg+xml" href="/admatai/app-icon.svg">
   <link rel="stylesheet" href="/admatai/legal.css">
+  <script>
+    const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+    const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+    (function() {
+      var saved = localStorage.getItem('theme');
+      if (saved === 'light') {
+        document.documentElement.classList.add('light-mode');
+        document.documentElement.classList.remove('dark-mode');
+        document.documentElement.dataset.theme = 'light';
+      } else if (saved === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        document.documentElement.classList.remove('light-mode');
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+
+    function isCurrentlyDark() {
+      if (document.documentElement.classList.contains('light-mode') || document.documentElement.dataset.theme === 'light') return false;
+      if (document.documentElement.classList.contains('dark-mode') || document.documentElement.dataset.theme === 'dark') return true;
+      return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    }
+
+    function updateThemeIcon() {
+      var container = document.getElementById('theme-icon-container');
+      var btn = document.getElementById('theme-btn');
+      var dark = isCurrentlyDark();
+      if (container) {
+        container.innerHTML = dark ? sunIcon : moonIcon;
+      }
+      if (btn) {
+        var label = dark ? 'Switch to light mode' : 'Switch to dark mode';
+        btn.setAttribute('aria-label', label);
+        btn.setAttribute('title', label);
+      }
+    }
+
+    function toggleTheme() {
+      var willBeDark = !isCurrentlyDark();
+      if (willBeDark) {
+        document.documentElement.classList.add('dark-mode');
+        document.documentElement.classList.remove('light-mode');
+        document.documentElement.dataset.theme = 'dark';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.add('light-mode');
+        document.documentElement.classList.remove('dark-mode');
+        document.documentElement.dataset.theme = 'light';
+        localStorage.setItem('theme', 'light');
+      }
+      updateThemeIcon();
+    }
+
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function() {
+        if (!localStorage.getItem('theme')) {
+          updateThemeIcon();
+        }
+      });
+    }
+
+    window.addEventListener('DOMContentLoaded', updateThemeIcon);
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-650BH6MCPS"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-650BH6MCPS')</script>
 </head>
@@ -33,6 +96,8 @@
   </article>
   <footer><p>&copy; <span id="year">2026</span> avih6. All rights reserved.</p></footer>
 </main>
-<button class="theme-fab" id="themeButton" aria-label="Toggle color theme">&#9790;</button>
-<script>const root=document.documentElement,button=document.getElementById('themeButton');const saved=localStorage.getItem('theme');const dark=saved?saved==='dark':matchMedia('(prefers-color-scheme: dark)').matches;function setTheme(v){root.dataset.theme=v?'dark':'light';button.innerHTML=v?'&#9788;':'&#9790;';localStorage.setItem('theme',v?'dark':'light')}setTheme(dark);button.onclick=()=>setTheme(root.dataset.theme!=='dark');document.getElementById('year').textContent='2026'</script>
+<button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
+  <span id="theme-icon-container"></span>
+</button>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body></html>
