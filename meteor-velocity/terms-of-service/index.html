@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+      if (window.location.pathname.endsWith('/') && window.location.pathname !== '/') {
+        window.history.replaceState(null, '', window.location.pathname.slice(0, -1) + window.location.search + window.location.hash);
+      }
+    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.google-analytics.com">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://www.google.com https://*.google.com https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net;">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+    <meta charset="UTF-8"><meta name="robots" content="noindex, nofollow"><meta name="description" content="Meteor Velocity: dodge meteors, battle enemy drones, and chase your best score. An Android arcade game by avih6.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service — Meteor Velocity</title>
+
+    
+    
+    
+    
+    <link rel="canonical" href="https://avih6.github.io/meteor-velocity/terms-of-service">
+    <link rel="icon" type="image/png" href="/meteor-velocity/icon.webp">
+
+    
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+            touch-action: manipulation;
+        }
+
+        :root {
+            --bg: #ffffff;
+            --text: #202124;
+            --primary: #1a73e8;
+            --subtitle: #5f6368;
+            --border: #ebebeb;
+            --card: #ffffff;
+            --card-bg: #ffffff;
+            --toc-bg: #f8f9fa;
+            --toc-border: #eee;
+            --toc-link: #5f6368;
+            --warning-bg: #fef7e0;
+            --warning-border: #f9ab00;
+            --warning-text: #202124;
+            --btn-border: #1a73e8;
+            --fab-bg: rgba(255, 255, 255, 0.85);
+            --fab-border: #eee;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #121212;
+                --text: #e8eaed;
+                --primary: #8ab4f8;
+                --subtitle: #9aa0a6;
+                --border: #333333;
+                --card: #1e1e1e;
+                --card-bg: #1e1e1e;
+                --toc-bg: #1e1e1e;
+                --toc-border: #333333;
+                --toc-link: #9aa0a6;
+                --warning-bg: #3c2f00;
+                --warning-border: #f9ab00;
+                --warning-text: #ffd54f;
+                --btn-border: #8ab4f8;
+                --fab-bg: rgba(30, 30, 30, 0.85);
+                --fab-border: #333333;
+            }
+        }
+
+        html.dark-mode {
+            --bg: #121212 !important;
+            --text: #e8eaed !important;
+            --primary: #8ab4f8 !important;
+            --subtitle: #9aa0a6 !important;
+            --border: #333333 !important;
+            --card: #1e1e1e !important;
+            --card-bg: #1e1e1e !important;
+            --toc-bg: #1e1e1e !important;
+            --toc-border: #333333 !important;
+            --toc-link: #9aa0a6 !important;
+            --warning-bg: #3c2f00 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #ffd54f !important;
+            --btn-border: #8ab4f8 !important;
+            --fab-bg: rgba(30, 30, 30, 0.85) !important;
+            --fab-border: #333333 !important;
+        }
+
+        html.light-mode {
+            --bg: #ffffff !important;
+            --text: #202124 !important;
+            --primary: #1a73e8 !important;
+            --subtitle: #5f6368 !important;
+            --border: #ebebeb !important;
+            --card: #ffffff !important;
+            --card-bg: #ffffff !important;
+            --toc-bg: #f8f9fa !important;
+            --toc-border: #eee !important;
+            --toc-link: #5f6368 !important;
+            --warning-bg: #fef7e0 !important;
+            --warning-border: #f9ab00 !important;
+            --warning-text: #202124 !important;
+            --btn-border: #1a73e8 !important;
+            --fab-bg: rgba(255, 255, 255, 0.85) !important;
+            --fab-border: #eee !important;
+        }
+
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; 
+            margin: 0; 
+            padding: 40px 20px; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            min-height: 85vh; 
+            justify-content: center; 
+            background: var(--bg);
+            color: var(--text);
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .app-icon { 
+            width: 120px; 
+            height: 120px; 
+            border-radius: 26px; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15); 
+            margin-bottom: 20px; 
+            object-fit: cover;
+        }
+
+        h1 { 
+            margin: 0 0 10px 0; 
+            font-size: 2rem; 
+            text-align: center; 
+            color: var(--text);
+        }
+
+        p.tagline {
+            margin: 0 0 35px 0;
+            color: var(--subtitle);
+            text-align: center;
+            max-width: 380px;
+            font-size: 1.05rem;
+            line-height: 1.4;
+        }
+
+        .btn-container { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            width: 90%; 
+            max-width: 320px; 
+        }
+
+        .btn { 
+            padding: 18px; 
+            border-radius: 16px; 
+            text-decoration: none; 
+            text-align: center; 
+            font-weight: bold; 
+            border: 2px solid var(--btn-border); 
+            color: var(--primary); 
+            transition: 0.3s; 
+            font-size: 1.1rem;
+        }
+        
+        .btn-main { 
+            background: var(--primary); 
+            color: var(--bg);
+            border-color: var(--primary);
+        }
+        
+        .btn:hover, .btn.is-pen-hover { 
+            opacity: 0.9; 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 15px rgba(26, 115, 232, 0.2);
+        }
+
+        .back-link { 
+            margin-top: 4rem;
+            color: #5f6368; 
+            text-decoration: none; 
+            font-size: 0.95rem; 
+            transition: color 0.3s;
+        }
+        
+        html.dark-mode .back-link {
+            color: #9aa0a6; 
+        }
+        
+        .back-link:hover, .back-link.is-pen-hover { text-decoration: underline; color: var(--primary); }
+
+        .theme-fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--fab-bg);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: var(--text);
+            border: 1px solid var(--border);
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .theme-fab:hover, .theme-fab.is-pen-hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            background: var(--card);
+        }
+
+        .theme-fab span { display: flex; align-items: center; justify-content: center; }
+        .theme-fab svg {
+            width: 22px;
+            height: 22px;
+        }
+    </style>
+    <style>
+      body { display:block; min-height:100vh; padding:0; justify-content:flex-start; }
+      .site-wrap { width:min(1080px,calc(100% - 40px)); margin:auto; }
+      .site-nav { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 0; }
+      .site-brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:750; color:var(--text); }
+      .site-brand img { width:42px; height:42px; border-radius:12px; box-shadow:0 3px 12px rgba(0,0,0,.14); }
+      .site-links { display:flex; gap:20px; color:var(--subtitle); font-size:.95rem; }
+      .site-links a,.site-footer a { color:inherit; text-decoration:none; }
+      .site-links a:hover,.site-footer a:hover { color:var(--primary); text-decoration:underline; text-underline-offset:4px; }
+      .hero { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:48px; padding:66px 0 74px; }
+      .eyebrow { color:var(--primary); font-size:.82rem; font-weight:750; letter-spacing:.09em; text-transform:uppercase; }
+      .hero h1 { font-size:clamp(2.8rem,6vw,5rem); letter-spacing:-.06em; line-height:1.02; margin:14px 0; }
+      .hero-copy,.section-intro { color:var(--subtitle); font-size:1.08rem; max-width:580px; }
+      .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:24px; }
+      .hero-actions .btn { display:inline-flex; align-items:center; justify-content:center; gap:8px; width:auto; max-width:none; flex:1 1 210px; padding:14px 14px; font-size:.96rem; }
+      .button-label,.button-arrow { white-space:nowrap; }
+      .button-arrow { flex:none; }
+      .section { padding:55px 0; }
+      .section h2 { font-size:clamp(1.8rem,4vw,2.6rem); letter-spacing:-.04em; margin:0 0 10px; }
+      .feature-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin-top:24px; }
+      .feature { border:1px solid var(--border); background:var(--card); border-radius:18px; padding:22px; text-align:left; }
+      .feature h3 { margin:0 0 7px; font-size:1.08rem; }
+      .feature p { color:var(--subtitle); margin:0; line-height:1.55; }
+      .steps { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:24px; }
+      .step { border-top:1px solid var(--border); padding-top:16px; text-align:left; }
+      .step b { color:var(--primary); font-size:.85rem; letter-spacing:.08em; }
+      .step p { color:var(--subtitle); margin-bottom:0; }
+      .privacy-panel { display:grid; grid-template-columns:.8fr 1.2fr; gap:30px; align-items:start; border-radius:22px; padding:clamp(24px,5vw,44px); background:var(--toc-bg); text-align:left; }
+      .privacy-panel p { color:var(--subtitle); margin-top:0; }
+      .privacy-panel .btn { display:inline-block; width:auto; }
+      .site-footer { border-top:1px solid var(--border); margin-top:42px; padding:22px 0 32px; color:var(--subtitle); }
+      .footer-inner { display:flex; flex-wrap:wrap; justify-content:space-between; gap:16px; align-items:center; }
+      .footer-links { display:flex; gap:18px; }
+      a:focus-visible { outline:3px solid var(--primary); outline-offset:3px; }
+      @media(max-width:760px) { .hero { grid-template-columns:1fr; gap:30px; padding:48px 0 38px; text-align:center; }.hero-copy { margin:auto; }.feature-grid { grid-template-columns:1fr; }.steps { grid-template-columns:1fr; }.privacy-panel { grid-template-columns:1fr; gap:16px; } }
+      @media(max-width:480px) { .site-wrap { width:calc(100% - 30px); }.site-links { gap:12px; font-size:.83rem; }.site-brand img { width:36px; height:36px; }.hero-actions .btn { flex-basis:100%; font-size:.9rem; }.section { padding:40px 0; } }
+      @media(prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto !important; transition:none !important; } }
+    </style>
+
+<script>
+  const sunIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
+  const moonIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
+
+  (function() {
+    var savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+    } else if (savedTheme === 'light') {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+    }
+  })();
+
+  function isCurrentlyDark() {
+    if (document.documentElement.classList.contains('dark-mode')) return true;
+    if (document.documentElement.classList.contains('light-mode')) return false;
+    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  function updateThemeIcon() {
+    var container = document.getElementById('theme-icon-container');
+    if (container) {
+      container.innerHTML = isCurrentlyDark() ? sunIcon : moonIcon;
+    }
+    var button = document.getElementById('theme-btn');
+    if (button) {
+      var label = isCurrentlyDark() ? 'Switch to light mode' : 'Switch to dark mode';
+      button.setAttribute('aria-label', label);
+      button.setAttribute('title', label);
+    }
+  }
+
+  function toggleTheme() {
+    var willBeDark = !isCurrentlyDark();
+    if (willBeDark) {
+      document.documentElement.classList.add('dark-mode');
+      document.documentElement.classList.remove('light-mode');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.add('light-mode');
+      document.documentElement.classList.remove('dark-mode');
+      localStorage.setItem('theme', 'light');
+    }
+    updateThemeIcon();
+  }
+
+  if (window.matchMedia) {
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+      if (!localStorage.getItem('theme')) {
+        updateThemeIcon();
+      }
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', updateThemeIcon);
+</script>
+<style>
+.orbit {position:relative;isolation:isolate;width:min(350px,100%);height:410px;margin:auto;overflow:hidden;border:1px solid #6150aa;border-radius:28px;background:radial-gradient(ellipse at 50% 110%,#48236f,transparent 65%),#090e23;color:#fff;box-shadow:0 25px 70px #543b7933}
+.orbit:before {content:"";position:absolute;inset:0;background-image:radial-gradient(#ffffffaa 1px,transparent 1px);background-size:39px 51px;opacity:.6;z-index:-1}
+.orbit-label {display:flex;justify-content:space-between;margin:22px;font:700 12px monospace;letter-spacing:2px;color:#85e9ff}
+.meteor {position:absolute;color:#bca3db;font-size:55px;line-height:1}.m1{top:90px;left:40px;transform:rotate(25deg)}.m2{top:150px;right:35px;font-size:75px}.m3{top:50px;right:100px;font-size:30px}
+.ship {position:absolute;bottom:95px;left:calc(50% - 30px);width:60px;height:70px;background:linear-gradient(#e6faff,#6ac8ff 65%,#8955e7);clip-path:polygon(50% 0,65% 50%,100% 85%,60% 75%,50% 100%,40% 75%,0 85%,35% 50%)}
+.laser {position:absolute;left:50%;top:150px;width:3px;height:100px;background:#78edff;box-shadow:0 0 15px #78edff}
+.orbit-caption {position:absolute;bottom:20px;left:20px;right:20px;text-align:center;color:#b5bdd6;font-size:12px}.draft {display:inline-block;padding:6px 11px;border:1px solid var(--border);border-radius:99px;color:var(--subtitle);font-size:.8rem;margin-top:18px}
+.legal-copy {max-width:780px;margin:auto;line-height:1.8}.legal-copy h2{margin-top:35px;font-size:1.5rem}.legal-copy a{color:var(--primary)}
+@media(max-width:480px){.site-links{flex-wrap:wrap;justify-content:flex-end}.site-brand{min-width:0}.orbit{height:350px}.footer-links{flex-wrap:wrap}}
+</style></head>
+<body><header class="site-wrap site-nav"><a class="site-brand" href="/meteor-velocity/"><img src="/meteor-velocity/icon.webp" alt=""><span>Meteor Velocity</span></a><nav class="site-links" aria-label="Main navigation"><a href="/meteor-velocity/#features">Features</a><a href="/meteor-velocity/privacy-policy/">Privacy</a><a href="/meteor-velocity/terms-of-service/">Terms</a></nav></header><main class="site-wrap section legal-copy"><h1>Terms of Service</h1><p>Last updated: 6 November 2026</p><p>These terms apply to Meteor Velocity, an Android arcade game by avih6. By using the game, you agree to these terms.</p><h2>Using the game</h2><p>You may use the game for personal entertainment. Do not use it unlawfully or redistribute its code, artwork, or audio without permission from the relevant rights holder or an applicable licence.</p><h2>Scores and availability</h2><p>Scores and preferences are stored on your device and may be lost when app data is cleared, the app is removed, or a device is changed. Features and availability may change with future updates.</p><h2>Availability and responsibility</h2><p>The game is provided as available, without a guarantee of uninterrupted or error-free operation. To the extent permitted by applicable law, the developer is not responsible for losses resulting from use of the game. These terms do not limit rights or responsibilities that cannot be excluded under applicable law.</p><h2>Privacy and contact</h2><p>See the <a href="/meteor-velocity/privacy-policy/">Privacy Policy</a> for information about game data. For support or questions, email <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>.</p></main><footer class="site-footer"><div class="site-wrap footer-inner"><span>Meteor Velocity · avih6</span><nav class="footer-links" aria-label="Footer"><a href="/meteor-velocity/privacy-policy/">Privacy Policy</a><a href="/meteor-velocity/terms-of-service/">Terms of Service</a><a href="mailto:av6development@gmail.com">Contact</a><a href="/">avih6 home</a></nav></div></footer><button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Switch theme"><span id="theme-icon-container"></span></button></body></html>
