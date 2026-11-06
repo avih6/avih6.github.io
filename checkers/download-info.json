@@ -1,9 +1,9 @@
 {
-  "versionName": "1.4.0 Beta",
-  "versionCode": 7,
+  "versionName": "1.5.0 Beta",
+  "versionCode": 8,
   "applicationId": "com.avih6.checkers",
-  "sourceCommit": "b051853",
+  "sourceCommit": "91b7b9e16afe7684f5d4ce1eb550b5bccfa44fa2",
   "buildType": "debug",
-  "size": 14367844,
-  "sha256": "236dfc9b1f9c40d7b7d0496c2fbffe4ce6820e64a18d1a7950444808bf9812fc"
+  "size": 13168980,
+  "sha256": "87231082e23a7948505fcfdd0bee15ec9ba3cb1cfc5a6283daa33cc89ba5cd4b"
 }
