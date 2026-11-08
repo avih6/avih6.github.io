@@ -33,6 +33,10 @@
             touch-action: manipulation;
         }
 
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
         :root {
             --bg: #ffffff;
             --text: #202124;
@@ -178,9 +182,16 @@ body {
             outline-offset: 2px;
         }
         header { 
-            background: linear-gradient(to right, #0043a8 0%, #002083 100%); 
+            background: linear-gradient(135deg, #0754b8 0%, #002083 100%);
             color: white; 
-            padding: 3.5rem 1rem; 
+            padding: clamp(3.25rem, 9vw, 5.5rem) 1.25rem;
+        }
+        header p {
+            margin: 0.65rem auto 0;
+            max-width: 36rem;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: clamp(1rem, 2.5vw, 1.15rem);
+            line-height: 1.6;
         }
         .theme-fab {
             position: fixed;
@@ -221,22 +232,23 @@ body {
         }
         .container { 
             max-width: 1100px; 
-            margin: 2rem auto 2rem auto; 
-            padding: 0 1rem; 
+            margin: clamp(1.5rem, 4vw, 2.5rem) auto;
+            padding: 0 clamp(1rem, 4vw, 1.5rem);
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
-            gap: 1.5rem; 
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+            gap: clamp(1rem, 2.5vw, 1.5rem);
         }
         .card { 
             background: var(--card); 
             padding: 1.5rem; 
+            min-width: 0;
             border-radius: 16px; 
             box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             border: 1px solid var(--border); 
-            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.3s, border 0.3s; 
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background 0.3s, border-color 0.3s;
         }
         .card:hover, .card.is-pen-hover { 
             transform: translateY(-5px); 
@@ -263,7 +275,8 @@ body {
         }
         .btn { 
             flex: 1; 
-            padding: 0.6rem 1rem; 
+            min-height: 44px;
+            padding: 0.65rem 0.75rem;
             border-radius: 8px; 
             text-decoration: none; 
             font-weight: 500; 
@@ -275,6 +288,14 @@ body {
         .btn-store { background: var(--primary); color: white; }
         .btn-site { border: 1px solid var(--primary); color: var(--primary); }
         .btn:hover, .btn.is-pen-hover { opacity: 0.9; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
         footer { 
             margin-top: 3rem; 
             padding: 2rem; 
@@ -344,7 +365,7 @@ body {
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
         <h1>avih6</h1>
-        <p>Android Developer</p>
+        <p>Android Developer · Practical apps and tools for everyday life</p>
     </header>
 
     <main id="main-content" class="container">
@@ -374,7 +395,7 @@ body {
         </div>
         <div class="card">
             <img loading="lazy" src="/icon-ad-matai.png" alt="AdMatai Icon" width="64" height="64" class="app-icon">
-            <h2>עד מתי!</h2>
+            <h2>Ad Matai!</h2>
             <div class="btn-group">
                 <a rel="noopener noreferrer" href="https://play.google.com/store/apps/details?id=com.avih6.admatai" class="btn btn-store" target="_blank" onclick="trackClick('AdMatai', 'Store')">Google Play</a>
                 <a href="/admatai" class="btn btn-site" onclick="trackClick('AdMatai', 'Site')">App Site</a>
@@ -520,3 +541,4 @@ body {
 </script>
 </body>
 </html>
+
