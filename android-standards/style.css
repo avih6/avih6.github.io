@@ -1,0 +1,13 @@
+html { color-scheme: light; --bg:#f4f7fc; --surface:#fff; --text:#17243a; --link:#1453a0; --border:#ccd7e8; }
+html[data-theme="dark"] { color-scheme:dark; --bg:#101723; --surface:#182234; --text:#e8effc; --link:#a3ccff; --border:#394963; }
+body { margin:0; background:var(--bg); color:var(--text); font: 1rem/1.65 system-ui,sans-serif; }
+main { max-width:48rem; margin:2rem auto 6rem; padding:clamp(1.2rem,5vw,3rem); background:var(--surface); border:1px solid var(--border); border-radius:1rem; }
+@media(max-width:55rem) { main { margin:1rem 1rem 6rem; } }
+a { color:var(--link); }
+.logo { border-radius:.75rem; }
+footer { margin-top:2rem; border-top:1px solid var(--border); padding-top:1rem; }
+.theme-fab { position:fixed; right:30px; bottom:30px; width:50px; height:50px; border:1px solid var(--border); border-radius:12px; background:var(--surface); color:var(--text); display:grid; place-items:center; box-shadow:0 4px 16px #0002; cursor:pointer; }
+.theme-fab span { display:flex; }
+.theme-fab svg { width:22px; height:22px; }
+@media(max-width:600px) { .theme-fab { right:20px; bottom:20px; } }
+:focus-visible { outline:3px solid var(--link); outline-offset:3px; }

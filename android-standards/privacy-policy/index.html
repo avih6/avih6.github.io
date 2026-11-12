@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://avih6.github.io/android-standards/privacy-policy/">
+<link rel="icon" href="/android-standards/icon.png">
+<link rel="stylesheet" href="/android-standards/style.css">
+<title>Privacy Policy - avih6 Android Standards</title>
+</head>
+<body>
+<main>
+<a href="/android-standards/">avih6 Android Standards</a>
+<h1>Privacy Policy</h1>
+<p>Effective November 13, 2026</p>
+<nav aria-label="Contents"><ol><li><a href="#section-1">Overview</a></li><li><a href="#section-2">Authorization</a></li><li><a href="#section-3">Data accessed</a></li><li><a href="#section-4">Purpose</a></li><li><a href="#section-5">Credentials</a></li><li><a href="#section-6">Report storage</a></li><li><a href="#section-7">Service providers</a></li><li><a href="#section-8">Website</a></li><li><a href="#section-9">Revoking access and deletion</a></li><li><a href="#section-10">Changes</a></li><li><a href="#section-11">Contact</a></li></ol></nav>
+<section id="section-1"><h2>1. Overview</h2><p>This policy covers avih6 Android Standards and its AdMob reporting connection.</p></section>
+<section id="section-2"><h2>2. Authorization</h2><p>The connection uses Google OAuth with the admob.report scope. Authorization is initiated by the account holder.</p></section>
+<section id="section-3"><h2>3. Data accessed</h2><p>The workflow reads the publisher account identifier and reporting time zone, and retrieves app and ad unit identifiers, report dates, ad requests, matched requests, impressions, match rate and show rate.</p></section>
+<section id="section-4"><h2>4. Purpose</h2><p>These data are used to generate and interpret AdMob delivery reports for the requested app.</p></section>
+<section id="section-5"><h2>5. Credentials</h2><p>The OAuth client credentials and refresh token are stored as a GitHub Actions secret in a private repository and used to obtain access tokens from Google.</p></section>
+<section id="section-6"><h2>6. Report storage</h2><p>GitHub Actions stores generated reports as private workflow artifacts configured to expire after seven days. People with repository access may be able to retrieve them.</p></section>
+<section id="section-7"><h2>7. Service providers</h2><p>Google provides authorization and reporting. GitHub runs the workflow and stores its artifacts. When a report is opened in an assistant host, that host processes the report content to answer the request.</p></section>
+<section id="section-8"><h2>8. Website</h2><p>These pages provide information about the connection. They contain no analytics scripts or forms. The hosting provider may process requests needed to serve the pages.</p></section>
+<section id="section-9"><h2>9. Revoking access and deletion</h2><p>Revoke the OAuth grant in Google Account settings. Repository administrators can remove the stored secret and report artifacts. Copies downloaded separately are managed where they were saved.</p></section>
+<section id="section-10"><h2>10. Changes</h2><p>Updates to this policy are posted on this page.</p></section>
+<section id="section-11"><h2>11. Contact</h2><p>For privacy questions, contact <a href="mailto:av6development@gmail.com">av6development@gmail.com</a>.</p></section>
+<footer><a href="/android-standards/privacy-policy/">Privacy Policy</a> · <a href="/android-standards/terms-of-service/">Terms of Service</a> · <a href="mailto:av6development@gmail.com">Contact</a><p>© <span id="year"></span> avih6</p></footer>
+</main>
+<button class="theme-fab" id="theme-btn" type="button" aria-label="Toggle color theme"><span id="theme-icon-container"></span></button>
+<script src="/android-standards/theme.js"></script>
+</body>
+</html>
