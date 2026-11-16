@@ -81,7 +81,11 @@
       });
     }
 
-    window.addEventListener('DOMContentLoaded', updateThemeIcon);
+    window.addEventListener('DOMContentLoaded', function() {
+      updateThemeIcon();
+      var yearEl = document.getElementById('year');
+      if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+    });
   </script>
   <style>
     :root, html.dark-mode {
@@ -158,7 +162,7 @@
       gap: 42px;
       align-items: center;
       min-height: 420px;
-      margin-bottom: 56px;
+      margin-bottom: 48px;
     }
     .eyebrow {
       color: var(--gold);
@@ -189,12 +193,32 @@
       font-size: 19px;
       line-height: 1.75;
     }
+    .beta-meta {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .beta-pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--card-bg);
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 12px;
+    }
     .actions {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       gap: 12px;
-      margin-top: 32px;
+      margin-top: 24px;
     }
     .button {
       min-height: 52px;
@@ -247,7 +271,7 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
     .feature {
       border: 1px solid var(--line);
@@ -255,7 +279,11 @@
       padding: 22px;
       background: var(--card-bg);
       box-shadow: var(--card-shadow);
-      transition: background 0.3s, border-color 0.3s;
+      transition: background 0.3s, border-color 0.3s, transform 0.18s ease;
+    }
+    .feature:hover {
+      transform: translateY(-2px);
+      border-color: var(--gold);
     }
     .feature strong {
       display: block;
@@ -269,12 +297,47 @@
       font-size: 14px;
       line-height: 1.55;
     }
+    .install-guide {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 22px;
+      background: var(--card-bg);
+      box-shadow: var(--card-shadow);
+      margin-bottom: 36px;
+    }
+    .install-guide h2 {
+      margin: 0 0 10px;
+      font-size: 18px;
+      color: var(--gold);
+      font-weight: 800;
+    }
+    .install-steps {
+      margin: 0;
+      padding-inline-start: 20px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .install-steps strong {
+      color: var(--text);
+    }
     footer {
-      margin-top: 45px;
+      margin-top: 40px;
       border-top: 1px solid var(--line);
       padding-top: 22px;
       color: var(--muted);
       font-size: 13px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      align-items: center;
     }
     .back {
       color: inherit;
@@ -329,7 +392,7 @@
         text-align: center;
         gap: 24px;
         min-height: auto;
-        margin-bottom: 46px;
+        margin-bottom: 42px;
       }
       .icon-wrap {
         grid-row: 1;
@@ -340,9 +403,12 @@
         margin-inline: auto;
         font-size: 17px;
       }
+      .beta-meta {
+        justify-content: center;
+      }
       .actions {
         justify-content: center;
-        margin-top: 26px;
+        margin-top: 22px;
         gap: 10px;
       }
       .actions .button.primary {
@@ -359,7 +425,7 @@
       .features {
         grid-template-columns: 1fr;
         gap: 14px;
-        margin-bottom: 30px;
+        margin-bottom: 24px;
       }
       .eyebrow:before {
         display: none;
@@ -367,6 +433,10 @@
       .theme-fab {
         bottom: 20px;
         right: 20px;
+      }
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -378,9 +448,13 @@
       <div>
         <div class="eyebrow">עד מתי!</div>
         <h1>הפז״ם שלך,<br>במקום אחד.</h1>
-        <p class="lead">אפליקציה לחיילים עם ספירת פז״ם, אבני דרך, כלים לשירות, חברים, דיווחי מ.צ ומידע שימושי ביום יום.</p>
+        <p class="lead">אפליקציה לחיילים עם ספירת פז״ם, אבני דרך, דרגות ותג יחידה, מפת דיווחי מ.צ, כלים לשירות וחברים.</p>
+        <div class="beta-meta">
+          <span class="beta-pill">גרסת בטא 0.86.0</span>
+          <span>קובץ APK חתום לאנדרואיד 8.0 ומעלה</span>
+        </div>
         <div class="actions">
-          <a class="button primary" href="/admatai/admatai-debug.apk" download="admatai-debug.apk">הורדת APK (גרסת בדיקה)</a>
+          <a class="button primary" href="/admatai/AdMatai-0.86.0-release.apk" download="AdMatai-0.86.0-release.apk">הורדת APK (גרסה 0.86.0)</a>
           <a class="button secondary" href="https://play.google.com/store/apps/details?id=com.avih6.admatai" target="_blank" rel="noopener noreferrer">Google Play</a>
           <a class="button secondary" href="/admatai/privacy-policy">מדיניות פרטיות</a>
           <a class="button secondary" href="/admatai/terms-of-service">תנאי שימוש</a>
@@ -388,12 +462,32 @@
       </div>
       <div class="icon-wrap"><img src="/admatai/app-icon.svg" alt="אייקון עד מתי!"></div>
     </section>
+
     <section class="features" aria-label="יכולות עיקריות">
-      <div class="feature"><strong>הפז״ם שלי</strong><span>ספירה מדויקת, תאריכים, דרגות ואבני דרך.</span></div>
-      <div class="feature"><strong>כלים לשירות</strong><span>מידע פרקטי, כוורת, אבדות ומציאות וגלאי מ.צ.</span></div>
-      <div class="feature"><strong>חברים</strong><span>בקשות חברות מאובטחות, קישור או QR.</span></div>
+      <div class="feature"><strong>הפז״ם שלי</strong><span>ספירה מדויקת, אבני דרך, דרגות צה״ל ותג יחידה מותאם אישית.</span></div>
+      <div class="feature"><strong>גלאי מ.צ ותובנות</strong><span>מפת תחנות ובסיסים ברחבי הארץ, דיווחים חיים וגרפי מגמות.</span></div>
+      <div class="feature"><strong>כלים לשירות</strong><span>מחשבון משכורת צבאית, פורטל כוורת, טרמפים וציוד לטירונות.</span></div>
+      <div class="feature"><strong>אבידות ומציאות</strong><span>דיווח מהיר על ציוד שאבד או נמצא, כולל צילום ישיר או העלאת תמונה.</span></div>
+      <div class="feature"><strong>חידון צה״ל</strong><span>קטגוריות ידע מגוונות עם שמירת שיא אישי לכל קטגוריה.</span></div>
+      <div class="feature"><strong>חברים והזמנות</strong><span>בקשות חברות מאובטחות, השוואת פז״ם, שיתוף קישור וסריקת QR.</span></div>
     </section>
-    <footer><a class="back" href="/">חזרה לאתר avih6</a></footer>
+
+    <section class="install-guide" aria-label="הוראות התקנת APK">
+      <h2>איך מתקינים את גרסת הבטא?</h2>
+      <ol class="install-steps">
+        <li>לוחצים על כפתור <strong>הורדת APK (גרסה 0.86.0)</strong> ומורידים את הקובץ למכשיר.</li>
+        <li>פותחים את הקובץ שהורד ומאשרים בהגדרות <strong>התקנה ממקור לא מוכר</strong> (מהדפדפן או ממנהל הקבצים).</li>
+        <li>אם מוצגת התראת Play Protect על אפליקציה מחוץ לחנות, בוחרים <strong>התקנה בכל זאת</strong>.</li>
+      </ol>
+    </section>
+
+    <footer>
+      <div class="footer-links">
+        <a class="back" href="/">חזרה לאתר avih6</a>
+        <a class="back" href="mailto:av6development@gmail.com">יצירת קשר</a>
+      </div>
+      <span>&copy; <span id="year">2026</span> avih6</span>
+    </footer>
   </main>
   <button class="theme-fab" id="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme">
     <span id="theme-icon-container"></span>
