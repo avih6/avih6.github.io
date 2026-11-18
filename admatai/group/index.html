@@ -273,6 +273,11 @@
   <script>
     (function () {
       const params = new URLSearchParams(location.search);
+      if (params.has("type")) {
+        params.delete("type");
+        const cleanQs = params.toString();
+        history.replaceState(null, "", "/admatai/group" + (cleanQs ? "?" + cleanQs : ""));
+      }
       const code = (params.get("code") || "").trim().toUpperCase();
       const inviter = params.get("preview") === "1" ? (params.get("from") || "").trim().slice(0, 40) : "";
       const title = document.getElementById("title");

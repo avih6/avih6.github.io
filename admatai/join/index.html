@@ -11,6 +11,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <title>בקשת חברות | עד מתי!</title>
   <link rel="icon" type="image/svg+xml" href="../app-icon.svg">
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      if (params.get("type") === "group") {
+        params.delete("type");
+        var qs = params.toString();
+        location.replace("/admatai/group" + (qs ? "?" + qs : ""));
+      }
+    })();
+  </script>
   <style>
     :root {
       --bg: #111811;
@@ -274,7 +284,9 @@
     (function () {
       const params = new URLSearchParams(location.search);
       if (params.get("type") === "group") {
-        location.replace("../group/" + location.search);
+        params.delete("type");
+        const qs = params.toString();
+        location.replace("/admatai/group" + (qs ? "?" + qs : ""));
         return;
       }
       const code = (params.get("code") || "").trim().toUpperCase();
